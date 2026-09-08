@@ -1,0 +1,24 @@
+# models.yaml 로 복사해서 사용한다. 실제 모델 ID와 계정 정보는 커밋하지 않는다.
+# provider 는 langchain init_chat_model 이 이해하는 이름을 쓴다.
+#   anthropic | openai | google_genai | ollama | ...
+routes:
+  small:
+    provider: anthropic
+    model: <small-model-id>
+    params: {temperature: 0, max_tokens: 1024}
+    pricing: {input_per_mtok: 0.0, output_per_mtok: 0.0}
+  balanced:
+    provider: anthropic
+    model: <balanced-model-id>
+    params: {temperature: 0, max_tokens: 2048}
+    pricing: {input_per_mtok: 0.0, output_per_mtok: 0.0}
+  frontier:
+    provider: anthropic
+    model: <frontier-model-id>
+    params: {temperature: 0, max_tokens: 4096}
+    pricing: {input_per_mtok: 0.0, output_per_mtok: 0.0}
+  local:
+    provider: ollama
+    model: <local-model-tag>
+    params: {temperature: 0}
+    pricing: {input_per_mtok: 0.0, output_per_mtok: 0.0}

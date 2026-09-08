@@ -1,0 +1,4 @@
+{"task_id": "route-easy-01", "prompt": "RAG의 뜻이 무엇인가요?", "expected": "small", "graders": ["contains"], "tags": ["easy"], "meta": {"expected_route": "small"}}
+{"task_id": "route-hard-01", "prompt": "검색 지연을 줄이면서 정확도를 유지하는 인덱싱 아키텍처를 설계하고 trade-off를 설명하라.", "expected": "frontier", "graders": ["contains"], "tags": ["hard"], "meta": {"expected_route": "frontier"}}
+{"task_id": "route-tool-01", "prompt": "원금 1,000만원을 연 4% 단리로 3년 두면 이자를 계산해 조회하라.", "expected": "balanced", "graders": ["contains"], "tags": ["tool"], "meta": {"expected_route": "balanced"}}
+{"task_id": "route-local-01", "prompt": "사내 비공개 문서라 로컬에서만 처리해서 요약해줘.", "expected": "local", "graders": ["contains"], "tags": ["sensitive"], "meta": {"expected_route": "local"}}
