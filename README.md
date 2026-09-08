@@ -20,7 +20,7 @@ planned → active → validated
 
 ## 실험 추가하기
 
-1. `experiments/README.template.md`를 `experiments/<YYYY-MM-DD>-<topic>/README.md`로 복사합니다.
+1. `experiments/README.template.md`를 `experiments/<YYYY-MM-DD>-<순번>-<topic>/README.md`로 복사합니다.
 2. 해당 디렉터리 안에 실험 코드와 실행에 필요한 파일을 함께 둡니다.
 3. 중첩된 Git 저장소를 만들지 않습니다.
 4. 화요일·목요일 세션이 끝날 때 결과와 다음 행동을 갱신합니다.
@@ -32,10 +32,11 @@ planned → active → validated
 
 ```text
 experiments/
-└── 2026-09-08-agent-framework/
+└── 2026-09-08-01-agent-framework/
     ├── README.md
     ├── shared/                    # 공통 자료와 설정(필요한 경우)
     └── implementations/           # 각자 별도로 구현할 때만 생성
+        ├── README.md
         ├── github-id-a/
         └── github-id-b/
 ```
@@ -48,10 +49,16 @@ experiments/
 
 ## 실험 목록
 
-아직 등록된 실험이 없습니다.
-
 | 실험 | 상태 | 시작일 | 관련 아이디어·프로젝트 | 결론 |
 | --- | --- | --- | --- | --- |
-| _첫 실험을 기다리고 있어요_ | — | — | — | — |
+| [Agentic RAG](experiments/2026-09-08-01-agentic-rag/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [LLM Router](experiments/2026-09-08-02-llm-router/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [Agent Evaluation](experiments/2026-09-08-03-agent-evaluation/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [Local/Open-weight LLM](experiments/2026-09-08-04-local-llm/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [Multimodal Agent](experiments/2026-09-08-05-multimodal-agent/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [AI Research Agent](experiments/2026-09-08-06-research-agent/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [Computer-use Agent](experiments/2026-09-08-07-computer-use-agent/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [Coding Agent](experiments/2026-09-08-08-coding-agent/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
+| [Cybersecurity Agent](experiments/2026-09-08-09-cybersecurity-agent/) | `planned` | 2026-09-08 | 없음 | 진행 전 |
 
 독립 프로젝트 생성 방법은 [프로젝트 생성 가이드](https://github.com/GongChangJin/projects/blob/main/docs/creating-a-project.md)를 참고합니다.
