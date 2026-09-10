@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:hands-on:evaluation-record",
+  "title": "EvaluationRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "implementation_id", "task_success", "latency_ms", "safety_violations"],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "implementation_id": { "type": "string", "minLength": 1 },
+    "task_success": { "type": "boolean" },
+    "quality_score": { "type": "number", "minimum": 0, "maximum": 1 },
+    "tool_accuracy": { "type": "number", "minimum": 0, "maximum": 1 },
+    "latency_ms": { "type": "number", "minimum": 0 },
+    "usage": { "type": "object" },
+    "cost": { "type": ["number", "null"], "minimum": 0 },
+    "safety_violations": { "type": "array", "items": { "type": "string" } },
+    "failure_type": { "type": ["string", "null"] },
+    "metadata": { "type": "object" }
+  }
+}
