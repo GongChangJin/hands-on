@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:hands-on:agent-result",
+  "title": "AgentResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "status", "output", "evidence", "actions", "limitations"],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["success", "partial", "failed", "blocked"] },
+    "output": { "type": ["string", "object", "array", "null"] },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "claim"],
+        "properties": {
+          "source": { "type": "string" },
+          "location": { "type": "string" },
+          "claim": { "type": "string" }
+        }
+      }
+    },
+    "actions": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "metadata": { "type": "object" }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:hands-on:task-request",
+  "title": "TaskRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "task_type", "input", "constraints", "expected_output"],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "task_type": {
+      "type": "string",
+      "enum": ["evaluation", "rag", "local_llm", "vision", "research", "routing", "browser", "coding", "security", "integration"]
+    },
+    "input": { "type": ["string", "object", "array"] },
+    "attachments": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "required": ["type", "uri"],
+        "properties": {
+          "type": { "type": "string" },
+          "uri": { "type": "string" },
+          "metadata": { "type": "object" }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": ["allowed_tools", "forbidden_actions"],
+      "properties": {
+        "allowed_tools": { "type": "array", "items": { "type": "string" } },
+        "forbidden_actions": { "type": "array", "items": { "type": "string" } },
+        "max_steps": { "type": "integer", "minimum": 1 },
+        "max_tool_calls": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "expected_output": { "type": "object" },
+    "metadata": { "type": "object" }
+  }
+}

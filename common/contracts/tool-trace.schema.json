@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:hands-on:tool-trace",
+  "title": "ToolTrace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "tool_name", "input_summary", "result_summary", "duration_ms"],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "tool_name": { "type": "string", "minLength": 1 },
+    "input_summary": { "type": "string" },
+    "result_summary": { "type": "string" },
+    "duration_ms": { "type": "number", "minimum": 0 },
+    "error": { "type": ["string", "null"] },
+    "metadata": { "type": "object" }
+  }
+}
