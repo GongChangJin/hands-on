@@ -1,0 +1,3 @@
+{"input":{"prompt":"6과 7을 곱한 값을 알려줘."},"output":{"required_texts":["42"],"required_tools":["calculator"]},"metadata":{"case_id":"calculator-only"}}
+{"input":{"prompt":"01-agent-evaluation 프로젝트의 상태와 목적을 알려줘."},"output":{"required_texts":["active","관측","평가"],"required_tools":["lookup_project_status"]},"metadata":{"case_id":"project-status-only"}}
+{"input":{"prompt":"6과 7을 곱한 값과 01-agent-evaluation 프로젝트 상태를 알려줘."},"output":{"required_texts":["42","active"],"required_tools":["calculator","lookup_project_status"]},"metadata":{"case_id":"parallel-tools"}}
