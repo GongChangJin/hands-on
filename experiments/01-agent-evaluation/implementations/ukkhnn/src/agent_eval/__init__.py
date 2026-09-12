@@ -1,16 +1,7 @@
-"""Minimal deterministic agent evaluation package."""
+"""Agent evaluation hands-on using OpenAI Agents SDK and Arize Phoenix."""
 
-from .agents import FlawedScriptedAgent, OracleScriptedAgent
-from .contracts import ContractError, ContractRegistry
-from .graders import DeterministicGrader, GradeResult
-from .runner import EvaluationRunner
+from .agent import build_agent
+from .observability import configure_phoenix
+from .providers import build_model
 
-__all__ = [
-    "ContractError",
-    "ContractRegistry",
-    "DeterministicGrader",
-    "EvaluationRunner",
-    "FlawedScriptedAgent",
-    "GradeResult",
-    "OracleScriptedAgent",
-]
+__all__ = ["build_agent", "build_model", "configure_phoenix"]

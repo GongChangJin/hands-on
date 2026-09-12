@@ -5,10 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gongchangjin-agent-evaluation"
 version = "0.1.0"
-description = "A small, deterministic agent evaluation runner for hands-on learning."
+description = "Agent observability and evaluation hands-on with Arize Phoenix."
 requires-python = ">=3.11"
 dependencies = [
-  "jsonschema>=4.20,<5",
+  "arize-phoenix-client>=2.8.0",
+  "arize-phoenix-evals>=3.3.0",
+  "arize-phoenix-otel>=0.14.0",
+  "openai-agents>=0.2.6",
+  "openinference-instrumentation-openai-agents>=1.6.2",
 ]
 
 [project.optional-dependencies]
