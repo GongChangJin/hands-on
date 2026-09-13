@@ -8,6 +8,7 @@ import os
 import time
 from datetime import datetime, time as clock_time, timezone
 from typing import Any
+from urllib.parse import urlparse
 
 from openai import (
     APIConnectionError,
@@ -100,6 +101,10 @@ class DeepSeekVisionGateway:
         if model_name not in ALLOWED_MODELS:
             raise RuntimeError(f"허용된 vision model은 {DEFAULT_MODEL}뿐입니다.")
         api_key = os.getenv("DEEPSEEK_API_KEY")
+        if client is not None:
+            parsed = urlparse(str(getattr(client, "base_url", "")))
+            if parsed.scheme != "https" or parsed.hostname != "api.deepseek.com":
+                raise RuntimeError("주입된 client도 https://api.deepseek.com endpoint만 허용합니다.")
         if client is None and not api_key:
             raise RuntimeError(
                 "DEEPSEEK_API_KEY가 설정되지 않았습니다. prepare, validate-fixtures와 pytest는 키 없이 실행할 수 있습니다."
