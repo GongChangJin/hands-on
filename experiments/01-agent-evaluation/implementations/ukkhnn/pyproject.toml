@@ -11,6 +11,7 @@ dependencies = [
   "arize-phoenix-client>=2.8.0",
   "arize-phoenix-evals>=3.3.0",
   "arize-phoenix-otel>=0.14.0",
+  "jsonschema>=4.20.0",
   "openai-agents>=0.2.6",
   "openinference-instrumentation-openai-agents>=1.6.2",
 ]

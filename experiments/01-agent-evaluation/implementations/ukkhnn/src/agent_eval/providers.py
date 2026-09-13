@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from datetime import datetime, time, timezone
 
 from agents.models.openai_chatcompletions import OpenAIChatCompletionsModel
 from openai import (
@@ -26,6 +27,14 @@ class ProviderSpec:
     check_models_before_experiment: bool = False
 
 
+@dataclass(frozen=True)
+class ModelPricing:
+    input_per_million: float
+    cached_input_per_million: float
+    output_per_million: float
+    peak_multiplier: float = 1.0
+
+
 PROVIDERS = {
     "upstage": ProviderSpec(
         api_key_env="UPSTAGE_API_KEY",
@@ -39,6 +48,20 @@ PROVIDERS = {
         default_model="deepseek-v4-flash",
         experiment_concurrency=1,
         check_models_before_experiment=True,
+    ),
+}
+
+MODEL_PRICING = {
+    ("upstage", "solar-pro4"): ModelPricing(
+        input_per_million=0.30,
+        cached_input_per_million=0.06,
+        output_per_million=1.20,
+    ),
+    ("deepseek", "deepseek-v4-flash"): ModelPricing(
+        input_per_million=0.22,
+        cached_input_per_million=0.007,
+        output_per_million=0.66,
+        peak_multiplier=2.0,
     ),
 }
 
@@ -96,3 +119,39 @@ def provider_error_message(provider: str, error: APIError) -> str:
     if isinstance(error, APIConnectionError):
         return f"{provider} API 서버에 연결할 수 없습니다. 네트워크 상태를 확인해 주세요."
     return f"{provider} API 요청에 실패했습니다: {type(error).__name__}"
+
+
+def _deepseek_peak(at: datetime) -> bool:
+    utc = at.astimezone(timezone.utc)
+    if utc.weekday() >= 5:
+        return False
+    current = utc.time()
+    return time(1) <= current < time(4) or time(6) <= current < time(10)
+
+
+def estimate_cost_usd(
+    provider: str,
+    model_name: str,
+    *,
+    input_tokens: int,
+    output_tokens: int,
+    cached_input_tokens: int = 0,
+    at: datetime | None = None,
+) -> float | None:
+    """Estimate model-call cost from published per-token prices.
+
+    Unknown model overrides deliberately return None instead of guessing a price.
+    """
+
+    pricing = MODEL_PRICING.get((provider, model_name))
+    if pricing is None:
+        return None
+    multiplier = 1.0
+    if provider == "deepseek" and _deepseek_peak(at or datetime.now(timezone.utc)):
+        multiplier = pricing.peak_multiplier
+    uncached_tokens = max(0, input_tokens - cached_input_tokens)
+    return multiplier * (
+        uncached_tokens * pricing.input_per_million
+        + cached_input_tokens * pricing.cached_input_per_million
+        + output_tokens * pricing.output_per_million
+    ) / 1_000_000

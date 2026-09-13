@@ -10,6 +10,8 @@ from typing import Any
 
 from phoenix.client import Client
 
+from .contracts import task_request_from_example
+
 
 DATASET_NAME = "agent-tool-use-golden-v1"
 
@@ -20,7 +22,10 @@ def default_dataset_path() -> Path:
 
 def load_examples(path: Path) -> list[dict[str, Any]]:
     with path.open(encoding="utf-8") as dataset_file:
-        return [json.loads(line) for line in dataset_file if line.strip()]
+        examples = [json.loads(line) for line in dataset_file if line.strip()]
+    for example in examples:
+        task_request_from_example(example)
+    return examples
 
 
 def main() -> None:
