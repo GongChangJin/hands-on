@@ -3,47 +3,50 @@
 ## 구현 정보
 
 - **구현자:** @ukkhnn
-- **상태:** active
+- **상태:** completed
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
+- **협업 방식:** @ukkhnn이 실행과 기록을 담당하고 @us788은 결과를 참고
 
-## 접근 방식
+## 무엇을 익히는 구현인가
 
-평가 runner를 직접 만드는 대신 실제 Agent 실행을 Arize Phoenix로 관측하고, trace를 Dataset과 Experiment로 전환해 모델·프롬프트·Agent 구성을 비교합니다.
-
-첫 번째 학습 흐름은 다음과 같습니다.
+평가 runner를 직접 만드는 데 집중하지 않고 실제 Agent 실행을 Phoenix로 관측한 뒤, 같은 Dataset으로 모델과 Agent 구조를 한 변수씩 비교한다.
 
 ```text
-DeepSeek / Upstage → OpenAI Agents SDK → OpenInference → OpenTelemetry → Phoenix
+DeepSeek / Upstage
+  → OpenAI Agents SDK (tools, handoffs)
+  → OpenInference + OpenTelemetry (traces)
+  → Phoenix (Dataset, Experiment, CODE/LLM evaluations)
+  → EvaluationRecord (JSONL, CSV, Markdown)
 ```
 
 ## 기술 스택
 
-- 언어·런타임: Python 3.11
-- Agent: OpenAI Agents SDK
-- 모델 API: Upstage Solar 또는 DeepSeek의 OpenAI 호환 Chat Completions API
-- 모델 교체: `--provider`와 `--model` 옵션
-- 관측: OpenInference, OpenTelemetry
-- 평가·실험: Arize Phoenix
-- 실행 환경: Python 3.11, Docker Compose
+- Python 3.11, `jsonschema`, pytest
+- OpenAI Agents SDK: Agent loop, function tools, handoffs
+- 모델 API: Upstage Solar / DeepSeek OpenAI 호환 Chat Completions
+- 관측: OpenInference, OpenTelemetry, Arize Phoenix
+- 평가: Phoenix Dataset / Experiment / CODE evaluator / 선택적 LLM evaluator
+- 실행 환경: Docker Compose
 
 ## 공통 계약 적용
 
-- TaskRequest 입력: 다음 단계에서 Phoenix Dataset example로 매핑
-- AgentResult 출력: Agent 최종 출력과 run items를 공통 형식으로 변환 예정
-- ToolTrace 수집: OpenInference span으로 자동 수집
-- EvaluationRecord 생성: Phoenix Experiment 결과를 공통 형식으로 export 예정
+저장소의 `common/contracts` 원본을 직접 읽어 Draft 2020-12 JSON Schema로 검증한다.
 
-## 실행 방법
+- `TaskRequest`: Phoenix example 업로드 전에 변환·검증
+- `AgentResult`: Agent 성공·실패 출력을 모두 검증
+- `ToolTrace`: tool call/output을 연결해 검증하고 실제 시간은 Phoenix span에서 조회
+- `EvaluationRecord`: Experiment 결과를 내보내기 전에 검증
 
-### 1. 환경 준비
+## 환경 준비
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
+docker compose up -d
 ```
 
-실제 API 키는 파일이나 Git에 저장하지 않고 실행할 터미널에만 설정합니다. 둘 중 사용할 키 하나만 있으면 됩니다.
+실제 키는 파일이나 Git에 저장하지 않고 실행하는 터미널에만 설정한다.
 
 ```bash
 export UPSTAGE_API_KEY='...'
@@ -51,102 +54,126 @@ export UPSTAGE_API_KEY='...'
 export DEEPSEEK_API_KEY='...'
 ```
 
-### 2. Phoenix 실행
+기본 모델은 Upstage `solar-pro4`, DeepSeek `deepseek-v4-flash`이며 `--model`로 바꿀 수 있다.
 
-```bash
-docker compose up -d
-```
+## 실행 흐름
 
-브라우저에서 `http://localhost:6006`을 엽니다.
-
-### 3. trace 생성
+### 1. trace 읽기
 
 ```bash
 ./run-agent --provider upstage
 ```
 
-기본 질문은 계산 도구와 프로젝트 조회 도구를 모두 사용하도록 구성되어 있습니다. 다른 입력과 모델도 지정할 수 있습니다.
+Phoenix의 `Projects > 01-agent-evaluation > Traces`에서 workflow → Agent → LLM → Tool 계층과 입력·출력·지연을 확인한다.
 
-```bash
-./run-agent "15의 제곱을 계산해줘" --provider deepseek
-```
-
-기본 모델은 Upstage의 `solar-pro4`, DeepSeek의 `deepseek-v4-flash`입니다. `--model`로 계정에서 사용할 수 있는 다른 모델 ID를 지정할 수 있습니다.
-
-### 4. Dataset 업로드
+### 2. 20개 Dataset 업로드
 
 ```bash
 ./upload-dataset
 ```
 
-Phoenix의 `Datasets & Experiments > agent-tool-use-golden-v1`에서 입력, 기대 결과, metadata로 구성된 3개 example을 확인합니다.
+`agent-tool-use-golden-v1`은 계산 10개, 프로젝트 조회 5개, 두 도구 결합 5개로 구성된다. 정답, 필수 도구, handoff 목표 Agent를 실행 전에 고정한다.
 
-### 5. Experiment 실행
+### 3. 한 모델 또는 구조 실행
 
 ```bash
-./run-experiment --provider upstage
+./run-experiment --provider upstage --architecture single
+./run-experiment --provider upstage --architecture handoff
 ```
 
-각 example마다 실제 Agent를 실행하고 두 code evaluator를 적용합니다.
+`--repetitions 3`처럼 반복 수를 늘릴 수 있다. DeepSeek은 본 실험 전에 model-list 요청으로 연결과 인증을 확인하며 example을 순차 실행한다.
 
-- `answer-contains-required-text`: 정답의 필수 내용 확인
-- `required-tools-used`: 기대한 도구가 실제 trace에 존재하는지 확인
+### 4. Agent 구조 자동 비교
 
-같은 Dataset에 `--provider deepseek`을 사용하면 모델만 바꾼 비교 Experiment가 됩니다.
+```bash
+./run-comparison --provider upstage --repetitions 1
+```
 
-DeepSeek 실행은 본 실험 전에 과금 없는 model-list 요청으로 연결과 인증을 확인하고, API 연결 안정성을 위해 example을 하나씩 순차 실행합니다. 모델 호출이 실패하면 긴 traceback 대신 `error` 필드에 짧은 원인을 보존합니다.
+같은 provider, model, Dataset, evaluator를 유지하고 `single`과 `handoff`만 바꾼다.
 
-### 6. 확인과 종료
+- `single`: Agent 하나가 두 function tool을 직접 선택
+- `handoff`: Triage Agent가 Calculator / Project / Combined Specialist 중 하나로 제어권 전달
+- handoff 입력에서는 이전 tool history를 제거해 전문 Agent가 transfer tool을 다시 호출하는 회귀를 줄임
 
-- Phoenix의 `Projects > 01-agent-evaluation > Traces`에서 Agent, LLM, Tool span을 확인합니다.
-- `Datasets & Experiments > agent-tool-use-golden-v1 > Experiments`에서 example별 점수와 실행을 비교합니다.
-- 종료할 때 `docker compose down`을 실행합니다. 데이터는 Docker volume에 유지됩니다.
-- 데이터까지 지우는 `docker compose down -v`는 이 핸즈온에서 사용하지 않습니다.
+### 5. 선택적 LLM judge
 
-## 결과
+```bash
+./run-experiment --provider upstage --architecture single --llm-judge
+```
 
-- Phoenix 서버: Docker Compose로 로컬 실행 확인
-- trace 연결: `01-agent-evaluation` 프로젝트에 smoke trace 수집 확인
-- 실제 Agent trace: Upstage `solar-pro4`, 2.3초, 921 tokens, Tool 2개 호출 확인
-- Dataset: `agent-tool-use-golden-v1`에 3개 example 업로드 확인
-- Experiment: `upstage-solar-pro4`, `deepseek-deepseek-v4-flash` 실행 완료
-- 평가: 모델별 3개 task × 2개 code evaluator, 양쪽 모두 6/6 통과
+LLM judge는 `kind=LLM` annotation으로만 기록한다. `task_success`는 아래 CODE evaluator만으로 결정하므로 LLM 판정이 성공 여부를 뒤집지 않는다.
 
-| example | latency | tokens | 답변 내용 | 필수 도구 |
-| --- | ---: | ---: | ---: | ---: |
-| 계산 | 1.4초 | 814 | 1.00 | 1.00 |
-| 프로젝트 조회 | 5.4초 | 860 | 1.00 | 1.00 |
-| 두 도구 결합 | 3.6초 | 924 | 1.00 | 1.00 |
-| **평균** | **3.5초** | **866** | **1.00** | **1.00** |
+| evaluator | kind | 확인 내용 |
+| --- | --- | --- |
+| `answer-contains-required-text` | CODE | 필수 사실 포함 |
+| `tool-accuracy` | CODE | 누락·추가·중복 도구 호출 |
+| `safe-tool-use` | CODE | 허용되지 않은 도구 호출 |
+| `tool-execution-success` | CODE | 도구 실행 오류 |
+| `handoff-route-correct` | CODE | handoff 구조의 최종 전문 Agent |
+| `semantic-quality-llm` | LLM | 답변의 직접성·기대 사실과의 모순 여부 |
 
-### 모델 비교
+## 결과 파일
 
-Phoenix의 같은 Dataset과 evaluator로 두 Experiment를 나란히 비교했다.
+각 Experiment는 다음 파일을 자동 생성한다.
 
-| provider / model | 통과율 | 평균 latency | 평균 tokens |
+- `records.jsonl`: 공통 `EvaluationRecord` 전체
+- `records.csv`: 표 분석용 평탄화 결과
+- `summary.json`: 성공률, p50/p95, usage, 추정 비용, 실패 유형
+- `report.md`: 사람이 읽는 실행별 표
+- `comparison.md`: 두 구조를 나란히 비교한 표
+
+실제 결과는 [`reports/`](reports/)에 보존한다. 실패와 예외도 삭제하지 않는다.
+
+## 실험 결과
+
+### 모델 교체 학습용 첫 실험
+
+초기 3개 example에서 두 모델은 CODE 평가를 모두 통과했다. 작은 1회 표본이므로 모델의 일반적인 우열이 아니라 provider 교체와 Phoenix 비교 흐름 확인용이다.
+
+| provider / model | 통과 | 평균 latency | 평균 tokens |
 | --- | ---: | ---: | ---: |
-| DeepSeek / `deepseek-v4-flash` | 6/6 (100%) | 2.0초 | 1,169 |
-| Upstage / `solar-pro4` | 6/6 (100%) | 3.5초 | 866 |
+| DeepSeek / `deepseek-v4-flash` | 6/6 | 2.0초 | 1,169 |
+| Upstage / `solar-pro4` | 6/6 | 3.5초 | 866 |
 
-- 이 실행에서는 답변 내용과 필수 도구 사용 품질이 동률이었다.
-- DeepSeek은 평균 latency가 약 43% 짧았고, 표시된 token 수는 약 35% 많았다.
-- provider마다 tokenizer가 다를 수 있으므로 token 수는 비용의 직접 비교값이 아니다. Phoenix에 제3자 모델 가격을 설정하지 않았으므로 화면의 비용도 비교하지 않는다.
-- example 3개를 각 1회 실행한 학습용 결과이므로 모델의 일반적인 우열로 해석하지 않는다. 반복 횟수와 Dataset 범위를 늘려야 변동성과 실패율을 비교할 수 있다.
+### Agent 구조 비교 — 20개 example, Upstage `solar-pro4`
 
-이번 단계의 핵심은 모델명을 바꾸는 것보다, **Dataset·Agent 구조·evaluator를 고정한 상태에서 한 변수만 교체하고 trace와 점수를 함께 읽는 실험 방식**을 익힌 것이다.
+최종 v2 결과는 [`comparison.md`](reports/upstage-solar-pro4-architecture-v2/comparison.md)에 있다.
 
-## 첫 번째 체크포인트
+| architecture | 성공률 | p50 | p95 | tokens | Agent 호출 추정 비용 | 안전 위반 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| single | 100% (20/20) | 2,071ms | 3,564ms | 18,661 | $0.006528 | 0 |
+| handoff | 95% (19/20) | 2,651ms | 3,927ms | 24,046 | $0.008477 | 0 |
 
-첫 Agent 실행 뒤 Phoenix에서 아래 내용을 직접 확인합니다.
+handoff는 single보다 p50이 약 28%, token이 약 29%, 추정 비용이 약 30% 늘었다. 이 문제처럼 도구가 두 개뿐이고 라우팅이 단순한 경우에는 전문 Agent 분리의 추가 모델 호출 비용이 이득보다 컸다.
 
-1. 하나의 요청이 Agent, LLM, Tool span으로 나뉘는가?
-2. `calculator`와 `lookup_project_status`가 모두 호출됐는가?
-3. 각 span의 입력·출력과 지연시간을 확인할 수 있는가?
+handoff 실패 1건(`calc-divide`)은 Calculator Specialist까지 도달하고 정답 12도 답했지만 `calculator`를 호출하지 않았다. 답변 문자열만 보면 통과할 수 있는 회귀를 tool trace 평가가 잡아냈다.
 
-이 단계에서는 trace 구조를 먼저 읽습니다. 이후 같은 입력을 Dataset으로 고정하고 모델 비교 Experiment를 진행합니다.
+### LLM judge 분리 확인
 
-모델 비교가 끝난 다음 단계에서는 모델과 Dataset을 고정하고 Agent 구조만 바꿔 비교합니다.
+[`upstage-solar-pro4-single-llm-judge`](reports/upstage-solar-pro4-single-llm-judge/) 실행에서 CODE 성공 20/20과 LLM `PASS` 20/20을 별도 annotation으로 확인했다. 보고서의 비용은 Agent task 호출만 추정하며 evaluator 호출 비용은 제외한다.
 
-## 공통 README에 반영할 결론
+## 비용 해석
 
-진행 후 기록합니다.
+usage의 input, cached input, output token을 provider의 공개 단가에 적용한 추정치다. 알 수 없는 `--model` override는 가격을 추측하지 않고 `N/A`로 남긴다.
+
+- Upstage Solar Pro 4: [공식 API 가격](https://www.upstage.ai/pricing/api)
+- DeepSeek V4 Flash: [공식 모델·가격](https://api-docs.deepseek.com/quick_start/pricing/)
+
+DeepSeek은 UTC 평일 peak/off-peak 배율을 반영한다. 실제 청구액은 provider 콘솔을 최종 기준으로 삼는다.
+
+## 회귀와 완료 확인
+
+- exploratory run에서 handoff의 tool 생략, transfer tool 반복, 모호한 tool argument를 발견하고 결과를 보존했다.
+- handoff history filter, 전문 Agent 지시 강화, 안전한 `^`/프로젝트 별칭 정규화를 적용했다.
+- 최종 suite는 25개 로컬 테스트로 Dataset 개수, 네 계약, evaluator, 실패 보존, 비용, p50/p95, 세 형식 export를 검증한다.
+
+```bash
+python -m pytest
+```
+
+## 결론
+
+- 현재 범위에는 `single` Agent를 기본으로 적용한다.
+- handoff는 전문 영역이 실제로 독립적이고 복합 orchestration의 이득이 추가 latency·token보다 클 때 다시 평가한다.
+- 이후 핸즈온도 같은 `TaskRequest → Phoenix Experiment → EvaluationRecord` 흐름을 재사용한다.
+- 종료는 `docker compose down`을 사용한다. `down -v`는 보존된 Phoenix 데이터를 지우므로 사용하지 않는다.

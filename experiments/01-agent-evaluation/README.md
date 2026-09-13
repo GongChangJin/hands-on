@@ -4,8 +4,8 @@
 
 ## 프로젝트 정의
 
-- **상태:** `planned`
-- **참여자:** `@ukkhnn`, `@us788`
+- **상태:** `completed`
+- **참여자:** `@ukkhnn` (실행·기록), `@us788` (결과 참고)
 - **역할:** 모든 핸즈온의 공통 계약·평가·관측 기반
 - **선행 프로젝트:** 없음
 - **후행 프로젝트:** 나머지 모든 프로젝트
@@ -85,29 +85,35 @@
 
 ## 완료 조건
 
-- [ ] 공통 계약 네 종류를 검증할 수 있음
-- [ ] 평가 태스크 20개 이상을 일괄 실행할 수 있음
-- [ ] 결정적 평가와 LLM 평가를 구분해 표시함
-- [ ] 두 구현의 결과를 같은 표로 비교함
-- [ ] 다른 핸즈온이 runner를 사용할 수 있음
+- [x] 공통 계약 네 종류를 검증할 수 있음
+- [x] 평가 태스크 20개 이상을 일괄 실행할 수 있음
+- [x] 결정적 평가와 LLM 평가를 구분해 표시함
+- [x] 두 Agent 구조의 결과를 같은 표로 비교함
+- [x] 다른 핸즈온이 Dataset → Experiment → EvaluationRecord 흐름을 재사용할 수 있음
 
 ## 구현 비교
 
-| 참여자 | 기술 구성 | 지원 지표 | 실행시간 | 비용 | 특징 |
+| 구현 | 기술 구성 | 성공률 | p50/p95 | 비용 | 특징 |
 | --- | --- | ---: | ---: | ---: | --- |
-| `@ukkhnn` | TBD | — | — | — | — |
-| `@us788` | TBD | — | — | — | — |
+| `@ukkhnn:single` | Agents SDK + Phoenix | 100% | 2,071/3,564ms | $0.006528 | 단일 Agent, Tool 2개 |
+| `@ukkhnn:handoff` | Agents SDK handoff + Phoenix | 95% | 2,651/3,927ms | $0.008477 | Triage + 전문 Agent 3개 |
+| `@us788` | 결과 참고 | — | — | — | 별도 API 실행 없음 |
 
 ## 결과
 
-진행 후 기록합니다.
+- 20개 golden example과 공통 JSON Schema 네 종류 검증
+- Phoenix에서 Upstage `solar-pro4`의 single/handoff 구조 비교 완료
+- CODE evaluator로 정답, 도구 정확도, 안전성, 도구 오류, handoff route 분리 측정
+- 선택적 LLM judge를 `kind=LLM`으로 분리하고 CODE 결과만 성공 판정에 사용
+- JSONL, CSV, Markdown 리포트와 실패 유형 보존
+- 상세 결과: [`implementations/ukkhnn/`](implementations/ukkhnn/)
 
 ## 결론
 
-- **적용 판단:** 미정
-- **판단 이유:**
-- **적용 가능 범위:**
-- **다음 행동:** 공통 계약과 첫 평가 태스크 확정
+- **적용 판단:** 현재의 작은 도구형 Agent에는 single 구조 적용
+- **판단 이유:** handoff는 성공률이 5%p 낮고 p50, token, 비용이 약 28~30% 증가함
+- **적용 가능 범위:** 이후 핸즈온의 golden Dataset, trace 관측, 회귀 비교, 결과 export
+- **다음 행동:** 후행 프로젝트에서 같은 평가 흐름을 사용하고 복잡도가 커질 때 handoff를 재평가
 
 ## 변경 기록
 
@@ -116,3 +122,9 @@
 - 변경: 공통 평가 프로젝트와 두 개인 구현 영역 정의
 - 결과: `planned`
 - 다음 행동: 구현 방식 선택
+
+### @ukkhnn 구현 완료
+
+- 변경: Phoenix 관측, 20개 Dataset, 모델·구조 비교, CODE/LLM 평가, 결과 export 추가
+- 결과: `completed`
+- 다음 행동: 후행 핸즈온에 평가 흐름 적용
