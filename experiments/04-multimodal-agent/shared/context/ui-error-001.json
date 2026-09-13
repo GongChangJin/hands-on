@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-001",
+  "user_description": "The checkout action covers part of the total.",
+  "dom_summary": "main > section.order-summary > total + button.primary",
+  "accessibility_snapshot": "heading Checkout; text Total 84 credits; button Pay now"
+}

@@ -1,0 +1,29 @@
+{
+  "fixture_id": "ui-error-012",
+  "image": "fixtures/ui-error-012.png",
+  "sha256": "f98d1188af6e259aa4b0d151a45fa1c714b775e125a68543a6bfb9f2e63d82a5",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "invalid_state"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "profile-form",
+      "claim": "All required fields appear complete but Save remains disabled."
+    }
+  ],
+  "acceptable_uncertainty": "An unseen validation rule may exist, so the cause is uncertain.",
+  "visible_text": [
+    "Profile setup",
+    "Display name",
+    "Role",
+    "Workspace",
+    "Save"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

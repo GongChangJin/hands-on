@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-008",
+  "user_description": "A sidebar label is unreadable.",
+  "dom_summary": "nav > a[aria-label='Reports'] > span.clipped",
+  "accessibility_snapshot": "navigation item Reports announced; visible text R"
+}

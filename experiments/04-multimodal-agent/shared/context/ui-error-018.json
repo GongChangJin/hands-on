@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-018",
+  "user_description": "Keyboard focus is on Save, but I cannot see it.",
+  "dom_summary": "button#save-shortcut:focus-visible[style='outline:none']",
+  "accessibility_snapshot": "button Save shortcut focused; no visible focus indicator"
+}

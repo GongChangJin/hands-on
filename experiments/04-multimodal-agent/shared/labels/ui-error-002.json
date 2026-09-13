@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-002",
+  "image": "fixtures/ui-error-002.png",
+  "sha256": "1aed045c2d0ff26580745e11f3ae411b6e764a8264437ca7624851802106ecd4",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "layout_break"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "main-content-right-edge",
+      "claim": "The chart and its label continue beyond the visible viewport."
+    }
+  ],
+  "acceptable_uncertainty": "The hidden chart extent cannot be measured from the screenshot.",
+  "visible_text": [
+    "Analytics",
+    "Weekly sessions",
+    "Saturday"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

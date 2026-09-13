@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-012",
+  "user_description": "The completed form still cannot be saved.",
+  "dom_summary": "form[data-valid='true'] > button[disabled]",
+  "accessibility_snapshot": "three required fields complete; button Save disabled"
+}

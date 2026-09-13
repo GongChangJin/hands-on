@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-010",
+  "user_description": "The upload progress is over 100 percent.",
+  "dom_summary": "progress[value='128'][max='100']",
+  "accessibility_snapshot": "progress Upload 128 percent"
+}

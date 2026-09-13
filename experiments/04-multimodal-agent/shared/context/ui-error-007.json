@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-007",
+  "user_description": "The confirmation dialog runs off screen.",
+  "dom_summary": "body > dialog.delete[open][style='left:1040px']",
+  "accessibility_snapshot": "dialog Delete project; destructive button partially hidden"
+}

@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-014",
+  "image": "fixtures/ui-error-014.png",
+  "sha256": "7077264f3b526cea8d27ff5472fa6f03abfc2fcb07113ec765337c5efa7ba6bf",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "error_message"
+  ],
+  "severity": "critical",
+  "evidence": [
+    {
+      "region": "payment-result",
+      "claim": "The payment is marked Failed and no completion receipt is shown."
+    }
+  ],
+  "acceptable_uncertainty": "The reason for rejection is not exposed.",
+  "visible_text": [
+    "Payment",
+    "Payment failed",
+    "No charge was made",
+    "Choose another method"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

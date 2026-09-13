@@ -1,0 +1,26 @@
+{
+  "fixture_id": "ui-normal-021",
+  "image": "fixtures/ui-normal-021.png",
+  "sha256": "e54e3eeb1dd69f54abda932dcf0cb883776a5e046c71aa8216f7cb81e8500ae1",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [],
+  "severity": "none",
+  "evidence": [
+    {
+      "region": "checkout",
+      "claim": "The order summary and primary action are fully visible and separated."
+    }
+  ],
+  "acceptable_uncertainty": "Back-end behavior cannot be verified from a static screenshot.",
+  "visible_text": [
+    "Checkout",
+    "Order summary",
+    "Total 84 credits",
+    "Pay now"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

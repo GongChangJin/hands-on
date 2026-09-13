@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-019",
+  "image": "fixtures/ui-error-019.png",
+  "sha256": "57712311f50c27ea6d9645e710d526cd336edd2b46d62e5b1ef0d21386e8deeb",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "accessibility_issue"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "service-status-list",
+      "claim": "Service health is communicated only by red and green dots."
+    }
+  ],
+  "acceptable_uncertainty": "The color meanings are inferred from conventional status colors.",
+  "visible_text": [
+    "System status",
+    "API",
+    "Storage",
+    "Webhooks"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

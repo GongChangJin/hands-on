@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-019",
+  "user_description": "Status uses dots without text labels.",
+  "dom_summary": "ul.services > li > span.status-dot[aria-label='']",
+  "accessibility_snapshot": "service rows with unlabeled colored status indicators"
+}

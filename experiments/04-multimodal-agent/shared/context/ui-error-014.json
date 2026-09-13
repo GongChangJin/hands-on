@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-014",
+  "user_description": "The payment failed at confirmation.",
+  "dom_summary": "main > section.payment-result[data-state='failed']",
+  "accessibility_snapshot": "heading Payment failed; button Choose another method"
+}

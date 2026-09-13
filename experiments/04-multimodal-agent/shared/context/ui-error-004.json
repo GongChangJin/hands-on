@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-004",
+  "user_description": "The report columns are stacked on top of one another.",
+  "dom_summary": "main > table.report.compact-broken",
+  "accessibility_snapshot": "table headers Period, Status, Amount overlap"
+}

@@ -1,0 +1,26 @@
+{
+  "fixture_id": "ui-normal-024",
+  "image": "fixtures/ui-normal-024.png",
+  "sha256": "565e7f29bbbc5afd1bd88d99219e0f9ac46451d7b6a116b87dd01b40027a8597",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [],
+  "severity": "none",
+  "evidence": [
+    {
+      "region": "archive-dialog",
+      "claim": "The complete dialog and both actions are visible inside the viewport."
+    }
+  ],
+  "acceptable_uncertainty": "The result of selecting an action is not tested.",
+  "visible_text": [
+    "Archive workspace",
+    "You can restore it later",
+    "Cancel",
+    "Archive"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

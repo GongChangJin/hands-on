@@ -1,0 +1,26 @@
+{
+  "fixture_id": "ui-normal-023",
+  "image": "fixtures/ui-normal-023.png",
+  "sha256": "e7bc2245336129025aecca4277bd4e26d812fb496e4d916736ce51ed91e30178",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [],
+  "severity": "none",
+  "evidence": [
+    {
+      "region": "notification-settings",
+      "claim": "Each switch and status label communicates a consistent state."
+    }
+  ],
+  "acceptable_uncertainty": "Delivery outside the UI cannot be verified.",
+  "visible_text": [
+    "Notifications",
+    "Email notifications",
+    "Enabled",
+    "Save changes"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-015",
+  "image": "fixtures/ui-error-015.png",
+  "sha256": "5ffbb4ef934d207480a2c4548d7b92bdb65198c699f5a2e126f686cab6ad6dec",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "error_message"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "top-banner",
+      "claim": "A timeout banner states that live metrics are stale."
+    }
+  ],
+  "acceptable_uncertainty": "The age of the last successful data point is approximate.",
+  "visible_text": [
+    "Live metrics",
+    "Live update timed out",
+    "Last update 12 min ago"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

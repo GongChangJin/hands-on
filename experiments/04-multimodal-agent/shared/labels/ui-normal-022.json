@@ -1,0 +1,26 @@
+{
+  "fixture_id": "ui-normal-022",
+  "image": "fixtures/ui-normal-022.png",
+  "sha256": "eb3c2ba69cf3e419bea79488baea7218315ec823f62f8edb22bbcdc3aee32b7f",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [],
+  "severity": "none",
+  "evidence": [
+    {
+      "region": "analytics",
+      "claim": "Cards and chart fit within the viewport without collision."
+    }
+  ],
+  "acceptable_uncertainty": "Only the captured viewport is evaluated.",
+  "visible_text": [
+    "Analytics",
+    "Weekly sessions",
+    "Conversion",
+    "Retention"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

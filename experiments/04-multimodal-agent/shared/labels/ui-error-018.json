@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-018",
+  "image": "fixtures/ui-error-018.png",
+  "sha256": "c8d944373277af2745eac17601e4ca12e3134a0427476c7714880f41ebfc9191",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "accessibility_issue"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "shortcut-controls",
+      "claim": "The focused Save shortcut button has no visible focus indicator."
+    }
+  ],
+  "acceptable_uncertainty": "Keyboard focus is supplied by the accessibility snapshot, not inferable from pixels alone.",
+  "visible_text": [
+    "Keyboard settings",
+    "Save shortcut",
+    "Reset"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

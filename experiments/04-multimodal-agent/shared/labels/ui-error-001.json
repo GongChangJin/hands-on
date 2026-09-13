@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-001",
+  "image": "fixtures/ui-error-001.png",
+  "sha256": "2d84e3d8cc5512b226b55665764e5388920335091a3e8c785611586f7144e6c6",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "layout_break"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "order-summary",
+      "claim": "The Pay now button overlaps the order total."
+    }
+  ],
+  "acceptable_uncertainty": "The overlap is visually clear; its CSS cause is unknown.",
+  "visible_text": [
+    "Checkout",
+    "Order summary",
+    "Total 84 credits",
+    "Pay now"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

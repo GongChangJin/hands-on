@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-005",
+  "image": "fixtures/ui-error-005.png",
+  "sha256": "5cd2fc82a0d867ae26cdd18a48690578babff2e0106adfdef66ee2526d948345",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "element_clipping"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "setup-card-bottom",
+      "claim": "The primary Continue button is clipped by the card boundary."
+    }
+  ],
+  "acceptable_uncertainty": "The portion below the card is not visible.",
+  "visible_text": [
+    "Workspace setup",
+    "Choose preferences",
+    "Continue"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

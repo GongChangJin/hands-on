@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-007",
+  "image": "fixtures/ui-error-007.png",
+  "sha256": "1cfafcb92f9f3029e5b7412a05c7d0a759b7649850702f42fb2d95955ffcf555",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "element_clipping"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "dialog-right-edge",
+      "claim": "The dialog extends past the viewport and hides part of Delete."
+    }
+  ],
+  "acceptable_uncertainty": "Only the visible portion of the destructive action can be assessed.",
+  "visible_text": [
+    "Delete project",
+    "This cannot be undone",
+    "Cancel",
+    "Delete"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

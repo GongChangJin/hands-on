@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-013",
+  "image": "fixtures/ui-error-013.png",
+  "sha256": "b8ee980cde07260f3d1551fd708ebbde1b640f677be3a52cf28a0e440eb92e8b",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "error_message"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "dashboard-alert",
+      "claim": "A prominent alert reports that dashboard data could not load."
+    }
+  ],
+  "acceptable_uncertainty": "The upstream service and recovery time are not shown.",
+  "visible_text": [
+    "Dashboard",
+    "Could not load dashboard data",
+    "Retry"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

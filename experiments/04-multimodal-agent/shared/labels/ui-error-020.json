@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-020",
+  "image": "fixtures/ui-error-020.png",
+  "sha256": "c378d0f8a2feea15a10cb5f27c78c215d69fc8f4fdae6236d8f04685e0125821",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "accessibility_issue"
+  ],
+  "severity": "low",
+  "evidence": [
+    {
+      "region": "card-actions",
+      "claim": "Icon-only action controls are visibly much smaller than nearby buttons."
+    }
+  ],
+  "acceptable_uncertainty": "The exact CSS pixel size is intentionally not asserted.",
+  "visible_text": [
+    "Mobile actions",
+    "Recent items",
+    "Open",
+    "Share"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

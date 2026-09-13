@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-normal-022",
+  "user_description": "The analytics page looks normal.",
+  "dom_summary": "main > section.metrics + section.chart",
+  "accessibility_snapshot": "heading Analytics; three metric cards; complete chart"
+}

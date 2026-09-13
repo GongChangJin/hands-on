@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-003",
+  "image": "fixtures/ui-error-003.png",
+  "sha256": "4ba72a79a39418e6997e4104f4bf4991da053044133868dff4c2de530af1209a",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "layout_break"
+  ],
+  "severity": "low",
+  "evidence": [
+    {
+      "region": "task-grid",
+      "claim": "The middle task card is vertically displaced from adjacent cards."
+    }
+  ],
+  "acceptable_uncertainty": "The intended grid alignment is inferred from neighboring cards.",
+  "visible_text": [
+    "Team board",
+    "Research",
+    "Prototype",
+    "Review"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}
