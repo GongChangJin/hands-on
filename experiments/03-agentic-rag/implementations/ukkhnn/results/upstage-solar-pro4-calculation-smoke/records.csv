@@ -1,0 +1,5 @@
+task_id,category,task_success,quality_score,tool_accuracy,latency_ms,cost,failure_type
+rag-calc-01,calculation,True,1.0,1.0,1651.9377499935217,0.00021,
+rag-calc-02,calculation,True,1.0,1.0,1667.0547079993412,0.0002355,
+rag-calc-03,calculation,True,1.0,1.0,1685.805250017438,0.0002625,
+rag-calc-04,calculation,True,1.0,1.0,1541.5359159815125,0.0002295,
