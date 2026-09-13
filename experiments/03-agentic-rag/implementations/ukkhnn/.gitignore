@@ -1,0 +1,2 @@
+# ONNX Runtime may create a local anonymous telemetry session marker.
+*.ses

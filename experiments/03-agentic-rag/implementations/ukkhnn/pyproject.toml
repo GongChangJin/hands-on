@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gongchangjin-agentic-rag"
+version = "0.1.0"
+description = "LangGraph Agentic RAG with local embeddings, Qdrant, and Phoenix."
+requires-python = ">=3.11"
+dependencies = [
+  "arize-phoenix-otel>=0.14,<1",
+  "fastembed>=0.7,<1",
+  "jsonschema>=4.20,<5",
+  "langchain-core>=0.3,<2",
+  "langchain-openai>=0.3,<2",
+  "langgraph>=0.6,<2",
+  "openinference-instrumentation-langchain>=0.1.50,<1",
+  "qdrant-client>=1.12,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+agentic-rag = "agentic_rag.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]
