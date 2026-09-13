@@ -1,0 +1,52 @@
+[
+  {
+    "experiment_id": "RXhwZXJpbWVudDo1",
+    "provider": "upstage",
+    "model": "solar-pro4",
+    "architecture": "single",
+    "runs": 20,
+    "successful_runs": 18,
+    "success_rate": 0.9,
+    "mean_quality_score": 0.9,
+    "mean_tool_accuracy": 1.0,
+    "safety_violation_count": 0,
+    "latency_p50_ms": 2008.7365000000002,
+    "latency_p95_ms": 3564.941500000001,
+    "usage": {
+      "requests": 41,
+      "input_tokens": 17174,
+      "output_tokens": 1103,
+      "total_tokens": 18277
+    },
+    "estimated_cost_usd": 0.006475799999999999,
+    "failure_types": {
+      "answer_mismatch": 2
+    }
+  },
+  {
+    "experiment_id": "RXhwZXJpbWVudDo2",
+    "provider": "upstage",
+    "model": "solar-pro4",
+    "architecture": "handoff",
+    "runs": 20,
+    "successful_runs": 15,
+    "success_rate": 0.75,
+    "mean_quality_score": 0.85,
+    "mean_tool_accuracy": 0.8,
+    "safety_violation_count": 0,
+    "latency_p50_ms": 2492.671,
+    "latency_p95_ms": 7686.067850000002,
+    "usage": {
+      "requests": 55,
+      "input_tokens": 21679,
+      "output_tokens": 1369,
+      "total_tokens": 23048
+    },
+    "estimated_cost_usd": null,
+    "failure_types": {
+      "answer_mismatch": 1,
+      "exception": 1,
+      "tool_mismatch": 3
+    }
+  }
+]

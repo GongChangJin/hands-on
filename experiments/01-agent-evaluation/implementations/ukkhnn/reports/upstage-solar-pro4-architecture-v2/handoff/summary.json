@@ -1,0 +1,25 @@
+{
+  "experiment_id": "RXhwZXJpbWVudDo4",
+  "provider": "upstage",
+  "model": "solar-pro4",
+  "architecture": "handoff",
+  "runs": 20,
+  "successful_runs": 19,
+  "success_rate": 0.95,
+  "mean_quality_score": 1.0,
+  "mean_tool_accuracy": 0.95,
+  "safety_violation_count": 0,
+  "latency_p50_ms": 2651.452,
+  "latency_p95_ms": 3926.5288,
+  "usage": {
+    "requests": 59,
+    "input_tokens": 22642,
+    "output_tokens": 1404,
+    "total_tokens": 24046
+  },
+  "estimated_cost_usd": 0.0084774,
+  "cost_coverage": 1.0,
+  "failure_types": {
+    "tool_mismatch": 1
+  }
+}
