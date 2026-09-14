@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-004",
+  "image": "fixtures/ui-error-004.png",
+  "sha256": "68bdefe153b20692f79f4fa77561f2b8c88d36a02807403ef506d53921257411",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "layout_break"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "report-table",
+      "claim": "Table columns are compressed until labels collide."
+    }
+  ],
+  "acceptable_uncertainty": "The responsive breakpoint that caused the collision is unknown.",
+  "visible_text": [
+    "Reports",
+    "Period",
+    "Status",
+    "Amount"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

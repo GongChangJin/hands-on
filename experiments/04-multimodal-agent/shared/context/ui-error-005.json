@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-005",
+  "user_description": "I can only see the top half of Continue.",
+  "dom_summary": "main > form.setup > button.primary[aria-label='Continue']",
+  "accessibility_snapshot": "button Continue, partially visible"
+}

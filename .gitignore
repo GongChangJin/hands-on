@@ -9,6 +9,7 @@ __pycache__/
 node_modules/
 dist/
 build/
+*.egg-info/
 runs/
 artifacts/
 *.log
@@ -16,4 +17,3 @@ artifacts/
 *.webm
 *.gguf
 *.safetensors
-

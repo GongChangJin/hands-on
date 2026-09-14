@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-015",
+  "user_description": "The live metrics timed out.",
+  "dom_summary": "main > div[role='status'][data-state='timeout']",
+  "accessibility_snapshot": "status Live update timed out; chart Last update 12 min ago"
+}

@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-020",
+  "user_description": "The card action icons are too small to target reliably.",
+  "dom_summary": "article > button.icon-only.small",
+  "accessibility_snapshot": "three icon buttons with small touch targets"
+}

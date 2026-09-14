@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-normal-021",
+  "user_description": "Checkout looks ready to submit.",
+  "dom_summary": "main > section.order-summary[data-state='ready']",
+  "accessibility_snapshot": "heading Checkout; total and Pay now button visible"
+}

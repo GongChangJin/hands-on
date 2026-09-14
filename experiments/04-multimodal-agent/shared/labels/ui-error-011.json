@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-011",
+  "image": "fixtures/ui-error-011.png",
+  "sha256": "e59c4d79b12fb50896047ca267105167694c0eadfd8ebae86eb6ba54a32bf94c",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "invalid_state"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "plan-options",
+      "claim": "Two radio-style plan options are selected simultaneously."
+    }
+  ],
+  "acceptable_uncertainty": "The screenshot does not reveal which plan should remain selected.",
+  "visible_text": [
+    "Plan selection",
+    "Basic",
+    "Plus",
+    "Continue"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

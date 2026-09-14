@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-011",
+  "user_description": "Both Basic and Plus are selected.",
+  "dom_summary": "fieldset > input[type='radio']:checked x2",
+  "accessibility_snapshot": "radio Basic checked; radio Plus checked"
+}

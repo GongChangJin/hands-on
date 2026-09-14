@@ -5,4 +5,4 @@
 - [ukkhnn](ukkhnn/)
 - [us788](us788/)
 
-독립 구현을 비교할 때만 `<github-id>/`를 만들고 `../../IMPLEMENTATION.template.md`를 `<github-id>/README.md`로 복사합니다. 중첩 Git 저장소는 만들지 않습니다.
+두 참여자는 공통 문서·질문·계약만 고정한 뒤 설계, 코드, prompt와 중간 trace를 공유하지 않고 독립 구현합니다. 완료 후 성공률, 근거·계산·도구 정확도, p50/p95, 비용, 안전 위반, 대표 실패와 적용 결론만 공통 README에서 비교합니다. 중첩 Git 저장소는 만들지 않습니다.

@@ -1,0 +1,50 @@
+{
+  "recorded_at": "2026-09-13T23:49:41+09:00",
+  "fixture_validation": {
+    "status": "passed",
+    "fixture_count": 24,
+    "defect_count": 20,
+    "normal_count": 4,
+    "task_count": 48,
+    "privacy_findings": 0,
+    "metadata_findings": 0
+  },
+  "regression_tests": {
+    "status": "passed",
+    "passed": 33,
+    "failed": 0
+  },
+  "deepseek_single_image_smoke": {
+    "status": "not_run",
+    "reason": "DEEPSEEK_API_KEY was not available in the execution environment"
+  },
+  "image_only_evaluation": {
+    "status": "not_run",
+    "reason": "requires a successful DeepSeek model call"
+  },
+  "image_with_context_evaluation": {
+    "status": "not_run",
+    "reason": "requires a successful DeepSeek model call"
+  },
+  "condition_comparison": {
+    "status": "not_run",
+    "reason": "requires both live condition evaluations"
+  },
+  "phoenix": {
+    "compose_source": "01-agent-evaluation/implementations/ukkhnn/compose.yaml",
+    "container_status": "running",
+    "health_endpoint": "OK",
+    "project": "04-multimodal-agent",
+    "collector_connectivity_trace": "verified",
+    "live_workflow_trace": "not_run",
+    "reason": "live workflow requires DEEPSEEK_API_KEY"
+  },
+  "live_metrics": {
+    "accuracy": null,
+    "latency_p50_ms": null,
+    "latency_p95_ms": null,
+    "tokens": null,
+    "cost_usd": null
+  },
+  "fabricated_results": false
+}

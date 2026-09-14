@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-017",
+  "user_description": "The balance summary is almost invisible.",
+  "dom_summary": "section.summary > p.muted[style='color:#D5D8DE']",
+  "accessibility_snapshot": "text Current usage 64 credits with low visual contrast"
+}

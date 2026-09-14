@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ui-error-006",
+  "image": "fixtures/ui-error-006.png",
+  "sha256": "41f309e44c5b2845960d861f5fe8f15090f69d70fbcf8ce54bb07b97ec51c5ff",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "element_clipping",
+    "error_message"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "import-alert",
+      "claim": "The error message ends mid-sentence inside a fixed-height alert."
+    }
+  ],
+  "acceptable_uncertainty": "The missing remainder of the message cannot be recovered visually.",
+  "visible_text": [
+    "Import data",
+    "Import failed: unsupported col...",
+    "Try again"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-006",
+  "user_description": "The import error text is truncated.",
+  "dom_summary": "main > div[role='alert'].fixed-height > p",
+  "accessibility_snapshot": "alert Import failed: unsupported col..."
+}

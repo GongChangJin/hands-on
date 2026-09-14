@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-009",
+  "image": "fixtures/ui-error-009.png",
+  "sha256": "24175d4d3994d1ca2291c7008bebeed0321599e48f92ae4bbd650956ebe3b4bf",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "invalid_state"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "email-notifications-row",
+      "claim": "The toggle appears on while the adjacent status says Disabled."
+    }
+  ],
+  "acceptable_uncertainty": "The authoritative state cannot be chosen from the screenshot alone.",
+  "visible_text": [
+    "Notifications",
+    "Email notifications",
+    "Disabled"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

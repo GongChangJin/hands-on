@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-016",
+  "user_description": "The filled workspace name is still marked required.",
+  "dom_summary": "input[name='workspace'][value='Demo Lab'][aria-invalid='true']",
+  "accessibility_snapshot": "textbox Workspace name Demo Lab invalid; error Required field"
+}

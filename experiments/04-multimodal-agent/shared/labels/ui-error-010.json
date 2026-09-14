@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-010",
+  "image": "fixtures/ui-error-010.png",
+  "sha256": "8f78c5ce0054beb7213cea53dcac0b6b423b1065b26c40109c89b8ce4412380a",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "invalid_state"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "upload-progress",
+      "claim": "Upload progress is displayed as 128 percent."
+    }
+  ],
+  "acceptable_uncertainty": "Whether the value is a calculation or rendering error is unknown.",
+  "visible_text": [
+    "File upload",
+    "Uploading",
+    "128%"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

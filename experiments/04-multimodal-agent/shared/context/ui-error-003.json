@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-003",
+  "user_description": "One project card does not line up with the others.",
+  "dom_summary": "main > section.task-grid > article:nth-child(2).offset",
+  "accessibility_snapshot": "heading Team board; three task cards"
+}

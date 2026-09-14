@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-normal-024",
+  "user_description": "The archive confirmation dialog is fully visible.",
+  "dom_summary": "body > dialog.archive[open]",
+  "accessibility_snapshot": "dialog Archive workspace; buttons Cancel and Archive"
+}

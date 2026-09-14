@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-002",
+  "user_description": "The analytics chart is cut off on the right.",
+  "dom_summary": "main > section.chart[style='width:1460px']",
+  "accessibility_snapshot": "heading Analytics; chart Weekly sessions; label Saturday clipped"
+}

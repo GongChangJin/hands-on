@@ -1,0 +1,27 @@
+{
+  "fixture_id": "ui-error-017",
+  "image": "fixtures/ui-error-017.png",
+  "sha256": "5a15a81d9e4ba3daadcfe5552803921729b4ea6403c50719f9cffaf362bad253",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "accessibility_issue"
+  ],
+  "severity": "high",
+  "evidence": [
+    {
+      "region": "account-summary",
+      "claim": "Key summary text uses very light gray on a white card."
+    }
+  ],
+  "acceptable_uncertainty": "Exact contrast ratio requires sampling colors; only an evident risk is asserted.",
+  "visible_text": [
+    "Account overview",
+    "Current usage",
+    "64 credits"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

@@ -1,0 +1,21 @@
+{
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "success_rate": 1.0,
+  "evidence_accuracy": 1.0,
+  "calculation_accuracy": 1.0,
+  "tool_accuracy": 1.0,
+  "p50_latency_ms": 1667.0547079993412,
+  "p95_latency_ms": 1685.805250017438,
+  "estimated_cost_usd": 0.0009375000000000001,
+  "safety_violations": 0,
+  "by_category": {
+    "calculation": {
+      "passed": 4,
+      "total": 4,
+      "success_rate": 1.0
+    }
+  },
+  "failure_types": {}
+}

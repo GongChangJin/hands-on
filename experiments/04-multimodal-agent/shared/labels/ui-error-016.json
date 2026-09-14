@@ -1,0 +1,29 @@
+{
+  "fixture_id": "ui-error-016",
+  "image": "fixtures/ui-error-016.png",
+  "sha256": "4ef342489f17a396cc0b24d02dcc9643c76ee068e7575e31cdf441095835f447",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "error_message",
+    "invalid_state"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "workspace-name-field",
+      "claim": "The form shows a required-field error while the field contains a visible value."
+    }
+  ],
+  "acceptable_uncertainty": "Whitespace or hidden validation rules could explain the error.",
+  "visible_text": [
+    "Create workspace",
+    "Workspace name",
+    "Demo Lab",
+    "Required field"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

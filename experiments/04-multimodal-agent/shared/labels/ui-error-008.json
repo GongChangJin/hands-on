@@ -1,0 +1,29 @@
+{
+  "fixture_id": "ui-error-008",
+  "image": "fixtures/ui-error-008.png",
+  "sha256": "f28ae23f0c95413290e91d918cd4b933d96a0225407172593d49a390f6647e9d",
+  "width": 1280,
+  "height": 720,
+  "format": "PNG",
+  "mime_type": "image/png",
+  "expected_error_types": [
+    "element_clipping",
+    "accessibility_issue"
+  ],
+  "severity": "medium",
+  "evidence": [
+    {
+      "region": "sidebar-third-item",
+      "claim": "The third navigation label is clipped to a single letter."
+    }
+  ],
+  "acceptable_uncertainty": "The complete intended label is available only from context.",
+  "visible_text": [
+    "Navigation",
+    "Home",
+    "Projects",
+    "R"
+  ],
+  "synthetic": true,
+  "contains_personal_data": false
+}

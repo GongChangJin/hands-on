@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-009",
+  "user_description": "Email notifications look enabled and disabled at once.",
+  "dom_summary": "button[role='switch'][aria-checked='true'] + span.status-disabled",
+  "accessibility_snapshot": "switch Email notifications on; text Disabled"
+}

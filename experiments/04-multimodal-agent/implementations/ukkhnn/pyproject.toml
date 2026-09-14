@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gongchangjin-multimodal-agent"
+version = "0.1.0"
+description = "Privacy-gated DeepSeek vision evaluation workflow with Phoenix traces."
+requires-python = ">=3.11"
+dependencies = [
+  "arize-phoenix-otel>=0.14,<1",
+  "jsonschema>=4.20,<5",
+  "openai>=1.100,<3",
+  "opentelemetry-sdk>=1.30,<2",
+  "Pillow==11.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+multimodal-agent = "multimodal_agent.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-error-013",
+  "user_description": "The dashboard says its data failed to load.",
+  "dom_summary": "main > div[role='alert'][data-code='SERVER_ERROR']",
+  "accessibility_snapshot": "alert Could not load dashboard data"
+}

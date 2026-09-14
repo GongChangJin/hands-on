@@ -1,0 +1,24 @@
+{
+  "experiment_id": "RXhwZXJpbWVudDo1",
+  "provider": "upstage",
+  "model": "solar-pro4",
+  "architecture": "single",
+  "runs": 20,
+  "successful_runs": 18,
+  "success_rate": 0.9,
+  "mean_quality_score": 0.9,
+  "mean_tool_accuracy": 1.0,
+  "safety_violation_count": 0,
+  "latency_p50_ms": 2008.7365000000002,
+  "latency_p95_ms": 3564.941500000001,
+  "usage": {
+    "requests": 41,
+    "input_tokens": 17174,
+    "output_tokens": 1103,
+    "total_tokens": 18277
+  },
+  "estimated_cost_usd": 0.006475799999999999,
+  "failure_types": {
+    "answer_mismatch": 2
+  }
+}

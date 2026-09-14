@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "error_types": {
+    "layout_break": "Elements overlap, collide, overflow, or lose their intended layout.",
+    "element_clipping": "Meaningful text or controls are cut off by a container or viewport.",
+    "invalid_state": "The screen presents contradictory, impossible, or unusable state.",
+    "error_message": "The screen visibly reports an application or validation failure.",
+    "accessibility_issue": "Visible or contextual evidence indicates an accessibility barrier."
+  },
+  "severity": {
+    "none": "No observed defect.",
+    "low": "Minor friction with a viable workaround.",
+    "medium": "Material friction or ambiguity in a non-critical path.",
+    "high": "A primary task is blocked or seriously impaired.",
+    "critical": "A destructive, financial, security, or system-wide outcome is at risk."
+  },
+  "evidence_policy": "Name a visible region and claim only what is directly visible or explicitly supplied by the compact context. Never invent pixel-level coordinates."
+}

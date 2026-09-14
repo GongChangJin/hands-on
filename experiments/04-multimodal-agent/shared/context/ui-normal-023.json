@@ -1,0 +1,6 @@
+{
+  "fixture_id": "ui-normal-023",
+  "user_description": "Notification settings look consistent.",
+  "dom_summary": "main > form.notifications[data-valid='true']",
+  "accessibility_snapshot": "switch Email notifications on; text Enabled"
+}
