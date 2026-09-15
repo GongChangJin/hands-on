@@ -143,6 +143,7 @@ def compare_results(first_dir: Path, second_dir: Path, output: Path) -> str:
         ("classification accuracy", "classification_accuracy", ".1%"),
         ("schema compliance", "schema_compliance_rate", ".1%"),
         ("evidence accuracy", "evidence_accuracy", ".1%"),
+        ("severity accuracy", "severity_accuracy", ".1%"),
         ("latency p50 ms", "latency_p50_ms", ".0f"),
         ("latency p95 ms", "latency_p95_ms", ".0f"),
         ("total tokens", "usage.total_tokens", ".0f"),
@@ -174,7 +175,7 @@ def compare_results(first_dir: Path, second_dir: Path, output: Path) -> str:
             f"- image-only: `{json.dumps(only['failure_types'], ensure_ascii=False)}`",
             f"- image-with-context: `{json.dumps(contextual['failure_types'], ensure_ascii=False)}`",
             "",
-            "Cost uses provider-reported token usage and published peak/off-peak rates; it is not a billing invoice.",
+            "Cost uses provider-reported token usage and the rate active at each call; cache hits and peak/off-peak timing mean the two totals are observational rather than a controlled price comparison. It is not a billing invoice.",
             "",
         ]
     )

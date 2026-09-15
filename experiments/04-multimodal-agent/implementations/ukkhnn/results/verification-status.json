@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-09-13T23:49:41+09:00",
+  "recorded_at": "2026-09-15T17:35:48+09:00",
   "fixture_validation": {
     "status": "passed",
     "fixture_count": 24,
@@ -11,24 +11,57 @@
   },
   "regression_tests": {
     "status": "passed",
-    "passed": 33,
+    "passed": 35,
     "failed": 0
   },
   "deepseek_single_image_smoke": {
-    "status": "not_run",
-    "reason": "DEEPSEEK_API_KEY was not available in the execution environment"
+    "status": "passed",
+    "request_model": "deepseek-v4-flash-vision-exp",
+    "response_model": "deepseek-flash",
+    "schema_compliance": 1.0,
+    "total_tokens": 1063,
+    "calculated_cost_usd": 0.0007062
   },
   "image_only_evaluation": {
-    "status": "not_run",
-    "reason": "requires a successful DeepSeek model call"
+    "status": "completed",
+    "runs": 24,
+    "successful_runs": 4,
+    "classification_accuracy": 0.5416666666666666,
+    "schema_compliance_rate": 1.0,
+    "evidence_accuracy": 0.3257142857142857,
+    "severity_accuracy": 0.5833333333333334,
+    "latency_p50_ms": 2086.7286875000027,
+    "latency_p95_ms": 15453.837562500005,
+    "total_tokens": 22554,
+    "calculated_cost_usd": 0.0127716,
+    "privacy_exposures": 0,
+    "safety_violations": 0
   },
   "image_with_context_evaluation": {
-    "status": "not_run",
-    "reason": "requires a successful DeepSeek model call"
+    "status": "completed_with_retained_failure",
+    "runs": 24,
+    "successful_runs": 4,
+    "classification_accuracy": 0.6666666666666666,
+    "schema_compliance_rate": 0.9583333333333334,
+    "evidence_accuracy": 0.3894444444444445,
+    "severity_accuracy": 0.4583333333333333,
+    "latency_p50_ms": 3217.0856875000027,
+    "latency_p95_ms": 52227.849410600604,
+    "total_tokens": 23687,
+    "calculated_cost_usd": 0.00786252,
+    "cost_coverage": 0.9583333333333334,
+    "retained_timeout_count": 1,
+    "privacy_exposures": 0,
+    "safety_violations": 0
   },
   "condition_comparison": {
-    "status": "not_run",
-    "reason": "requires both live condition evaluations"
+    "status": "completed",
+    "classification_accuracy_delta": 0.125,
+    "evidence_accuracy_delta": 0.06373015873015877,
+    "severity_accuracy_delta": -0.125,
+    "latency_p50_delta_ms": 1130.3570000000009,
+    "latency_p95_delta_ms": 36774.0118481006,
+    "decision": "keep image-only as the default; use context selectively and re-evaluate before broad adoption"
   },
   "phoenix": {
     "compose_source": "01-agent-evaluation/implementations/ukkhnn/compose.yaml",
@@ -36,15 +69,23 @@
     "health_endpoint": "OK",
     "project": "04-multimodal-agent",
     "collector_connectivity_trace": "verified",
-    "live_workflow_trace": "not_run",
-    "reason": "live workflow requires DEEPSEEK_API_KEY"
+    "live_workflow_trace": "verified",
+    "workflow_root_count": 98,
+    "span_count": 583,
+    "orphan_child_count": 0,
+    "persisted_input_count": 0,
+    "persisted_output_count": 0,
+    "sensitive_marker_hits": 0,
+    "request_model": "deepseek-v4-flash-vision-exp",
+    "response_model": "deepseek-flash"
   },
   "live_metrics": {
-    "accuracy": null,
-    "latency_p50_ms": null,
-    "latency_p95_ms": null,
-    "tokens": null,
-    "cost_usd": null
+    "image_only_classification_accuracy": 0.5416666666666666,
+    "image_with_context_classification_accuracy": 0.6666666666666666,
+    "image_only_latency_p50_ms": 2086.7286875000027,
+    "image_with_context_latency_p50_ms": 3217.0856875000027,
+    "image_only_total_tokens": 22554,
+    "image_with_context_total_tokens": 23687
   },
   "fabricated_results": false
 }
