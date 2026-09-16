@@ -1,0 +1,24 @@
+{
+  "version": "2026-09-16-v1",
+  "language": ["en"],
+  "publication_date": {"from": "2020-01-01", "to": "run-date"},
+  "document_types": {
+    "include": ["journal-article", "proceedings-article", "posted-content", "preprint", "conference-paper"],
+    "exclude": ["blog", "marketing", "news", "book-review", "dataset-only", "editorial"]
+  },
+  "access": {
+    "metadata": "Official scholarly metadata APIs only",
+    "abstract": "Publicly returned abstract only",
+    "full_text": "Openly and legally accessible PDF or HTML only",
+    "prohibited": ["paywall bypass", "robots bypass", "credential sharing", "Google Scholar scraping"]
+  },
+  "content_limits": {
+    "pdf_max_bytes": 20971520,
+    "pdf_max_pages": 80,
+    "evidence_quote_max_characters": 500,
+    "request_timeout_seconds": 20,
+    "maximum_attempts": 3
+  },
+  "deduplication_order": ["doi", "arxiv_id", "semantic_scholar_paper_id", "normalized_title"],
+  "title_fallback": {"minimum_similarity": 0.97, "require_compatible_year": true, "require_compatible_authors": true}
+}

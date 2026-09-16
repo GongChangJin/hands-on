@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:research-agent:hypothesis",
+  "title": "AgentHypothesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["hypothesis_id", "hypothesis", "derived_from_claim_ids", "rationale", "falsification_test", "confidence", "attribution"],
+  "properties": {
+    "hypothesis_id": {"type": "string", "minLength": 1},
+    "hypothesis": {"type": "string", "minLength": 1},
+    "derived_from_claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "rationale": {"type": "string", "minLength": 1},
+    "falsification_test": {"type": "string", "minLength": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "attribution": {"const": "agent_hypothesis_not_paper_conclusion"}
+  }
+}
