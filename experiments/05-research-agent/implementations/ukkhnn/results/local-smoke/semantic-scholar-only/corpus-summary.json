@@ -1,0 +1,9 @@
+{
+  "condition": "semantic-scholar-only",
+  "duplicates_removed": 0,
+  "identifier_failures": 0,
+  "minimum_met": true,
+  "requests_by_source": {},
+  "unresolved_duplicates": 0,
+  "verified_papers": 12
+}

@@ -1,0 +1,55 @@
+{
+  "condition": "federated-verified",
+  "duplicates_removed": 3,
+  "eligible_candidates": 12,
+  "external_validation_failures": [],
+  "input_records": 15,
+  "merges": [
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Offline Fixture Query Rewriting Study 01",
+      "kept_index": 0,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Offline Fixture Corrective Retrieval Study 07",
+      "kept_index": 6,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Offline Fixture Self RAG Study 09",
+      "kept_index": 8,
+      "method": "normalized_title"
+    }
+  ],
+  "minimum_met": true,
+  "minimum_required": 10,
+  "order": [
+    "doi",
+    "arxiv_id",
+    "semantic_scholar_paper_id",
+    "normalized_title"
+  ],
+  "rejected_papers": [],
+  "search_failures": [],
+  "title_threshold": 0.97,
+  "unique_records": 12,
+  "unresolved_duplicates": [],
+  "verified_papers": 12
+}

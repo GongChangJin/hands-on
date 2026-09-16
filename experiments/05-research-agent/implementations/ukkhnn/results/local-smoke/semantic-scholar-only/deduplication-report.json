@@ -1,0 +1,22 @@
+{
+  "condition": "semantic-scholar-only",
+  "duplicates_removed": 0,
+  "eligible_candidates": 12,
+  "external_validation_failures": [],
+  "input_records": 12,
+  "merges": [],
+  "minimum_met": true,
+  "minimum_required": 10,
+  "order": [
+    "doi",
+    "arxiv_id",
+    "semantic_scholar_paper_id",
+    "normalized_title"
+  ],
+  "rejected_papers": [],
+  "search_failures": [],
+  "title_threshold": 0.97,
+  "unique_records": 12,
+  "unresolved_duplicates": [],
+  "verified_papers": 12
+}

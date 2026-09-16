@@ -1,0 +1,85 @@
+{
+  "calculated_cost_usd": 0.027941472,
+  "claims": 75,
+  "condition": "semantic-scholar-only",
+  "failures": [
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:56:14.588119+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:56:18.210004+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:56:22.868960+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "reranking retrieval augmented generation faithfulness latency",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:56:25.293931+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation implementation complexity",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:56:28.249055+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "self-reflective retrieval augmented generation cost latency trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:56:30.759275+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    }
+  ],
+  "hypotheses": 6,
+  "model_latency_p50_ms": 11777.523415999894,
+  "model_latency_p95_ms": 14820.06525000179,
+  "model_status": "executed",
+  "offline": false,
+  "papers_with_claims": 18,
+  "request_model": "deepseek-flash",
+  "response_models": [
+    "deepseek-flash"
+  ],
+  "usage": {
+    "cached_input_tokens": 512,
+    "input_tokens": 27432,
+    "output_tokens": 16552,
+    "requests": 5,
+    "total_tokens": 43984
+  },
+  "verified_papers": 18
+}
