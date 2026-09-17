@@ -1,0 +1,13 @@
+{
+  "condition": "federated-verified",
+  "duplicates_removed": 75,
+  "identifier_failures": 0,
+  "minimum_met": true,
+  "requests_by_source": {
+    "arxiv": 8,
+    "crossref": 10,
+    "semantic_scholar": 46
+  },
+  "unresolved_duplicates": 6,
+  "verified_papers": 18
+}

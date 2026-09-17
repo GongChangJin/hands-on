@@ -1,0 +1,31 @@
+{
+  "version": "2026-09-16-v1",
+  "question": "RAG 시스템에서 query rewriting, reranking, corrective retrieval, self-reflective retrieval 기법은 검색 품질과 답변의 faithfulness를 어떤 조건에서 개선하며, latency·비용·구현 복잡도 측면에서 어떤 trade-off를 만드는가?",
+  "scope": {
+    "population": "English-language research about retrieval-augmented generation systems",
+    "interventions": ["query rewriting", "reranking", "corrective retrieval", "self-reflective retrieval"],
+    "outcomes": ["retrieval quality", "answer faithfulness", "latency", "cost", "implementation complexity"],
+    "primary_evidence": "Primary research with direct experiments",
+    "survey_use": "Background and citation chaining only"
+  },
+  "inclusion_criteria": [
+    "Published or publicly released from 2020-01-01 through the run date",
+    "English title and abstract or legally accessible full text",
+    "Directly evaluates at least one in-scope RAG intervention or a necessary component",
+    "Primary research reports methods, data, metrics, or direct experimental results",
+    "At least one DOI, arXiv ID, or Semantic Scholar paperId can be verified"
+  ],
+  "exclusion_criteria": [
+    "Blog, marketing page, unattributed document, or search-result snippet as core evidence",
+    "Survey used as a substitute for primary experimental evidence",
+    "Publication before 2020-01-01",
+    "Non-English paper without an English abstract",
+    "Paywall, robots policy, or access control must be bypassed",
+    "Identifier remains invalid or unresolved after bounded verification"
+  ],
+  "date_range": {"from": "2020-01-01", "to": "run-date"},
+  "language": "en",
+  "target_verified_papers": {"minimum": 10, "preferred_minimum": 12, "preferred_maximum": 18},
+  "search_timestamp_policy": "Record UTC timestamp at each source request and at run start",
+  "interpretation_policy": "Agent interpretations and hypotheses must use separate fields and must not be attributed to paper authors"
+}

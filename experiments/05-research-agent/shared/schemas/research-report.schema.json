@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:research-agent:research-report",
+  "title": "ResearchReport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["question", "condition", "search", "verified_papers", "claims", "synthesis", "hypotheses", "failures", "limitations", "usage"],
+  "properties": {
+    "question": {"type": "string", "minLength": 1},
+    "condition": {"enum": ["semantic-scholar-only", "federated-verified", "offline-fixture"]},
+    "search": {"type": "object"},
+    "verified_papers": {"type": "array", "items": {"type": "object"}},
+    "claims": {"type": "array", "items": {"$ref": "claim-evidence.schema.json"}},
+    "synthesis": {"type": "object"},
+    "hypotheses": {"type": "array", "items": {"$ref": "hypothesis.schema.json"}},
+    "failures": {"type": "array", "items": {"type": "object"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "usage": {"type": "object"}
+  }
+}

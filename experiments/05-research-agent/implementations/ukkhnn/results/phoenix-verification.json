@@ -1,0 +1,59 @@
+{
+  "verified_at": "2026-09-16T04:00:16Z",
+  "phoenix_version": "19.10.0",
+  "project_name": "05-research-agent",
+  "trace_id": "5749d2fd4ffcd4e8b8cbbd32d00e4376",
+  "root_span": "research.workflow",
+  "root_span_id": "8013c7cd22cda093",
+  "direct_child_spans": {
+    "query.expand": 1,
+    "paper.search": 2,
+    "identifier.validate": 2,
+    "paper.deduplicate": 2,
+    "content.fetch": 2,
+    "evidence.extract": 2,
+    "report.synthesize": 2,
+    "evaluation.deterministic": 2
+  },
+  "allowed_attribute_keys_observed": [
+    "actual_endpoint_provider",
+    "actual_hostname",
+    "cost_usd",
+    "failure_type",
+    "input_tokens",
+    "latency_ms",
+    "model",
+    "offline",
+    "output_tokens",
+    "project",
+    "protocol_provider",
+    "query_hash",
+    "query_version",
+    "request_count",
+    "request_model",
+    "response_model",
+    "result_count",
+    "search_condition",
+    "task_id",
+    "total_tokens",
+    "validation_status"
+  ],
+  "token_spans": 5,
+  "failure_spans_observed": [
+    "paper.search:partial_source_failure",
+    "paper.deduplicate:unresolved_duplicate",
+    "evidence.extract:partial_model_failure",
+    "evaluation.deterministic:deterministic_threshold_failed",
+    "research.workflow:deterministic_threshold_failed"
+  ],
+  "prohibited_content_scan": {
+    "api_key": false,
+    "authorization_header": false,
+    "raw_prompt": false,
+    "raw_response": false,
+    "full_abstract": false,
+    "pdf_signature_or_body": false
+  },
+  "verification_source": "Phoenix local REST API /v1/projects/05-research-agent/spans",
+  "note": "Only span names, hierarchy, allow-listed attributes, token/cost/latency summaries, and failure types were inspected."
+}

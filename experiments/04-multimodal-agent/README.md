@@ -4,7 +4,7 @@
 
 ## 프로젝트 정의
 
-- **상태:** 구현·로컬 검증 완료, live 비교 보류
+- **상태:** 구현·로컬 검증·DeepSeek live 비교 완료
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 이미지·화면 상태를 해석하는 전문 Agent
 - **선행 프로젝트:** Agent Evaluation
@@ -39,7 +39,7 @@ TaskRequest
 
 이미지는 개인정보 검사에 통과하기 전에는 모델 호출에 도달하지 않는다. 허용된 `shared/fixtures/` 밖의 파일, symlink 이탈, hash 불일치, 상한 초과, 개인정보·비밀 형태 문자열은 `blocked`로 남긴다. JSON parsing, timeout, rate limit, 인증 실패는 삭제하지 않고 실패 유형으로 보존한다.
 
-모델 adapter는 OpenAI-compatible Python client를 사용하지만 endpoint는 `https://api.deepseek.com`, provider는 `deepseek`, 모델은 `deepseek-v4-flash-vision-exp`로 고정한다. `OPENAI_API_KEY`와 OpenAI endpoint를 읽지 않는다. 모델과 vision 입력 형식, 가격 근거는 [DeepSeek Vision guide](https://api-docs.deepseek.com/guides/vision/)와 [DeepSeek Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing/)을 따른다.
+모델 adapter는 OpenAI-compatible Python client를 사용하지만 endpoint는 `https://api.deepseek.com`, provider는 `deepseek`, 요청 모델은 `deepseek-v4-flash-vision-exp`로 고정한다. thinking은 명시적으로 비활성화하며 실제 응답 model alias는 `deepseek-flash`로 관측됐다. `OPENAI_API_KEY`와 OpenAI endpoint를 읽지 않는다. 모델과 vision 입력 형식, 가격 근거는 [DeepSeek Vision guide](https://api-docs.deepseek.com/guides/vision/)와 [DeepSeek Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing/)을 따른다.
 
 ## 관측과 평가
 
@@ -55,27 +55,28 @@ trace에는 상대 파일 경로, 이미지 hash·크기·MIME, 입력 조건, �
 
 분류는 기대/예측 taxonomy 집합의 정확 일치, 근거는 고정 영역과 claim token overlap, 개인정보와 안전은 model-call gate 상태로 결정한다. LLM 자기평가는 성공 판정에 쓰지 않는다. 보고서는 성공률, 분류·schema·근거·심각도 정확도, 전체 latency p50/p95, provider-reported token, 공개 요율 기반 계산 비용과 실패 사례를 보존한다.
 
-## 현재 검증 결과
+## 검증 결과
 
 | 항목 | 결과 |
 | --- | --- |
 | fixture / paired tasks | 24 / 48 |
 | 결함 / 정상 | 20 / 4 |
 | fixture 개인정보·metadata finding | 0 / 0 |
-| 로컬 회귀 테스트 | 33 passed |
+| 로컬 회귀 테스트 | 35 passed |
 | 기존 Phoenix container / health | running / OK |
-| Phoenix project와 collector 연결 | `04-multimodal-agent` 확인 |
-| 실제 DeepSeek 단일 smoke | 미실행 — 실행 환경에 `DEEPSEEK_API_KEY` 없음 |
-| 두 조건 live 평가·비교 | 미실행 — 실제 모델 결과 필요 |
-| live workflow trace | 미실행 — 실제 모델 호출 필요 |
+| Phoenix live trace | 98 workflow roots / 583 spans / orphan 0 |
+| 실제 DeepSeek 단일 smoke | 성공, schema 준수, 1,063 tokens |
+| image-only live 평가 | 24건, 분류 54.2%, p50/p95 2.09s/15.45s |
+| image-with-context live 평가 | 24건, 분류 66.7%, p50/p95 3.22s/52.23s |
+| 개인정보 노출 / 안전 위반 | 두 조건 모두 0 / 0 |
 
-키 부재 때문에 정확도, 실제 token·비용, p50/p95 수치는 기록하지 않았다. mock 결과를 live 결과처럼 만들지 않았으며, 실행 경계는 `implementations/ukkhnn/results/verification-status.json`에 남겼다.
+Context는 분류 정확도를 12.5%p, 근거 정확도를 6.4%p 높였지만 성공률은 두 조건 모두 16.7%였고 심각도 정확도는 12.5%p 낮아졌다. Context의 API timeout 1건도 결과에 보존했다. 계산 비용은 image-only $0.012772, context $0.007863이지만 순차 실행 중 cache hit와 peak/off-peak 요율이 달라 통제된 가격 비교로 해석하지 않는다. 전체 record와 비교표는 `implementations/ukkhnn/results/`에 있고 mock 측정은 없다.
 
 ## 구현 비교
 
 | 참여자 | 입력 구성 | 모델 | 정확도 | 비용 | 특징 |
 | --- | --- | --- | ---: | ---: | --- |
-| `@ukkhnn` | image-only / image-with-context | `deepseek-v4-flash-vision-exp` | live 미측정 | live 미측정 | privacy gate, explicit Phoenix spans, fixed-label grader |
+| `@ukkhnn` | image-only / image-with-context | `deepseek-v4-flash-vision-exp` | 54.2% / 66.7% 분류 정확도 | $0.012772 / $0.007863 관측값 | privacy gate, explicit Phoenix spans, fixed-label grader |
 | `@us788` | 독립 구현 후 기록 | 독립 구현 후 기록 | — | — | 공통 데이터·schema만 공유 |
 
 ## 완료 조건
@@ -85,8 +86,8 @@ trace에는 상대 파일 경로, 이미지 hash·크기·MIME, 입력 조건, �
 - [x] 오류 근거, 불확실성과 수정 제안을 구조화함
 - [x] 개인정보·경로·symlink·크기·request body 안전 경계를 구현함
 - [x] JSONL, CSV, JSON, Markdown과 조건 비교 생성기를 구현·테스트함
-- [ ] 실제 DeepSeek로 단일 smoke와 두 조건 전체 평가를 완료함
-- [ ] live 수치로 Computer-use Agent 입력 형식을 최종 결정함
+- [x] 실제 DeepSeek로 단일 smoke와 두 조건 전체 평가를 완료함
+- [x] live 수치로 Computer-use Agent 입력 형식을 결정함
 
 ## 독립 협업 규칙
 
@@ -94,10 +95,10 @@ trace에는 상대 파일 경로, 이미지 hash·크기·MIME, 입력 조건, �
 
 ## 결론
 
-- **적용 판단:** live 비교 전까지 보류
-- **판단 이유:** 안전·계약·보고 경로는 검증됐지만 실제 DeepSeek의 분류 정확도와 context의 비용/지연 trade-off는 아직 측정하지 못함
-- **적용 가능 범위:** 합성 UI 회귀 데이터 준비, 사전 안전 검사, Router용 `TaskRequest → AgentResult` 인터페이스
-- **다음 행동:** `DEEPSEEK_API_KEY`가 있는 환경에서 두 조건 24개씩 실행하고 비교표와 Phoenix workflow trace를 확인한 뒤 입력 형식을 결정
+- **적용 판단:** Computer-use Agent의 기본 입력은 image-only, compact context는 접근성·상태가 모호한 화면의 선택적 재시도에만 적용
+- **판단 이유:** context가 분류와 근거는 개선했지만 전체 성공률을 높이지 못했고 심각도 정확도와 tail latency가 악화됨
+- **적용 가능 범위:** 합성 UI 회귀 데이터, 사전 안전 검사, Router용 `TaskRequest → AgentResult`, 실제 DeepSeek 호출과 Phoenix 관측
+- **다음 행동:** 반복 평가로 신뢰구간을 만들고 context 재시도의 latency budget과 대상 조건을 고정한 뒤 확대 적용
 
 ## 변경 기록
 
@@ -106,3 +107,9 @@ trace에는 상대 파일 경로, 이미지 hash·크기·MIME, 입력 조건, �
 - 변경: 공용 합성 데이터, DeepSeek vision workflow, privacy gate, Phoenix 관측, deterministic 평가와 보고서 구현
 - 결과: 로컬 검증 완료, live 평가 미실행
 - 다음 행동: 실제 두 조건 평가 후 적용 판단 갱신
+
+### 2026-09-15
+
+- 변경: DeepSeek thinking 비활성화, empty response usage 보존, 동일 taxonomy 복수 finding 허용
+- 결과: 단일 smoke, 두 조건 24건씩, 비교표, Phoenix live trace와 35개 회귀 테스트 검증 완료
+- 판단: image-only 기본 적용, compact context는 선택적 보강으로 제한

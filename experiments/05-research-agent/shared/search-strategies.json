@@ -1,0 +1,54 @@
+{
+  "version": "2026-09-16-v1",
+  "question_version": "2026-09-16-v1",
+  "deterministic_seed_queries": [
+    "retrieval augmented generation query rewriting retrieval quality faithfulness",
+    "retrieval augmented generation reranking retrieval quality faithfulness",
+    "corrective retrieval augmented generation CRAG",
+    "self reflective retrieval augmented generation Self-RAG"
+  ],
+  "concept_expansion": {
+    "rag": ["retrieval augmented generation", "RAG"],
+    "query_rewriting": ["query rewriting", "query reformulation", "multi query retrieval", "query expansion"],
+    "reranking": ["reranking", "re-ranking", "cross encoder ranker", "retrieval reranker"],
+    "corrective_retrieval": ["corrective retrieval", "CRAG", "retrieval correction", "web search fallback"],
+    "self_reflection": ["self reflective retrieval", "self-reflection", "Self-RAG", "adaptive retrieval"],
+    "quality": ["retrieval quality", "faithfulness", "groundedness", "factuality"]
+  },
+  "model_expansion": {
+    "enabled_when_key_available": true,
+    "provider": "deepseek",
+    "fallback": "Use deterministic_seed_queries unchanged",
+    "maximum_additional_queries": 4
+  },
+  "conditions": {
+    "semantic-scholar-only": {
+      "sources": ["semantic_scholar"],
+      "queries": "deterministic_seed_queries plus validated model expansion",
+      "per_query_candidate_limit": 20,
+      "deduplicate": true,
+      "identifier_cross_validation": false
+    },
+    "federated-verified": {
+      "sources": ["semantic_scholar", "crossref", "arxiv"],
+      "queries": "deterministic_seed_queries plus validated model expansion",
+      "per_query_candidate_limit": 20,
+      "deduplicate": true,
+      "identifier_cross_validation": true
+    }
+  },
+  "source_query_transforms": {
+    "semantic_scholar": {
+      "syntax": "plain text",
+      "year_filter": "2020-run-year",
+      "fields": ["paperId", "title", "abstract", "year", "authors", "externalIds", "url", "openAccessPdf", "publicationTypes", "venue"]
+    },
+    "crossref": {
+      "syntax": "query.bibliographic",
+      "date_filter": "from-pub-date:2020-01-01,until-pub-date:run-date",
+      "select": ["DOI", "title", "abstract", "author", "published", "URL", "type", "subtype", "language", "resource", "link"]
+    },
+    "arxiv": {"syntax": "all:<quoted terms>", "date_filter": "client-side published timestamp", "sortBy": "relevance"}
+  },
+  "recording_requirements": ["query", "query_origin", "source", "rank", "filters", "retrieved_at", "response_identifier"]
+}

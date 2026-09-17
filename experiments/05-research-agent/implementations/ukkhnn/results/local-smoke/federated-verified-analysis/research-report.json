@@ -1,0 +1,449 @@
+{
+  "claims": [
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Corrective Retrieval Study 07",
+      "claim_id": "offline-claim-001",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.07",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000007"
+      },
+      "paper_record_id": "paper-fb76496e560e",
+      "paper_title": "Offline Fixture Corrective Retrieval Study 07",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000007",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Cross Encoder Reranker Study 05",
+      "claim_id": "offline-claim-002",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.05",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000005"
+      },
+      "paper_record_id": "paper-95dc9b4808a5",
+      "paper_title": "Offline Fixture Cross Encoder Reranker Study 05",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000005",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Self RAG Study 09",
+      "claim_id": "offline-claim-003",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "arxiv_id": "2501.00009",
+        "doi": "10.5555/offline.09",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000009"
+      },
+      "paper_record_id": "paper-9230a0fd10a1",
+      "paper_title": "Offline Fixture Self RAG Study 09",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000009",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Adaptive Retrieval Study 11",
+      "claim_id": "offline-claim-004",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.11",
+        "semantic_scholar_paper_id": "000000000000000000000000000000000000000b"
+      },
+      "paper_record_id": "paper-38335c98de76",
+      "paper_title": "Offline Fixture Adaptive Retrieval Study 11",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000b",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Self Reflective Retrieval Study 10",
+      "claim_id": "offline-claim-005",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.10",
+        "semantic_scholar_paper_id": "000000000000000000000000000000000000000a"
+      },
+      "paper_record_id": "paper-bf86d674eb1d",
+      "paper_title": "Offline Fixture Self Reflective Retrieval Study 10",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000a",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Passage Reranking Study 06",
+      "claim_id": "offline-claim-006",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.06",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000006"
+      },
+      "paper_record_id": "paper-c3d5a3eb663e",
+      "paper_title": "Offline Fixture Passage Reranking Study 06",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000006",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Query Reformulation Study 02",
+      "claim_id": "offline-claim-007",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.02",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000002"
+      },
+      "paper_record_id": "paper-fee62d4676d5",
+      "paper_title": "Offline Fixture Query Reformulation Study 02",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000002",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Reranking Study 04",
+      "claim_id": "offline-claim-008",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.04",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000004"
+      },
+      "paper_record_id": "paper-399637e520c5",
+      "paper_title": "Offline Fixture Reranking Study 04",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000004",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Faithful Retrieval Pipeline Study 12",
+      "claim_id": "offline-claim-009",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.12",
+        "semantic_scholar_paper_id": "000000000000000000000000000000000000000c"
+      },
+      "paper_record_id": "paper-cda99a74fe44",
+      "paper_title": "Offline Fixture Faithful Retrieval Pipeline Study 12",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000c",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Retrieval Correction Study 08",
+      "claim_id": "offline-claim-010",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.08",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000008"
+      },
+      "paper_record_id": "paper-cdc0d6a5f8d7",
+      "paper_title": "Offline Fixture Retrieval Correction Study 08",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000008",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Query Rewriting Study 01",
+      "claim_id": "offline-claim-011",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.01",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000001"
+      },
+      "paper_record_id": "paper-67a7bccd81d1",
+      "paper_title": "Offline Fixture Query Rewriting Study 01",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000001",
+      "verified": true
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Multi Query Retrieval Study 03",
+      "claim_id": "offline-claim-012",
+      "claim_type": "paper_result",
+      "evidence_location": "offline fixture abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "Offline mock; not a live paper analysis.",
+      "identifiers": {
+        "doi": "10.5555/offline.03",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000003"
+      },
+      "paper_record_id": "paper-32d3496c835f",
+      "paper_title": "Offline Fixture Multi Query Retrieval Study 03",
+      "paraphrase": "Synthetic fixture claim used only to exercise the offline pipeline.",
+      "quote": null,
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000003",
+      "verified": true
+    }
+  ],
+  "condition": "federated-verified",
+  "failures": [],
+  "hypotheses": [
+    {
+      "attribution": "agent_hypothesis_not_paper_conclusion",
+      "confidence": 0.2,
+      "derived_from_claim_ids": [
+        "offline-claim-001"
+      ],
+      "falsification_test": "Run the live workflow and check every output contract and locator.",
+      "hypothesis": "The same pipeline should preserve provenance when connected to live APIs.",
+      "hypothesis_id": "offline-hypothesis-001",
+      "rationale": "The mock route exercises the same schemas and renderers."
+    }
+  ],
+  "limitations": [
+    "Extraction uses bounded public abstract excerpts; claims are not full-text findings unless explicitly marked.",
+    "Search API ranking and metadata can change after the recorded retrieval timestamp.",
+    "Calculated API cost uses provider-reported usage and published rates; it is not an invoice.",
+    "Offline output is synthetic and must not be presented as live research."
+  ],
+  "question": "RAG 시스템에서 query rewriting, reranking, corrective retrieval, self-reflective retrieval 기법은 검색 품질과 답변의 faithfulness를 어떤 조건에서 개선하며, latency·비용·구현 복잡도 측면에서 어떤 trade-off를 만드는가?",
+  "search": {
+    "duplicates_removed": 3,
+    "identifier_failures": 0,
+    "queries": [
+      {
+        "origin": "deterministic_seed",
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness"
+      },
+      {
+        "origin": "deterministic_seed",
+        "query": "retrieval augmented generation reranking retrieval quality faithfulness"
+      },
+      {
+        "origin": "deterministic_seed",
+        "query": "corrective retrieval augmented generation CRAG"
+      },
+      {
+        "origin": "deterministic_seed",
+        "query": "self reflective retrieval augmented generation Self-RAG"
+      }
+    ],
+    "requests_by_source": {},
+    "sources": [
+      "semantic_scholar",
+      "crossref",
+      "arxiv"
+    ],
+    "started_at": "2026-09-16T04:01:29.603954+00:00"
+  },
+  "synthesis": {
+    "sections": [
+      {
+        "findings": "Synthetic evidence confirms only that the offline pipeline is wired correctly.",
+        "supporting_claim_ids": [
+          "offline-claim-001",
+          "offline-claim-002",
+          "offline-claim-003",
+          "offline-claim-004",
+          "offline-claim-005",
+          "offline-claim-006",
+          "offline-claim-007",
+          "offline-claim-008",
+          "offline-claim-009",
+          "offline-claim-010",
+          "offline-claim-011",
+          "offline-claim-012"
+        ],
+        "technique": "offline fixture",
+        "tradeoffs": "No live research conclusion may be drawn."
+      }
+    ]
+  },
+  "usage": {
+    "actual_endpoint_provider": null,
+    "actual_hostname": null,
+    "calculated_cost_usd": 0.0,
+    "model_status": "offline_mock_not_live",
+    "pricing_checked_at": "2026-09-16",
+    "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "pricing_tiers": "execution-time",
+    "protocol_provider": null,
+    "provider": "offline_mock",
+    "request_model": null,
+    "response_models": [],
+    "tokens": {
+      "cached_input_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "requests": 0,
+      "total_tokens": 0
+    }
+  },
+  "verified_papers": [
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.07",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000007"
+      },
+      "record_id": "paper-fb76496e560e",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000007",
+      "title": "Offline Fixture Corrective Retrieval Study 07",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.05",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000005"
+      },
+      "record_id": "paper-95dc9b4808a5",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000005",
+      "title": "Offline Fixture Cross Encoder Reranker Study 05",
+      "year": 2021
+    },
+    {
+      "identifiers": {
+        "arxiv_id": "2501.00009",
+        "doi": "10.5555/offline.09",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000009"
+      },
+      "record_id": "paper-9230a0fd10a1",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000009",
+      "title": "Offline Fixture Self RAG Study 09",
+      "year": 2023
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.11",
+        "semantic_scholar_paper_id": "000000000000000000000000000000000000000b"
+      },
+      "record_id": "paper-38335c98de76",
+      "source_url": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000b",
+      "title": "Offline Fixture Adaptive Retrieval Study 11",
+      "year": 2022
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.10",
+        "semantic_scholar_paper_id": "000000000000000000000000000000000000000a"
+      },
+      "record_id": "paper-bf86d674eb1d",
+      "source_url": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000a",
+      "title": "Offline Fixture Self Reflective Retrieval Study 10",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.06",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000006"
+      },
+      "record_id": "paper-c3d5a3eb663e",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000006",
+      "title": "Offline Fixture Passage Reranking Study 06",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.02",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000002"
+      },
+      "record_id": "paper-fee62d4676d5",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000002",
+      "title": "Offline Fixture Query Reformulation Study 02",
+      "year": 2023
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.04",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000004"
+      },
+      "record_id": "paper-399637e520c5",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000004",
+      "title": "Offline Fixture Reranking Study 04",
+      "year": 2022
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.12",
+        "semantic_scholar_paper_id": "000000000000000000000000000000000000000c"
+      },
+      "record_id": "paper-cda99a74fe44",
+      "source_url": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000c",
+      "title": "Offline Fixture Faithful Retrieval Pipeline Study 12",
+      "year": 2020
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.08",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000008"
+      },
+      "record_id": "paper-cdc0d6a5f8d7",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000008",
+      "title": "Offline Fixture Retrieval Correction Study 08",
+      "year": 2025
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.01",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000001"
+      },
+      "record_id": "paper-67a7bccd81d1",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000001",
+      "title": "Offline Fixture Query Rewriting Study 01",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5555/offline.03",
+        "semantic_scholar_paper_id": "0000000000000000000000000000000000000003"
+      },
+      "record_id": "paper-32d3496c835f",
+      "source_url": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000003",
+      "title": "Offline Fixture Multi Query Retrieval Study 03",
+      "year": 2025
+    }
+  ]
+}

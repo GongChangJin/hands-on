@@ -60,6 +60,7 @@ def test_comparison_has_condition_metrics_and_deltas(tmp_path: Path) -> None:
     assert "image-only" in value
     assert "image-with-context" in value
     assert "classification accuracy" in value
+    assert "severity accuracy" in value
     assert "latency p95" in value
     assert "calculated cost USD" in value
 

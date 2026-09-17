@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gongchangjin-research-agent"
+version = "0.1.0"
+description = "Verified, provenance-preserving academic research agent experiment."
+requires-python = ">=3.11"
+dependencies = [
+  "arize-phoenix-otel>=0.14.0",
+  "httpx>=0.27,<1",
+  "jsonschema>=4.20",
+  "opentelemetry-api>=1.27",
+  "opentelemetry-sdk>=1.27",
+  "pypdf>=5,<7",
+  "referencing>=0.28.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+research-agent = "research_agent.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]

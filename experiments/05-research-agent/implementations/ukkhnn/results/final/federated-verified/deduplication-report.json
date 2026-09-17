@@ -1,0 +1,949 @@
+{
+  "condition": "federated-verified",
+  "duplicates_removed": 75,
+  "eligible_candidates": 18,
+  "external_validation_failures": [],
+  "input_records": 165,
+  "merges": [
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "kept_index": 3,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Cultural Faithfulness in Tourism Chatbots: A Structured Human Adjudication Framework for Traceable Retrieval-Augmented Generation",
+      "kept_index": 5,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Retrieval‐Augmented Generation",
+      "kept_index": 10,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Correctness is not Faithfulness in Retrieval Augmented Generation Attributions",
+      "kept_index": 12,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Domain-Adapted Retrieval-Augmented Generation for Technical Documentation: Enhancing Reliability and Faithfulness in Technical QA",
+      "kept_index": 14,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Graph‐based Retrieval‐augmented Generation",
+      "kept_index": 15,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Evaluating Retrieval Quality in Retrieval-Augmented Generation",
+      "kept_index": 16,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "A Comparative Study of Retrieval-Augmented Generation, Graph Retrieval-Augmented Generation, and Fine-Tuned Large Language Models for Fire Engineering Knowledge Retrieval",
+      "kept_index": 25,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Retrieval‐Augmented Generation",
+      "kept_index": 10,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Graph‐based Retrieval‐augmented Generation",
+      "kept_index": 15,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Why Retrieval Augmented Generation?",
+      "kept_index": 27,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "A Comparative Study of Retrieval-Augmented Generation, Graph Retrieval-Augmented Generation, and Fine-Tuned Large Language Models for Fire Engineering Knowledge Retrieval",
+      "kept_index": 25,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "A Comparative Study of Retrieval-Augmented Generation, Graph Retrieval-Augmented Generation, and Fine-Tuned Large Language Models for Fire Engineering Knowledge Retrieval",
+      "kept_index": 25,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Why Retrieval Augmented Generation?",
+      "kept_index": 27,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Understanding Retrieval Pitfalls: Challenges Faced by Retrieval Augmented Generation (RAG) models",
+      "kept_index": 53,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Review for \"Text2SQL Business Intelligence System Based on Retrieval-Augmented Generation (RAG)\"",
+      "kept_index": 56,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Query Rewriting in Retrieval-Augmented Generation as an Application of NLP Technology for Understanding and Transforming Human Language",
+      "kept_index": 4,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "SageRAG: Query rewriting for retrieval enhancement and retrieval-augmented generation for grounded responses in AI research assistance",
+      "kept_index": 0,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "AQACO: Adaptive Query-Aware Chunking Optimization for Retrieval-Augmented Generation Systems",
+      "kept_index": 1,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "LiRe: Efficient Query Rewriting for Retrieval Augmented Generation Systems",
+      "kept_index": 9,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Integrating Ranking-Based Query Rewriting into RAFT for Improved Retrieval-Augmented Generation",
+      "kept_index": 11,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Q-PRM: Adaptive Query Rewriting for Retrieval-Augmented Generation via Step-level Process Supervision",
+      "kept_index": 13,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "RETRIEVAL AUGMENTED GENERATION SYSTEM FOR EDUCATIONAL TEXTBOOK QUERY ASSISTANCE",
+      "kept_index": 7,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Query Transformation and Prompt Engineering",
+      "kept_index": 8,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Schema Retrieval with Embeddings and Vector Stores Using Retrieval-Augmented Generation and LLM-Based SQL Query Generation",
+      "kept_index": 6,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "kept_index": 22,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Adaptive Query Performance Prediction for Retrieval-Augmented Generation: Bridging Retrieval Quality and Generation Relevance",
+      "kept_index": 2,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "GRPO++: A Controlled Differentiable Reinforcement Learning Reranking Method for Retrieval-Augmented Generation",
+      "kept_index": 19,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "kept_index": 3,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Candidate Evidence Reranking and Risk-Aware Answer Selection in Multi-Hop Retrieval-Augmented Generation",
+      "kept_index": 21,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Cultural Faithfulness in Tourism Chatbots: A Structured Human Adjudication Framework for Traceable Retrieval-Augmented Generation",
+      "kept_index": 5,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "kept_index": 22,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "An Empirical Evaluation of Retrieval, Reranking, and Similarity for a Q&A-Based Retrieval Augmented Generation System",
+      "kept_index": 20,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Reinforcement Learning from Answer Reranking Feedback for Retrieval-Augmented Answer Generation",
+      "kept_index": 24,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Systematic Evaluation of Similarity Metrics for Retrieval, Reranking, and Completion in Retrieval Augmented Generation Systems",
+      "kept_index": 23,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Domain-Adapted Retrieval-Augmented Generation for Technical Documentation: Enhancing Reliability and Faithfulness in Technical QA",
+      "kept_index": 14,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Disentangling Faithfulness Hallucinations in Retrieval-Augmented Generation: A Systematic Benchmark and Analysis",
+      "kept_index": 26,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Domain Adaptive Document Reranking for Retrieval Augmented Generation",
+      "kept_index": 28,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Correctness is not Faithfulness in Retrieval Augmented Generation Attributions",
+      "kept_index": 12,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "kept_index": 3,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Corrective Retrieval Augmented Generation",
+      "kept_index": 29,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Implementation of an Academic Information Chatbot Based on Retrieval-Augmented Generation (RAG) Using LLaMA 3.1",
+      "kept_index": 51,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Retrieval‐Augmented Generation",
+      "kept_index": 10,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Graph‐based Retrieval‐augmented Generation",
+      "kept_index": 15,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Why Retrieval Augmented Generation?",
+      "kept_index": 27,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Advanced Retrieval‐Augmented Generation",
+      "kept_index": 32,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "A Comparative Study of Retrieval-Augmented Generation, Graph Retrieval-Augmented Generation, and Fine-Tuned Large Language Models for Fire Engineering Knowledge Retrieval",
+      "kept_index": 25,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "A Comparative Study of Retrieval-Augmented Generation, Graph Retrieval-Augmented Generation, and Fine-Tuned Large Language Models for Fire Engineering Knowledge Retrieval",
+      "kept_index": 25,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Impact of Retrieval‐Augmented Generation Framework for Natural Language Processing",
+      "kept_index": 33,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Introduction to Retrieval-Augmented Generation (RAG)",
+      "kept_index": 34,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Building a Retrieval-Augmented Generation (RAG) Application",
+      "kept_index": 35,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Core Concepts of Retrieval-Augmented Generation (RAG)",
+      "kept_index": 36,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Web Application for Retrieval-Augmented Generation: Implementation and Testing",
+      "kept_index": 75,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "A Self-Reflective Retrieval Augmented Generation System to Eliminate Hallucination in LLM Generation",
+      "kept_index": 48,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "OPTIMIZING LATENCY AND ACCURACY TRADE-OFFS IN LARGE-SCALE RETRIEVAL-AUGMENTED GENERATION PIPELINES",
+      "kept_index": 57,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Self-Reflective Retrieval-Augmented Generation (Self-RAG) in Analytical Systems",
+      "kept_index": 42,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "MultiReflect: Multimodal Self-Reflective RAG-based Automated Fact-Checking",
+      "kept_index": 43,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Reflective RAG: Self-Evaluation Driven Strategy Optimization in Agentic Retrieval-Augmented Generation",
+      "kept_index": 47,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Retrieval‐Augmented Generation",
+      "kept_index": 10,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Graph‐based Retrieval‐augmented Generation",
+      "kept_index": 15,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Efficient Information Retrieval and Response Generation with Retrieval-Augmented Generation (RAG)",
+      "kept_index": 17,
+      "method": "normalized_title"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Why Retrieval Augmented Generation?",
+      "kept_index": 27,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "Advanced Retrieval‐Augmented Generation",
+      "kept_index": 32,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "equal_doi"
+      ],
+      "incoming_title": "A Comparative Study of Retrieval-Augmented Generation, Graph Retrieval-Augmented Generation, and Fine-Tuned Large Language Models for Fire Engineering Knowledge Retrieval",
+      "kept_index": 25,
+      "method": "doi"
+    },
+    {
+      "confidence": 1.0,
+      "duplicate": true,
+      "evidence": [
+        "normalized_title_similarity=1.0000",
+        "compatible_year",
+        "compatible_authors"
+      ],
+      "incoming_title": "Corrective Retrieval Augmented Generation",
+      "kept_index": 29,
+      "method": "normalized_title"
+    }
+  ],
+  "minimum_met": true,
+  "minimum_required": 10,
+  "order": [
+    "doi",
+    "arxiv_id",
+    "semantic_scholar_paper_id",
+    "normalized_title"
+  ],
+  "rejected_papers": [],
+  "search_failures": [
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:29.517197+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:31.528482+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:33.910454+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "self reflective retrieval augmented generation Self-RAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:35.911215+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:37.440256+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "reranking retrieval augmented generation faithfulness latency",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:39.315873+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation implementation complexity",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:41.113500+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "self-reflective retrieval augmented generation cost latency trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-16T03:57:43.015664+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    }
+  ],
+  "title_threshold": 0.97,
+  "unique_records": 90,
+  "unresolved_duplicates": [
+    {
+      "confidence": 0.0,
+      "duplicate": false,
+      "evidence": [
+        "normalized_title_similarity=0.9375"
+      ],
+      "first_title": "Retrieval‐Augmented Generation",
+      "method": "none",
+      "second_title": "Why Retrieval Augmented Generation?",
+      "status": "unresolved_not_merged"
+    },
+    {
+      "confidence": 0.0,
+      "duplicate": false,
+      "evidence": [
+        "normalized_title_similarity=0.9375"
+      ],
+      "first_title": "Retrieval‐Augmented Generation",
+      "method": "none",
+      "second_title": "Why Retrieval Augmented Generation?",
+      "status": "unresolved_not_merged"
+    },
+    {
+      "confidence": 0.0,
+      "duplicate": false,
+      "evidence": [
+        "normalized_title_similarity=0.9375"
+      ],
+      "first_title": "Retrieval‐Augmented Generation",
+      "method": "none",
+      "second_title": "Why Retrieval Augmented Generation?",
+      "status": "unresolved_not_merged"
+    },
+    {
+      "confidence": 0.0,
+      "duplicate": false,
+      "evidence": [
+        "normalized_title_similarity=0.9375"
+      ],
+      "first_title": "Retrieval‐Augmented Generation",
+      "method": "none",
+      "second_title": "Why Retrieval Augmented Generation?",
+      "status": "unresolved_not_merged"
+    },
+    {
+      "confidence": 0.0,
+      "duplicate": false,
+      "evidence": [
+        "normalized_title_similarity=0.9071"
+      ],
+      "first_title": "Adaptive Control of Retrieval-Augmented Generation for LLMs Through Reflective Tags",
+      "method": "none",
+      "second_title": "Adaptive Control of Retrieval-Augmented Generation for Large Language Models Through Reflective Tags",
+      "status": "unresolved_not_merged"
+    },
+    {
+      "confidence": 0.0,
+      "duplicate": false,
+      "evidence": [
+        "normalized_title_similarity=0.9375"
+      ],
+      "first_title": "Retrieval‐Augmented Generation",
+      "method": "none",
+      "second_title": "Why Retrieval Augmented Generation?",
+      "status": "unresolved_not_merged"
+    }
+  ],
+  "verified_papers": 18
+}

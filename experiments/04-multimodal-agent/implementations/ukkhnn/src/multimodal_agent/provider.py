@@ -130,7 +130,12 @@ class DeepSeekVisionGateway:
         ]
         body_size = len(
             json.dumps(
-                {"model": self.model_name, "messages": messages, "response_format": {"type": "json_object"}},
+                {
+                    "model": self.model_name,
+                    "messages": messages,
+                    "response_format": {"type": "json_object"},
+                    "thinking": {"type": "disabled"},
+                },
                 separators=(",", ":"),
             ).encode("utf-8")
         )
@@ -145,15 +150,14 @@ class DeepSeekVisionGateway:
                 model=self.model_name,
                 messages=messages,
                 response_format={"type": "json_object"},
+                extra_body={"thinking": {"type": "disabled"}},
                 temperature=0,
-                max_tokens=1200,
+                max_tokens=2400,
             )
         except APIError as exc:
             raise _provider_failure(exc) from exc
         latency_ms = (time.perf_counter() - started) * 1000
-        content = response.choices[0].message.content
-        if not isinstance(content, str) or not content.strip():
-            raise ProviderFailure("empty_response", "DeepSeek가 비어 있는 응답을 반환했습니다.")
+        content = response.choices[0].message.content or ""
         usage = _usage(response.usage)
         cost, tier = calculate_cost_usd(usage)
         return RawModelResponse(

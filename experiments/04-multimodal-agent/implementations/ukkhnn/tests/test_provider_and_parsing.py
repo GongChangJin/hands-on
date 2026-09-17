@@ -37,6 +37,15 @@ def test_json_parser_accepts_object_and_fenced_json() -> None:
     assert parse_analysis(f"```json\n{encoded}\n```") == VALID_ANALYSIS
 
 
+def test_json_parser_allows_distinct_findings_with_same_taxonomy_type() -> None:
+    import copy
+    import json
+
+    value = copy.deepcopy(VALID_ANALYSIS)
+    value["errors"].append(copy.deepcopy(value["errors"][0]))
+    assert len(parse_analysis(json.dumps(value))["errors"]) == 2
+
+
 @pytest.mark.parametrize(
     "content",
     [
@@ -97,6 +106,8 @@ def test_gateway_sends_only_deepseek_vision_shape() -> None:
     result = asyncio.run(gateway.analyze(image=image, prompt="analyze"))
     kwargs = client.chat.completions.kwargs
     assert kwargs["model"] == "deepseek-v4-flash-vision-exp"
+    assert kwargs["extra_body"] == {"thinking": {"type": "disabled"}}
+    assert kwargs["max_tokens"] == 2400
     assert kwargs["messages"][0]["content"][1]["type"] == "image_url"
     assert kwargs["messages"][0]["content"][1]["image_url"]["url"].startswith("data:image/png;base64,")
     assert result.usage.total_tokens == 35
@@ -119,3 +130,21 @@ def test_injected_non_deepseek_endpoint_is_rejected() -> None:
     client.base_url = "https://api.openai.com/v1"
     with pytest.raises(RuntimeError, match="api.deepseek.com"):
         DeepSeekVisionGateway(client=client)  # type: ignore[arg-type]
+
+
+def test_empty_content_keeps_provider_usage_for_parser_failure() -> None:
+    client = FakeClient()
+
+    async def empty_create(**kwargs):
+        return SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content=None))],
+            usage=SimpleNamespace(prompt_tokens=40, completion_tokens=2400, prompt_cache_hit_tokens=0),
+            model="deepseek-flash",
+        )
+
+    client.chat.completions.create = empty_create
+    gateway = DeepSeekVisionGateway(client=client)  # type: ignore[arg-type]
+    image = preprocess_image(FIXTURES_DIR / "ui-normal-021.png")
+    result = asyncio.run(gateway.analyze(image=image, prompt="analyze"))
+    assert result.content == ""
+    assert result.usage.total_tokens == 2440

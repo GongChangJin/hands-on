@@ -1,0 +1,22 @@
+{
+  "calculated_cost_usd": 0.0,
+  "claims": 12,
+  "condition": "federated-verified",
+  "failures": [],
+  "hypotheses": 1,
+  "model_latency_p50_ms": 0.0,
+  "model_latency_p95_ms": 0.0,
+  "model_status": "offline_mock_not_live",
+  "offline": true,
+  "papers_with_claims": 12,
+  "request_model": null,
+  "response_models": [],
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0,
+    "total_tokens": 0
+  },
+  "verified_papers": 12
+}

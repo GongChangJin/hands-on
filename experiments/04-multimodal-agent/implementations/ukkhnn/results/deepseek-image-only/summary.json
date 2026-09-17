@@ -1,0 +1,86 @@
+{
+  "experiment": "04-multimodal-agent",
+  "implementation": "ukkhnn",
+  "provider": "deepseek",
+  "protocol_provider": "openai-compatible",
+  "actual_endpoint_provider": "deepseek",
+  "model": "deepseek-v4-flash-vision-exp",
+  "condition": "image-only",
+  "runs": 24,
+  "successful_runs": 4,
+  "success_rate": 0.16666666666666666,
+  "classification_accuracy": 0.5416666666666666,
+  "schema_compliance_rate": 1.0,
+  "evidence_accuracy": 0.32571428571428573,
+  "severity_accuracy": 0.5833333333333334,
+  "latency_p50_ms": 2086.7286664997664,
+  "latency_p95_ms": 15453.837645550053,
+  "usage": {
+    "requests": 24,
+    "input_tokens": 19008,
+    "output_tokens": 3546,
+    "cached_input_tokens": 640,
+    "total_tokens": 22554
+  },
+  "calculated_cost_usd": 0.0127716,
+  "cost_coverage": 1.0,
+  "cost_basis": "provider-reported tokens and DeepSeek published peak/off-peak rates",
+  "privacy_exposure_count": 0,
+  "safety_violation_count": 0,
+  "failure_types": {
+    "classification_mismatch": 11,
+    "evidence_mismatch": 5,
+    "severity_mismatch": 4
+  },
+  "representative_failures": [
+    {
+      "task_id": "ui-error-001-image-only",
+      "failure_type": "classification_mismatch",
+      "expected_error_types": [
+        "layout_break"
+      ],
+      "predicted_error_types": []
+    },
+    {
+      "task_id": "ui-error-002-image-only",
+      "failure_type": "classification_mismatch",
+      "expected_error_types": [
+        "layout_break"
+      ],
+      "predicted_error_types": [
+        "element_clipping"
+      ]
+    },
+    {
+      "task_id": "ui-error-003-image-only",
+      "failure_type": "evidence_mismatch",
+      "expected_error_types": [
+        "layout_break"
+      ],
+      "predicted_error_types": [
+        "layout_break"
+      ]
+    },
+    {
+      "task_id": "ui-error-005-image-only",
+      "failure_type": "severity_mismatch",
+      "expected_error_types": [
+        "element_clipping"
+      ],
+      "predicted_error_types": [
+        "element_clipping"
+      ]
+    },
+    {
+      "task_id": "ui-error-006-image-only",
+      "failure_type": "classification_mismatch",
+      "expected_error_types": [
+        "element_clipping",
+        "error_message"
+      ],
+      "predicted_error_types": [
+        "error_message"
+      ]
+    }
+  ]
+}

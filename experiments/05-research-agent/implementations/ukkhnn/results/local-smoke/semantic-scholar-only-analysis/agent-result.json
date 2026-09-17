@@ -1,0 +1,86 @@
+{
+  "actions": [
+    "Apply the search strategy only after deterministic evaluation passes"
+  ],
+  "evidence": [
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Corrective Retrieval Study 07",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000007"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Cross Encoder Reranker Study 05",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000005"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Self RAG Study 09",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000009"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Adaptive Retrieval Study 11",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000b"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Self Reflective Retrieval Study 10",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000a"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Passage Reranking Study 06",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000006"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Query Reformulation Study 02",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000002"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Reranking Study 04",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000004"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Faithful Retrieval Pipeline Study 12",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/000000000000000000000000000000000000000c"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Retrieval Correction Study 08",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000008"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Query Rewriting Study 01",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000001"
+    },
+    {
+      "claim": "Offline fixture evidence for Offline Fixture Multi Query Retrieval Study 03",
+      "location": "offline fixture abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/0000000000000000000000000000000000000003"
+    }
+  ],
+  "limitations": [
+    "Extraction uses bounded public abstract excerpts; claims are not full-text findings unless explicitly marked.",
+    "Search API ranking and metadata can change after the recorded retrieval timestamp.",
+    "Calculated API cost uses provider-reported usage and published rates; it is not an invoice.",
+    "Offline output is synthetic and must not be presented as live research."
+  ],
+  "metadata": {
+    "model_status": "offline_mock_not_live",
+    "offline": true,
+    "provider": "offline_mock"
+  },
+  "output": {
+    "claims": 12,
+    "condition": "semantic-scholar-only",
+    "report": "report.md",
+    "verified_papers": 12
+  },
+  "status": "success",
+  "task_id": "research-report-semantic-scholar-only"
+}

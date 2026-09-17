@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gongchangjin:research-agent:paper-record",
+  "title": "PaperRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_id", "title", "year", "authors", "identifiers", "source_records", "validation", "access", "analysis"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "normalized_title": {"type": "string"},
+    "year": {"type": ["integer", "null"], "minimum": 1900, "maximum": 2100},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "venue": {"type": ["string", "null"]},
+    "publication_type": {"type": ["string", "null"]},
+    "language": {"type": ["string", "null"]},
+    "abstract": {"type": ["string", "null"]},
+    "identifiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "doi": {"type": ["string", "null"]},
+        "arxiv_id": {"type": ["string", "null"]},
+        "semantic_scholar_paper_id": {"type": ["string", "null"]}
+      }
+    },
+    "source_records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source", "source_url", "retrieved_at", "query", "rank", "response_identifier"],
+        "properties": {
+          "source": {"enum": ["semantic_scholar", "crossref", "arxiv", "offline_fixture"]},
+          "source_url": {"type": "string"},
+          "retrieved_at": {"type": "string", "format": "date-time"},
+          "query": {"type": "string"},
+          "rank": {"type": "integer", "minimum": 1},
+          "response_identifier": {"type": "string"}
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["status", "checks", "eligible"],
+      "properties": {
+        "status": {"enum": ["verified", "invalid", "unresolved", "offline_fixture"]},
+        "checks": {"type": "array", "items": {"type": "object"}},
+        "eligible": {"type": "boolean"}
+      }
+    },
+    "deduplication": {"type": "object"},
+    "access": {
+      "type": "object",
+      "required": ["content_type", "source_url", "content_sha256", "size_bytes", "status"],
+      "properties": {
+        "content_type": {"enum": ["abstract", "pdf", "html", "none"]},
+        "source_url": {"type": ["string", "null"]},
+        "content_sha256": {"type": ["string", "null"]},
+        "size_bytes": {"type": "integer", "minimum": 0},
+        "page_count": {"type": ["integer", "null"], "minimum": 0},
+        "status": {"enum": ["available", "unavailable", "blocked", "failed"]},
+        "failure_type": {"type": ["string", "null"]}
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["research_objective", "methodology", "datasets", "metrics", "key_results", "limitations", "rag_stages", "paper_claims", "agent_interpretation", "extraction_uncertainty"],
+      "properties": {
+        "research_objective": {"type": "string"},
+        "methodology": {"type": "string"},
+        "datasets": {"type": "array", "items": {"type": "string"}},
+        "metrics": {"type": "array", "items": {"type": "string"}},
+        "key_results": {"type": "array", "items": {"type": "string"}},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "rag_stages": {"type": "array", "items": {"type": "string"}},
+        "paper_claims": {"type": "array", "items": {"type": "object"}},
+        "agent_interpretation": {"type": "array", "items": {"type": "string"}},
+        "extraction_uncertainty": {"type": "string"}
+      }
+    }
+  }
+}

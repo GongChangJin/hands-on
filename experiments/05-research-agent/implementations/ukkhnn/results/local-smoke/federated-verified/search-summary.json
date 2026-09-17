@@ -1,0 +1,47 @@
+{
+  "condition": "federated-verified",
+  "failures": [],
+  "finished_at": "2026-09-16T04:01:29.606778+00:00",
+  "latency_p50_ms": 0.0,
+  "latency_p95_ms": 0.0,
+  "model_expansion": {
+    "failure_type": "offline_model_not_called",
+    "model_queries": [],
+    "seed_queries": [
+      "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "retrieval augmented generation reranking retrieval quality faithfulness",
+      "corrective retrieval augmented generation CRAG",
+      "self reflective retrieval augmented generation Self-RAG"
+    ],
+    "status": "offline_seed_only"
+  },
+  "offline": true,
+  "queries": [
+    {
+      "origin": "deterministic_seed",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness"
+    },
+    {
+      "origin": "deterministic_seed",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness"
+    },
+    {
+      "origin": "deterministic_seed",
+      "query": "corrective retrieval augmented generation CRAG"
+    },
+    {
+      "origin": "deterministic_seed",
+      "query": "self reflective retrieval augmented generation Self-RAG"
+    }
+  ],
+  "query_hash": "70820bf172b51394db651570f90eda628a2ae19c9c0609b3e031d15721d0c3fa",
+  "question_version": "2026-09-16-v1",
+  "requests_by_source": {},
+  "result_records": 15,
+  "sources": [
+    "semantic_scholar",
+    "crossref",
+    "arxiv"
+  ],
+  "started_at": "2026-09-16T04:01:29.603954+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "failure_type": "offline_model_not_called",
+  "model_queries": [],
+  "seed_queries": [
+    "retrieval augmented generation query rewriting retrieval quality faithfulness",
+    "retrieval augmented generation reranking retrieval quality faithfulness",
+    "corrective retrieval augmented generation CRAG",
+    "self reflective retrieval augmented generation Self-RAG"
+  ],
+  "status": "offline_seed_only"
+}

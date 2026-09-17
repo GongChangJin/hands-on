@@ -71,9 +71,6 @@ def validate_contract(name: str, value: dict[str, Any]) -> None:
 
 def validate_analysis(value: dict[str, Any]) -> None:
     Draft202012Validator(ANALYSIS_SCHEMA).validate(value)
-    error_types = [item["error_type"] for item in value["errors"]]
-    if len(error_types) != len(set(error_types)):
-        raise ValueError("오류 유형은 결과에서 중복될 수 없습니다.")
     if not value["errors"] and value["overall_severity"] != "none":
         raise ValueError("정상 화면의 overall_severity는 none이어야 합니다.")
     if value["errors"] and value["overall_severity"] == "none":
