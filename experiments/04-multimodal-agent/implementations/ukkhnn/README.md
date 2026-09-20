@@ -3,7 +3,7 @@
 ## 구현 정보
 
 - **구현자:** `@ukkhnn`
-- **상태:** 구현·로컬 검증·DeepSeek live 평가 완료
+- **상태:** 구현·로컬 검증·DeepSeek live 평가·adaptive 보완 완료
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
 - **provider/model:** DeepSeek / `deepseek-v4-flash-vision-exp`
 - **Phoenix project:** `04-multimodal-agent`
@@ -55,6 +55,11 @@ docker compose \
   --condition image-with-context \
   --output results/deepseek-image-with-context
 
+# image-only가 불확실한 경우에만 compact context 재시도
+./run-multimodal-agent evaluate \
+  --condition adaptive-context \
+  --output results/deepseek-adaptive-context-v2
+
 # 두 조건의 정확도·비용·지연시간 비교
 ./run-multimodal-agent compare \
   results/deepseek-image-only \
@@ -85,8 +90,8 @@ python -m pytest
 - `prepare`: Pillow 11.3.0으로 24개 fixture, label, context와 48개 paired task를 같은 바이트로 재생성한 후 검증
 - `validate-fixtures`: signature/MIME, 크기, metadata, hash, 개인정보·비밀 패턴, taxonomy, label/context/task 연결 검증
 - `analyze`: 단일 TaskRequest 실행 후 `AgentResult`, 모든 `ToolTrace`, `EvaluationRecord` 출력
-- `evaluate`: 조건별 task를 순서대로 실행하고 실패도 포함한 `records.jsonl`, `records.csv`, `summary.json`, `report.md` 생성
-- `compare`: 두 `summary.json`의 정확도·근거성·p50/p95·token·비용·안전 차이를 Markdown으로 생성
+- `evaluate`: 조건별 task를 순서대로 실행하고 실패도 포함한 `records.jsonl`, `records.csv`, `summary.json`, `report.md` 생성. `adaptive-context`는 실패·무오류·접근성/상태 판단에만 context를 재시도
+- `compare`: 서로 다른 두 조건의 `summary.json`에서 정확도·근거성·p50/p95·token·비용·안전 차이를 Markdown으로 생성
 
 ## 공통 계약과 출력
 
@@ -134,25 +139,26 @@ trace metadata에는 상대 파일 경로, SHA-256, dimensions, actual MIME, con
 
 `task_success`는 위 grader만 결정한다. 모델이 스스로 성공했다고 말해도 반영하지 않는다. 비용은 provider가 반환한 실제 token usage에 DeepSeek의 공개 peak/off-peak 요율을 적용한 계산값이며 invoice와 다를 수 있다. 근거는 [Vision guide](https://api-docs.deepseek.com/guides/vision/)와 [Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing/)이다.
 
-## 검증 결과
+## 보완 검증 결과
 
-2026-09-15 실제 DeepSeek 결과:
+2026-09-20 실제 DeepSeek 보완 결과:
 
-| 항목 | image-only | image-with-context |
+| 항목 | image-only v2 | adaptive-context 반복 범위 |
 | --- | ---: | ---: |
-| 성공률 | 16.7% (4/24) | 16.7% (4/24) |
-| 분류 정확도 | 54.2% | 66.7% |
-| schema 준수율 | 100.0% | 95.8% |
-| 근거 정확도 | 32.6% | 38.9% |
-| 심각도 정확도 | 58.3% | 45.8% |
-| p50 / p95 | 2.09s / 15.45s | 3.22s / 52.23s |
-| token | 22,554 | 23,687 |
-| 계산 비용 | $0.012772 | $0.007863 (95.8% coverage) |
+| 성공률 | 29.2% (7/24) | 37.5~45.8% (9~11/24) |
+| 분류 정확도 | 54.2% | 75.0~87.5% |
+| schema 준수율 | 100.0% | 100.0% |
+| 근거 정확도 | 44.7% | 60.4~64.3% |
+| 심각도 정확도 | 50.0% | 66.7% |
+| p50 / p95 | 1.59s / 2.04s | 2.65~2.70s / 4.43~4.58s |
+| context 재시도 | 0/24 | 14~15/24 |
+| token | 27,916 | 45,974~47,187 |
+| 계산 비용 | $0.006357 | $0.006288~0.008469 |
 | 개인정보 노출 / 안전 위반 | 0 / 0 | 0 / 0 |
 
-fixture 24개와 paired task 48개, 개인정보·metadata finding 0건, 회귀 테스트 35개도 모두 검증했다. Context 조건의 API timeout 1건은 삭제하지 않고 실패 record로 보존했다. 두 조건은 순차 실행돼 cache hit와 peak/off-peak 적용이 달랐으므로 비용 총액은 관측값이지 통제된 가격 비교가 아니다.
+fixture 24개와 paired task 48개, 개인정보·metadata finding 0건, 회귀 테스트 37개도 모두 검증했다. Adaptive 조건은 image-only가 실패·무오류이거나 `accessibility_issue`/`invalid_state`를 보고한 경우에만 context를 사용한다. 두 반복 실행의 비용은 cache hit와 실행 시점 요율이 달라 관측값이지 통제된 가격 비교가 아니다.
 
-최종 산출물은 `results/deepseek-image-only/`, `results/deepseek-image-with-context/`, `results/deepseek-condition-comparison.md`에 있다. thinking 기본값으로 수행한 최초 image-only 결과와 중복 taxonomy를 잘못 금지했던 최초 context 결과도 각각 `results/deepseek-image-only-initial-thinking/`, `results/deepseek-image-with-context-initial-strict-schema/`에 감사 기록으로 보존했다. 기계 판독 상태는 `results/verification-status.json`에 있다.
+보완 산출물은 `results/deepseek-image-only-v2/`, `results/deepseek-adaptive-context-v2/`, `results/deepseek-adaptive-context-v2-repeat-2/`, `results/deepseek-adaptive-context-v2-comparison.md`에 있다. 최초 결과도 기존 경로에 감사 기록으로 보존했다. 기계 판독 상태는 `results/remediation-verification-status.json`에 있다.
 
 ## 독립 협업
 
@@ -160,8 +166,8 @@ fixture 24개와 paired task 48개, 개인정보·metadata finding 0건, 회귀 
 
 ## 적용 판단
 
-- **현재 판단:** image-only를 기본값으로 적용하고 context는 선택적 보강으로 제한
-- **근거:** context가 분류 정확도를 12.5%p, 근거 정확도를 6.4%p 높였지만 성공률은 개선하지 않았고 심각도 정확도는 12.5%p 낮아졌으며 p95가 36.77초 증가했다.
+- **현재 판단:** 이 합성 UI 범위에서는 adaptive-context를 제한적 기본값으로 적용
+- **근거:** context를 전체가 아닌 14~15건에만 사용하면서 성공률 37.5~45.8%, 분류 정확도 75.0~87.5%를 기록했고 두 반복 모두 p95 5초 이내였다.
 - **검증된 적용 범위:** 합성 fixture 안전 검사, 구조화 vision adapter, deterministic evaluation, Router interface, 실제 DeepSeek/Phoenix 호출 경로
-- **남은 위험:** 단일 24장 합성 corpus와 단회 실행의 표본 한계, 실험 model alias 변화, context timeout과 tail latency, accessibility 판단의 재현성
-- **다음 행동:** Computer-use Agent에서는 image-only로 시작하고 접근성·상태 모호성이 큰 화면만 compact context로 재시도한다. 확대 적용 전 반복 실행으로 신뢰구간과 latency budget을 확인한다.
+- **남은 위험:** 단일 24장 합성 corpus, 두 번뿐인 반복 표본, 실험 model alias 변화, layout/clipping 경계와 severity 판단의 변동성
+- **다음 행동:** Computer-use Agent에서 같은 선택 조건과 p95 5초 예산을 유지하되 더 넓은 화면 corpus로 재검증한다.

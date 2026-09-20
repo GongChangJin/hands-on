@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from .contracts import validate_contract
-from .evaluation import load_tasks, run_evaluation
+from .evaluation import load_adaptive_tasks, load_tasks, run_adaptive_evaluation, run_evaluation
 from .fixtures import prepare_shared, validate_fixtures
 from .observability import configure_phoenix, shutdown_phoenix
 from .paths import CONTEXT_DIR, IMPLEMENTATION_DIR, PROJECT_DIR, TASKS_PATH
@@ -49,7 +49,7 @@ def parse_args() -> argparse.Namespace:
     evaluate = commands.add_parser("evaluate", help="한 입력 조건의 전체 또는 smoke 평가")
     evaluate.add_argument(
         "--condition",
-        choices=("image-only", "image-with-context"),
+        choices=("image-only", "image-with-context", "adaptive-context"),
         required=True,
     )
     evaluate.add_argument("--tasks", type=Path, default=TASKS_PATH)
@@ -115,13 +115,17 @@ async def _run_model_command(args: argparse.Namespace) -> None:
             )
             print(json.dumps(outcome.as_dict(), ensure_ascii=False, indent=2))
         else:
-            tasks = load_tasks(args.tasks, condition=args.condition, limit=args.limit)
-            summary = await run_evaluation(
-                agent,
-                tasks,
-                output=args.output,
-                condition=args.condition,
-            )
+            if args.condition == "adaptive-context":
+                tasks = load_adaptive_tasks(args.tasks, limit=args.limit)
+                summary = await run_adaptive_evaluation(agent, tasks, output=args.output)
+            else:
+                tasks = load_tasks(args.tasks, condition=args.condition, limit=args.limit)
+                summary = await run_evaluation(
+                    agent,
+                    tasks,
+                    output=args.output,
+                    condition=args.condition,
+                )
             print(json.dumps(summary, ensure_ascii=False, indent=2))
     finally:
         shutdown_phoenix(phoenix_provider)

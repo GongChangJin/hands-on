@@ -4,7 +4,7 @@
 
 ## 프로젝트 정의
 
-- **상태:** 구현·로컬 검증·DeepSeek live 비교 완료
+- **상태:** 구현·로컬 검증·DeepSeek live 비교·adaptive 보완 완료
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 이미지·화면 상태를 해석하는 전문 Agent
 - **선행 프로젝트:** Agent Evaluation
@@ -62,21 +62,22 @@ trace에는 상대 파일 경로, 이미지 hash·크기·MIME, 입력 조건, �
 | fixture / paired tasks | 24 / 48 |
 | 결함 / 정상 | 20 / 4 |
 | fixture 개인정보·metadata finding | 0 / 0 |
-| 로컬 회귀 테스트 | 35 passed |
+| 로컬 회귀 테스트 | 37 passed |
 | 기존 Phoenix container / health | running / OK |
 | Phoenix live trace | 98 workflow roots / 583 spans / orphan 0 |
 | 실제 DeepSeek 단일 smoke | 성공, schema 준수, 1,063 tokens |
-| image-only live 평가 | 24건, 분류 54.2%, p50/p95 2.09s/15.45s |
-| image-with-context live 평가 | 24건, 분류 66.7%, p50/p95 3.22s/52.23s |
+| image-only v2 live 평가 | 24건, 성공 29.2%, 분류 54.2%, p50/p95 1.59s/2.04s |
+| adaptive-context 반복 평가 | 각 24건, 성공 37.5~45.8%, 분류 75.0~87.5% |
+| adaptive context 사용량 / p95 | 14~15건 / 4.43~4.58s |
 | 개인정보 노출 / 안전 위반 | 두 조건 모두 0 / 0 |
 
-Context는 분류 정확도를 12.5%p, 근거 정확도를 6.4%p 높였지만 성공률은 두 조건 모두 16.7%였고 심각도 정확도는 12.5%p 낮아졌다. Context의 API timeout 1건도 결과에 보존했다. 계산 비용은 image-only $0.012772, context $0.007863이지만 순차 실행 중 cache hit와 peak/off-peak 요율이 달라 통제된 가격 비교로 해석하지 않는다. 전체 record와 비교표는 `implementations/ukkhnn/results/`에 있고 mock 측정은 없다.
+최초 비교 뒤 taxonomy·severity prompt와 정상 화면 evidence grader를 보완하고, image-only가 실패·무오류이거나 접근성/상태 판단을 내렸을 때만 compact context를 재호출하는 adaptive 조건을 추가했다. 두 번의 adaptive 실행에서 성공률은 37.5~45.8%, 분류 정확도는 75.0~87.5%였고 context는 24건 중 14~15건에만 사용됐다. 두 실행 모두 schema 100%, 개인정보·안전 위반 0, p95 5초 이내였다. 전체 record와 비교표는 `implementations/ukkhnn/results/`에 있고 mock 측정은 없다.
 
 ## 구현 비교
 
 | 참여자 | 입력 구성 | 모델 | 정확도 | 비용 | 특징 |
 | --- | --- | --- | ---: | ---: | --- |
-| `@ukkhnn` | image-only / image-with-context | `deepseek-v4-flash-vision-exp` | 54.2% / 66.7% 분류 정확도 | $0.012772 / $0.007863 관측값 | privacy gate, explicit Phoenix spans, fixed-label grader |
+| `@ukkhnn` | image-only / adaptive-context | `deepseek-v4-flash-vision-exp` | 54.2% / 75.0~87.5% 분류 정확도 | $0.006357 / $0.006288~0.008469 관측값 | privacy gate, selective context retry, fixed-label grader |
 | `@us788` | 독립 구현 후 기록 | 독립 구현 후 기록 | — | — | 공통 데이터·schema만 공유 |
 
 ## 완료 조건
@@ -95,10 +96,10 @@ Context는 분류 정확도를 12.5%p, 근거 정확도를 6.4%p 높였지만 �
 
 ## 결론
 
-- **적용 판단:** Computer-use Agent의 기본 입력은 image-only, compact context는 접근성·상태가 모호한 화면의 선택적 재시도에만 적용
-- **판단 이유:** context가 분류와 근거는 개선했지만 전체 성공률을 높이지 못했고 심각도 정확도와 tail latency가 악화됨
+- **적용 판단:** 이 합성 UI 범위에서는 adaptive-context를 제한적 기본값으로 적용
+- **판단 이유:** context를 58.3~62.5%의 요청에만 사용하면서 성공률과 분류·근거·심각도 정확도를 모두 개선했고 p95 5초 예산을 지켰음
 - **적용 가능 범위:** 합성 UI 회귀 데이터, 사전 안전 검사, Router용 `TaskRequest → AgentResult`, 실제 DeepSeek 호출과 Phoenix 관측
-- **다음 행동:** 반복 평가로 신뢰구간을 만들고 context 재시도의 latency budget과 대상 조건을 고정한 뒤 확대 적용
+- **다음 행동:** 더 넓은 UI corpus와 실제 Computer-use 화면에서 같은 5초 p95 예산과 선택 조건을 재검증한 뒤 확대 적용
 
 ## 변경 기록
 
