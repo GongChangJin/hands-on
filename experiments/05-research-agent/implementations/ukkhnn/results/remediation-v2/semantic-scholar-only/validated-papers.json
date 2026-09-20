@@ -1,0 +1,1680 @@
+[
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) systems commonly adopt retrieval fusion techniques such as multi-query retrieval and reciprocal rank fusion (RRF) to increase document recall, under the assumption that higher recall leads to better answer quality. While these methods show consistent gains in isolated retrieval benchmarks, their effectiveness under realistic production constraints remains underexplored. In this work, we evaluate retrieval fusion in a production-style RAG pipeline operating over an enterprise knowledge base, with fixed retrieval depth, re-ranking budgets, and latency constra",
+    "access": {
+      "content_sha256": "08550189de152350f28a4e0945f3e6ccd2b38272bdb2d3269b8defb0e226c581",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/26c23812d4853f4eacde97c725e58b1ba09243f5",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Luigi Medrano",
+      "Arush Verma",
+      "Mukul Chhabra"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2603.02153",
+      "doi": "10.48550/arxiv.2603.02153",
+      "semantic_scholar_paper_id": "26c23812d4853f4eacde97c725e58b1ba09243f5"
+    },
+    "language": "en",
+    "normalized_title": "scaling retrieval augmented generation with rag fusion lessons from an industry deployment",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-48ed528e9740",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 17,
+        "response_identifier": "26c23812d4853f4eacde97c725e58b1ba09243f5",
+        "retrieved_at": "2026-09-20T07:42:48.324514+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/26c23812d4853f4eacde97c725e58b1ba09243f5"
+      }
+    ],
+    "title": "Scaling Retrieval Augmented Generation with RAG Fusion: Lessons from an Industry Deployment",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2603.02153"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2603.02153"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "26c23812d4853f4eacde97c725e58b1ba09243f5"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2603.02153"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2603.02153"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "26c23812d4853f4eacde97c725e58b1ba09243f5"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2026
+  },
+  {
+    "abstract": "While Retrieval-Augmented Generation (RAG) augments Large Language Models (LLMs) with external knowledge, conventional single-agent RAG remains fundamentally limited in resolving complex queries demanding coordinated reasoning across heterogeneous data ecosystems. We present HM-RAG, a novel Hierarchical Multi-agent Multimodal RAG framework that pioneers collaborative intelligence for dynamic knowledge synthesis across structured, unstructured, and graph-based data. The framework is composed of a three-tiered architecture with specialized agents: a Decomposition Agent that dissects complex quer",
+    "access": {
+      "content_sha256": "f8e3978522a47b4450e965ff6acf658bd158b117af0286727a1c4886f1dbc5f5",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Pei Liu",
+      "Xin Liu",
+      "Ruo-Yu Yao",
+      "Junming Liu",
+      "Siyuan Meng",
+      "Ding Wang",
+      "Jun Ma"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2504.12330",
+      "doi": "10.1145/3746027.3754761",
+      "semantic_scholar_paper_id": "49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+    },
+    "language": "en",
+    "normalized_title": "hm rag hierarchical multi agent multimodal retrieval augmented generation",
+    "publication_type": "Book,JournalArticle",
+    "record_id": "paper-1eeb45890506",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 3,
+        "response_identifier": "49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65",
+        "retrieved_at": "2026-09-20T07:42:48.322264+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+      }
+    ],
+    "title": "HM-RAG: Hierarchical Multi-Agent Multimodal Retrieval Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1145/3746027.3754761"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2504.12330"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1145/3746027.3754761"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2504.12330"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "ACM Multimedia",
+    "year": 2025
+  },
+  {
+    "abstract": "Large Language Models (LLMs) exhibit remarkable capabilities but are prone to generating inaccurate or hallucinatory responses. This limitation stems from their reliance on vast pretraining datasets, making them susceptible to errors in unseen scenarios. To tackle these challenges, Retrieval-Augmented Generation (RAG) addresses this by incorporating external, relevant documents into the response generation process, thus leveraging non-parametric knowledge alongside LLMs' in-context learning abilities. However, existing RAG implementations primarily focus on initial input for context retrieval,",
+    "access": {
+      "content_sha256": "aa56f2b7be06134475b12dee3bc13069a1e0f6803fb6135d181a94555d909230",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/746b96ee17e329f1085a047116c05e12eaa3925a",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Chi-Min Chan",
+      "Chunpu Xu",
+      "Ruibin Yuan",
+      "Hongyin Luo",
+      "Wei Xue",
+      "Yike Guo",
+      "Jie Fu"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2404.00610",
+      "doi": "10.48550/arxiv.2404.00610",
+      "semantic_scholar_paper_id": "746b96ee17e329f1085a047116c05e12eaa3925a"
+    },
+    "language": "en",
+    "normalized_title": "rq rag learning to refine queries for retrieval augmented generation",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-0e1cf25a025d",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 20,
+        "response_identifier": "746b96ee17e329f1085a047116c05e12eaa3925a",
+        "retrieved_at": "2026-09-20T07:42:48.324901+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/746b96ee17e329f1085a047116c05e12eaa3925a"
+      }
+    ],
+    "title": "RQ-RAG: Learning to Refine Queries for Retrieval Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2404.00610"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2404.00610"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "746b96ee17e329f1085a047116c05e12eaa3925a"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2404.00610"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2404.00610"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "746b96ee17e329f1085a047116c05e12eaa3925a"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2024
+  },
+  {
+    "abstract": "Multi-turn RAG systems often face queries with colloquial omissions and ambiguous references, posing significant challenges for effective retrieval and generation. Traditional query rewriting relies on human annotators to clarify queries, but due to limitations in annotators'expressive ability and depth of understanding, manually rewritten queries often diverge from those needed in real-world RAG systems, resulting in a gap between user intent and system response. We observe that high-quality synthetic queries can better bridge this gap, achieving superior performance in both retrieval and gen",
+    "access": {
+      "content_sha256": "f065f00f23629aafc325178c2b7eae8d71432d391ec1da5896c8495221b43ba2",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/df657b5690774b05ce7f0e06542c29ac7c094e1d",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Jiaying Zheng",
+      "Hai-Nan Zhang",
+      "Liang Pang",
+      "Yong-Xin Tong",
+      "Zhiming Zheng"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2509.22325",
+      "doi": "10.48550/arxiv.2509.22325",
+      "semantic_scholar_paper_id": "df657b5690774b05ce7f0e06542c29ac7c094e1d"
+    },
+    "language": "en",
+    "normalized_title": "can synthetic query rewrites capture user intent better than humans in retrieval augmented generation",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-2b29a26d5757",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 11,
+        "response_identifier": "df657b5690774b05ce7f0e06542c29ac7c094e1d",
+        "retrieved_at": "2026-09-20T07:42:48.323874+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/df657b5690774b05ce7f0e06542c29ac7c094e1d"
+      }
+    ],
+    "title": "Can Synthetic Query Rewrites Capture User Intent Better than Humans in Retrieval-Augmented Generation?",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2509.22325"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2509.22325"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "df657b5690774b05ce7f0e06542c29ac7c094e1d"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2509.22325"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2509.22325"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "df657b5690774b05ce7f0e06542c29ac7c094e1d"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2025
+  },
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) significantly improves the factuality of Large Language Models (LLMs), yet standard pipelines often lack mechanisms to verify inter- mediate reasoning, leaving them vulnerable to hallucinations in high-stakes domains. To address this, we propose a domain-specific RAG framework that integrates explicit rea- soning and faithfulness verification. Our architecture augments standard retrieval with neural query rewriting, BGE-based cross-encoder reranking, and a rationale generation module that grounds sub-claims in specific evidence spans. We further introduce a",
+    "access": {
+      "content_sha256": "21e892ee24ea15bad4bb5adbaa8f48b7a2689d71a53ae4113fb89b6eb7f31e18",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/a99930f519b536876aa1e67a83dfd7b57f617678",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Eeham Khan",
+      "Luis Rodriguez",
+      "Marc Queudot"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2603.10143",
+      "doi": "10.48550/arxiv.2603.10143",
+      "semantic_scholar_paper_id": "a99930f519b536876aa1e67a83dfd7b57f617678"
+    },
+    "language": "en",
+    "normalized_title": "reason and verify a framework for faithful retrieval augmented generation",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-20e714bb6349",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 10,
+        "response_identifier": "a99930f519b536876aa1e67a83dfd7b57f617678",
+        "retrieved_at": "2026-09-20T07:42:48.323732+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/a99930f519b536876aa1e67a83dfd7b57f617678"
+      }
+    ],
+    "title": "Reason and Verify: A Framework for Faithful Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2603.10143"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2603.10143"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "a99930f519b536876aa1e67a83dfd7b57f617678"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2603.10143"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2603.10143"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "a99930f519b536876aa1e67a83dfd7b57f617678"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2026
+  },
+  {
+    "abstract": "With the continuous advancement of information retrieval technologies, query rewriting has become a key technique for enhancing retrieval effectiveness. In the context of the widespread application of large language models and retrieval-augmented generation technologies, high-quality query rewriting plays a crucial role in tasks like open-domain question answering. Conventional Conversational Query Rewriting (CQR) methods often prioritize human-friendly query formulation, which may not consistently produce optimal retriever-friendly results. To address this limitation, we present LiRe, a light",
+    "access": {
+      "content_sha256": "203ddcefd8f409ada371d5d9e4ace722dbf0ab2b948df25948a00510ba8c1b4a",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/eb0fc9be1da8ded652bb68182bdf5dab2954a8bb",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Chengfeng Chen",
+      "Xiaodong Huang",
+      "Yangzhen Xu",
+      "Runfeng Lin",
+      "Gangliang Li",
+      "Shouqiang Liu"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": null,
+      "doi": "10.1109/cei63587.2024.10871553",
+      "semantic_scholar_paper_id": "eb0fc9be1da8ded652bb68182bdf5dab2954a8bb"
+    },
+    "language": "en",
+    "normalized_title": "lire efficient query rewriting for retrieval augmented generation systems",
+    "publication_type": "Conference",
+    "record_id": "paper-e8b5ae6f733a",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 2,
+        "response_identifier": "eb0fc9be1da8ded652bb68182bdf5dab2954a8bb",
+        "retrieved_at": "2026-09-20T07:42:48.321877+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/eb0fc9be1da8ded652bb68182bdf5dab2954a8bb"
+      }
+    ],
+    "title": "LiRe: Efficient Query Rewriting for Retrieval Augmented Generation Systems",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1109/cei63587.2024.10871553"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "eb0fc9be1da8ded652bb68182bdf5dab2954a8bb"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1109/cei63587.2024.10871553"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "eb0fc9be1da8ded652bb68182bdf5dab2954a8bb"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "2024 4th International Conference on Computer Science, Electronic Information Engineering and Intelligent Control Technology (CEI)",
+    "year": 2024
+  },
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) has emerged as a dominant paradigm for enhancing Large Language Models (LLMs) with external knowledge. However, existing ranking methods in RAG pipelines primarily optimize for document-query relevance, neglecting crucial factors for generation quality such as factual consistency and information coverage. We propose a novel multi-objective ranking framework that explicitly models three critical dimensions: relevance, coverage, and faithfulness support. Unlike traditional IR-centric approaches, our method introduces a utility-based scoring mechanism that eva",
+    "access": {
+      "content_sha256": "2df0f079f9d45fad5fd37079c3c710cb9bb0873a52910fc746adc9a22227b5c9",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/f1c1a104e8bd37b47ec8afe350205220de01a8a9",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Tian Guan",
+      "Sebastian Sun",
+      "Bolin Chen"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": null,
+      "doi": "10.1145/3797161.3797180",
+      "semantic_scholar_paper_id": "f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+    },
+    "language": "en",
+    "normalized_title": "faithfulness aware multi objective context ranking for retrieval augmented generation",
+    "publication_type": "Book,Conference",
+    "record_id": "paper-ea2c4b69e4b5",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 7,
+        "response_identifier": "f1c1a104e8bd37b47ec8afe350205220de01a8a9",
+        "retrieved_at": "2026-09-20T07:42:48.323319+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+      }
+    ],
+    "title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1145/3797161.3797180"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1145/3797161.3797180"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "Proceedings of the 2025 3rd International Conference on Artificial Intelligence, Systems and Network Security",
+    "year": 2025
+  },
+  {
+    "abstract": "Chunking quality determines RAG system performance. Current methods partition documents individually, but complex queries need information scattered across multiple sources: the knowledge fragmentation problem. We introduce Cross-Document Topic-Aligned (CDTA) chunking, which reconstructs knowledge at the corpus level. It first identifies topics across documents, maps segments to each topic, and synthesizes them into unified chunks. On HotpotQA multi-hop reasoning, our method reached 0.93 faithfulness versus 0.83 for contextual retrieval and 0.78 for semantic chunking, a 12% improvement over cu",
+    "access": {
+      "content_sha256": "d0086e286c92e0b5fedd7d2ffb16996d2abd8807f495ef779c3e2ea057ec9539",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/201688b1732353ac92b458395ac093ba94b73fc9",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Miloš Stanković"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2601.05265",
+      "doi": "10.48550/arxiv.2601.05265",
+      "semantic_scholar_paper_id": "201688b1732353ac92b458395ac093ba94b73fc9"
+    },
+    "language": "en",
+    "normalized_title": "cross document topic aligned chunking for retrieval augmented generation",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-30e06945210b",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 13,
+        "response_identifier": "201688b1732353ac92b458395ac093ba94b73fc9",
+        "retrieved_at": "2026-09-20T07:42:48.324110+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/201688b1732353ac92b458395ac093ba94b73fc9"
+      }
+    ],
+    "title": "Cross-Document Topic-Aligned Chunking for Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2601.05265"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2601.05265"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "201688b1732353ac92b458395ac093ba94b73fc9"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2601.05265"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2601.05265"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "201688b1732353ac92b458395ac093ba94b73fc9"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2025
+  },
+  {
+    "abstract": "Inspired by the success of reinforcement learning (RL) in Large Language Model (LLM) training for domains like math and code, recent work has begun training LLMs to dynamically plan, query, and reason with search engines as tools -- a paradigm increasingly referred to as agentic search. Although these methods achieve performance improvement across popular short-form QA benchmarks, many prioritize final answer correctness while overlooking the quality of intermediate reasoning steps, which may lead to chain-of-thought unfaithfulness. In this paper, we first introduce a comprehensive evaluation ",
+    "access": {
+      "content_sha256": "6d245c75dc63f4a709c2d07ae385e8619d46c0783be4a3480fababf22d33aba6",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/01021187b2ac3b2341b674c2063b1566b87ec6ef",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Zhichao Xu",
+      "Zongyu Wu",
+      "Yun Zhou",
+      "Aosong Feng",
+      "Kang Zhou",
+      "Sangmin Woo",
+      "Kiran Ramnath",
+      "Yijun Tian",
+      "X. Qi",
+      "Wei-Kang Qiu",
+      "Lin Lee Cheong",
+      "Haibo Ding"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2510.13272",
+      "doi": "10.48550/arxiv.2510.13272",
+      "semantic_scholar_paper_id": "01021187b2ac3b2341b674c2063b1566b87ec6ef"
+    },
+    "language": "en",
+    "normalized_title": "beyond correctness rewarding faithful reasoning in retrieval augmented generation",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-2de64529273d",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 8,
+        "response_identifier": "01021187b2ac3b2341b674c2063b1566b87ec6ef",
+        "retrieved_at": "2026-09-20T07:42:48.323481+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/01021187b2ac3b2341b674c2063b1566b87ec6ef"
+      }
+    ],
+    "title": "Beyond Correctness: Rewarding Faithful Reasoning in Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2510.13272"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2510.13272"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "01021187b2ac3b2341b674c2063b1566b87ec6ef"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2510.13272"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2510.13272"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "01021187b2ac3b2341b674c2063b1566b87ec6ef"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "Trans. Mach. Learn. Res.",
+    "year": 2025
+  },
+  {
+    "abstract": "Evidence-based medicine (EBM) research has always been of paramount importance. It is important to find appropriate medical theoretical support for the needs from physicians or patients to reduce the occurrence of medical accidents. This process is often carried out by human querying relevant literature databases, which lacks objectivity and efficiency. Therefore, researchers utilize retrieval-augmented generation (RAG) to search for evidence and generate responses automatically. However, current RAG methods struggle to handle complex queries in real-world clinical scenarios. For example, when",
+    "access": {
+      "content_sha256": "864fcc4e40658ab3c10efcbfc934a6742581b4a6ab842572acb7eb2d83b49075",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/f0d3678eb6431bea5e6a940cc417bd2388c0cf07",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Mengzhou Sun",
+      "Sendong Zhao",
+      "Jianyu Chen",
+      "Bin Qin"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2510.23998",
+      "doi": "10.48550/arxiv.2510.23998",
+      "semantic_scholar_paper_id": "f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+    },
+    "language": "en",
+    "normalized_title": "picos rag pico supported query rewriting for retrieval augmented generation in evidence based medicine",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-27ce9c11ec2b",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 9,
+        "response_identifier": "f0d3678eb6431bea5e6a940cc417bd2388c0cf07",
+        "retrieved_at": "2026-09-20T07:42:48.323602+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+      }
+    ],
+    "title": "PICOs-RAG: PICO-supported Query Rewriting for Retrieval-Augmented Generation in Evidence-Based Medicine",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2510.23998"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2510.23998"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2510.23998"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2510.23998"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2025
+  },
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) is a crucial method for mitigating hallucinations in Large Language Models (LLMs) and integrating external knowledge into their responses. Existing RAG methods typically employ query rewriting to clarify the user intent and manage multi-hop logic, while using hybrid retrieval to expand search scope. However, the tight coupling of query rewriting to the dense retriever limits its compatibility with hybrid retrieval, impeding further RAG performance improvements. To address this challenge, we introduce a high-level searcher that decomposes complex queries int",
+    "access": {
+      "content_sha256": "3f6bcc3f49e2bec7440e06f02052b3cf507f34cd668f9afde1a5e5296258589b",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/dbed9b90fe58f5a5b944139407ad09ea3905f46c",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Zhuo-Cheng Zhang",
+      "Yang Feng",
+      "Min Zhang"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2502.18139",
+      "doi": "10.48550/arxiv.2502.18139",
+      "semantic_scholar_paper_id": "dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+    },
+    "language": "en",
+    "normalized_title": "levelrag enhancing retrieval augmented generation with multi hop logic planning over rewriting augmented searchers",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-d8007f2521ce",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 12,
+        "response_identifier": "dbed9b90fe58f5a5b944139407ad09ea3905f46c",
+        "retrieved_at": "2026-09-20T07:42:48.324011+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+      }
+    ],
+    "title": "LevelRAG: Enhancing Retrieval-Augmented Generation with Multi-hop Logic Planning over Rewriting Augmented Searchers",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2502.18139"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2502.18139"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2502.18139"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2502.18139"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "arXiv.org",
+    "year": 2025
+  },
+  {
+    "abstract": "Improving Retrieval-Augmented Generation (RAG) requires effective query rewriting and domain adaptation to enhance retrieval precision and response quality. This paper integrates ranking-based feedback with retrieval-augmented fine-tuning (RAFT) to optimize search queries and adapt models for domain-specific tasks. The proposed method refines query rewriting by leveraging ranking signals to improve document retrieval while RAFT fine-tunes Large Language Models (LLMs) for enhanced contextual understanding. By combining these techniques, our approach significantly improves retrieval accuracy and",
+    "access": {
+      "content_sha256": "863e0f51f4ae924c3fe1dd597cd40b74aec1d690e74bc358e0a7d749bbf82982",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/03baf90aac813bfe724749c5868743099a0d0b01",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Zong-Yan Yang",
+      "Jing-Ming Guo",
+      "Yi-Chong Zeng",
+      "Shi-An Chen",
+      "Jian-Hong Liu"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": null,
+      "doi": "10.1109/icce-taiwan66881.2025.11207967",
+      "semantic_scholar_paper_id": "03baf90aac813bfe724749c5868743099a0d0b01"
+    },
+    "language": "en",
+    "normalized_title": "integrating ranking based query rewriting into raft for improved retrieval augmented generation",
+    "publication_type": "Conference",
+    "record_id": "paper-5ba4d8df9651",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 1,
+        "response_identifier": "03baf90aac813bfe724749c5868743099a0d0b01",
+        "retrieved_at": "2026-09-20T07:42:48.321650+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/03baf90aac813bfe724749c5868743099a0d0b01"
+      }
+    ],
+    "title": "Integrating Ranking-Based Query Rewriting into RAFT for Improved Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1109/icce-taiwan66881.2025.11207967"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "03baf90aac813bfe724749c5868743099a0d0b01"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1109/icce-taiwan66881.2025.11207967"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "03baf90aac813bfe724749c5868743099a0d0b01"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "IEEE International Conference on Consumer Electronics",
+    "year": 2025
+  },
+  {
+    "abstract": "Retrieval-augmented generation (RAG) is widely utilized to incorporate external knowledge into large language models, thereby enhancing factuality and reducing hallucinations in question-answering (QA) tasks. A standard RAG pipeline consists of several components, such as query rewriting, document retrieval, document filtering, and answer generation. However, these components are typically optimized separately through supervised fine-tuning, which can lead to misalignments between the objectives of individual components and the overarching aim of generating accurate answers. Although recent ef",
+    "access": {
+      "content_sha256": "7b5ef1c4bcab972a0bd40dba6b668e6ffb72d690a8c9185bc53732318bb0be10",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Yiqun Chen",
+      "Ling Yan",
+      "Weiwei Sun",
+      "Xinyu Ma",
+      "Yi Zhang",
+      "Shuaiqiang Wang",
+      "Dawei Yin",
+      "Yiming Yang",
+      "Jiaxin Mao"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2501.15228",
+      "doi": "10.48550/arxiv.2501.15228",
+      "semantic_scholar_paper_id": "5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+    },
+    "language": "en",
+    "normalized_title": "improving retrieval augmented generation through multi agent reinforcement learning",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-c94590c91a1f",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 4,
+        "response_identifier": "5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5",
+        "retrieved_at": "2026-09-20T07:42:48.322559+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+      }
+    ],
+    "title": "Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.48550/arxiv.2501.15228"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2501.15228"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.48550/arxiv.2501.15228"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2501.15228"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "Neural Information Processing Systems",
+    "year": 2025
+  },
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) enables Large Language Models (LLMs) to generate grounded responses by leveraging external knowledge databases without altering model parameters. Although the absence of weight tuning prevents leakage via model parameters, it introduces the risk of inference adversaries exploiting retrieved documents in the model's context. Existing methods for membership inference and data extraction often rely on jailbreaking or carefully crafted unnatural queries, which can be easily detected or thwarted with query rewriting techniques common in RAG systems. In this work",
+    "access": {
+      "content_sha256": "507a57616709f2a67726ee89234ea23e5e19600b02c0348058148407573f9b09",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/be43884bfae5c6c6add21640a41b1d19197cbee5",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Ali Naseh",
+      "Yuefeng Peng",
+      "Anshuman Suri",
+      "Harsh Chaudhari",
+      "Alina Oprea",
+      "Amir Houmansadr"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2502.00306",
+      "doi": "10.1145/3719027.3744840",
+      "semantic_scholar_paper_id": "be43884bfae5c6c6add21640a41b1d19197cbee5"
+    },
+    "language": "en",
+    "normalized_title": "riddle me this stealthy membership inference for retrieval augmented generation",
+    "publication_type": "JournalArticle,Book,Conference",
+    "record_id": "paper-017662323117",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 5,
+        "response_identifier": "be43884bfae5c6c6add21640a41b1d19197cbee5",
+        "retrieved_at": "2026-09-20T07:42:48.322884+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/be43884bfae5c6c6add21640a41b1d19197cbee5"
+      }
+    ],
+    "title": "Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1145/3719027.3744840"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2502.00306"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "be43884bfae5c6c6add21640a41b1d19197cbee5"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1145/3719027.3744840"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2502.00306"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "be43884bfae5c6c6add21640a41b1d19197cbee5"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "Conference on Computer and Communications Security",
+    "year": 2025
+  },
+  {
+    "abstract": "Maternal complications remain an important public health challenge, highlighting the need for effective mechanisms to support the consultation and application of clinical guidelines. Large Language Models (LLMs) have shown transformative potential in this area, yet their reliability decreases when handling domain-specific queries. Retrieval-Augmented Generation (RAG) offers a promising strategy by establishing responses in authoritative evidence. In this work, we compare four RAG architectures: Simple Semantic, Hybrid, HyDE, and Query Rewriting. Applied to ten questions related to obstetrics e",
+    "access": {
+      "content_sha256": "d6668d82ca82aa192b0817cc8aed3a8f1eb4be1d842fcc6d536ae24936e5f155",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "D. Betancur-Vásquez",
+      "Nicolás Hoyos-Giraldo",
+      "Jhon Hander Mejia-Muñoz",
+      "A. F. Giraldo-Forero"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": null,
+      "doi": "10.1109/iscmi67495.2025.11358608",
+      "semantic_scholar_paper_id": "e84e742cff30020c1694c5ec8296ff13fc03539e"
+    },
+    "language": "en",
+    "normalized_title": "evaluating retrieval augmented generation architectures for clinical guideline question answering a case study in obstetrics",
+    "publication_type": "Conference",
+    "record_id": "paper-597bfe953e8f",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 6,
+        "response_identifier": "e84e742cff30020c1694c5ec8296ff13fc03539e",
+        "retrieved_at": "2026-09-20T07:42:48.323175+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e"
+      }
+    ],
+    "title": "Evaluating Retrieval-Augmented Generation Architectures for Clinical Guideline Question Answering: A Case Study in Obstetrics",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1109/iscmi67495.2025.11358608"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "e84e742cff30020c1694c5ec8296ff13fc03539e"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1109/iscmi67495.2025.11358608"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "e84e742cff30020c1694c5ec8296ff13fc03539e"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "2025 12th International Conference on Soft Computing & Machine Intelligence (ISCMI)",
+    "year": 2025
+  },
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) has demonstrated significant effectiveness in enhancing large language models (LLMs) for complex multi-hop question answering (QA). For multi-hop QA tasks, current iterative approaches predominantly rely on LLMs to self-guide and plan multi-step exploration paths during retrieval, leading to substantial challenges in maintaining reasoning coherence across steps from inaccurate query decomposition and error propagation. To address these issues, we introduce Reasoning Tree Guided RAG (RT-RAG), a novel hierarchical framework for complex multi-hop QA. RT-RAG sy",
+    "access": {
+      "content_sha256": "e38fd49459e4ebafd00ecea14479ce62eb977f4bafa3fbd2ff099260c0aa95bb",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/d8005d2d65869eb06a5ec25f4ea18ac24a84456a",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Yuling Shi",
+      "Mao-Lin Sun",
+      "Zijun Liu",
+      "Mo Yang",
+      "Yi-Xiong Fang",
+      "Tianran Sun",
+      "Xiao-Dong Gu"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2601.11255",
+      "doi": "10.1145/3774905.3794658",
+      "semantic_scholar_paper_id": "d8005d2d65869eb06a5ec25f4ea18ac24a84456a"
+    },
+    "language": "en",
+    "normalized_title": "reasoning in trees improving retrieval augmented generation for multi hop question answering",
+    "publication_type": "JournalArticle,Book,Conference",
+    "record_id": "paper-bcc5b1418b7d",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 15,
+        "response_identifier": "d8005d2d65869eb06a5ec25f4ea18ac24a84456a",
+        "retrieved_at": "2026-09-20T07:42:48.324249+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/d8005d2d65869eb06a5ec25f4ea18ac24a84456a"
+      }
+    ],
+    "title": "Reasoning in Trees: Improving Retrieval-Augmented Generation for Multi-Hop Question Answering",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1145/3774905.3794658"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2601.11255"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "d8005d2d65869eb06a5ec25f4ea18ac24a84456a"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1145/3774905.3794658"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2601.11255"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "d8005d2d65869eb06a5ec25f4ea18ac24a84456a"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "The Web Conference",
+    "year": 2026
+  },
+  {
+    "abstract": "In the context of the rapid development of large-scale model technology, natural language technology has become a bridge connecting humans and computers, which determines the naturalness and accuracy of human-computer interaction. Therefore, it is very important to accurately convert human language into machine language, and avoid AI hallucinations and unnecessary errors. In this paper, the main exploration, cutting-edge applications and various technologies of retrieval-augmented generation (RAG) technology in the current field are reviewed, covering the whole process from query understanding",
+    "access": {
+      "content_sha256": "a89d2cad511fbc2c94d84ff3660cffaec57e9b3f6e65444992edf0e9279537ea",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Haozhe Qi"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": null,
+      "doi": "10.1051/itmconf/20268904003",
+      "semantic_scholar_paper_id": "fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c"
+    },
+    "language": "en",
+    "normalized_title": "query rewriting in retrieval augmented generation as an application of nlp technology for understanding and transforming human language",
+    "publication_type": "JournalArticle,Conference,Review",
+    "record_id": "paper-92a0ac2b5c94",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 16,
+        "response_identifier": "fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c",
+        "retrieved_at": "2026-09-20T07:42:48.324368+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c"
+      }
+    ],
+    "title": "Query Rewriting in Retrieval-Augmented Generation as an Application of NLP Technology for Understanding and Transforming Human Language",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1051/itmconf/20268904003"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1051/itmconf/20268904003"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "ITM Web of Conferences",
+    "year": 2026
+  },
+  {
+    "abstract": "Retrieval-Augmented Generation (RAG) is often used with Large Language Models (LLMs) to infuse domain knowledge or user-specific information. In RAG, given a user query, a retriever extracts chunks of relevant text from a knowledge base. These chunks are sent to an LLM as part of the input prompt. Typically, any given chunk is repeatedly retrieved across user questions. However, currently, for every question, attention layers in LLMs fully compute the Keys and Values (KVs) repeatedly for the input chunks, as state-of-the-art methods cannot reuse KV-caches when chunks appear at arbitrary locati",
+    "access": {
+      "content_sha256": "ec9526a34b5e7a38a1d91ce967cb6636bbcbeac35c67df99da4510566826ddc5",
+      "content_type": "abstract",
+      "failure_type": null,
+      "page_count": null,
+      "size_bytes": 600,
+      "source_url": "https://www.semanticscholar.org/paper/8f323e932374e158cb4ceb4376c9b0ab2ac35a1f",
+      "status": "available"
+    },
+    "analysis": {
+      "agent_interpretation": [],
+      "datasets": [],
+      "extraction_uncertainty": "Not yet analyzed",
+      "key_results": [],
+      "limitations": [],
+      "methodology": "",
+      "metrics": [],
+      "paper_claims": [],
+      "rag_stages": [],
+      "research_objective": ""
+    },
+    "authors": [
+      "Shubham Agarwal",
+      "Sai Narayan Sundaresan",
+      "Subrata Mitra",
+      "Debabrata Mahapatra",
+      "Archit Gupta",
+      "Rounak Sharma",
+      "Nirmal Joshua Kapu",
+      "Tong Yu",
+      "S. Saini"
+    ],
+    "deduplication": {
+      "merged_records": [],
+      "unresolved_candidates": []
+    },
+    "identifiers": {
+      "arxiv_id": "2502.15734",
+      "doi": "10.1145/3725273",
+      "semantic_scholar_paper_id": "8f323e932374e158cb4ceb4376c9b0ab2ac35a1f"
+    },
+    "language": "en",
+    "normalized_title": "cache craft managing chunk caches for efficient retrieval augmented generation",
+    "publication_type": "JournalArticle",
+    "record_id": "paper-b0de65c1bca0",
+    "source_records": [
+      {
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+        "rank": 18,
+        "response_identifier": "8f323e932374e158cb4ceb4376c9b0ab2ac35a1f",
+        "retrieved_at": "2026-09-20T07:42:48.324678+00:00",
+        "source": "semantic_scholar",
+        "source_url": "https://www.semanticscholar.org/paper/8f323e932374e158cb4ceb4376c9b0ab2ac35a1f"
+      }
+    ],
+    "title": "Cache-Craft: Managing Chunk-Caches for Efficient Retrieval-Augmented Generation",
+    "validation": {
+      "checks": [
+        {
+          "identifier": "doi",
+          "status": "syntax_valid",
+          "value": "10.1145/3725273"
+        },
+        {
+          "identifier": "arxiv_id",
+          "status": "syntax_valid",
+          "value": "2502.15734"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "status": "syntax_valid",
+          "value": "8f323e932374e158cb4ceb4376c9b0ab2ac35a1f"
+        },
+        {
+          "identifier": "doi",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "10.1145/3725273"
+        },
+        {
+          "identifier": "arxiv_id",
+          "method": "condition_source_boundary",
+          "status": "syntax_valid_only",
+          "value": "2502.15734"
+        },
+        {
+          "identifier": "semantic_scholar_paper_id",
+          "method": "official_semantic_scholar_search_response",
+          "status": "verified",
+          "value": "8f323e932374e158cb4ceb4376c9b0ab2ac35a1f"
+        }
+      ],
+      "eligible": true,
+      "status": "verified"
+    },
+    "venue": "Proc. ACM Manag. Data",
+    "year": 2025
+  }
+]

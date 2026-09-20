@@ -143,6 +143,63 @@ def _blank_analysis() -> dict[str, Any]:
     }
 
 
+def _apply_extracted_papers(
+    returned: list[Any],
+    papers: list[dict[str, Any]],
+    claims: list[dict[str, Any]],
+) -> set[str]:
+    """Validate model extraction output and attach accepted claims to papers."""
+
+    by_id = {paper["record_id"]: paper for paper in papers}
+    papers_with_claims: set[str] = set()
+    for extracted in returned:
+        if not isinstance(extracted, dict) or extracted.get("record_id") not in by_id:
+            continue
+        paper = by_id[extracted["record_id"]]
+        analysis = {
+            "research_objective": str(extracted.get("research_objective") or "Not stated in excerpt"),
+            "methodology": str(extracted.get("methodology") or "Not stated in excerpt"),
+            "datasets": [str(value) for value in extracted.get("datasets") or [] if value],
+            "metrics": [str(value) for value in extracted.get("metrics") or [] if value],
+            "key_results": [str(value) for value in extracted.get("key_results") or [] if value],
+            "limitations": [str(value) for value in extracted.get("limitations") or [] if value],
+            "rag_stages": [str(value) for value in extracted.get("rag_stages") or [] if value],
+            "paper_claims": [],
+            "agent_interpretation": [str(value) for value in extracted.get("agent_interpretation") or [] if value],
+            "extraction_uncertainty": str(extracted.get("extraction_uncertainty") or "Abstract excerpt only"),
+        }
+        for raw_claim in extracted.get("paper_claims") or []:
+            if not isinstance(raw_claim, dict) or not str(raw_claim.get("claim") or "").strip():
+                continue
+            claim_id = f"claim-{len(claims)+1:03d}"
+            identifiers = {key: value for key, value in paper["identifiers"].items() if value}
+            claim = {
+                "claim_id": claim_id,
+                "claim": str(raw_claim["claim"]).strip(),
+                "claim_type": "paper_result",
+                "paper_record_id": paper["record_id"],
+                "paper_title": paper["title"],
+                "identifiers": identifiers,
+                "source_url": paper["source_records"][0]["source_url"],
+                "evidence_location": "abstract excerpt",
+                "evidence_type": "abstract",
+                "quote": (str(raw_claim.get("quote") or "").strip()[:MAX_EVIDENCE_QUOTE_CHARS] or None),
+                "paraphrase": str(raw_claim.get("paraphrase") or raw_claim["claim"]).strip(),
+                "verified": True,
+                "extraction_uncertainty": analysis["extraction_uncertainty"],
+            }
+            try:
+                validate_research("claim-evidence", claim)
+            except ValidationError:
+                continue
+            claims.append(claim)
+            analysis["paper_claims"].append({"claim_id": claim_id, "claim": claim["claim"]})
+        paper["analysis"] = analysis
+        if analysis["paper_claims"]:
+            papers_with_claims.add(paper["record_id"])
+    return papers_with_claims
+
+
 def _confidence(value: Any) -> float:
     if isinstance(value, str):
         mapped = {"low": 0.25, "medium": 0.5, "high": 0.8}
@@ -675,8 +732,13 @@ class ResearchWorkflow:
                 actual_endpoint_provider="deepseek",
                 actual_hostname="api.deepseek.com",
             ) as extraction_span:
-                for batch_start in range(0, len(papers), 5):
-                    batch = papers[batch_start : batch_start + 5]
+                def extract_batch(
+                    batch: list[dict[str, Any]],
+                    *,
+                    batch_start: int,
+                    recovery_attempt: int | None = None,
+                ) -> set[str]:
+                    nonlocal cost
                     source = [
                         {
                             "record_id": paper["record_id"],
@@ -691,11 +753,14 @@ class ResearchWorkflow:
                             system=(
                                 "You extract only claims directly supported by the supplied scholarly abstract excerpts. "
                                 "Return JSON with a papers array. Never infer numeric results or methods not in the excerpt. "
-                                "Agent interpretation must be separate."
+                                "Agent interpretation must be separate. Return every supplied record_id exactly once. "
+                                "For each non-empty abstract, include at least one conservative paper_claim that paraphrases "
+                                "a directly stated objective, method, result, or limitation."
                             ),
                             user=json.dumps(
                                 {
                                     "papers": source,
+                                    "recovery_attempt": recovery_attempt,
                                     "required_per_paper": {
                                         "record_id": "exact input id",
                                         "research_objective": "string",
@@ -715,62 +780,60 @@ class ResearchWorkflow:
                             max_tokens=6000,
                         )
                     except WorkflowFailure as exc:
-                        failures.append({"stage": "evidence.extract", "failure_type": exc.kind, "summary": str(exc), "batch_start": batch_start})
-                        continue
+                        failure = {"stage": "evidence.extract", "failure_type": exc.kind, "summary": str(exc), "batch_start": batch_start}
+                        if recovery_attempt is not None:
+                            failure["recovery_attempt"] = recovery_attempt
+                        failures.append(failure)
+                        return set()
                     usage.add(result.usage)
                     cost += result.cost_usd
                     model_latencies.append(result.latency_ms)
                     response_models.append(result.response_model)
                     returned = result.value.get("papers")
                     if not isinstance(returned, list):
-                        failures.append({"stage": "evidence.extract", "failure_type": "model_parsing", "summary": "papers array missing", "batch_start": batch_start})
-                        continue
-                    by_id = {paper["record_id"]: paper for paper in batch}
-                    for extracted in returned:
-                        if not isinstance(extracted, dict) or extracted.get("record_id") not in by_id:
-                            continue
-                        paper = by_id[extracted["record_id"]]
-                        analysis = {
-                            "research_objective": str(extracted.get("research_objective") or "Not stated in excerpt"),
-                            "methodology": str(extracted.get("methodology") or "Not stated in excerpt"),
-                            "datasets": [str(value) for value in extracted.get("datasets") or [] if value],
-                            "metrics": [str(value) for value in extracted.get("metrics") or [] if value],
-                            "key_results": [str(value) for value in extracted.get("key_results") or [] if value],
-                            "limitations": [str(value) for value in extracted.get("limitations") or [] if value],
-                            "rag_stages": [str(value) for value in extracted.get("rag_stages") or [] if value],
-                            "paper_claims": [],
-                            "agent_interpretation": [str(value) for value in extracted.get("agent_interpretation") or [] if value],
-                            "extraction_uncertainty": str(extracted.get("extraction_uncertainty") or "Abstract excerpt only"),
+                        failure = {"stage": "evidence.extract", "failure_type": "model_parsing", "summary": "papers array missing", "batch_start": batch_start}
+                        if recovery_attempt is not None:
+                            failure["recovery_attempt"] = recovery_attempt
+                        failures.append(failure)
+                        return set()
+                    return _apply_extracted_papers(returned, batch, claims)
+
+                for batch_start in range(0, len(papers), 5):
+                    extract_batch(papers[batch_start : batch_start + 5], batch_start=batch_start)
+
+                recovery_requests = 0
+                for recovery_attempt in range(1, 3):
+                    missing = [paper for paper in papers if not paper["analysis"]["paper_claims"]]
+                    if not missing:
+                        break
+                    for paper in missing:
+                        recovery_requests += 1
+                        extract_batch(
+                            [paper],
+                            batch_start=papers.index(paper),
+                            recovery_attempt=recovery_attempt,
+                        )
+                unresolved = [paper["record_id"] for paper in papers if not paper["analysis"]["paper_claims"]]
+                if unresolved:
+                    failures.append(
+                        {
+                            "stage": "evidence.extract",
+                            "failure_type": "claim_coverage_incomplete",
+                            "summary": f"{len(unresolved)} papers still have no valid claim after bounded recovery",
+                            "paper_record_ids": unresolved,
                         }
-                        for raw_claim in extracted.get("paper_claims") or []:
-                            if not isinstance(raw_claim, dict) or not str(raw_claim.get("claim") or "").strip():
-                                continue
-                            claim_id = f"claim-{len(claims)+1:03d}"
-                            identifiers = {key: value for key, value in paper["identifiers"].items() if value}
-                            claim = {
-                                "claim_id": claim_id,
-                                "claim": str(raw_claim["claim"]).strip(),
-                                "claim_type": "paper_result",
-                                "paper_record_id": paper["record_id"],
-                                "paper_title": paper["title"],
-                                "identifiers": identifiers,
-                                "source_url": paper["source_records"][0]["source_url"],
-                                "evidence_location": "abstract excerpt",
-                                "evidence_type": "abstract",
-                                "quote": (str(raw_claim.get("quote") or "").strip()[:MAX_EVIDENCE_QUOTE_CHARS] or None),
-                                "paraphrase": str(raw_claim.get("paraphrase") or raw_claim["claim"]).strip(),
-                                "verified": True,
-                                "extraction_uncertainty": analysis["extraction_uncertainty"],
-                            }
-                            try:
-                                validate_research("claim-evidence", claim)
-                            except ValidationError:
-                                continue
-                            claims.append(claim)
-                            analysis["paper_claims"].append({"claim_id": claim_id, "claim": claim["claim"]})
-                        paper["analysis"] = analysis
+                    )
                 extraction_span.set_attributes(
-                    {"result_count": len(claims), "input_tokens": usage.input_tokens, "output_tokens": usage.output_tokens, "total_tokens": usage.total_tokens, "cost_usd": cost, "failure_type": "partial_model_failure" if failures else "none"}
+                    {
+                        "result_count": len(claims),
+                        "recovery_requests": recovery_requests,
+                        "unresolved_papers": len(unresolved),
+                        "input_tokens": usage.input_tokens,
+                        "output_tokens": usage.output_tokens,
+                        "total_tokens": usage.total_tokens,
+                        "cost_usd": cost,
+                        "failure_type": "partial_model_failure" if unresolved else "none",
+                    }
                 )
             with span(
                 "report.synthesize",
@@ -1127,7 +1190,7 @@ class ResearchWorkflow:
                 "all_core_claims_linked": all(value["evidence_coverage"] == 1.0 for value in evaluations.values()),
                 "hypotheses_separated": all(value["hypothesis_separation"] == 1.0 for value in evaluations.values()),
                 "raw_content_in_traces": False,
-                "secrets_in_git_or_results": all(not value["safety_violations"] for value in evaluations.values()),
+                "no_secrets_in_git_or_results": all(not value["safety_violations"] for value in evaluations.values()),
                 "deepseek_model": self.gateway.model if self.gateway else None,
                 "model_execution": "offline_mock" if self.offline else ("executed" if self.gateway else "unexecuted"),
                 "application_decision": decision,

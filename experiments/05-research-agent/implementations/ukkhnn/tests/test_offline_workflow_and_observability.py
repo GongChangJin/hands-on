@@ -27,6 +27,8 @@ def test_offline_end_to_end_writes_all_required_formats(tmp_path: Path) -> None:
     status = workflow().run_all(tmp_path)
     assert status["success"] is True
     assert status["model_execution"] == "offline_mock"
+    assert status["no_secrets_in_git_or_results"] is True
+    assert "secrets_in_git_or_results" not in status
     for condition in ("semantic-scholar-only", "federated-verified"):
         search_dir = tmp_path / condition
         analysis_dir = tmp_path / f"{condition}-analysis"

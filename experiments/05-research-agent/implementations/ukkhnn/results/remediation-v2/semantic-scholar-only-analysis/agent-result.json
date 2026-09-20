@@ -1,0 +1,300 @@
+{
+  "actions": [
+    "Apply the search strategy only after deterministic evaluation passes"
+  ],
+  "evidence": [
+    {
+      "claim": "Retrieval fusion techniques such as multi-query retrieval and reciprocal rank fusion (RRF) are commonly adopted to increase document recall under the assumption that higher recall leads to better answer quality.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/26c23812d4853f4eacde97c725e58b1ba09243f5"
+    },
+    {
+      "claim": "These methods show consistent gains in isolated retrieval benchmarks, but their effectiveness under realistic production constraints remains underexplored.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/26c23812d4853f4eacde97c725e58b1ba09243f5"
+    },
+    {
+      "claim": "We evaluate retrieval fusion in a production-style RAG pipeline operating over an enterprise knowledge base, with fixed retrieval depth, re-ranking budgets, and latency constraints.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/26c23812d4853f4eacde97c725e58b1ba09243f5"
+    },
+    {
+      "claim": "Conventional single-agent RAG remains fundamentally limited in resolving complex queries demanding coordinated reasoning across heterogeneous data ecosystems.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+    },
+    {
+      "claim": "We present HM-RAG, a novel Hierarchical Multi-agent Multimodal RAG framework that pioneers collaborative intelligence for dynamic knowledge synthesis across structured, unstructured, and graph-based data.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+    },
+    {
+      "claim": "The framework is composed of a three-tiered architecture with specialized agents: a Decomposition Agent that dissects complex quer",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/49fb7d86884ff42d1b6fbf6c2eb704399f8a4f65"
+    },
+    {
+      "claim": "Large Language Models (LLMs) exhibit remarkable capabilities but are prone to generating inaccurate or hallucinatory responses.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/746b96ee17e329f1085a047116c05e12eaa3925a"
+    },
+    {
+      "claim": "This limitation stems from their reliance on vast pretraining datasets, making them susceptible to errors in unseen scenarios.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/746b96ee17e329f1085a047116c05e12eaa3925a"
+    },
+    {
+      "claim": "Retrieval-Augmented Generation (RAG) addresses this by incorporating external, relevant documents into the response generation process, thus leveraging non-parametric knowledge alongside LLMs' in-context learning abilities.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/746b96ee17e329f1085a047116c05e12eaa3925a"
+    },
+    {
+      "claim": "Existing RAG implementations primarily focus on initial input for context retrieval.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/746b96ee17e329f1085a047116c05e12eaa3925a"
+    },
+    {
+      "claim": "Multi-turn RAG systems often face queries with colloquial omissions and ambiguous references, posing significant challenges for effective retrieval and generation.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/df657b5690774b05ce7f0e06542c29ac7c094e1d"
+    },
+    {
+      "claim": "Traditional query rewriting relies on human annotators to clarify queries, but due to limitations in annotators' expressive ability and depth of understanding, manually rewritten queries often diverge from those needed in real-world RAG systems, resulting in a gap between user intent and system response.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/df657b5690774b05ce7f0e06542c29ac7c094e1d"
+    },
+    {
+      "claim": "We observe that high-quality synthetic queries can better bridge this gap, achieving superior performance in both retrieval and generation.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/df657b5690774b05ce7f0e06542c29ac7c094e1d"
+    },
+    {
+      "claim": "Retrieval-Augmented Generation (RAG) significantly improves the factuality of Large Language Models (LLMs), yet standard pipelines often lack mechanisms to verify intermediate reasoning, leaving them vulnerable to hallucinations in high-stakes domains.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/a99930f519b536876aa1e67a83dfd7b57f617678"
+    },
+    {
+      "claim": "To address this, we propose a domain-specific RAG framework that integrates explicit reasoning and faithfulness verification.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/a99930f519b536876aa1e67a83dfd7b57f617678"
+    },
+    {
+      "claim": "Our architecture augments standard retrieval with neural query rewriting, BGE-based cross-encoder reranking, and a rationale generation module that grounds sub-claims in specific evidence spans.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/a99930f519b536876aa1e67a83dfd7b57f617678"
+    },
+    {
+      "claim": "Conventional Conversational Query Rewriting (CQR) methods often prioritize human-friendly query formulation, which may not consistently produce optimal retriever-friendly results.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/eb0fc9be1da8ded652bb68182bdf5dab2954a8bb"
+    },
+    {
+      "claim": "To address this limitation, we present LiRe, a light",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/eb0fc9be1da8ded652bb68182bdf5dab2954a8bb"
+    },
+    {
+      "claim": "Existing ranking methods in RAG pipelines primarily optimize for document-query relevance, neglecting crucial factors for generation quality such as factual consistency and information coverage.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+    },
+    {
+      "claim": "We propose a novel multi-objective ranking framework that explicitly models three critical dimensions: relevance, coverage, and faithfulness support.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+    },
+    {
+      "claim": "Unlike traditional IR-centric approaches, our method introduces a utility-based scoring mechanism that eva",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f1c1a104e8bd37b47ec8afe350205220de01a8a9"
+    },
+    {
+      "claim": "Chunking quality determines RAG system performance.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/201688b1732353ac92b458395ac093ba94b73fc9"
+    },
+    {
+      "claim": "Current methods partition documents individually, but complex queries need information scattered across multiple sources: the knowledge fragmentation problem.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/201688b1732353ac92b458395ac093ba94b73fc9"
+    },
+    {
+      "claim": "We introduce Cross-Document Topic-Aligned (CDTA) chunking, which reconstructs knowledge at the corpus level. It first identifies topics across documents, maps segments to each topic, and synthesizes them into unified chunks.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/201688b1732353ac92b458395ac093ba94b73fc9"
+    },
+    {
+      "claim": "On HotpotQA multi-hop reasoning, our method reached 0.93 faithfulness versus 0.83 for contextual retrieval and 0.78 for semantic chunking, a 12% improvement over cu",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/201688b1732353ac92b458395ac093ba94b73fc9"
+    },
+    {
+      "claim": "Although these methods achieve performance improvement across popular short-form QA benchmarks, many prioritize final answer correctness while overlooking the quality of intermediate reasoning steps, which may lead to chain-of-thought unfaithfulness.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/01021187b2ac3b2341b674c2063b1566b87ec6ef"
+    },
+    {
+      "claim": "In this paper, we first introduce a comprehensive evaluation",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/01021187b2ac3b2341b674c2063b1566b87ec6ef"
+    },
+    {
+      "claim": "It is important to find appropriate medical theoretical support for the needs from physicians or patients to reduce the occurrence of medical accidents.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+    },
+    {
+      "claim": "This process is often carried out by human querying relevant literature databases, which lacks objectivity and efficiency.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+    },
+    {
+      "claim": "Therefore, researchers utilize retrieval-augmented generation (RAG) to search for evidence and generate responses automatically.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+    },
+    {
+      "claim": "However, current RAG methods struggle to handle complex queries in real-world clinical scenarios.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/f0d3678eb6431bea5e6a940cc417bd2388c0cf07"
+    },
+    {
+      "claim": "Existing RAG methods typically employ query rewriting to clarify the user intent and manage multi-hop logic, while using hybrid retrieval to expand search scope.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+    },
+    {
+      "claim": "The tight coupling of query rewriting to the dense retriever limits its compatibility with hybrid retrieval, impeding further RAG performance improvements.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+    },
+    {
+      "claim": "To address this challenge, we introduce a high-level searcher that decomposes complex queries int...",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/dbed9b90fe58f5a5b944139407ad09ea3905f46c"
+    },
+    {
+      "claim": "Improving Retrieval-Augmented Generation (RAG) requires effective query rewriting and domain adaptation to enhance retrieval precision and response quality.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/03baf90aac813bfe724749c5868743099a0d0b01"
+    },
+    {
+      "claim": "This paper integrates ranking-based feedback with retrieval-augmented fine-tuning (RAFT) to optimize search queries and adapt models for domain-specific tasks.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/03baf90aac813bfe724749c5868743099a0d0b01"
+    },
+    {
+      "claim": "The proposed method refines query rewriting by leveraging ranking signals to improve document retrieval while RAFT fine-tunes Large Language Models (LLMs) for enhanced contextual understanding.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/03baf90aac813bfe724749c5868743099a0d0b01"
+    },
+    {
+      "claim": "By combining these techniques, our approach significantly improves retrieval accuracy and",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/03baf90aac813bfe724749c5868743099a0d0b01"
+    },
+    {
+      "claim": "Retrieval-augmented generation (RAG) is widely utilized to incorporate external knowledge into large language models, thereby enhancing factuality and reducing hallucinations in question-answering (QA) tasks.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+    },
+    {
+      "claim": "A standard RAG pipeline consists of several components, such as query rewriting, document retrieval, document filtering, and answer generation.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+    },
+    {
+      "claim": "However, these components are typically optimized separately through supervised fine-tuning, which can lead to misalignments between the objectives of individual components and the overarching aim of generating accurate answers.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/5e5c2b08231678dcb33b1f00bc2dd5bb7045bcd5"
+    },
+    {
+      "claim": "Retrieval-Augmented Generation (RAG) enables Large Language Models (LLMs) to generate grounded responses by leveraging external knowledge databases without altering model parameters.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/be43884bfae5c6c6add21640a41b1d19197cbee5"
+    },
+    {
+      "claim": "Although the absence of weight tuning prevents leakage via model parameters, it introduces the risk of inference adversaries exploiting retrieved documents in the model's context.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/be43884bfae5c6c6add21640a41b1d19197cbee5"
+    },
+    {
+      "claim": "Existing methods for membership inference and data extraction often rely on jailbreaking or carefully crafted unnatural queries, which can be easily detected or thwarted with query rewriting techniques common in RAG systems.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/be43884bfae5c6c6add21640a41b1d19197cbee5"
+    },
+    {
+      "claim": "Maternal complications remain an important public health challenge, highlighting the need for effective mechanisms to support the consultation and application of clinical guidelines.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e"
+    },
+    {
+      "claim": "Large Language Models (LLMs) have shown transformative potential in this area, yet their reliability decreases when handling domain-specific queries.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e"
+    },
+    {
+      "claim": "Retrieval-Augmented Generation (RAG) offers a promising strategy by establishing responses in authoritative evidence.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e"
+    },
+    {
+      "claim": "In this work, we compare four RAG architectures: Simple Semantic, Hybrid, HyDE, and Query Rewriting.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e"
+    },
+    {
+      "claim": "Applied to ten questions related to obstetrics e...",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/e84e742cff30020c1694c5ec8296ff13fc03539e"
+    },
+    {
+      "claim": "Current iterative approaches for multi-hop QA predominantly rely on LLMs to self-guide and plan multi-step exploration paths during retrieval, leading to substantial challenges in maintaining reasoning coherence across steps from inaccurate query decomposition and error propagation.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/d8005d2d65869eb06a5ec25f4ea18ac24a84456a"
+    },
+    {
+      "claim": "To address these issues, we introduce Reasoning Tree Guided RAG (RT-RAG), a novel hierarchical framework for complex multi-hop QA.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/d8005d2d65869eb06a5ec25f4ea18ac24a84456a"
+    },
+    {
+      "claim": "In this paper, the main exploration, cutting-edge applications and various technologies of retrieval-augmented generation (RAG) technology in the current field are reviewed, covering the whole process from query understanding",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c"
+    },
+    {
+      "claim": "It is very important to accurately convert human language into machine language, and avoid AI hallucinations and unnecessary errors.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/fd62c4e11c7bc63cf85eb49c2c56e8e9fb30582c"
+    },
+    {
+      "claim": "In RAG, given a user query, a retriever extracts chunks of relevant text from a knowledge base. These chunks are sent to an LLM as part of the input prompt.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/8f323e932374e158cb4ceb4376c9b0ab2ac35a1f"
+    },
+    {
+      "claim": "Typically, any given chunk is repeatedly retrieved across user questions. However, currently, for every question, attention layers in LLMs fully compute the Keys and Values (KVs) repeatedly for the input chunks, as state-of-the-art methods cannot reuse KV-caches when chunks appear at arbitrary locations.",
+      "location": "abstract excerpt",
+      "source": "https://www.semanticscholar.org/paper/8f323e932374e158cb4ceb4376c9b0ab2ac35a1f"
+    }
+  ],
+  "limitations": [
+    "Extraction uses bounded public abstract excerpts; claims are not full-text findings unless explicitly marked.",
+    "Search API ranking and metadata can change after the recorded retrieval timestamp.",
+    "Calculated API cost uses provider-reported usage and published rates; it is not an invoice."
+  ],
+  "metadata": {
+    "model_status": "executed",
+    "offline": false,
+    "provider": "deepseek"
+  },
+  "output": {
+    "claims": 55,
+    "condition": "semantic-scholar-only",
+    "report": "report.md",
+    "verified_papers": 18
+  },
+  "status": "success",
+  "task_id": "research-report-semantic-scholar-only"
+}

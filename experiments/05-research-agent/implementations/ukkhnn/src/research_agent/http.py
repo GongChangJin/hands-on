@@ -31,11 +31,13 @@ class ResilientClient:
         *,
         client: httpx.Client | None = None,
         timeout_seconds: float = 20.0,
-        maximum_attempts: int = 3,
-        backoff_seconds: float = 0.25,
+        maximum_attempts: int = 5,
+        backoff_seconds: float = 1.0,
         sleep: Callable[[float], None] = time.sleep,
         stats: RunStats | None = None,
+        minimum_intervals: dict[str, float] | None = None,
     ) -> None:
+        live_client = client is None
         self.client = client or httpx.Client(
             timeout=httpx.Timeout(timeout_seconds),
             follow_redirects=False,
@@ -45,6 +47,8 @@ class ResilientClient:
         self.backoff_seconds = backoff_seconds
         self.sleep = sleep
         self.stats = stats or RunStats()
+        self.minimum_intervals = minimum_intervals if minimum_intervals is not None else ({"semantic_scholar": 1.0} if live_client else {})
+        self._last_request_started: dict[str, float] = {}
 
     def close(self) -> None:
         self.client.close()
@@ -58,6 +62,12 @@ class ResilientClient:
         params: dict[str, Any] | None = None,
         headers: dict[str, str] | None = None,
     ) -> httpx.Response:
+        interval = max(0.0, float(self.minimum_intervals.get(source, 0.0)))
+        previous = self._last_request_started.get(source)
+        now = time.monotonic()
+        if previous is not None and now - previous < interval:
+            self.sleep(interval - (now - previous))
+        self._last_request_started[source] = time.monotonic()
         last_failure: WorkflowFailure | None = None
         for attempt in range(self.maximum_attempts):
             started = time.perf_counter()

@@ -4,12 +4,12 @@
 
 ## 프로젝트 정의
 
-- **상태:** `in_progress` — `@ukkhnn` 구현·실데이터 평가는 완료, `@us788` 구현은 미작성
+- **상태:** `completed` — 구현·보완·실데이터 재평가 완료, 독립 구현 비교는 후속 작업
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 학술 정보 검색·검증·비교를 담당하는 전문 Agent
 - **선행 프로젝트:** Agent Evaluation
 - **후행 프로젝트:** LLM Router, 통합 시스템
-- **실행일:** 2026-09-16 UTC
+- **최종 실행일:** 2026-09-20 UTC
 
 ## 고정 연구 질문
 
@@ -26,29 +26,29 @@
 
 두 조건은 동일한 고정 검색어 4개와 DeepSeek가 확장한 검색어 4개를 사용한다. 확장은 `run-all`에서 한 번만 실행하고 두 조건이 공유한다.
 
-## @ukkhnn 실데이터 결과
+## 보완 후 실데이터 결과
 
 | 지표 | Semantic Scholar only | Federated verified |
 | --- | ---: | ---: |
-| 원시 검색 레코드 | 40 | 165 |
+| 원시 검색 레코드 | 20 | 180 |
 | 검증 논문 | 18 | 18 |
-| 제거한 중복 | 0 | 75 |
-| 식별자 실패 / 잔존 중복 | 0 / 0 | 0 / 0 |
-| 논문 근거 claim | 75 | 47 |
-| claim이 있는 검증 논문 | 18/18 | 14/18 |
-| 논문 단위 근거 coverage | 100% | 77.8% |
+| 제거한 중복 | 0 | 82 |
+| 식별자 실패 / 잔존 중복 | 0 / 0 | 1 / 0 |
+| 논문 근거 claim | 55 | 53 |
+| claim이 있는 검증 논문 | 18/18 | 18/18 |
+| 논문 단위 근거 coverage | 100% | 100% |
 | claim 인용·locator·식별자 유효성 | 100% | 100% |
-| 검색 API 요청 | S2 22 | S2 24, Crossref 10, arXiv 8 |
+| 검색·검증 API 요청 | S2 39 | S2 37, Crossref 11, arXiv 9 |
 | 분석 모델 요청 | 5 | 5 |
-| 조건별 API 요청 합계 | 27 | 47 |
-| 모델 토큰 | 43,984 | 31,739 |
-| 모델 호출 latency p50 / p95 | 11.78s / 14.82s | 10.70s / 14.50s |
-| 계산 비용 | $0.027941472 | $0.023709300 |
-| 결정론적 평가 | 통과 | 실패 |
+| 조건별 API 요청 합계 | 44 | 62 |
+| 모델 토큰 | 32,970 | 31,711 |
+| 모델 호출 latency p50 / p95 | 9.11s / 9.84s | 9.73s / 10.29s |
+| 계산 비용 | $0.010335600 | $0.010547250 |
+| 결정론적 평가 | 통과 | 통과 |
 
-공유 query expansion은 별도로 1회, 248 tokens, $0.0001257이었고 조건별 합계에 중복 산입하지 않았다. 비용은 공급자 usage와 실행 당시 공식 요율로 계산한 추정치이며 청구 금액이 아니다. 조건별 요청 수 보정 근거는 [`request-attribution-correction.json`](./implementations/ukkhnn/results/request-attribution-correction.json)에 남겼다.
+모델이 batch에서 누락하거나 유효 claim을 만들지 못한 논문은 논문별로 최대 2회만 재추출한다. 이번 실행은 최초 batch에서 모든 논문을 연결해 추가 모델 요청 없이 조건별 5회로 끝났다. 비용은 공급자 usage와 실행 당시 공식 요율로 계산한 추정치이며 청구 금액이 아니다.
 
-실패도 성공으로 숨기지 않았다. Semantic Scholar는 각각 6회와 8회의 HTTP 429를 반환했으며 federated 결과에는 보수적으로 병합하지 않은 제목 유사 후보 6건이 있다. Federated 분석은 모델이 4개 논문에 유효한 claim을 반환하지 않아 엄격한 100% paper coverage 기준을 통과하지 못했다. 모든 저장 claim은 검증 식별자, HTTPS 출처, `abstract excerpt` locator에 연결되어 있다.
+실패도 성공으로 숨기지 않았다. Semantic Scholar HTTP 429와 arXiv HTTP 406은 source failure로 보존했으며 federated 결과에는 보수적으로 병합하지 않은 제목 유사 후보 6건이 있다. 최종 선택된 논문과 claim은 모두 검증 식별자, HTTPS 출처, `abstract excerpt` locator에 연결되어 결정론적 기준을 통과했다.
 
 ## 구현과 안전 경계
 
@@ -64,8 +64,8 @@
 
 - 공통 질문·전략·필터·schema·평가 corpus: [`shared/`](./shared/)
 - 구현 및 실행법: [`implementations/ukkhnn/README.md`](./implementations/ukkhnn/README.md)
-- 최종 실험 산출물: [`implementations/ukkhnn/results/final/`](./implementations/ukkhnn/results/final/)
-- 조건 비교: [`research-condition-comparison.md`](./implementations/ukkhnn/results/research-condition-comparison.md)
+- 최종 보완 산출물: [`implementations/ukkhnn/results/remediation-v2/`](./implementations/ukkhnn/results/remediation-v2/)
+- 조건 비교: [`research-condition-comparison.md`](./implementations/ukkhnn/results/remediation-v2/research-condition-comparison.md)
 - Phoenix 검증: [`phoenix-verification.json`](./implementations/ukkhnn/results/phoenix-verification.json)
 - 최종 판정: [`verification-status.json`](./implementations/ukkhnn/results/verification-status.json)
 
@@ -86,15 +86,15 @@
 
 | 참여자 | 검색원·구성 | 논문 수 | 인용 오류 | 결과 | 특징 |
 | --- | --- | ---: | ---: | --- | --- |
-| `@ukkhnn` | S2 단독 / S2+Crossref+arXiv | 조건별 18 | 0 | 단독 통과, federated 보류 | 결정론적 검증, DeepSeek 분석, Phoenix 추적 |
+| `@ukkhnn` | S2 단독 / S2+Crossref+arXiv | 조건별 18 | 0 | 두 조건 통과 | 결정론적 검증, 제한적 누락 복구, DeepSeek 분석 |
 | `@us788` | 미작성 | — | — | 대기 | 디렉터리 미변경 |
 
 ## 결론
 
-- **적용 판단:** 품질 또는 안전 기준 미달로 적용 보류
-- **판단 이유:** 식별자·인용·locator·schema·가설 분리는 통과했지만 federated 조건의 논문 단위 근거 coverage가 77.8%로 고정 임계값 100%에 미달했다.
-- **적용 가능 범위:** 현재 상태는 검색·검증·관측·offline 회귀 테스트용 실험 구현으로 사용할 수 있다. 자동 최종 연구 결론 생성에는 사용하지 않는다.
-- **다음 행동:** Semantic Scholar API key 또는 더 완만한 호출 간격으로 429를 줄이고, 누락 논문 추출 재시도와 1차 실험 적합성 screening을 강화한 뒤 동일 corpus와 결정론적 grader로 재실행한다.
+- **적용 판단:** federated 검색을 기본 적용
+- **판단 이유:** 두 조건 모두 18/18 논문 근거 coverage와 인용·locator·식별자·schema·가설 분리 100%를 충족했다.
+- **적용 가능 범위:** 검색·식별자 검증·중복 제거·초록 기반 근거 추출과 후속 가설 생성. source failure는 계속 결과에 보존한다.
+- **다음 행동:** Semantic Scholar API key 또는 더 완만한 실행 주기로 429를 추가 완화하고 arXiv 406 원인을 별도 점검한다.
 
 ## 변경 기록
 

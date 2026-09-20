@@ -124,6 +124,19 @@ def test_retry_is_limited_and_exponential() -> None:
     assert sleeps == [0.1, 0.2]
 
 
+def test_source_requests_are_rate_limited_before_separate_calls() -> None:
+    sleeps: list[float] = []
+    resilient = ResilientClient(
+        client=httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(200))),
+        sleep=sleeps.append,
+        minimum_intervals={"semantic_scholar": 1.0},
+    )
+    resilient.request("semantic_scholar", "GET", "https://example.test/one")
+    resilient.request("semantic_scholar", "GET", "https://example.test/two")
+    assert len(sleeps) == 1
+    assert 0.9 <= sleeps[0] <= 1.0
+
+
 def test_all_adapters_expose_pagination_configuration() -> None:
     resilient = ResilientClient(client=httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(500))))
     assert SemanticScholarAdapter(resilient, page_size=7).page_size == 7

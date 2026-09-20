@@ -6,6 +6,7 @@ import json
 import os
 import re
 import time
+from collections.abc import Callable
 from datetime import datetime, time as clock_time, timezone
 from typing import Any
 from urllib.parse import urlparse
@@ -79,7 +80,9 @@ class DeepSeekGateway:
         *,
         client: httpx.Client | None = None,
         api_key: str | None = None,
-        maximum_attempts: int = 2,
+        maximum_attempts: int = 3,
+        backoff_seconds: float = 1.0,
+        sleep: Callable[[float], None] = time.sleep,
     ) -> None:
         if model not in ALLOWED_MODELS:
             raise RuntimeError(f"Only the pinned DeepSeek text model is allowed: {DEFAULT_MODEL}")
@@ -92,6 +95,8 @@ class DeepSeekGateway:
                 raise RuntimeError("Injected clients must use https://api.deepseek.com only")
         self.model = model
         self.maximum_attempts = maximum_attempts
+        self.backoff_seconds = backoff_seconds
+        self.sleep = sleep
         self.client = client or httpx.Client(
             base_url=DEEPSEEK_BASE_URL,
             timeout=httpx.Timeout(120),
@@ -116,16 +121,21 @@ class DeepSeekGateway:
                 last = WorkflowFailure("timeout", "DeepSeek request timed out", retryable=True)
                 if attempt + 1 == self.maximum_attempts:
                     raise last from exc
+                self.sleep(self.backoff_seconds * (2**attempt))
                 continue
             except httpx.RequestError as exc:
                 last = WorkflowFailure("connection", "DeepSeek connection failed", retryable=True)
                 if attempt + 1 == self.maximum_attempts:
                     raise last from exc
+                self.sleep(self.backoff_seconds * (2**attempt))
                 continue
             if response.status_code >= 400:
                 last = _failure(response)
                 if not last.retryable or attempt + 1 == self.maximum_attempts:
                     raise last
+                retry_after = response.headers.get("Retry-After")
+                delay = min(float(retry_after), 10.0) if retry_after and retry_after.isdigit() else self.backoff_seconds * (2**attempt)
+                self.sleep(delay)
                 continue
             latency_ms = (time.perf_counter() - started) * 1000
             try:
