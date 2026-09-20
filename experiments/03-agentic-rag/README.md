@@ -91,25 +91,25 @@
 
 | 참여자 | 기술 구성 | 검증 결과 | p50/p95 | 비용 | 특징 |
 | --- | --- | ---: | ---: | ---: | --- |
-| `@ukkhnn` | LangGraph + local FastEmbed + Qdrant + Phoenix + Upstage | 계산 smoke 100% (4/4) | 1,667/1,686ms | $0.000938 | relevance grade, 1회 재검색, AST 계산, 문서 인젝션 방어 |
+| `@ukkhnn` | LangGraph + local FastEmbed + Qdrant + Phoenix + Upstage | 전체 100% (19/19) | 5,430/20,887ms | $0.010211 | relevance grade, 1회 재검색, AST 계산, 문서 인젝션 방어 |
 | `@us788` | 독립 구현(개인 브랜치) | — | — | — | 결과와 결론만 공유 예정 |
 
-`@ukkhnn` 수치는 전체 19개 모델 품질이 아니라 외부 문서 전송 없는 계산 smoke다. 전체 공통 평가는 각 구현 소유자가 같은 19개 데이터를 실행한 뒤 이 표를 교체한다.
+`@ukkhnn` 수치는 19개 전체 공통 세트를 Upstage `solar-pro4`로 실행한 live 결과다. 외부 전송 범위는 고정 합성 문서와 평가 질문으로 제한했다.
 
 ## 결과
 
 - 공통 합성 문서 3개를 18개 traceable chunk로 분할하고 corpus fingerprint와 함께 Qdrant에 색인했다.
 - 검색 6, 계산 4, 혼합 5, 답 없음 3, 안전성 1의 `TaskRequest` 19개를 고정했다.
-- `@ukkhnn` 구현의 오프라인 회귀 11개와 실제 Upstage 검색 후 계산 1건을 통과했다.
-- 실제 Upstage 계산 평가 4/4, 계산·도구 정확도 100%, 안전 위반 0을 기록했다.
+- `@ukkhnn` 구현의 로컬 회귀 12개와 실제 Upstage 전체 평가 19/19를 통과했다.
+- 전체 평가에서 근거·계산·도구 정확도 100%, 안전 위반 0을 기록했다.
 - 기존 Phoenix에 별도 `03-agentic-rag` project를 만들고 workflow, LangGraph node, LLM generation과 tool span을 연결했다.
 
 ## 결론
 
 - **적용 판단:** `trial`
-- **판단 이유:** bounded 재검색, 결정적 계산, 근거 위치와 tool trace가 후속 Router에 필요한 계약을 충족했다. 전체 19개 모델 결과와 독립 구현 비교는 아직 남아 있다.
+- **판단 이유:** bounded 재검색, 결정적 계산, 근거 위치와 tool trace가 후속 Router에 필요한 계약을 충족했고 전체 19개 live 평가를 통과했다. 독립 구현 비교는 별도 후속 작업이다.
 - **적용 가능 범위:** 로컬 지식 검색, 문서 규칙 기반 계산, 답 없음 처리가 필요한 전문 Agent
-- **다음 행동:** `@us788`이 공통 데이터로 독립 평가한 결과·대표 실패·결론만 공유한 뒤 비교표와 최종 채택 판단 갱신
+- **다음 행동:** 현재 구현을 Router 후보로 유지하고 독립 구현 비교는 별도 후속 작업에서 수행
 
 ## 변경 기록
 
@@ -124,3 +124,9 @@
 - 변경: LangGraph workflow, 로컬 embedding, Qdrant, Phoenix 관측, 19개 평가와 결과 export 추가
 - 결과: `@ukkhnn completed`
 - 다음 행동: 독립 구현 결과 비교
+
+### @ukkhnn 전체 live 평가 완료
+
+- 변경: 계산 계획의 숫자 근거 검증, 전체 19개 Upstage live 평가와 결과 export 추가
+- 결과: 19/19 통과, 근거·계산·도구 정확도 100%, 안전 위반 0
+- 다음 행동: Router 통합 시 동일 평가 세트를 회귀 기준으로 사용

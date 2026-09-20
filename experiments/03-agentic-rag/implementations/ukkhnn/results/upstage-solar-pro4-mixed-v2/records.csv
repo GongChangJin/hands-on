@@ -1,0 +1,6 @@
+task_id,category,task_success,quality_score,tool_accuracy,latency_ms,cost,failure_type
+rag-mixed-01,mixed,True,1.0,1.0,8072.15495800483,0.0009518999999999999,
+rag-mixed-02,mixed,True,1.0,1.0,5764.326290998724,0.0008697,
+rag-mixed-03,mixed,True,1.0,1.0,27000.3220840008,0.000999,
+rag-mixed-04,mixed,True,1.0,1.0,4000.6615839956794,0.0007794,
+rag-mixed-05,mixed,True,1.0,1.0,7260.253874992486,0.0007254,
