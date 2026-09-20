@@ -76,6 +76,21 @@ def test_federated_fixture_removes_cross_source_duplicates(tmp_path: Path) -> No
     assert report["minimum_met"] is True
 
 
+def test_condition_metrics_do_not_include_previous_condition(tmp_path: Path) -> None:
+    run = workflow()
+    run.stats.requests_by_source["semantic_scholar"] = 22
+    run.stats.latencies_ms.extend([100.0, 200.0])
+    output = tmp_path / "federated"
+
+    search_summary = run.search("federated-verified", output)
+    corpus_summary = run.validate_corpus(output)
+
+    assert search_summary["requests_by_source"] == {}
+    assert search_summary["latency_p50_ms"] == 0
+    assert search_summary["latency_p95_ms"] == 0
+    assert corpus_summary["requests_by_source"] == {}
+
+
 def test_required_span_hierarchy_is_nested_under_workflow(tmp_path: Path) -> None:
     exporter = InMemorySpanExporter()
     provider = TracerProvider()

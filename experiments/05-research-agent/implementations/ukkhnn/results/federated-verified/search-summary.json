@@ -152,7 +152,7 @@
   "requests_by_source": {
     "arxiv": 8,
     "crossref": 10,
-    "semantic_scholar": 46
+    "semantic_scholar": 24
   },
   "result_records": 165,
   "sources": [

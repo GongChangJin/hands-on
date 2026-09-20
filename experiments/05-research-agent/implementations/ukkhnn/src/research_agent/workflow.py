@@ -291,6 +291,8 @@ class ResearchWorkflow:
 
     def search(self, condition: str, output: Path, *, queries_and_origins: list[tuple[str, str]] | None = None, expansion: dict[str, Any] | None = None) -> dict[str, Any]:
         started_at = utc_now()
+        starting_requests = deepcopy(self.stats.requests_by_source)
+        starting_latency_count = len(self.stats.latencies_ms)
         strategies = load_json(STRATEGIES_PATH)
         question = load_json(QUESTION_PATH)
         if condition not in strategies["conditions"]:
@@ -400,6 +402,12 @@ class ResearchWorkflow:
         write_jsonl(output / "search-records.jsonl", serialized)
         write_jsonl(output / "tool-traces.jsonl", traces)
         write_json(output / "query-expansion.json", expansion)
+        condition_requests = {
+            source: count - starting_requests.get(source, 0)
+            for source, count in self.stats.requests_by_source.items()
+            if count - starting_requests.get(source, 0) > 0
+        }
+        condition_latencies = self.stats.latencies_ms[starting_latency_count:]
         summary = {
             "condition": condition,
             "offline": self.offline,
@@ -411,15 +419,16 @@ class ResearchWorkflow:
             "sources": config["sources"],
             "result_records": len(records),
             "failures": failures,
-            "requests_by_source": deepcopy(self.stats.requests_by_source),
-            "latency_p50_ms": percentile(self.stats.latencies_ms, 0.5),
-            "latency_p95_ms": percentile(self.stats.latencies_ms, 0.95),
+            "requests_by_source": condition_requests,
+            "latency_p50_ms": percentile(condition_latencies, 0.5),
+            "latency_p95_ms": percentile(condition_latencies, 0.95),
             "model_expansion": expansion,
         }
         write_json(output / "search-summary.json", summary)
         return summary
 
     def validate_corpus(self, input_dir: Path) -> dict[str, Any]:
+        starting_requests = deepcopy(self.stats.requests_by_source)
         search_summary = load_json(input_dir / "search-summary.json")
         condition = str(search_summary["condition"])
         rows = read_jsonl(input_dir / "search-records.jsonl")
@@ -528,6 +537,11 @@ class ResearchWorkflow:
         write_json(input_dir / "deduplication-report.json", report)
         existing_traces = read_jsonl(input_dir / "tool-traces.jsonl") if (input_dir / "tool-traces.jsonl").exists() else []
         write_jsonl(input_dir / "tool-traces.jsonl", existing_traces + validation_traces)
+        condition_requests = deepcopy(search_summary.get("requests_by_source") or {})
+        for source, count in self.stats.requests_by_source.items():
+            validation_requests = count - starting_requests.get(source, 0)
+            if validation_requests > 0:
+                condition_requests[source] = condition_requests.get(source, 0) + validation_requests
         summary = {
             "condition": condition,
             "verified_papers": len(papers),
@@ -535,7 +549,7 @@ class ResearchWorkflow:
             "unresolved_duplicates": len(report["unresolved_duplicates"]),
             "identifier_failures": len(rejected) + len(external_validation_failures),
             "minimum_met": report["minimum_met"],
-            "requests_by_source": deepcopy(self.stats.requests_by_source),
+            "requests_by_source": condition_requests,
         }
         write_json(input_dir / "corpus-summary.json", summary)
         return summary
@@ -837,7 +851,7 @@ class ResearchWorkflow:
                 "started_at": search_summary["started_at"],
                 "sources": search_summary["sources"],
                 "queries": search_summary["queries"],
-                "requests_by_source": search_summary["requests_by_source"],
+                "requests_by_source": corpus_summary["requests_by_source"],
                 "duplicates_removed": corpus_summary["duplicates_removed"],
                 "identifier_failures": corpus_summary["identifier_failures"],
             },

@@ -3,7 +3,7 @@
   "application_decision": "품질 또는 안전 기준 미달로 적용 보류",
   "conditions": {
     "federated-verified": {
-      "api_requests": 69,
+      "api_requests": 47,
       "calculated_cost_usd": 0.0237093,
       "citation_linkage": 1.0,
       "condition": "federated-verified",
@@ -36,7 +36,7 @@
       "requests_by_source": {
         "arxiv": 8,
         "crossref": 10,
-        "semantic_scholar": 46
+        "semantic_scholar": 24
       },
       "safety_violations": [],
       "schema_compliance_rate": 1.0,
