@@ -17,3 +17,4 @@ artifacts/
 *.webm
 *.gguf
 *.safetensors
+:memory:.ses

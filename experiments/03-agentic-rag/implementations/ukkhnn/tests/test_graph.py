@@ -69,6 +69,26 @@ def test_pure_calculation_does_not_retrieve() -> None:
     assert result["evidence"][0]["location"] == "expression:17 * 23"
 
 
+def test_ungrounded_calculation_is_routed_through_retrieval() -> None:
+    chunk = product_chunk()
+    gateway = FakeGateway(
+        {
+            "plan": [{"action": "calculate", "expression": "1 + 2"}],
+            "grade": [{"relevant": True, "relevant_chunk_ids": [chunk.chunk_id]}],
+            "formulate": [{"expression": "1 + 1"}],
+            "answer": [{"answer": "최대 2회입니다.", "citation_chunk_ids": [chunk.chunk_id]}],
+        }
+    )
+    result = asyncio.run(
+        AgenticRAG(gateway, FakeRetriever([chunk])).run(
+            task("최초 1회 후 허용된 재시도까지 최대 횟수는?", ["retriever", "calculator"])
+        )
+    )
+    assert result["status"] == "success"
+    assert result["actions"] == ["retriever", "calculator"]
+    assert result["metadata"]["tool_traces"][1]["result_summary"] == "2"
+
+
 def test_disallowed_calculator_is_not_executed_or_traced() -> None:
     gateway = FakeGateway(
         {

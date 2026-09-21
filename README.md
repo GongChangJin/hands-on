@@ -76,11 +76,11 @@ experiments/03-agentic-rag/
 
 | 순서 | 프로젝트 | 상태 | 직접 후행 프로젝트 | 결론 |
 | ---: | --- | --- | --- | --- |
-| 01 | [Agent Evaluation](experiments/01-agent-evaluation/) | `planned` | 전체 프로젝트 | 진행 전 |
+| 01 | [Agent Evaluation](experiments/01-agent-evaluation/) | `validated` | 전체 프로젝트 | 작은 도구형 Agent에는 single 구조 적용 |
 | 02 | [Local/Open-weight LLM](experiments/02-local-llm/) | `planned` | LLM Router | 진행 전 |
-| 03 | [Agentic RAG](experiments/03-agentic-rag/) | `planned` | LLM Router, Integration | 진행 전 |
-| 04 | [Multimodal Agent](experiments/04-multimodal-agent/) | `planned` | Computer-use, LLM Router | 진행 전 |
-| 05 | [AI Research Agent](experiments/05-research-agent/) | `planned` | LLM Router, Integration | 진행 전 |
+| 03 | [Agentic RAG](experiments/03-agentic-rag/) | `validated` | LLM Router, Integration | 전체 19문항 통과, 제한 범위 trial |
+| 04 | [Multimodal Agent](experiments/04-multimodal-agent/) | `validated` | Computer-use, LLM Router | adaptive-context 제한 적용 |
+| 05 | [AI Research Agent](experiments/05-research-agent/) | `validated` | LLM Router, Integration | federated 검색 기본 적용 |
 | 06 | [LLM Router](experiments/06-llm-router/) | `planned` | Computer-use, Coding, Integration | 진행 전 |
 | 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | `planned` | Integration | 진행 전 |
 | 08 | [Coding Agent](experiments/08-coding-agent/) | `planned` | Cybersecurity Agent | 진행 전 |
@@ -96,5 +96,7 @@ experiments/03-agentic-rag/
 | `trial` | 제한된 범위에서 시범 적용 |
 | `hold` | 조건이나 기술 성숙도를 추가 확인 |
 | `reject` | 현재 요구와 품질·비용·안전 기준에 부적합 |
+
+01·03·04·05의 최신 지표와 남은 제약은 [검증 요약](experiments/verification-summary.md)에 정리되어 있습니다.
 
 독립 프로젝트 생성 방법은 [프로젝트 생성 가이드](https://github.com/GongChangJin/projects/blob/main/docs/creating-a-project.md)를 참고합니다.

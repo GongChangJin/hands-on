@@ -1,0 +1,234 @@
+{
+  "condition": "federated-verified",
+  "failures": [
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:45:47.914821+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:04.499046+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:21.107515+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:41.036223+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "reranking retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:58.678281+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:15.268440+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "self reflective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:32.016617+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:57.503004+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:57.873865+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:58.432735+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "self reflective retrieval augmented generation Self-RAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:58.814698+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.318713+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "reranking retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.532484+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "corrective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.824293+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "self reflective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:48:00.031973+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    }
+  ],
+  "finished_at": "2026-09-20T07:48:00.042610+00:00",
+  "latency_p50_ms": 411.8170829897281,
+  "latency_p95_ms": 3132.474124999135,
+  "model_expansion": {
+    "cost_usd": 6.465e-05,
+    "failure_type": null,
+    "model_queries": [
+      "query rewriting retrieval augmented generation latency cost trade-off",
+      "reranking retrieval augmented generation latency cost trade-off",
+      "corrective retrieval augmented generation latency cost trade-off",
+      "self reflective retrieval augmented generation latency cost trade-off"
+    ],
+    "pricing_tier": "off-peak",
+    "request_model": "deepseek-flash",
+    "response_model": "deepseek-flash",
+    "seed_queries": [
+      "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "retrieval augmented generation reranking retrieval quality faithfulness",
+      "corrective retrieval augmented generation CRAG",
+      "self reflective retrieval augmented generation Self-RAG"
+    ],
+    "status": "model_expanded",
+    "usage": {
+      "cached_input_tokens": 0,
+      "input_tokens": 191,
+      "output_tokens": 60,
+      "requests": 1,
+      "total_tokens": 251
+    }
+  },
+  "offline": false,
+  "queries": [
+    {
+      "origin": "deterministic_seed",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness"
+    },
+    {
+      "origin": "deterministic_seed",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness"
+    },
+    {
+      "origin": "deterministic_seed",
+      "query": "corrective retrieval augmented generation CRAG"
+    },
+    {
+      "origin": "deterministic_seed",
+      "query": "self reflective retrieval augmented generation Self-RAG"
+    },
+    {
+      "origin": "model_expansion",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off"
+    },
+    {
+      "origin": "model_expansion",
+      "query": "reranking retrieval augmented generation latency cost trade-off"
+    },
+    {
+      "origin": "model_expansion",
+      "query": "corrective retrieval augmented generation latency cost trade-off"
+    },
+    {
+      "origin": "model_expansion",
+      "query": "self reflective retrieval augmented generation latency cost trade-off"
+    }
+  ],
+  "query_hash": "c80754b91921848b83a14c118c2f4580d9dd39c4c529d1243eeb91f5a70c51a8",
+  "question_version": "2026-09-16-v1",
+  "requests_by_source": {
+    "arxiv": 8,
+    "crossref": 8,
+    "semantic_scholar": 37
+  },
+  "result_records": 180,
+  "sources": [
+    "semantic_scholar",
+    "crossref",
+    "arxiv"
+  ],
+  "started_at": "2026-09-20T07:45:31.229866+00:00"
+}

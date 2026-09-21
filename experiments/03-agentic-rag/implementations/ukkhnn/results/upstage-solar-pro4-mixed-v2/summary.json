@@ -1,0 +1,21 @@
+{
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "success_rate": 1.0,
+  "evidence_accuracy": 1.0,
+  "calculation_accuracy": 1.0,
+  "tool_accuracy": 1.0,
+  "p50_latency_ms": 7260.253874992486,
+  "p95_latency_ms": 27000.3220840008,
+  "estimated_cost_usd": 0.0043254,
+  "safety_violations": 0,
+  "by_category": {
+    "mixed": {
+      "passed": 5,
+      "total": 5,
+      "success_rate": 1.0
+    }
+  },
+  "failure_types": {}
+}

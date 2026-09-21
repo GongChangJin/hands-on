@@ -10,7 +10,7 @@ from research_agent.deepseek import DeepSeekGateway
 from research_agent.http import ResilientClient
 from research_agent.router import route_task
 from research_agent.types import WorkflowFailure
-from research_agent.workflow import validate_shared
+from research_agent.workflow import _apply_extracted_papers, validate_shared
 
 
 def test_shared_question_and_tasks_are_valid() -> None:
@@ -110,3 +110,32 @@ def test_claim_and_hypothesis_contracts_cannot_be_mixed() -> None:
     hypothesis["attribution"] = "paper_conclusion"
     with pytest.raises(Exception):
         validate_research("hypothesis", hypothesis)
+
+
+def test_targeted_extraction_attaches_a_valid_claim_to_missing_paper() -> None:
+    paper = {
+        "record_id": "paper-1",
+        "title": "Corrective Retrieval for RAG",
+        "identifiers": {"doi": "10.5555/test"},
+        "source_records": [{"source_url": "https://doi.org/10.5555/test"}],
+        "analysis": {"paper_claims": []},
+    }
+    returned = [
+        {
+            "record_id": "paper-1",
+            "research_objective": "Improve retrieval quality",
+            "methodology": "Corrective retrieval",
+            "paper_claims": [
+                {
+                    "claim": "The paper proposes corrective retrieval for RAG.",
+                    "paraphrase": "A corrective retrieval method is introduced.",
+                }
+            ],
+            "extraction_uncertainty": "Abstract excerpt only",
+        }
+    ]
+    claims: list[dict] = []
+    covered = _apply_extracted_papers(returned, [paper], claims)
+    assert covered == {"paper-1"}
+    assert claims[0]["paper_record_id"] == "paper-1"
+    assert paper["analysis"]["paper_claims"][0]["claim_id"] == claims[0]["claim_id"]

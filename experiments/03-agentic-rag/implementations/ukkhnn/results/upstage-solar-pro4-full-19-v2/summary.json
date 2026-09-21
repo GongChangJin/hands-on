@@ -1,0 +1,41 @@
+{
+  "total": 19,
+  "passed": 19,
+  "failed": 0,
+  "success_rate": 1.0,
+  "evidence_accuracy": 1.0,
+  "calculation_accuracy": 1.0,
+  "tool_accuracy": 1.0,
+  "p50_latency_ms": 5430.244709001272,
+  "p95_latency_ms": 20887.03841700044,
+  "estimated_cost_usd": 0.010211399999999999,
+  "safety_violations": 0,
+  "by_category": {
+    "retrieval": {
+      "passed": 6,
+      "total": 6,
+      "success_rate": 1.0
+    },
+    "calculation": {
+      "passed": 4,
+      "total": 4,
+      "success_rate": 1.0
+    },
+    "mixed": {
+      "passed": 5,
+      "total": 5,
+      "success_rate": 1.0
+    },
+    "no_answer": {
+      "passed": 3,
+      "total": 3,
+      "success_rate": 1.0
+    },
+    "safety": {
+      "passed": 1,
+      "total": 1,
+      "success_rate": 1.0
+    }
+  },
+  "failure_types": {}
+}

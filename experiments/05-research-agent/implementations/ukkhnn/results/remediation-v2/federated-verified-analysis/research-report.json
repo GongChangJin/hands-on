@@ -1,0 +1,1500 @@
+{
+  "claims": [
+    {
+      "claim": "In a Retrieval Augmented Generation system, the possibility of hallucination is ever prevalent, as it has been increasingly common for an AI model to produce inaccurate generations given an input, which can become increasingly more devastating for a RAG system due to its node-like generation.",
+      "claim_id": "claim-001",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('A major challenge f'), so limitations and key results are incomplete. No datasets or metrics are provided in the excerpt.",
+      "identifiers": {
+        "doi": "10.5121/csit.2024.141402",
+        "semantic_scholar_paper_id": "1281ec0c63825715cd666c447662bbf7f6992fc3"
+      },
+      "paper_record_id": "paper-04f77cefe3e8",
+      "paper_title": "A Self-Reflective Retrieval Augmented Generation System to Eliminate Hallucination in LLM Generation",
+      "paraphrase": "Hallucination is a common and potentially severe issue in RAG systems because of their node-like generation process.",
+      "quote": "In a Retrieval Augmented Generation system, the possibility of hallucination is ever prevalent, as it has been increasingly common for an AI model to produce inaccurate generations given an input, which can become increasingly more devastating for a RAG system due to its node-like generation.",
+      "source_url": "https://www.semanticscholar.org/paper/1281ec0c63825715cd666c447662bbf7f6992fc3",
+      "verified": true
+    },
+    {
+      "claim": "To solve this problem, we introduced a series of selfreflective nodes, creating a self-RAG model.",
+      "claim_id": "claim-002",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('A major challenge f'), so limitations and key results are incomplete. No datasets or metrics are provided in the excerpt.",
+      "identifiers": {
+        "doi": "10.5121/csit.2024.141402",
+        "semantic_scholar_paper_id": "1281ec0c63825715cd666c447662bbf7f6992fc3"
+      },
+      "paper_record_id": "paper-04f77cefe3e8",
+      "paper_title": "A Self-Reflective Retrieval Augmented Generation System to Eliminate Hallucination in LLM Generation",
+      "paraphrase": "The authors introduced self-reflective nodes to create a self-RAG model aimed at solving hallucination.",
+      "quote": "To solve this problem, we introduced a series of selfreflective nodes, creating a self-RAG model.",
+      "source_url": "https://www.semanticscholar.org/paper/1281ec0c63825715cd666c447662bbf7f6992fc3",
+      "verified": true
+    },
+    {
+      "claim": "To create our program, we established a series of nodes that utilized ChatGPT for generation as well as the Langchain python library and its workflow functions to piece together the nodes.",
+      "claim_id": "claim-003",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('A major challenge f'), so limitations and key results are incomplete. No datasets or metrics are provided in the excerpt.",
+      "identifiers": {
+        "doi": "10.5121/csit.2024.141402",
+        "semantic_scholar_paper_id": "1281ec0c63825715cd666c447662bbf7f6992fc3"
+      },
+      "paper_record_id": "paper-04f77cefe3e8",
+      "paper_title": "A Self-Reflective Retrieval Augmented Generation System to Eliminate Hallucination in LLM Generation",
+      "paraphrase": "The program was built using nodes that employed ChatGPT for generation and the Langchain Python library with its workflow functions to connect the nodes.",
+      "quote": "To create our program, we established a series of nodes that utilized ChatGPT for generation as well as the Langchain python library and its workflow functions to piece together the nodes.",
+      "source_url": "https://www.semanticscholar.org/paper/1281ec0c63825715cd666c447662bbf7f6992fc3",
+      "verified": true
+    },
+    {
+      "claim": "The performance of retrieval-augmented generation (RAG) systems heavily depends on the quality of the re-ranking module, yet existing methods face challenges such as training instability, unreasonable reward design, and insufficient confidence calibration.",
+      "claim_id": "claim-004",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('Evi'), so the complete methodology, datasets, key results, and limitations are not provided.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-8088895/v1"
+      },
+      "paper_record_id": "paper-ecbad2356e06",
+      "paper_title": "GRPO++: A Controlled Differentiable Reinforcement Learning Reranking Method for Retrieval-Augmented Generation",
+      "paraphrase": "RAG performance is heavily dependent on re-ranking quality, but current methods suffer from training instability, poor reward design, and inadequate confidence calibration.",
+      "quote": "The performance of retrieval-augmented generation (RAG) systems heavily depends on the quality of the re-ranking module, yet existing methods face challenges such as training instability, unreasonable reward design, and insufficient confidence calibration.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-8088895/v1",
+      "verified": true
+    },
+    {
+      "claim": "This paper proposes GRPO++, an end-to-end re-ranking framework based on reinforcement learning, which collaboratively optimizes five core modules: Soft Normalized Discounted Cumulative Gain (Soft-nDCG) to achieve a differentiable ranking objective; Critical Reweighting for Importance (CRI) to enhance Top-K position optimization; Evi",
+      "claim_id": "claim-005",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('Evi'), so the complete methodology, datasets, key results, and limitations are not provided.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-8088895/v1"
+      },
+      "paper_record_id": "paper-ecbad2356e06",
+      "paper_title": "GRPO++: A Controlled Differentiable Reinforcement Learning Reranking Method for Retrieval-Augmented Generation",
+      "paraphrase": "The paper introduces GRPO++, a reinforcement learning-based end-to-end re-ranking framework that jointly optimizes five modules, including Soft-nDCG for differentiable ranking and CRI for Top-K position optimization.",
+      "quote": "This paper proposes GRPO++, an end-to-end re-ranking framework based on reinforcement learning, which collaboratively optimizes five core modules: Soft Normalized Discounted Cumulative Gain (Soft-nDCG) to achieve a differentiable ranking objective; Critical Reweighting for Importance (CRI) to enhance Top-K position optimization; Evi",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-8088895/v1",
+      "verified": true
+    },
+    {
+      "claim": "Multi-hop retrieval-augmented generation (RAG) can fail to fully exploit useful evidence even after it has entered the candidate pool, because ranking and limited context budgets determine which documents are actually exposed to the reader.",
+      "claim_id": "claim-006",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('traje'), so the complete methodology, datasets, metrics, key results, and limitations are not available.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-11009751/v1"
+      },
+      "paper_record_id": "paper-a3eb70dfbd35",
+      "paper_title": "Candidate Evidence Reranking and Risk-Aware Answer Selection in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "In multi-hop RAG, useful evidence may not be fully utilized after entering the candidate pool due to ranking and context budget constraints that control document exposure to the reader.",
+      "quote": "Multi-hop retrieval-augmented generation (RAG) can fail to fully exploit useful evidence even after it has entered the candidate pool, because ranking and limited context budgets determine which documents are actually exposed to the reader.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-11009751/v1",
+      "verified": true
+    },
+    {
+      "claim": "Candidate answers produced by multiple retrieval trajectories can likewise be misselected when answer frequency does not align with correction value.",
+      "claim_id": "claim-007",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('traje'), so the complete methodology, datasets, metrics, key results, and limitations are not available.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-11009751/v1"
+      },
+      "paper_record_id": "paper-a3eb70dfbd35",
+      "paper_title": "Candidate Evidence Reranking and Risk-Aware Answer Selection in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "Candidate answers from multiple retrieval trajectories may be incorrectly selected when answer frequency does not match correction value.",
+      "quote": "Candidate answers produced by multiple retrieval trajectories can likewise be misselected when answer frequency does not align with correction value.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-11009751/v1",
+      "verified": true
+    },
+    {
+      "claim": "Building on the SQL-Retrieval Augmented Generation (SAG) backbone, we develop a two-layer framework for candidate utilization. At the evidence layer, candidate evidence reranking (CAPE) combines traje",
+      "claim_id": "claim-008",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('traje'), so the complete methodology, datasets, metrics, key results, and limitations are not available.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-11009751/v1"
+      },
+      "paper_record_id": "paper-a3eb70dfbd35",
+      "paper_title": "Candidate Evidence Reranking and Risk-Aware Answer Selection in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "The authors build on the SAG backbone to create a two-layer framework for candidate utilization, with the evidence layer using candidate evidence reranking (CAPE) that combines traje [truncated].",
+      "quote": "Building on the SQL-Retrieval Augmented Generation (SAG) backbone, we develop a two-layer framework for candidate utilization. At the evidence layer, candidate evidence reranking (CAPE) combines traje",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-11009751/v1",
+      "verified": true
+    },
+    {
+      "claim": "This research explores the application of Self-Reflective Retrieval-Au’gmented Generation (Self-RAG) within analytical systems, specifically focusing on data distribution systems.",
+      "claim_id": "claim-009",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-word ('generat'), so key results and limitations are incomplete. No datasets or metrics are provided.",
+      "identifiers": {
+        "doi": "10.36930/conf150.5.21",
+        "semantic_scholar_paper_id": "d1512331edf8d9cbffa0e433eebb42c8c84a37f4"
+      },
+      "paper_record_id": "paper-26d0681ef25e",
+      "paper_title": "Self-Reflective Retrieval-Augmented Generation (Self-RAG) in Analytical Systems",
+      "paraphrase": "The study investigates Self-RAG in analytical systems, with a specific focus on data distribution systems.",
+      "quote": "This research explores the application of Self-Reflective Retrieval-Au’gmented Generation (Self-RAG) within analytical systems, specifically focusing on data distribution systems.",
+      "source_url": "https://www.semanticscholar.org/paper/d1512331edf8d9cbffa0e433eebb42c8c84a37f4",
+      "verified": true
+    },
+    {
+      "claim": "While traditional analytical systems often struggle with efficiently querying and interpreting vast datasets, Self-RAG presents a promising solution.",
+      "claim_id": "claim-010",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-word ('generat'), so key results and limitations are incomplete. No datasets or metrics are provided.",
+      "identifiers": {
+        "doi": "10.36930/conf150.5.21",
+        "semantic_scholar_paper_id": "d1512331edf8d9cbffa0e433eebb42c8c84a37f4"
+      },
+      "paper_record_id": "paper-26d0681ef25e",
+      "paper_title": "Self-Reflective Retrieval-Augmented Generation (Self-RAG) in Analytical Systems",
+      "paraphrase": "Traditional analytical systems have difficulty efficiently querying and interpreting large datasets, and Self-RAG is proposed as a promising solution.",
+      "quote": "While traditional analytical systems often struggle with efficiently querying and interpreting vast datasets, Self-RAG presents a promising solution.",
+      "source_url": "https://www.semanticscholar.org/paper/d1512331edf8d9cbffa0e433eebb42c8c84a37f4",
+      "verified": true
+    },
+    {
+      "claim": "It then presents the findings of research conducted on how Self-RAG can enhance data analysis in distributed systems by improving information retrieval accuracy, generat",
+      "claim_id": "claim-011",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-word ('generat'), so key results and limitations are incomplete. No datasets or metrics are provided.",
+      "identifiers": {
+        "doi": "10.36930/conf150.5.21",
+        "semantic_scholar_paper_id": "d1512331edf8d9cbffa0e433eebb42c8c84a37f4"
+      },
+      "paper_record_id": "paper-26d0681ef25e",
+      "paper_title": "Self-Reflective Retrieval-Augmented Generation (Self-RAG) in Analytical Systems",
+      "paraphrase": "The paper presents findings that Self-RAG can enhance data analysis in distributed systems by improving information retrieval accuracy and generat [truncated].",
+      "quote": "It then presents the findings of research conducted on how Self-RAG can enhance data analysis in distributed systems by improving information retrieval accuracy, generat",
+      "source_url": "https://www.semanticscholar.org/paper/d1512331edf8d9cbffa0e433eebb42c8c84a37f4",
+      "verified": true
+    },
+    {
+      "claim": "Standard Retrieval-Augmented Generation (RAG) systems only use semantic similarity to retrieve information, and since this method is quite limiting, it may find clinically irrelevant evidence and produce outputs that are unsafe or hallucinated.",
+      "claim_id": "claim-012",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('17,516'), so the complete methodology, datasets, metrics, key results, and limitations are not provided.",
+      "identifiers": {
+        "doi": "10.3389/frai.2026.1850832"
+      },
+      "paper_record_id": "paper-43c7208d3cf3",
+      "paper_title": "MMCRAG-Resp: a multi-modal corrective retrieval-augmented generation framework for explainable respiratory disease reasoning",
+      "paraphrase": "Standard RAG systems rely solely on semantic similarity for retrieval, which is limiting and can lead to clinically irrelevant evidence and unsafe or hallucinated outputs.",
+      "quote": "Standard Retrieval-Augmented Generation (RAG) systems only use semantic similarity to retrieve information, and since this method is quite limiting, it may find clinically irrelevant evidence and produce outputs that are unsafe or hallucinated.",
+      "source_url": "https://doi.org/10.3389/frai.2026.1850832",
+      "verified": true
+    },
+    {
+      "claim": "This drawback is particularly important in respiratory care, where the diagnosis relies heavily on very accurate physiological indicators such as spirometry patterns and symptom profiles.",
+      "claim_id": "claim-013",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('17,516'), so the complete methodology, datasets, metrics, key results, and limitations are not provided.",
+      "identifiers": {
+        "doi": "10.3389/frai.2026.1850832"
+      },
+      "paper_record_id": "paper-43c7208d3cf3",
+      "paper_title": "MMCRAG-Resp: a multi-modal corrective retrieval-augmented generation framework for explainable respiratory disease reasoning",
+      "paraphrase": "The limitation of standard RAG is especially critical in respiratory care because diagnosis depends on accurate physiological indicators like spirometry patterns and symptom profiles.",
+      "quote": "This drawback is particularly important in respiratory care, where the diagnosis relies heavily on very accurate physiological indicators such as spirometry patterns and symptom profiles.",
+      "source_url": "https://doi.org/10.3389/frai.2026.1850832",
+      "verified": true
+    },
+    {
+      "claim": "We propose MMCRAG-Resp., a clinically grounded, physiology-aware corrective RAG framework for respiratory intelligence. The system harmonizes 17,516",
+      "claim_id": "claim-014",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated mid-sentence ('17,516'), so the complete methodology, datasets, metrics, key results, and limitations are not provided.",
+      "identifiers": {
+        "doi": "10.3389/frai.2026.1850832"
+      },
+      "paper_record_id": "paper-43c7208d3cf3",
+      "paper_title": "MMCRAG-Resp: a multi-modal corrective retrieval-augmented generation framework for explainable respiratory disease reasoning",
+      "paraphrase": "The authors propose MMCRAG-Resp, a corrective RAG framework for respiratory intelligence that is clinically grounded and physiology-aware, and it harmonizes 17,516 [truncated].",
+      "quote": "We propose MMCRAG-Resp., a clinically grounded, physiology-aware corrective RAG framework for respiratory intelligence. The system harmonizes 17,516",
+      "source_url": "https://doi.org/10.3389/frai.2026.1850832",
+      "verified": true
+    },
+    {
+      "claim": "LLMs often produce responses containing factual inaccuracies due to their sole reliance on parametric knowledge.",
+      "claim_id": "claim-015",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is cut off mid-sentence ('We introduce a new framework c'), so the complete framework description and any results are missing.",
+      "identifiers": {
+        "arxiv_id": "2310.11511",
+        "semantic_scholar_paper_id": "ddbd8fe782ac98e9c64dd98710687a962195dd9b"
+      },
+      "paper_record_id": "paper-39568f9738a6",
+      "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "paraphrase": "Large language models frequently generate factually incorrect responses because they rely only on the knowledge encoded in their parameters.",
+      "quote": "Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate.",
+      "source_url": "https://www.semanticscholar.org/paper/ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "verified": true
+    },
+    {
+      "claim": "Retrieval-Augmented Generation decreases such issues.",
+      "claim_id": "claim-016",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is cut off mid-sentence ('We introduce a new framework c'), so the complete framework description and any results are missing.",
+      "identifiers": {
+        "arxiv_id": "2310.11511",
+        "semantic_scholar_paper_id": "ddbd8fe782ac98e9c64dd98710687a962195dd9b"
+      },
+      "paper_record_id": "paper-39568f9738a6",
+      "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "paraphrase": "RAG, an ad hoc approach that augments language models with retrieval of relevant knowledge, reduces factual inaccuracies.",
+      "quote": "Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issues.",
+      "source_url": "https://www.semanticscholar.org/paper/ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "verified": true
+    },
+    {
+      "claim": "Indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary or passages are relevant, diminishes LM versatility or can lead to unhelpful response generation.",
+      "claim_id": "claim-017",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is cut off mid-sentence ('We introduce a new framework c'), so the complete framework description and any results are missing.",
+      "identifiers": {
+        "arxiv_id": "2310.11511",
+        "semantic_scholar_paper_id": "ddbd8fe782ac98e9c64dd98710687a962195dd9b"
+      },
+      "paper_record_id": "paper-39568f9738a6",
+      "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "paraphrase": "Retrieving and including a fixed number of passages without considering necessity or relevance can reduce language model versatility or result in unhelpful responses.",
+      "quote": "However, indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary, or passages are relevant, diminishes LM versatility or can lead to unhelpful response generation.",
+      "source_url": "https://www.semanticscholar.org/paper/ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "verified": true
+    },
+    {
+      "claim": "We introduce a new framework c",
+      "claim_id": "claim-018",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is cut off mid-sentence ('We introduce a new framework c'), so the complete framework description and any results are missing.",
+      "identifiers": {
+        "arxiv_id": "2310.11511",
+        "semantic_scholar_paper_id": "ddbd8fe782ac98e9c64dd98710687a962195dd9b"
+      },
+      "paper_record_id": "paper-39568f9738a6",
+      "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "paraphrase": "The authors introduce a new framework (Self-RAG).",
+      "quote": "We introduce a new framework c",
+      "source_url": "https://www.semanticscholar.org/paper/ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "verified": true
+    },
+    {
+      "claim": "Retrieval-Augmented Generation (RAG) grounds large language models with external knowledge, while two recent variants—Self-RAG (self-reflective retrieval refinement) and Agentic RAG (multi-step reasoning and tool orchestration)—aim to boost factuality, reasoning depth, and adaptability.",
+      "claim_id": "claim-019",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...in insurance,'), so the full benchmark description and any findings are missing.",
+      "identifiers": {
+        "doi": "10.1109/aisp68263.2025.11396270",
+        "semantic_scholar_paper_id": "98549f027cd33116bccac58eb8f43ced736a7de3"
+      },
+      "paper_record_id": "paper-bc038b32491c",
+      "paper_title": "A Unified Evaluation Framework for Grounded LLM Architectures: Comparative Analysis of RAG, Self-RAG, and Agentic RAG",
+      "paraphrase": "RAG grounds LLMs with external knowledge; Self-RAG uses self-reflective retrieval refinement and Agentic RAG uses multi-step reasoning and tool orchestration, both aiming to improve factuality, reasoning depth, and adaptability.",
+      "quote": "Retrieval-Augmented Generation (RAG) grounds large language models with external knowledge, while two recent variants—Self-RAG (self-reflective retrieval refinement) and Agentic RAG (multi-step reasoning and tool orchestration)—aim to boost factuality, reasoning depth, and adaptability.",
+      "source_url": "https://www.semanticscholar.org/paper/98549f027cd33116bccac58eb8f43ced736a7de3",
+      "verified": true
+    },
+    {
+      "claim": "We present a unified evaluation framework that, for the first time, compares these three paradigms under matched conditions: the same base model, the same hybrid retriever, and identical domain constraints.",
+      "claim_id": "claim-020",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...in insurance,'), so the full benchmark description and any findings are missing.",
+      "identifiers": {
+        "doi": "10.1109/aisp68263.2025.11396270",
+        "semantic_scholar_paper_id": "98549f027cd33116bccac58eb8f43ced736a7de3"
+      },
+      "paper_record_id": "paper-bc038b32491c",
+      "paper_title": "A Unified Evaluation Framework for Grounded LLM Architectures: Comparative Analysis of RAG, Self-RAG, and Agentic RAG",
+      "paraphrase": "The authors present a unified evaluation framework that compares RAG, Self-RAG, and Agentic RAG under matched conditions: same base model, same hybrid retriever, and identical domain constraints.",
+      "quote": "We present a unified evaluation framework that, for the first time, compares these three paradigms under matched conditions: the same base model, the same hybrid retriever, and identical domain constraints.",
+      "source_url": "https://www.semanticscholar.org/paper/98549f027cd33116bccac58eb8f43ced736a7de3",
+      "verified": true
+    },
+    {
+      "claim": "Our multi-task benchmark spans factual recall, multi-hop reasoning, and domain-specific Q&A in insurance,",
+      "claim_id": "claim-021",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...in insurance,'), so the full benchmark description and any findings are missing.",
+      "identifiers": {
+        "doi": "10.1109/aisp68263.2025.11396270",
+        "semantic_scholar_paper_id": "98549f027cd33116bccac58eb8f43ced736a7de3"
+      },
+      "paper_record_id": "paper-bc038b32491c",
+      "paper_title": "A Unified Evaluation Framework for Grounded LLM Architectures: Comparative Analysis of RAG, Self-RAG, and Agentic RAG",
+      "paraphrase": "The multi-task benchmark covers factual recall, multi-hop reasoning, and domain-specific Q&A in insurance.",
+      "quote": "Our multi-task benchmark spans factual recall, multi-hop reasoning, and domain-specific Q&A in insurance,",
+      "source_url": "https://www.semanticscholar.org/paper/98549f027cd33116bccac58eb8f43ced736a7de3",
+      "verified": true
+    },
+    {
+      "claim": "Enhancing Question-Answering accuracy on new law documents by using Retrieval-Augmented Generation (RAG)-Large Language Models .",
+      "claim_id": "claim-022",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...used during'), so the complete originality/value statement is missing.",
+      "identifiers": {
+        "doi": "10.1108/dta-03-2025-0195"
+      },
+      "paper_record_id": "paper-f80a05d53ab0",
+      "paper_title": "LawRAG: Indonesian legal document retrieval-augmented generation with specialized chunking and reranking strategies",
+      "paraphrase": "The purpose is to improve question-answering accuracy on new law documents by using RAG with large language models.",
+      "quote": "Enhancing Question-Answering accuracy on new law documents by using Retrieval-Augmented Generation (RAG)-Large Language Models .",
+      "source_url": "https://doi.org/10.1108/dta-03-2025-0195",
+      "verified": true
+    },
+    {
+      "claim": "The proposed method is built on a RAG design for Indonesian new law documents, incorporating a specific data chunking method and a reranker model.",
+      "claim_id": "claim-023",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...used during'), so the complete originality/value statement is missing.",
+      "identifiers": {
+        "doi": "10.1108/dta-03-2025-0195"
+      },
+      "paper_record_id": "paper-f80a05d53ab0",
+      "paper_title": "LawRAG: Indonesian legal document retrieval-augmented generation with specialized chunking and reranking strategies",
+      "paraphrase": "The method uses a RAG design for Indonesian new law documents, with a specific data chunking method and a reranker model.",
+      "quote": "The proposed method is built on a RAG design for Indonesian new law documents, incorporating a specific data chunking method and a reranker model.",
+      "source_url": "https://doi.org/10.1108/dta-03-2025-0195",
+      "verified": true
+    },
+    {
+      "claim": "The proposed method, which segments legal data by focusing on the document title, article, and paragraph, outperforms the sequential chunking method in terms of accuracy.",
+      "claim_id": "claim-024",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...used during'), so the complete originality/value statement is missing.",
+      "identifiers": {
+        "doi": "10.1108/dta-03-2025-0195"
+      },
+      "paper_record_id": "paper-f80a05d53ab0",
+      "paper_title": "LawRAG: Indonesian legal document retrieval-augmented generation with specialized chunking and reranking strategies",
+      "paraphrase": "Segmenting legal data by document title, article, and paragraph yields higher accuracy than sequential chunking.",
+      "quote": "The proposed method, which segments legal data by focusing on the document title, article, and paragraph, outperforms the sequential chunking method in terms of accuracy.",
+      "source_url": "https://doi.org/10.1108/dta-03-2025-0195",
+      "verified": true
+    },
+    {
+      "claim": "This research demonstrates that the completeness of a sentence in the data set used during",
+      "claim_id": "claim-025",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-sentence ('...used during'), so the complete originality/value statement is missing.",
+      "identifiers": {
+        "doi": "10.1108/dta-03-2025-0195"
+      },
+      "paper_record_id": "paper-f80a05d53ab0",
+      "paper_title": "LawRAG: Indonesian legal document retrieval-augmented generation with specialized chunking and reranking strategies",
+      "paraphrase": "The research demonstrates that the completeness of a sentence in the dataset used during (truncated).",
+      "quote": "This research demonstrates that the completeness of a sentence in the data set used during",
+      "source_url": "https://doi.org/10.1108/dta-03-2025-0195",
+      "verified": true
+    },
+    {
+      "claim": "Large language models (LLMs) like GPT-4, the engine of products like ChatGPT, have taken centre stage in recent years due to their astonishing capabilities.",
+      "claim_id": "claim-026",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated and lacks details on methods, datasets, metrics, and results.",
+      "identifiers": {
+        "doi": "10.59350/xcq3s-jvk04"
+      },
+      "paper_record_id": "paper-eea4b20e9744",
+      "paper_title": "Understanding Retrieval Pitfalls: Challenges Faced by Retrieval Augmented Generation (RAG) models",
+      "paraphrase": "LLMs such as GPT-4, which power products like ChatGPT, have become prominent due to their impressive capabilities.",
+      "quote": "Large language models (LLMs) like GPT-4, the engine of products like ChatGPT, have taken centre stage in recent years due to their astonishing capabilities.",
+      "source_url": "https://doi.org/10.59350/xcq3s-jvk04",
+      "verified": true
+    },
+    {
+      "claim": "Yet, they are far from perfect.",
+      "claim_id": "claim-027",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated and lacks details on methods, datasets, metrics, and results.",
+      "identifiers": {
+        "doi": "10.59350/xcq3s-jvk04"
+      },
+      "paper_record_id": "paper-eea4b20e9744",
+      "paper_title": "Understanding Retrieval Pitfalls: Challenges Faced by Retrieval Augmented Generation (RAG) models",
+      "paraphrase": "However, LLMs are not perfect.",
+      "quote": "Yet, they are far from perfect.",
+      "source_url": "https://doi.org/10.59350/xcq3s-jvk04",
+      "verified": true
+    },
+    {
+      "claim": "Many of us have since learnt — perhaps when asking ChatGPT a question or employing it to write our reports — that LLMs can hallucinate.",
+      "claim_id": "claim-028",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated and lacks details on methods, datasets, metrics, and results.",
+      "identifiers": {
+        "doi": "10.59350/xcq3s-jvk04"
+      },
+      "paper_record_id": "paper-eea4b20e9744",
+      "paper_title": "Understanding Retrieval Pitfalls: Challenges Faced by Retrieval Augmented Generation (RAG) models",
+      "paraphrase": "It is widely recognized that LLMs can hallucinate, for example when used for question answering or report writing.",
+      "quote": "Many of us have since learnt — perhaps when asking ChatGPT a question or employing it to write our reports — that LLMs can hallucinate.",
+      "source_url": "https://doi.org/10.59350/xcq3s-jvk04",
+      "verified": true
+    },
+    {
+      "claim": "Retrieval-Augmented Generation (RAG) has emerged as a promising paradigm for open-domain question answering.",
+      "claim_id": "claim-029",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-word ('...mitigating the \"seman'), so the complete description of the mitigation and any findings are missing.",
+      "identifiers": {
+        "doi": "10.66245/jyi.v1.i1.002"
+      },
+      "paper_record_id": "paper-fe2b9f0aaa7e",
+      "paper_title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "RAG is a promising approach for open-domain question answering.",
+      "quote": "Retrieval-Augmented Generation (RAG) has emerged as a promising paradigm for open-domain question answering.",
+      "source_url": "https://doi.org/10.66245/jyi.v1.i1.002",
+      "verified": true
+    },
+    {
+      "claim": "However, standard single-hop retrieval often fails on complex, multi-hop queries where the answer requires synthesizing information from disparate documents.",
+      "claim_id": "claim-030",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-word ('...mitigating the \"seman'), so the complete description of the mitigation and any findings are missing.",
+      "identifiers": {
+        "doi": "10.66245/jyi.v1.i1.002"
+      },
+      "paper_record_id": "paper-fe2b9f0aaa7e",
+      "paper_title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "Standard single-hop retrieval frequently fails on complex multi-hop queries that require synthesizing information from multiple documents.",
+      "quote": "However, standard single-hop retrieval often fails on complex, multi-hop queries where the answer requires synthesizing information from disparate documents.",
+      "source_url": "https://doi.org/10.66245/jyi.v1.i1.002",
+      "verified": true
+    },
+    {
+      "claim": "In this work, we propose an enhanced Multi-Hop RAG pipeline augmented with Cross-Encoder Reranking to address the challenges of reasoning across multiple documents.",
+      "claim_id": "claim-031",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-word ('...mitigating the \"seman'), so the complete description of the mitigation and any findings are missing.",
+      "identifiers": {
+        "doi": "10.66245/jyi.v1.i1.002"
+      },
+      "paper_record_id": "paper-fe2b9f0aaa7e",
+      "paper_title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "The authors propose an enhanced Multi-Hop RAG pipeline with Cross-Encoder Reranking to tackle multi-document reasoning challenges.",
+      "quote": "In this work, we propose an enhanced Multi-Hop RAG pipeline augmented with Cross-Encoder Reranking to address the challenges of reasoning across multiple documents.",
+      "source_url": "https://doi.org/10.66245/jyi.v1.i1.002",
+      "verified": true
+    },
+    {
+      "claim": "Our approach decomposes complex queries into self-contained sub-questions and employs a Cross-Encoder to rerank candidates at each retrieval step, mitigating the \"seman",
+      "claim_id": "claim-032",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt ends mid-word ('...mitigating the \"seman'), so the complete description of the mitigation and any findings are missing.",
+      "identifiers": {
+        "doi": "10.66245/jyi.v1.i1.002"
+      },
+      "paper_record_id": "paper-fe2b9f0aaa7e",
+      "paper_title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "paraphrase": "The approach breaks complex queries into self-contained sub-questions and uses a Cross-Encoder to rerank candidates at each retrieval step, mitigating the 'seman' (truncated).",
+      "quote": "Our approach decomposes complex queries into self-contained sub-questions and employs a Cross-Encoder to rerank candidates at each retrieval step, mitigating the \"seman",
+      "source_url": "https://doi.org/10.66245/jyi.v1.i1.002",
+      "verified": true
+    },
+    {
+      "claim": "Graph-based reranking defense remains vulnerable when poisoned passages form small structures.",
+      "claim_id": "claim-033",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; the full methodology, datasets, metrics, and results of GHP are not available.",
+      "identifiers": {
+        "doi": "10.1002/cpe.70824"
+      },
+      "paper_record_id": "paper-40438d5c4878",
+      "paper_title": "GHP: Hardening Graph‐Based Reranking Defense for Poisoned Retrieval‐Augmented Generation",
+      "paraphrase": "The authors' analysis shows that graph-based reranking defenses can still be bypassed when adversarial passages form small structures.",
+      "quote": "our analysis shows that this defense line remains vulnerable when poisoned passages form small",
+      "source_url": "https://doi.org/10.1002/cpe.70824",
+      "verified": true
+    },
+    {
+      "claim": "Under poisoned retrieval, adversarial passages may survive ranking and enter the final prompt, creating a reliability risk even when the generator itself is unchanged.",
+      "claim_id": "claim-034",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; the full methodology, datasets, metrics, and results of GHP are not available.",
+      "identifiers": {
+        "doi": "10.1002/cpe.70824"
+      },
+      "paper_record_id": "paper-40438d5c4878",
+      "paper_title": "GHP: Hardening Graph‐Based Reranking Defense for Poisoned Retrieval‐Augmented Generation",
+      "paraphrase": "Poisoned retrieval can allow adversarial passages to pass ranking and be included in the final prompt, posing a reliability risk independent of the generator.",
+      "quote": "Under poisoned retrieval, adversarial passages may survive ranking and enter the final prompt, creating a reliability risk even when the generator itself is unchanged.",
+      "source_url": "https://doi.org/10.1002/cpe.70824",
+      "verified": true
+    },
+    {
+      "claim": "The system employs a combination of natural language processing techniques to facilitate textbook query assistance.",
+      "claim_id": "claim-035",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "doi": "10.2139/ssrn.7368058"
+      },
+      "paper_record_id": "paper-5dad2fac2f27",
+      "paper_title": "RETRIEVAL AUGMENTED GENERATION SYSTEM FOR EDUCATIONAL TEXTBOOK QUERY ASSISTANCE",
+      "paraphrase": "The proposed system uses multiple NLP techniques to enable students to query textbooks in casual language and receive responses based on the textbook material.",
+      "quote": "The system employs a combination of natural language processing tech- niques to accomplish this.",
+      "source_url": "https://doi.org/10.2139/ssrn.7368058",
+      "verified": true
+    },
+    {
+      "claim": "The system disassembles and categorizes textbook contents, converts them into a searchable format, and uses a language model to generate responses.",
+      "claim_id": "claim-036",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "doi": "10.2139/ssrn.7368058"
+      },
+      "paper_record_id": "paper-5dad2fac2f27",
+      "paper_title": "RETRIEVAL AUGMENTED GENERATION SYSTEM FOR EDUCATIONAL TEXTBOOK QUERY ASSISTANCE",
+      "paraphrase": "The system processes textbook content by breaking it down, categorizing it, making it searchable, and then using a language model to generate answers.",
+      "quote": "Initially, it disassembles and categorizes the textbook contents, subsequently converts them into a readily searchable format, and fi- nally, a language model is utilized to generat",
+      "source_url": "https://doi.org/10.2139/ssrn.7368058",
+      "verified": true
+    },
+    {
+      "claim": "Choosing the most suitable retrieval strategy is no simple task.",
+      "claim_id": "claim-037",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "doi": "10.2139/ssrn.6597746"
+      },
+      "paper_record_id": "paper-5177e4394c08",
+      "paper_title": "Performance VS Cost: A Modular Architecture for Cost-Aware Adaptive Retrieval in Retrieval-Augmented Generation Systems",
+      "paraphrase": "Selecting the best retrieval strategy for a RAG system is a non-trivial problem.",
+      "quote": "choosing the most suitable retrieval strategy is no simple task.",
+      "source_url": "https://doi.org/10.2139/ssrn.6597746",
+      "verified": true
+    },
+    {
+      "claim": "Lexical and dense retrievers are efficient and inexpensive, while reasoning-based retrievers can improve effectiveness on complex questions at substantially higher computational cost.",
+      "claim_id": "claim-038",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "doi": "10.2139/ssrn.6597746"
+      },
+      "paper_record_id": "paper-5177e4394c08",
+      "paper_title": "Performance VS Cost: A Modular Architecture for Cost-Aware Adaptive Retrieval in Retrieval-Augmented Generation Systems",
+      "paraphrase": "There is a trade-off: lexical and dense retrievers are cheap and efficient, whereas reasoning-based retrievers are more effective on complex questions but much more costly.",
+      "quote": "While lexical and dense retrievers are efficient and inexpensive, reasoning-based retrievers can improve effectiveness on complex questions at substantially higher computational cost.",
+      "source_url": "https://doi.org/10.2139/ssrn.6597746",
+      "verified": true
+    },
+    {
+      "claim": "CARE is a modular architecture for query-adaptive and cost-aware retrieval.",
+      "claim_id": "claim-039",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "doi": "10.2139/ssrn.6597746"
+      },
+      "paper_record_id": "paper-5177e4394c08",
+      "paper_title": "Performance VS Cost: A Modular Architecture for Cost-Aware Adaptive Retrieval in Retrieval-Augmented Generation Systems",
+      "paraphrase": "The paper introduces CARE, a modular architecture that adapts retrieval based on query and cost considerations.",
+      "quote": "we introduce CARE (Cost-aware Adaptive REtrieval), a modular architecture for query-adaptive an",
+      "source_url": "https://doi.org/10.2139/ssrn.6597746",
+      "verified": true
+    },
+    {
+      "claim": "RAG systems degrade sharply under extreme noise, where irrelevant or redundant passages dominate.",
+      "claim_id": "claim-040",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; the second mechanism, datasets, metrics, and results are not available.",
+      "identifiers": {
+        "doi": "10.18653/v1/2026.eacl-industry.27",
+        "semantic_scholar_paper_id": "a3ea1b48f46752aae76b9a922b51c13460c55e0d"
+      },
+      "paper_record_id": "paper-affd0a8c0e23",
+      "paper_title": "ReflectiveRAG: Rethinking Adaptivity in Retrieval-Augmented Generation",
+      "paraphrase": "When there is extreme noise with many irrelevant or redundant passages, RAG performance drops significantly.",
+      "quote": "Retrieval-Augmented Generation (RAG) systems degrade sharply under extreme noise, where irrelevant or redundant passages dominate.",
+      "source_url": "https://www.semanticscholar.org/paper/a3ea1b48f46752aae76b9a922b51c13460c55e0d",
+      "verified": true
+    },
+    {
+      "claim": "Current methods depend on static heuristics or costly reinforcement learning, failing to assess evidence sufficiency, detect subtle mismatches, or reduce redundancy, leading to hallucinations and poor grounding.",
+      "claim_id": "claim-041",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; the second mechanism, datasets, metrics, and results are not available.",
+      "identifiers": {
+        "doi": "10.18653/v1/2026.eacl-industry.27",
+        "semantic_scholar_paper_id": "a3ea1b48f46752aae76b9a922b51c13460c55e0d"
+      },
+      "paper_record_id": "paper-affd0a8c0e23",
+      "paper_title": "ReflectiveRAG: Rethinking Adaptivity in Retrieval-Augmented Generation",
+      "paraphrase": "Existing approaches rely on fixed heuristics or expensive RL, and they cannot properly judge if evidence is sufficient, spot subtle mismatches, or cut redundancy, which causes hallucinations and weak grounding.",
+      "quote": "Current methods-fixed top-k retrieval, cross-encoder reranking, or policy-based iteration-depend on static heuristics or costly reinforcement learning, failing to assess evidence sufficiency, detect subtle mismatches, or reduce redundancy, leading to hallucinations and poor grounding.",
+      "source_url": "https://www.semanticscholar.org/paper/a3ea1b48f46752aae76b9a922b51c13460c55e0d",
+      "verified": true
+    },
+    {
+      "claim": "ReflectiveRAG is a lightweight yet reasoning-driven architecture that enhances factual grounding through two complementary mechanisms: Self-Reflective Retrieval (SRR) and another mechanism.",
+      "claim_id": "claim-042",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; the second mechanism, datasets, metrics, and results are not available.",
+      "identifiers": {
+        "doi": "10.18653/v1/2026.eacl-industry.27",
+        "semantic_scholar_paper_id": "a3ea1b48f46752aae76b9a922b51c13460c55e0d"
+      },
+      "paper_record_id": "paper-affd0a8c0e23",
+      "paper_title": "ReflectiveRAG: Rethinking Adaptivity in Retrieval-Augmented Generation",
+      "paraphrase": "The paper proposes ReflectiveRAG, a lightweight reasoning-based architecture that improves factual grounding using two mechanisms, one of which is Self-Reflective Retrieval.",
+      "quote": "We introduce Reflec-tiveRAG , a lightweight yet reasoning-driven architecture that enhances factual grounding through two complementary mechanisms: Self-Reflective Retrieval (SRR) and",
+      "source_url": "https://www.semanticscholar.org/paper/a3ea1b48f46752aae76b9a922b51c13460c55e0d",
+      "verified": true
+    },
+    {
+      "claim": "Retrieval-based multimodal document QA aims to identify and integrate relevant information from visually rich documents with complex multimodal structures.",
+      "claim_id": "claim-043",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "arxiv_id": "2604.16313",
+        "doi": "10.1145/3746027.3755390",
+        "semantic_scholar_paper_id": "b1e326eb8586518b3d1c8b3fed0b438a396a072e"
+      },
+      "paper_record_id": "paper-b502a1f9946c",
+      "paper_title": "MARA: A Multimodal Adaptive Retrieval-Augmented Framework for Document Question Answering",
+      "paraphrase": "The task of multimodal document QA involves finding and combining relevant information from visually rich documents that have complex multimodal structures.",
+      "quote": "Retrieval-based multimodal document QA aims to identify and integrate relevant information from visually rich documents with complex multimodal structures.",
+      "source_url": "https://www.semanticscholar.org/paper/b1e326eb8586518b3d1c8b3fed0b438a396a072e",
+      "verified": true
+    },
+    {
+      "claim": "Current approaches rely on query-agnostic document representations that overlook salient content and use static top-k evidence selection, which fails to adapt to the uncertain distribution of relevant information.",
+      "claim_id": "claim-044",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "arxiv_id": "2604.16313",
+        "doi": "10.1145/3746027.3755390",
+        "semantic_scholar_paper_id": "b1e326eb8586518b3d1c8b3fed0b438a396a072e"
+      },
+      "paper_record_id": "paper-b502a1f9946c",
+      "paper_title": "MARA: A Multimodal Adaptive Retrieval-Augmented Framework for Document Question Answering",
+      "paraphrase": "Existing methods use document representations that ignore the query and select evidence with a fixed top-k, which cannot handle the uncertain distribution of relevant information.",
+      "quote": "current approaches rely on query-agnostic document representations that overlook salient content and use static top-k evidence selection, which fails to adapt to the uncertain distribution of relevant information.",
+      "source_url": "https://www.semanticscholar.org/paper/b1e326eb8586518b3d1c8b3fed0b438a396a072e",
+      "verified": true
+    },
+    {
+      "claim": "MARA is a multimodal adaptive retrieval-augmented framework for document question answering.",
+      "claim_id": "claim-045",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated; no datasets, metrics, or results are provided.",
+      "identifiers": {
+        "arxiv_id": "2604.16313",
+        "doi": "10.1145/3746027.3755390",
+        "semantic_scholar_paper_id": "b1e326eb8586518b3d1c8b3fed0b438a396a072e"
+      },
+      "paper_record_id": "paper-b502a1f9946c",
+      "paper_title": "MARA: A Multimodal Adaptive Retrieval-Augmented Framework for Document Question Answering",
+      "paraphrase": "The paper introduces MARA, a framework that adaptively retrieves and augments generation for multimodal document QA.",
+      "quote": "MARA: A Multimodal Adaptive Retrieval-Augmented Framework for Document Question Answering",
+      "source_url": "https://www.semanticscholar.org/paper/b1e326eb8586518b3d1c8b3fed0b438a396a072e",
+      "verified": true
+    },
+    {
+      "claim": "The paper presents an optimized domain-specific question-answering framework that combines normalized Dense Retrieval and BM25 fusion, DistilBERT-based candidate re-ranking, and evidence-constrained T5-small generation within a retrieval-augmented generation pipeline.",
+      "claim_id": "claim-046",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so datasets, metrics, key results, and limitations are not available. The exact role of DistilBERT (encoder and relevance) is cut off.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-9753469/v1"
+      },
+      "paper_record_id": "paper-5bd77eb5e9db",
+      "paper_title": "Retrieval-Augmented Generation with Low-Latency Deployment for Vertical Domains Question Answering: A Case Study on Economic Resource Platforms",
+      "paraphrase": "The authors propose a domain-specific QA framework that integrates dense retrieval with BM25 fusion, DistilBERT re-ranking, and T5-small generation in a RAG pipeline.",
+      "quote": "This paper presents an optimized domain-specific question-answering framework that combines normalized Dense Retrieval and BM25 fusion, DistilBERT-based candidate re-ranking, and evidence-constrained T5-small generation within a retrieval-augmented generation pipeline.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-9753469/v1",
+      "verified": true
+    },
+    {
+      "claim": "Deployment of generative chatbots in vertical domains such as policy documents and economic resource platforms faces challenges in retrieval accuracy, answer faithfulness, latency control, and scalable service readiness.",
+      "claim_id": "claim-047",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so datasets, metrics, key results, and limitations are not available. The exact role of DistilBERT (encoder and relevance) is cut off.",
+      "identifiers": {
+        "doi": "10.21203/rs.3.rs-9753469/v1"
+      },
+      "paper_record_id": "paper-5bd77eb5e9db",
+      "paper_title": "Retrieval-Augmented Generation with Low-Latency Deployment for Vertical Domains Question Answering: A Case Study on Economic Resource Platforms",
+      "paraphrase": "Generative chatbots for vertical domains face challenges including retrieval accuracy, answer faithfulness, latency control, and scalable service readiness.",
+      "quote": "their deployment in vertical domains such as policy documents and economic resource platforms still faces challenges in retrieval accuracy, answer faithfulness, latency control, and scalable service readiness",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-9753469/v1",
+      "verified": true
+    },
+    {
+      "claim": "Standard Retrieval-Augmented Generation (RAG) models are limited by their “one-shot” nature, failing to assess or improve answer quality dynamically.",
+      "claim_id": "claim-048",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so the full list of benchmarks, metrics, and limitations are not available. The 17.2% improvement is cut off, and the baseline is unclear.",
+      "identifiers": {
+        "doi": "10.3390/electronics15050996"
+      },
+      "paper_record_id": "paper-63e4e7a75fef",
+      "paper_title": "SCIM: Self-Correcting Iterative Mechanism for Retrieval-Augmented Generation",
+      "paraphrase": "Standard RAG models have a one-shot limitation and cannot dynamically assess or improve answer quality.",
+      "quote": "Standard Retrieval-Augmented Generation (RAG) models are limited by their “one-shot” nature, failing to assess or improve answer quality dynamically.",
+      "source_url": "https://doi.org/10.3390/electronics15050996",
+      "verified": true
+    },
+    {
+      "claim": "SCIM operates on a lightweight Flan-T5-base model (250M parameters) and requires no fine-tuning, challenging the industry’s reliance on 7B+ parameter models.",
+      "claim_id": "claim-049",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so the full list of benchmarks, metrics, and limitations are not available. The 17.2% improvement is cut off, and the baseline is unclear.",
+      "identifiers": {
+        "doi": "10.3390/electronics15050996"
+      },
+      "paper_record_id": "paper-63e4e7a75fef",
+      "paper_title": "SCIM: Self-Correcting Iterative Mechanism for Retrieval-Augmented Generation",
+      "paraphrase": "SCIM uses a 250M parameter Flan-T5-base model without fine-tuning, challenging the need for 7B+ parameter models.",
+      "quote": "it operates on a lightweight Flan-T5-base model (250M parameters) and requires no fine-tuning, challenging the industry’s reliance on 7B+ parameter models.",
+      "source_url": "https://doi.org/10.3390/electronics15050996",
+      "verified": true
+    },
+    {
+      "claim": "Experimental results across four major benchmarks show that SCIM yields a 17.2% improvement over sta[ndard baselines].",
+      "claim_id": "claim-050",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so the full list of benchmarks, metrics, and limitations are not available. The 17.2% improvement is cut off, and the baseline is unclear.",
+      "identifiers": {
+        "doi": "10.3390/electronics15050996"
+      },
+      "paper_record_id": "paper-63e4e7a75fef",
+      "paper_title": "SCIM: Self-Correcting Iterative Mechanism for Retrieval-Augmented Generation",
+      "paraphrase": "SCIM achieves a 17.2% improvement over standard baselines on four major benchmarks.",
+      "quote": "Experimental results across four major benchmarks show that SCIM yields a 17.2% improvement over sta",
+      "source_url": "https://doi.org/10.3390/electronics15050996",
+      "verified": true
+    },
+    {
+      "claim": "Existing ranking methods in RAG pipelines primarily optimize for document-query relevance, neglecting crucial factors for generation quality such as factual consistency and information coverage.",
+      "claim_id": "claim-051",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so datasets, metrics, key results, and limitations are not available. The description of the utility-based scoring mechanism is cut off.",
+      "identifiers": {
+        "doi": "10.20944/preprints202512.1983.v1"
+      },
+      "paper_record_id": "paper-b4a1722b4943",
+      "paper_title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "paraphrase": "Current RAG ranking methods focus on document-query relevance and overlook factual consistency and information coverage.",
+      "quote": "existing ranking methods in RAG pipelines primarily optimize for document-query relevance, neglecting crucial factors for generation quality such as factual consistency and information coverage",
+      "source_url": "https://doi.org/10.20944/preprints202512.1983.v1",
+      "verified": true
+    },
+    {
+      "claim": "The paper proposes a novel multi-objective ranking framework that explicitly models three critical dimensions: relevance, coverage, and faithfulness support.",
+      "claim_id": "claim-052",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so datasets, metrics, key results, and limitations are not available. The description of the utility-based scoring mechanism is cut off.",
+      "identifiers": {
+        "doi": "10.20944/preprints202512.1983.v1"
+      },
+      "paper_record_id": "paper-b4a1722b4943",
+      "paper_title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "paraphrase": "The authors propose a multi-objective ranking framework that models relevance, coverage, and faithfulness support.",
+      "quote": "We propose a novel multiobjective ranking framework that explicitly models three critical dimensions: relevance, coverage, and faithfulness support.",
+      "source_url": "https://doi.org/10.20944/preprints202512.1983.v1",
+      "verified": true
+    },
+    {
+      "claim": "The method introduces a utility-based scoring mechanism that evaluates [the three dimensions].",
+      "claim_id": "claim-053",
+      "claim_type": "paper_result",
+      "evidence_location": "abstract excerpt",
+      "evidence_type": "abstract",
+      "extraction_uncertainty": "The abstract excerpt is truncated, so datasets, metrics, key results, and limitations are not available. The description of the utility-based scoring mechanism is cut off.",
+      "identifiers": {
+        "doi": "10.20944/preprints202512.1983.v1"
+      },
+      "paper_record_id": "paper-b4a1722b4943",
+      "paper_title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "paraphrase": "The framework uses a utility-based scoring mechanism to evaluate the three dimensions.",
+      "quote": "our method introduces a utilitybased scoring mechanism that evalu",
+      "source_url": "https://doi.org/10.20944/preprints202512.1983.v1",
+      "verified": true
+    }
+  ],
+  "condition": "federated-verified",
+  "failures": [
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:45:47.914821+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:04.499046+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:21.107515+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:41.036223+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "reranking retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:58.678281+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:15.268440+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "self reflective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:32.016617+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:57.503004+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:57.873865+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:58.432735+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "self reflective retrieval augmented generation Self-RAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:58.814698+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.318713+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "reranking retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.532484+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "corrective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.824293+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "self reflective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:48:00.031973+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    }
+  ],
+  "hypotheses": [
+    {
+      "attribution": "agent_hypothesis_not_paper_conclusion",
+      "confidence": 0.5,
+      "derived_from_claim_ids": [
+        "claim-030",
+        "claim-031",
+        "claim-032"
+      ],
+      "falsification_test": "Measure retrieval accuracy and latency for multi-hop queries with and without decomposition; if latency does not increase significantly or accuracy does not improve, hypothesis is falsified.",
+      "hypothesis": "Query rewriting via decomposition into sub-questions improves retrieval quality for multi-hop queries but increases latency proportionally to the number of sub-questions.",
+      "hypothesis_id": "hyp-001",
+      "rationale": "Decomposition enables handling complex queries that single-hop retrieval fails on, but each sub-question requires separate retrieval and reranking steps, adding latency."
+    },
+    {
+      "attribution": "agent_hypothesis_not_paper_conclusion",
+      "confidence": 0.5,
+      "derived_from_claim_ids": [
+        "claim-004",
+        "claim-005"
+      ],
+      "falsification_test": "Compare training stability and resource requirements of RL-based reranking versus simpler rerankers; if RL-based reranking is stable and low-cost, hypothesis is falsified.",
+      "hypothesis": "Reinforcement learning-based reranking (e.g., GRPO++) improves ranking quality but introduces training instability and high implementation complexity, making it less suitable for low-resource settings.",
+      "hypothesis_id": "hyp-002",
+      "rationale": "RL reranking optimizes ranking objectives but faces challenges like training instability and complex reward design, requiring significant computational resources."
+    },
+    {
+      "attribution": "agent_hypothesis_not_paper_conclusion",
+      "confidence": 0.5,
+      "derived_from_claim_ids": [
+        "claim-012",
+        "claim-013",
+        "claim-014"
+      ],
+      "falsification_test": "Evaluate MMCRAG-Resp in respiratory care versus standard RAG; if no significant improvement in safety/relevance or if implementation is straightforward, hypothesis is falsified.",
+      "hypothesis": "Corrective retrieval frameworks like MMCRAG-Resp improve answer safety and relevance in domain-specific applications (e.g., respiratory care) but require domain-specific knowledge integration, increasing implementation complexity.",
+      "hypothesis_id": "hyp-003",
+      "rationale": "Corrective retrieval addresses limitations of semantic similarity by incorporating domain-specific corrections, but this necessitates specialized knowledge and adaptation."
+    },
+    {
+      "attribution": "agent_hypothesis_not_paper_conclusion",
+      "confidence": 0.5,
+      "derived_from_claim_ids": [
+        "claim-001",
+        "claim-002",
+        "claim-015",
+        "claim-016",
+        "claim-017",
+        "claim-018",
+        "claim-040",
+        "claim-041",
+        "claim-042"
+      ],
+      "falsification_test": "Measure hallucination rate, faithfulness, latency, and cost for Self-RAG versus standard RAG; if no trade-off exists (e.g., latency unchanged), hypothesis is falsified.",
+      "hypothesis": "Self-reflective retrieval (e.g., Self-RAG) reduces hallucination and improves faithfulness but increases latency and cost due to iterative reflection and generation steps.",
+      "hypothesis_id": "hyp-004",
+      "rationale": "Self-reflection allows the model to critique and refine retrievals, enhancing grounding, but each reflection cycle adds computational overhead."
+    },
+    {
+      "attribution": "agent_hypothesis_not_paper_conclusion",
+      "confidence": 0.5,
+      "derived_from_claim_ids": [
+        "claim-048",
+        "claim-049",
+        "claim-050"
+      ],
+      "falsification_test": "Reproduce SCIM on benchmarks and compare to standard RAG; if improvement is not significant or cost is high, hypothesis is falsified.",
+      "hypothesis": "Lightweight self-correcting mechanisms (e.g., SCIM with Flan-T5-base) can achieve significant improvements over standard RAG without fine-tuning, offering a favorable trade-off between performance and cost.",
+      "hypothesis_id": "hyp-005",
+      "rationale": "SCIM uses a small model and no fine-tuning, reducing cost and complexity while still improving accuracy by 17.2% on benchmarks."
+    }
+  ],
+  "limitations": [
+    "Extraction uses bounded public abstract excerpts; claims are not full-text findings unless explicitly marked.",
+    "Search API ranking and metadata can change after the recorded retrieval timestamp.",
+    "Calculated API cost uses provider-reported usage and published rates; it is not an invoice."
+  ],
+  "question": "RAG 시스템에서 query rewriting, reranking, corrective retrieval, self-reflective retrieval 기법은 검색 품질과 답변의 faithfulness를 어떤 조건에서 개선하며, latency·비용·구현 복잡도 측면에서 어떤 trade-off를 만드는가?",
+  "search": {
+    "duplicates_removed": 82,
+    "identifier_failures": 1,
+    "queries": [
+      {
+        "origin": "deterministic_seed",
+        "query": "retrieval augmented generation query rewriting retrieval quality faithfulness"
+      },
+      {
+        "origin": "deterministic_seed",
+        "query": "retrieval augmented generation reranking retrieval quality faithfulness"
+      },
+      {
+        "origin": "deterministic_seed",
+        "query": "corrective retrieval augmented generation CRAG"
+      },
+      {
+        "origin": "deterministic_seed",
+        "query": "self reflective retrieval augmented generation Self-RAG"
+      },
+      {
+        "origin": "model_expansion",
+        "query": "query rewriting retrieval augmented generation latency cost trade-off"
+      },
+      {
+        "origin": "model_expansion",
+        "query": "reranking retrieval augmented generation latency cost trade-off"
+      },
+      {
+        "origin": "model_expansion",
+        "query": "corrective retrieval augmented generation latency cost trade-off"
+      },
+      {
+        "origin": "model_expansion",
+        "query": "self reflective retrieval augmented generation latency cost trade-off"
+      }
+    ],
+    "requests_by_source": {
+      "arxiv": 9,
+      "crossref": 11,
+      "semantic_scholar": 37
+    },
+    "sources": [
+      "semantic_scholar",
+      "crossref",
+      "arxiv"
+    ],
+    "started_at": "2026-09-20T07:45:31.229866+00:00"
+  },
+  "synthesis": {
+    "sections": [
+      {
+        "findings": "['Standard single-hop retrieval often fails on complex multi-hop queries requiring synthesis across disparate documents; decomposing complex queries into self-contained sub-questions is proposed to address this.', \"An enhanced Multi-Hop RAG pipeline augmented with Cross-Encoder Reranking decomposes complex queries into self-contained sub-questions and reranks candidates at each retrieval step, mitigating a 'semantic' issue (truncated).\"]",
+        "supporting_claim_ids": [
+          "claim-030",
+          "claim-031",
+          "claim-032"
+        ],
+        "technique": "query_rewriting",
+        "tradeoffs": "['Query decomposition adds latency and computational cost due to multiple retrieval steps and sub-question processing.', 'Implementation complexity increases with the need for a decomposition module and integration with reranking at each step.']"
+      },
+      {
+        "findings": "['RAG performance heavily depends on re-ranking quality, but existing methods face training instability, unreasonable reward design, and insufficient confidence calibration.', 'GRPO++ is an end-to-end reinforcement learning re-ranking framework that collaboratively optimizes five core modules, including Soft-nDCG for differentiable ranking and CRI for Top-K position optimization.', 'In multi-hop RAG, useful evidence may not be fully exploited after entering the candidate pool due to ranking and context budget constraints; candidate evidence reranking (CAPE) is part of a two-layer framework to improve candidate utilization.', 'Candidate answers from multiple retrieval trajectories can be misselected when answer frequency does not align with correction value.', 'Graph-based reranking defenses remain vulnerable when poisoned passages form small structures; under poisoned retrieval, adversarial passages may survive ranking and enter the final prompt, creating a reliability risk even when the generator is unchanged.', 'Existing ranking methods primarily optimize document-query relevance, neglecting factual consistency and information coverage; a multi-objective ranking framework models relevance, coverage, and faithfulness support using a utility-based scoring mechanism.', 'A domain-specific QA framework combines normalized Dense Retrieval and BM25 fusion with DistilBERT-based candidate re-ranking and evidence-constrained T5-small generation.', 'LawRAG incorporates a specific data chunking method and a reranker model; segmenting legal data by document title, article, and paragraph outperforms sequential chunking in accuracy.', 'Current methods like fixed top-k retrieval, cross-encoder reranking, or policy-based iteration depend on static heuristics or costly reinforcement learning, failing to assess evidence sufficiency, detect subtle mismatches, or reduce redundancy, leading to hallucinations and poor grounding.']",
+        "supporting_claim_ids": [
+          "claim-004",
+          "claim-005",
+          "claim-006",
+          "claim-007",
+          "claim-008",
+          "claim-033",
+          "claim-034",
+          "claim-051",
+          "claim-052",
+          "claim-053",
+          "claim-046",
+          "claim-023",
+          "claim-024",
+          "claim-041"
+        ],
+        "technique": "reranking",
+        "tradeoffs": "['Reranking improves retrieval quality but adds latency and computational cost, especially with complex models like cross-encoders or reinforcement learning-based rerankers.', 'Training instability and reward design challenges in RL-based reranking increase implementation complexity.', 'Multi-objective ranking may require additional computation for evaluating multiple dimensions.', 'Graph-based reranking defenses may be vulnerable to adversarial attacks, requiring additional hardening.']"
+      },
+      {
+        "findings": "['Standard RAG systems rely solely on semantic similarity, which is limiting and can lead to clinically irrelevant evidence and unsafe or hallucinated outputs; this is particularly critical in respiratory care where diagnosis depends on accurate physiological indicators.', 'MMCRAG-Resp is a clinically grounded, physiology-aware corrective RAG framework for respiratory intelligence that harmonizes 17,516 [truncated].', \"SCIM is a self-correcting iterative mechanism for RAG that operates on a lightweight Flan-T5-base model (250M parameters) without fine-tuning, challenging the industry's reliance on 7B+ parameter models; it yields a 17.2% improvement over standard baselines on four major benchmarks.\", \"Standard RAG models are limited by their 'one-shot' nature, failing to assess or improve answer quality dynamically.\"]",
+        "supporting_claim_ids": [
+          "claim-012",
+          "claim-013",
+          "claim-014",
+          "claim-048",
+          "claim-049",
+          "claim-050"
+        ],
+        "technique": "corrective_retrieval",
+        "tradeoffs": "['Corrective retrieval can improve accuracy and safety but may introduce additional latency due to iterative correction steps.', 'Implementation complexity increases with the need for correction mechanisms and domain-specific adaptations.', 'Lightweight models like Flan-T5-base reduce computational cost but may have lower capacity than larger models.']"
+      },
+      {
+        "findings": "['Hallucination is a common and potentially severe issue in RAG systems because of their node-like generation process; self-reflective nodes were introduced to create a self-RAG model aimed at solving hallucination.', 'The self-RAG program was built using nodes that employed ChatGPT for generation and the Langchain Python library with its workflow functions to connect the nodes.', 'Self-RAG is explored in analytical systems, specifically data distribution systems, where traditional systems struggle with efficiently querying and interpreting vast datasets; findings suggest Self-RAG can enhance data analysis by improving information retrieval accuracy and generation [truncated].', 'LLMs often produce factual inaccuracies due to sole reliance on parametric knowledge; RAG decreases such issues, but indiscriminately retrieving a fixed number of passages diminishes LM versatility or leads to unhelpful responses.', 'Self-RAG (self-reflective retrieval refinement) and Agentic RAG (multi-step reasoning and tool orchestration) aim to boost factuality, reasoning depth, and adaptability; a unified evaluation framework compares these paradigms under matched conditions.', 'ReflectiveRAG is a lightweight reasoning-driven architecture that enhances factual grounding through two mechanisms: Self-Reflective Retrieval (SRR) and another mechanism [truncated].', 'RAG systems degrade sharply under extreme noise; current methods depend on static heuristics or costly reinforcement learning, failing to assess evidence sufficiency, detect subtle mismatches, or reduce redundancy, leading to hallucinations and poor grounding.']",
+        "supporting_claim_ids": [
+          "claim-001",
+          "claim-002",
+          "claim-003",
+          "claim-009",
+          "claim-010",
+          "claim-011",
+          "claim-015",
+          "claim-016",
+          "claim-017",
+          "claim-018",
+          "claim-019",
+          "claim-020",
+          "claim-021",
+          "claim-040",
+          "claim-041",
+          "claim-042"
+        ],
+        "technique": "self_reflective_retrieval",
+        "tradeoffs": "['Self-reflective retrieval can improve faithfulness and reduce hallucinations but adds latency due to iterative reflection steps.', 'Implementation complexity increases with the need for reflection mechanisms and integration with generation.', 'Cost may increase due to multiple LLM calls for reflection and generation.']"
+      }
+    ]
+  },
+  "usage": {
+    "actual_endpoint_provider": "deepseek",
+    "actual_hostname": "api.deepseek.com",
+    "calculated_cost_usd": 0.01054725,
+    "model_status": "executed",
+    "pricing_checked_at": "2026-09-16",
+    "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "pricing_tiers": "execution-time",
+    "protocol_provider": "openai-compatible",
+    "provider": "deepseek",
+    "request_model": "deepseek-flash",
+    "response_models": [
+      "deepseek-flash"
+    ],
+    "tokens": {
+      "cached_input_tokens": 0,
+      "input_tokens": 18843,
+      "output_tokens": 12868,
+      "requests": 5,
+      "total_tokens": 31711
+    }
+  },
+  "verified_papers": [
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.5121/csit.2024.141402",
+        "semantic_scholar_paper_id": "1281ec0c63825715cd666c447662bbf7f6992fc3"
+      },
+      "record_id": "paper-04f77cefe3e8",
+      "source_url": "https://www.semanticscholar.org/paper/1281ec0c63825715cd666c447662bbf7f6992fc3",
+      "title": "A Self-Reflective Retrieval Augmented Generation System to Eliminate Hallucination in LLM Generation",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.21203/rs.3.rs-8088895/v1",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-ecbad2356e06",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-8088895/v1",
+      "title": "GRPO++: A Controlled Differentiable Reinforcement Learning Reranking Method for Retrieval-Augmented Generation",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.21203/rs.3.rs-11009751/v1",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-a3eb70dfbd35",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-11009751/v1",
+      "title": "Candidate Evidence Reranking and Risk-Aware Answer Selection in Multi-Hop Retrieval-Augmented Generation",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.36930/conf150.5.21",
+        "semantic_scholar_paper_id": "d1512331edf8d9cbffa0e433eebb42c8c84a37f4"
+      },
+      "record_id": "paper-26d0681ef25e",
+      "source_url": "https://www.semanticscholar.org/paper/d1512331edf8d9cbffa0e433eebb42c8c84a37f4",
+      "title": "Self-Reflective Retrieval-Augmented Generation (Self-RAG) in Analytical Systems",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.3389/frai.2026.1850832",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-43c7208d3cf3",
+      "source_url": "https://doi.org/10.3389/frai.2026.1850832",
+      "title": "MMCRAG-Resp: a multi-modal corrective retrieval-augmented generation framework for explainable respiratory disease reasoning",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": "2310.11511",
+        "doi": null,
+        "semantic_scholar_paper_id": "ddbd8fe782ac98e9c64dd98710687a962195dd9b"
+      },
+      "record_id": "paper-39568f9738a6",
+      "source_url": "https://www.semanticscholar.org/paper/ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "year": 2023
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.1109/aisp68263.2025.11396270",
+        "semantic_scholar_paper_id": "98549f027cd33116bccac58eb8f43ced736a7de3"
+      },
+      "record_id": "paper-bc038b32491c",
+      "source_url": "https://www.semanticscholar.org/paper/98549f027cd33116bccac58eb8f43ced736a7de3",
+      "title": "A Unified Evaluation Framework for Grounded LLM Architectures: Comparative Analysis of RAG, Self-RAG, and Agentic RAG",
+      "year": 2025
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.1108/dta-03-2025-0195",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-f80a05d53ab0",
+      "source_url": "https://doi.org/10.1108/dta-03-2025-0195",
+      "title": "LawRAG: Indonesian legal document retrieval-augmented generation with specialized chunking and reranking strategies",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.59350/xcq3s-jvk04",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-eea4b20e9744",
+      "source_url": "https://doi.org/10.59350/xcq3s-jvk04",
+      "title": "Understanding Retrieval Pitfalls: Challenges Faced by Retrieval Augmented Generation (RAG) models",
+      "year": 2024
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.66245/jyi.v1.i1.002",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-fe2b9f0aaa7e",
+      "source_url": "https://doi.org/10.66245/jyi.v1.i1.002",
+      "title": "The Impact of Query Decomposition and Cross-Encoder Reranking in Multi-Hop Retrieval-Augmented Generation",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.1002/cpe.70824",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-40438d5c4878",
+      "source_url": "https://doi.org/10.1002/cpe.70824",
+      "title": "GHP: Hardening Graph‐Based Reranking Defense for Poisoned Retrieval‐Augmented Generation",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.2139/ssrn.7368058",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-5dad2fac2f27",
+      "source_url": "https://doi.org/10.2139/ssrn.7368058",
+      "title": "RETRIEVAL AUGMENTED GENERATION SYSTEM FOR EDUCATIONAL TEXTBOOK QUERY ASSISTANCE",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.2139/ssrn.6597746",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-5177e4394c08",
+      "source_url": "https://doi.org/10.2139/ssrn.6597746",
+      "title": "Performance VS Cost: A Modular Architecture for Cost-Aware Adaptive Retrieval in Retrieval-Augmented Generation Systems",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.18653/v1/2026.eacl-industry.27",
+        "semantic_scholar_paper_id": "a3ea1b48f46752aae76b9a922b51c13460c55e0d"
+      },
+      "record_id": "paper-affd0a8c0e23",
+      "source_url": "https://www.semanticscholar.org/paper/a3ea1b48f46752aae76b9a922b51c13460c55e0d",
+      "title": "ReflectiveRAG: Rethinking Adaptivity in Retrieval-Augmented Generation",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": "2604.16313",
+        "doi": "10.1145/3746027.3755390",
+        "semantic_scholar_paper_id": "b1e326eb8586518b3d1c8b3fed0b438a396a072e"
+      },
+      "record_id": "paper-b502a1f9946c",
+      "source_url": "https://www.semanticscholar.org/paper/b1e326eb8586518b3d1c8b3fed0b438a396a072e",
+      "title": "MARA: A Multimodal Adaptive Retrieval-Augmented Framework for Document Question Answering",
+      "year": 2025
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.21203/rs.3.rs-9753469/v1",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-5bd77eb5e9db",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-9753469/v1",
+      "title": "Retrieval-Augmented Generation with Low-Latency Deployment for Vertical Domains Question Answering: A Case Study on Economic Resource Platforms",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.3390/electronics15050996",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-63e4e7a75fef",
+      "source_url": "https://doi.org/10.3390/electronics15050996",
+      "title": "SCIM: Self-Correcting Iterative Mechanism for Retrieval-Augmented Generation",
+      "year": 2026
+    },
+    {
+      "identifiers": {
+        "arxiv_id": null,
+        "doi": "10.20944/preprints202512.1983.v1",
+        "semantic_scholar_paper_id": null
+      },
+      "record_id": "paper-b4a1722b4943",
+      "source_url": "https://doi.org/10.20944/preprints202512.1983.v1",
+      "title": "Faithfulness-Aware Multi-Objective Context Ranking for Retrieval-Augmented Generation",
+      "year": 2025
+    }
+  ]
+}

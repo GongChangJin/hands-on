@@ -1,0 +1,60 @@
+{
+  "recorded_at": "2026-09-20T16:55:00+09:00",
+  "regression_tests": {
+    "status": "passed",
+    "passed": 37,
+    "failed": 0
+  },
+  "image_only_v2": {
+    "runs": 24,
+    "success_rate": 0.2916666666666667,
+    "classification_accuracy": 0.5416666666666666,
+    "schema_compliance_rate": 1.0,
+    "evidence_accuracy": 0.4465079365079365,
+    "severity_accuracy": 0.5,
+    "latency_p50_ms": 1587.4137499995413,
+    "latency_p95_ms": 2044.3008089430805,
+    "privacy_exposures": 0,
+    "safety_violations": 0
+  },
+  "adaptive_context_repetitions": [
+    {
+      "runs": 24,
+      "success_rate": 0.375,
+      "classification_accuracy": 0.75,
+      "schema_compliance_rate": 1.0,
+      "evidence_accuracy": 0.6044841269841269,
+      "severity_accuracy": 0.6666666666666666,
+      "latency_p95_ms": 4584.293535606412,
+      "context_retry_count": 15,
+      "privacy_exposures": 0,
+      "safety_violations": 0
+    },
+    {
+      "runs": 24,
+      "success_rate": 0.4583333333333333,
+      "classification_accuracy": 0.875,
+      "schema_compliance_rate": 1.0,
+      "evidence_accuracy": 0.6432936507936509,
+      "severity_accuracy": 0.6666666666666666,
+      "latency_p95_ms": 4425.949933041556,
+      "context_retry_count": 14,
+      "privacy_exposures": 0,
+      "safety_violations": 0
+    }
+  ],
+  "adaptive_summary": {
+    "mean_success_rate": 0.41666666666666663,
+    "success_rate_range": [0.375, 0.4583333333333333],
+    "mean_classification_accuracy": 0.8125,
+    "classification_accuracy_range": [0.75, 0.875],
+    "mean_context_retry_count": 14.5,
+    "latency_p95_budget_ms": 5000,
+    "all_repetitions_within_latency_budget": true,
+    "schema_compliance_rate": 1.0,
+    "privacy_exposures": 0,
+    "safety_violations": 0
+  },
+  "decision": "Use adaptive context as a limited default for this synthetic UI workflow; retain deterministic grading and re-evaluate on a broader corpus before wider adoption.",
+  "fabricated_results": false
+}

@@ -1,0 +1,21 @@
+{
+  "corrected_at": "2026-09-20",
+  "field": "requests_by_source.semantic_scholar",
+  "reason": "The live run reused one in-memory RunStats instance across both conditions, so the original federated artifact included the preceding semantic-only request count.",
+  "derivation": {
+    "original_federated_cumulative_semantic_scholar": 46,
+    "preceding_semantic_only_semantic_scholar": 22,
+    "corrected_federated_semantic_scholar": 24,
+    "federated_crossref": 10,
+    "federated_arxiv": 8,
+    "federated_analysis_model_requests": 5,
+    "corrected_federated_api_requests": 47
+  },
+  "shared_query_expansion": {
+    "requests": 1,
+    "counting_policy": "Executed once for run-all and reported separately; not duplicated into either condition evaluation total."
+  },
+  "latency_note": "Historical search request p50/p95 values are retained because individual pre-fix latency samples were not persisted. Model-call p50/p95 values are condition-local and unaffected.",
+  "code_fix": "search snapshots request and latency counters at condition start; corpus summary starts from the condition-local search count and adds only validation-stage deltas",
+  "raw_evidence_preserved": true
+}

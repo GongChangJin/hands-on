@@ -1,0 +1,27 @@
+{
+  "cost_usd": 6.465e-05,
+  "failure_type": null,
+  "model_queries": [
+    "query rewriting retrieval augmented generation latency cost trade-off",
+    "reranking retrieval augmented generation latency cost trade-off",
+    "corrective retrieval augmented generation latency cost trade-off",
+    "self reflective retrieval augmented generation latency cost trade-off"
+  ],
+  "pricing_tier": "off-peak",
+  "request_model": "deepseek-flash",
+  "response_model": "deepseek-flash",
+  "seed_queries": [
+    "retrieval augmented generation query rewriting retrieval quality faithfulness",
+    "retrieval augmented generation reranking retrieval quality faithfulness",
+    "corrective retrieval augmented generation CRAG",
+    "self reflective retrieval augmented generation Self-RAG"
+  ],
+  "status": "model_expanded",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 191,
+    "output_tokens": 60,
+    "requests": 1,
+    "total_tokens": 251
+  }
+}

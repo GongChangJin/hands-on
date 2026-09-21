@@ -1,0 +1,175 @@
+{
+  "calculated_cost_usd": 0.01054725,
+  "claims": 53,
+  "condition": "federated-verified",
+  "failures": [
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:45:47.914821+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:04.499046+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:21.107515+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:41.036223+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "reranking retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:46:58.678281+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "corrective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:15.268440+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "rate_limit",
+      "query": "self reflective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:32.016617+00:00",
+      "retryable": true,
+      "source": "semantic_scholar",
+      "summary": "semantic_scholar returned HTTP 429"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "retrieval augmented generation query rewriting retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:57.503004+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "retrieval augmented generation reranking retrieval quality faithfulness",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:57.873865+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "corrective retrieval augmented generation CRAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:58.432735+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "self reflective retrieval augmented generation Self-RAG",
+      "query_origin": "deterministic_seed",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:58.814698+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "query rewriting retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.318713+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "reranking retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.532484+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "corrective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:47:59.824293+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    },
+    {
+      "failure_type": "http_error",
+      "query": "self reflective retrieval augmented generation latency cost trade-off",
+      "query_origin": "model_expansion",
+      "record_type": "failure",
+      "retrieved_at": "2026-09-20T07:48:00.031973+00:00",
+      "retryable": false,
+      "source": "arxiv",
+      "summary": "arxiv returned HTTP 406"
+    }
+  ],
+  "hypotheses": 5,
+  "model_latency_p50_ms": 9729.928917004145,
+  "model_latency_p95_ms": 10285.86054200423,
+  "model_status": "executed",
+  "offline": false,
+  "papers_with_claims": 18,
+  "request_model": "deepseek-flash",
+  "response_models": [
+    "deepseek-flash"
+  ],
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 18843,
+    "output_tokens": 12868,
+    "requests": 5,
+    "total_tokens": 31711
+  },
+  "verified_papers": 18
+}

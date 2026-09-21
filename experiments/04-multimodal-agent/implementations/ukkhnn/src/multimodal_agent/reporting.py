@@ -133,11 +133,10 @@ def _metric(summary: dict[str, Any], key: str) -> float:
 def compare_results(first_dir: Path, second_dir: Path, output: Path) -> str:
     first = json.loads((first_dir / "summary.json").read_text(encoding="utf-8"))
     second = json.loads((second_dir / "summary.json").read_text(encoding="utf-8"))
-    summaries = {first["condition"]: first, second["condition"]: second}
-    required = {"image-only", "image-with-context"}
-    if set(summaries) != required:
-        raise ValueError("비교 입력은 image-only와 image-with-context 결과여야 합니다.")
-    only, contextual = summaries["image-only"], summaries["image-with-context"]
+    first_condition = str(first.get("condition") or "first")
+    second_condition = str(second.get("condition") or "second")
+    if first_condition == second_condition:
+        raise ValueError("서로 다른 입력 조건의 결과를 비교해야 합니다.")
     rows = (
         ("success rate", "success_rate", ".1%"),
         ("classification accuracy", "classification_accuracy", ".1%"),
@@ -159,21 +158,21 @@ def compare_results(first_dir: Path, second_dir: Path, output: Path) -> str:
     lines = [
         "# DeepSeek input condition comparison",
         "",
-        f"Model: `{only['model']}`; endpoint provider: `deepseek`; protocol: `openai-compatible`.",
+        f"Model: `{first['model']}`; endpoint provider: `deepseek`; protocol: `openai-compatible`.",
         "",
-        "| metric | image-only | image-with-context | context - only |",
+        f"| metric | {first_condition} | {second_condition} | {second_condition} - {first_condition} |",
         "| --- | ---: | ---: | ---: |",
     ]
     for label, key, fmt in rows:
-        a, b = get(only, key), get(contextual, key)
+        a, b = get(first, key), get(second, key)
         lines.append(f"| {label} | {format(a, fmt)} | {format(b, fmt)} | {format(b - a, fmt)} |")
     lines.extend(
         [
             "",
             "## Retained failures",
             "",
-            f"- image-only: `{json.dumps(only['failure_types'], ensure_ascii=False)}`",
-            f"- image-with-context: `{json.dumps(contextual['failure_types'], ensure_ascii=False)}`",
+            f"- {first_condition}: `{json.dumps(first['failure_types'], ensure_ascii=False)}`",
+            f"- {second_condition}: `{json.dumps(second['failure_types'], ensure_ascii=False)}`",
             "",
             "Cost uses provider-reported token usage and the rate active at each call; cache hits and peak/off-peak timing mean the two totals are observational rather than a controlled price comparison. It is not a billing invoice.",
             "",

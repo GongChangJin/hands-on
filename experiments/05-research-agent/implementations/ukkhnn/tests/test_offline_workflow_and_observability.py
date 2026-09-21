@@ -27,6 +27,8 @@ def test_offline_end_to_end_writes_all_required_formats(tmp_path: Path) -> None:
     status = workflow().run_all(tmp_path)
     assert status["success"] is True
     assert status["model_execution"] == "offline_mock"
+    assert status["no_secrets_in_git_or_results"] is True
+    assert "secrets_in_git_or_results" not in status
     for condition in ("semantic-scholar-only", "federated-verified"):
         search_dir = tmp_path / condition
         analysis_dir = tmp_path / f"{condition}-analysis"
@@ -74,6 +76,21 @@ def test_federated_fixture_removes_cross_source_duplicates(tmp_path: Path) -> No
     assert summary["verified_papers"] == 12
     assert report["duplicates_removed"] == 3
     assert report["minimum_met"] is True
+
+
+def test_condition_metrics_do_not_include_previous_condition(tmp_path: Path) -> None:
+    run = workflow()
+    run.stats.requests_by_source["semantic_scholar"] = 22
+    run.stats.latencies_ms.extend([100.0, 200.0])
+    output = tmp_path / "federated"
+
+    search_summary = run.search("federated-verified", output)
+    corpus_summary = run.validate_corpus(output)
+
+    assert search_summary["requests_by_source"] == {}
+    assert search_summary["latency_p50_ms"] == 0
+    assert search_summary["latency_p95_ms"] == 0
+    assert corpus_summary["requests_by_source"] == {}
 
 
 def test_required_span_hierarchy_is_nested_under_workflow(tmp_path: Path) -> None:

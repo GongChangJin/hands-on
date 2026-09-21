@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import time
 from dataclasses import dataclass
 from typing import Any, Literal, TypedDict
@@ -66,6 +67,19 @@ def _chunk_context(chunks: list[Chunk]) -> list[dict[str, Any]]:
         }
         for chunk in chunks
     ]
+
+
+def _expression_is_grounded(expression: str, question: str) -> bool:
+    """Return whether every numeric literal in an expression appears in the question."""
+
+    expression_numbers = re.findall(r"(?<![\w.])\d+(?:\.\d+)?", expression)
+    question_numbers = re.findall(r"(?<![\w.])\d+(?:\.\d+)?", question)
+    remaining = list(question_numbers)
+    for number in expression_numbers:
+        if number not in remaining:
+            return False
+        remaining.remove(number)
+    return bool(expression_numbers)
 
 
 class AgenticRAG:
@@ -138,6 +152,15 @@ class AgenticRAG:
         action = str(plan.get("action", "search"))
         if action not in {"search", "calculate", "search_then_calculate", "direct"}:
             action = "search"
+        expression = str(plan.get("expression") or "")
+        allowed_tools = set(state["task"]["constraints"]["allowed_tools"])
+        if (
+            action == "calculate"
+            and "retriever" in allowed_tools
+            and not _expression_is_grounded(expression, state["question"])
+        ):
+            action = "search_then_calculate"
+            expression = ""
         route = {
             "search": "retrieve",
             "search_then_calculate": "retrieve",
@@ -147,7 +170,7 @@ class AgenticRAG:
         return {
             "plan_action": action,
             "query": str(plan.get("search_query") or state["question"]),
-            "expression": str(plan.get("expression") or ""),
+            "expression": expression,
             "route": route,
             "step_count": self._next_step(state),
         }

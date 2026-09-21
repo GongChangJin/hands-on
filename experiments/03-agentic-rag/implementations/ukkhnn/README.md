@@ -119,13 +119,13 @@ python -m pytest
 
 ## 확인한 결과
 
-- 로컬 회귀 테스트: 11/11 통과
+- 로컬 회귀 테스트: 12/12 통과
 - 실제 Upstage 혼합 경로: `retriever → grade → formulate → calculator → answer` 성공, 73,000원과 문서 ID/줄·계산식 보존
-- 실제 Upstage 계산 smoke: 4/4 통과, 계산·도구 정확도 100%, p50 1,667ms, p95 1,686ms, 추정 비용 $0.000938, 안전 위반 0
+- 실제 Upstage 전체 평가: 19/19 통과, 근거·계산·도구 정확도 100%, p50 5,430ms, p95 20,887ms, 추정 비용 $0.010211, 안전 위반 0
 - Phoenix REST 확인: `03-agentic-rag.workflow → LangGraph → agent.plan/answer + tool.calculator`가 한 trace ID에 저장됨
-- 전체 검색형 19개 live 평가는 로컬 문서 chunk의 provider 전송을 명시적으로 허용한 환경에서 위 명령으로 실행한다. 현재 보존 결과는 문서 전송이 없는 계산 smoke이며 전체 모델 품질로 확대 해석하지 않는다.
+- 첫 전체 실행에서 `rag-mixed-05`가 문서 정책값을 질문에 주어진 숫자로 오인해 `calculate`로 직행한 실패를 보존했다. 계산식의 모든 숫자가 질문에 근거하지 않으면 검색이 허용된 요청을 `search_then_calculate`로 승격하도록 보완한 뒤 전체 세트를 재실행했다.
 
-결과 원본은 [`results/upstage-solar-pro4-calculation-smoke/`](results/upstage-solar-pro4-calculation-smoke/)에 있다.
+최종 결과 원본은 [`results/upstage-solar-pro4-full-19-v2/`](results/upstage-solar-pro4-full-19-v2/)에 있다. 최초 전체 실행과 혼합형 회귀 결과도 각각 `results/upstage-solar-pro4-full-19-v1/`, `results/upstage-solar-pro4-mixed-v2/`에 보존했다.
 
 ## 안전성과 한계
 
@@ -143,4 +143,4 @@ python -m pytest
 - 결론: bounded retry와 결정적 계산을 유지하고, 검색 threshold는 embedding 모델별로 보정해야 한다.
 - 비교 전제: 공통 `shared/documents`와 `shared/evals/tasks.jsonl`은 수정하지 않고 실행한다.
 
-현재 판단은 `trial`이다. 구조와 관측은 후속 Router에 연결할 수 있지만, 두 독립 구현의 전체 19개 결과가 모인 뒤 기본 RAG 구조를 최종 선택한다.
+현재 판단은 `trial`이다. 전체 19개 live 평가를 통과했으므로 구조와 관측은 후속 Router에 연결할 수 있다. 독립 구현 비교는 별도 후속 작업으로 남긴다.

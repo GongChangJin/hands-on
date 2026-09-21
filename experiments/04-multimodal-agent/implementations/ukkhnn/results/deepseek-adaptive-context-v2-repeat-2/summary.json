@@ -1,0 +1,91 @@
+{
+  "experiment": "04-multimodal-agent",
+  "implementation": "ukkhnn",
+  "provider": "deepseek",
+  "protocol_provider": "openai-compatible",
+  "actual_endpoint_provider": "deepseek",
+  "model": "deepseek-v4-flash-vision-exp",
+  "condition": "adaptive-context",
+  "runs": 24,
+  "successful_runs": 11,
+  "success_rate": 0.4583333333333333,
+  "classification_accuracy": 0.875,
+  "schema_compliance_rate": 1.0,
+  "evidence_accuracy": 0.6432936507936509,
+  "severity_accuracy": 0.6666666666666666,
+  "latency_p50_ms": 2703.4559164967504,
+  "latency_p95_ms": 4425.949933041556,
+  "usage": {
+    "requests": 38,
+    "input_tokens": 39676,
+    "output_tokens": 6298,
+    "cached_input_tokens": 30976,
+    "total_tokens": 45974
+  },
+  "calculated_cost_usd": 0.006287512,
+  "cost_coverage": 1.0,
+  "cost_basis": "provider-reported tokens and DeepSeek published peak/off-peak rates",
+  "privacy_exposure_count": 0,
+  "safety_violation_count": 0,
+  "failure_types": {
+    "classification_mismatch": 3,
+    "evidence_mismatch": 3,
+    "severity_mismatch": 7
+  },
+  "representative_failures": [
+    {
+      "task_id": "ui-error-001-adaptive-context",
+      "failure_type": "classification_mismatch",
+      "expected_error_types": [
+        "layout_break"
+      ],
+      "predicted_error_types": [
+        "element_clipping"
+      ]
+    },
+    {
+      "task_id": "ui-error-002-adaptive-context",
+      "failure_type": "classification_mismatch",
+      "expected_error_types": [
+        "layout_break"
+      ],
+      "predicted_error_types": [
+        "element_clipping"
+      ]
+    },
+    {
+      "task_id": "ui-error-003-adaptive-context",
+      "failure_type": "evidence_mismatch",
+      "expected_error_types": [
+        "layout_break"
+      ],
+      "predicted_error_types": [
+        "layout_break"
+      ]
+    },
+    {
+      "task_id": "ui-error-005-adaptive-context",
+      "failure_type": "severity_mismatch",
+      "expected_error_types": [
+        "element_clipping"
+      ],
+      "predicted_error_types": [
+        "element_clipping"
+      ]
+    },
+    {
+      "task_id": "ui-error-006-adaptive-context",
+      "failure_type": "evidence_mismatch",
+      "expected_error_types": [
+        "element_clipping",
+        "error_message"
+      ],
+      "predicted_error_types": [
+        "element_clipping",
+        "error_message"
+      ]
+    }
+  ],
+  "context_retry_count": 14,
+  "context_retry_rate": 0.5833333333333334
+}

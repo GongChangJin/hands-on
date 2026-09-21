@@ -41,6 +41,8 @@ def _claim_score(expected: str, actual: str) -> float:
 
 
 def _evidence_score(expected: dict[str, Any], analysis: dict[str, Any] | None) -> float:
+    if not expected.get("error_types"):
+        return 1.0 if analysis is not None and not analysis.get("errors") else 0.0
     expected_evidence = expected.get("evidence", [])
     if not expected_evidence:
         return 1.0 if analysis and not analysis.get("errors") else 0.0
