@@ -1,0 +1,69 @@
+{
+  "implementation_id": "ukkhnn:ollama:qwen2.5:3b",
+  "adapter": "ollama",
+  "model": "qwen2.5:3b",
+  "repetitions": 3,
+  "runs": 72,
+  "successful_runs": 60,
+  "success_rate": 0.8333333333333334,
+  "schema_passes": 72,
+  "schema_pass_rate": 1.0,
+  "latency_p50_ms": 369.52385446056724,
+  "latency_p95_ms": 757.3991418932565,
+  "first_token_p50_ms": 178.60793747240677,
+  "first_token_p95_ms": 205.34964562975802,
+  "generation_tokens_per_second_mean": 89.11976208879645,
+  "usage": {
+    "requests": 72,
+    "input_tokens": 14565,
+    "output_tokens": 1044,
+    "total_tokens": 15609
+  },
+  "estimated_cost_usd": 0.0,
+  "cost_coverage": 1.0,
+  "safety_violation_count": 0,
+  "failure_types": {
+    "answer_mismatch": 12
+  },
+  "categories": {
+    "classification": {
+      "runs": 24,
+      "successful_runs": 21,
+      "success_rate": 0.875
+    },
+    "extraction": {
+      "runs": 24,
+      "successful_runs": 24,
+      "success_rate": 1.0
+    },
+    "short_qa": {
+      "runs": 24,
+      "successful_runs": 15,
+      "success_rate": 0.625
+    }
+  },
+  "environment": {
+    "executed_at": "2026-09-24T05:15:05.059205+00:00",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.11.15",
+    "dataset_tasks": 24,
+    "model": {
+      "adapter": "ollama",
+      "model": "qwen2.5:3b",
+      "family": "qwen2",
+      "parameter_size": "3.1B",
+      "quantization_level": "Q4_K_M",
+      "context_window": 4096,
+      "model_size_bytes": 2314803200,
+      "accelerator_memory_bytes": 2314803200,
+      "license": "Qwen RESEARCH LICENSE AGREEMENT",
+      "modified_at": "2026-09-24T14:09:40.80224616+09:00"
+    },
+    "warmup": {
+      "total_latency_ms": 249.1477079456672,
+      "load_duration_ms": 74.425166,
+      "error": null
+    }
+  }
+}

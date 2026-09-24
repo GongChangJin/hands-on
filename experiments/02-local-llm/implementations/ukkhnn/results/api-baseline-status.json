@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "checked_at": "2026-09-24T14:30:04+09:00",
+  "provider": "upstage",
+  "model": "solar-pro4",
+  "dataset_tasks": 24,
+  "credential_env": "UPSTAGE_API_KEY",
+  "credential_available": true,
+  "credential_source": "macOS Keychain; value not persisted in repository artifacts",
+  "reason": null,
+  "records_generated": 72,
+  "successful_records": 72,
+  "schema_pass_records": 72,
+  "result_included_in_comparison": true,
+  "summary": "solar-pro4-api/summary.json",
+  "estimated_cost_usd": 0.00158193
+}
