@@ -81,7 +81,7 @@ experiments/03-agentic-rag/
 | 03 | [Agentic RAG](experiments/03-agentic-rag/) | `validated` | LLM Router, Integration | 전체 19문항 통과, 제한 범위 trial |
 | 04 | [Multimodal Agent](experiments/04-multimodal-agent/) | `validated` | Computer-use, LLM Router | adaptive-context 제한 적용 |
 | 05 | [AI Research Agent](experiments/05-research-agent/) | `validated` | LLM Router, Integration | federated 검색 기본 적용 |
-| 06 | [LLM Router](experiments/06-llm-router/) | `planned` | Computer-use, Coding, Integration | 진행 전 |
+| 06 | [LLM Router](experiments/06-llm-router/) | `validated` | Computer-use, Coding, Integration | policy-first hybrid를 제한 범위 trial |
 | 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | `planned` | Integration | 진행 전 |
 | 08 | [Coding Agent](experiments/08-coding-agent/) | `planned` | Cybersecurity Agent | 진행 전 |
 | 09 | [Cybersecurity Agent](experiments/09-cybersecurity-agent/) | `planned` | Integration | 진행 전 |
@@ -97,6 +97,6 @@ experiments/03-agentic-rag/
 | `hold` | 조건이나 기술 성숙도를 추가 확인 |
 | `reject` | 현재 요구와 품질·비용·안전 기준에 부적합 |
 
-01·03·04·05의 최신 지표와 남은 제약은 [검증 요약](experiments/verification-summary.md)에 정리되어 있습니다.
+01~06의 최신 지표와 남은 제약은 [검증 요약](experiments/verification-summary.md)에 정리되어 있습니다.
 
 독립 프로젝트 생성 방법은 [프로젝트 생성 가이드](https://github.com/GongChangJin/projects/blob/main/docs/creating-a-project.md)를 참고합니다.
