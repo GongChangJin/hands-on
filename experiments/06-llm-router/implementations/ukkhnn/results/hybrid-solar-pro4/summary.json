@@ -1,0 +1,42 @@
+{
+  "tasks": 40,
+  "route_matches": 39,
+  "routing_accuracy": 0.975,
+  "model_accuracy": 1.0,
+  "agent_accuracy": 0.975,
+  "strategies": {
+    "hybrid": 4,
+    "rule": 36
+  },
+  "classifier_calls": 4,
+  "fallbacks": 0,
+  "quality": {
+    "coverage": 0.825,
+    "router_mean": 0.8973063972969697,
+    "all_frontier_mean": 0.9351851851878787,
+    "absolute_gap": 0.03787878789090904,
+    "within_five_percent": true
+  },
+  "cost": {
+    "coverage": 0.825,
+    "router_total_usd": 0.0992552288377193,
+    "all_frontier_total_usd": 0.09947640383771929,
+    "savings_rate": 0.002223391593053602,
+    "classifier_total_usd": 0.00017118,
+    "routing_and_model_total_usd": 0.000786375,
+    "all_frontier_model_total_usd": 0.00087885,
+    "routing_and_model_savings_rate": 0.10522273425499239
+  },
+  "latency": {
+    "coverage": 0.825,
+    "router_p50_ms": 573.647583136343,
+    "router_p95_ms": 10696.362399838134,
+    "all_frontier_p50_ms": 520.9072079742,
+    "all_frontier_p95_ms": 10696.361250004
+  },
+  "limitations": [
+    "Execution quality, downstream latency, and downstream cost are replay projections from 02-05 rather than new task executions.",
+    "Browser and coding projections are excluded because 07 and 08 have no measured metrics yet.",
+    "Balanced and frontier currently map to the same measured Solar Pro 4 endpoint."
+  ]
+}
