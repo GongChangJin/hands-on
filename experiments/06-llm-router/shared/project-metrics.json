@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-09-24",
+  "logical_models": {
+    "small": {
+      "actual_model": "qwen2.5:3b",
+      "provider": "ollama",
+      "quality_score": 0.8333333333,
+      "latency_p50_ms": 369.5238544606,
+      "request_cost_usd": 0.0,
+      "source": "02 qwen2.5 3B Q4_K_M, 60/72 exact successes"
+    },
+    "local": {
+      "actual_model": "qwen2.5:latest",
+      "provider": "ollama",
+      "quality_score": 0.9583333333,
+      "latency_p50_ms": 573.6467500683,
+      "request_cost_usd": 0.0,
+      "source": "02 qwen2.5 7.6B Q4_K_M, 69/72 exact successes"
+    },
+    "balanced": {
+      "actual_model": "solar-pro4",
+      "provider": "upstage",
+      "quality_score": 1.0,
+      "latency_p50_ms": 520.9072079742,
+      "request_cost_usd": 0.00002197125,
+      "source": "02 Solar Pro 4, 72/72 exact successes; measured cost divided by requests"
+    },
+    "frontier": {
+      "actual_model": "solar-pro4",
+      "provider": "upstage",
+      "quality_score": 1.0,
+      "latency_p50_ms": 520.9072079742,
+      "request_cost_usd": 0.00002197125,
+      "source": "Available frontier mapping uses the same measured Solar Pro 4 endpoint"
+    }
+  },
+  "agents": {
+    "rag": {
+      "quality_score": 1.0,
+      "latency_p50_ms": 5430.2447090013,
+      "request_cost_usd": 0.0005374421052632,
+      "source": "03 full-19-v2, 19/19; measured cost divided by tasks"
+    },
+    "vision": {
+      "quality_score": 0.75,
+      "latency_p50_ms": 2647.5091034954,
+      "request_cost_usd": 0.0003528768333333,
+      "source": "04 adaptive-context-v2 classification accuracy and measured cost divided by runs"
+    },
+    "research": {
+      "quality_score": 0.7777777778,
+      "latency_p50_ms": 10696.361250004,
+      "request_cost_usd": 0.0237093,
+      "source": "05 federated-verified evidence coverage and report-level measured cost"
+    },
+    "browser": {
+      "quality_score": null,
+      "latency_p50_ms": null,
+      "request_cost_usd": null,
+      "source": "07 not measured"
+    },
+    "coding": {
+      "quality_score": null,
+      "latency_p50_ms": null,
+      "request_cost_usd": null,
+      "source": "08 not measured"
+    }
+  }
+}

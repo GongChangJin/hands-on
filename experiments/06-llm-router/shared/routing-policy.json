@@ -1,0 +1,16 @@
+{
+  "confidence_threshold": 0.7,
+  "classifier_timeout_seconds": 15.0,
+  "circuit_breaker_failures": 2,
+  "default_model": "balanced",
+  "high_risk_model": "frontier",
+  "private_model": "local",
+  "fallback_model": "balanced",
+  "agent_capability_map": {
+    "knowledge_base": "rag",
+    "image_understanding": "vision",
+    "multi_source_research": "research",
+    "web_navigation": "browser",
+    "code_execution": "coding"
+  }
+}
