@@ -77,7 +77,7 @@ experiments/03-agentic-rag/
 | 순서 | 프로젝트 | 상태 | 직접 후행 프로젝트 | 결론 |
 | ---: | --- | --- | --- | --- |
 | 01 | [Agent Evaluation](experiments/01-agent-evaluation/) | `validated` | 전체 프로젝트 | 작은 도구형 Agent에는 single 구조 적용 |
-| 02 | [Local/Open-weight LLM](experiments/02-local-llm/) | `planned` | LLM Router | 진행 전 |
+| 02 | [Local/Open-weight LLM](experiments/02-local-llm/) | `validated` | LLM Router | 7.6B 분류·추출 trial, 계산은 fallback |
 | 03 | [Agentic RAG](experiments/03-agentic-rag/) | `validated` | LLM Router, Integration | 전체 19문항 통과, 제한 범위 trial |
 | 04 | [Multimodal Agent](experiments/04-multimodal-agent/) | `validated` | Computer-use, LLM Router | adaptive-context 제한 적용 |
 | 05 | [AI Research Agent](experiments/05-research-agent/) | `validated` | LLM Router, Integration | federated 검색 기본 적용 |
