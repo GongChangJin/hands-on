@@ -1,0 +1,14 @@
+{
+  "allowed_hosts": ["127.0.0.1", "localhost"],
+  "allowed_schemes": ["http"],
+  "allowed_actions": ["click", "fill", "select", "check", "scroll", "wait"],
+  "forbidden_button_types": ["submit"],
+  "max_steps": 15,
+  "max_recoveries": 2,
+  "repetitions": 2,
+  "action_timeout_ms": 300,
+  "task_timeout_ms": 10000,
+  "block_external_navigation": true,
+  "block_popups": true,
+  "block_downloads": true
+}
