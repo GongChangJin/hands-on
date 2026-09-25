@@ -1,0 +1,37 @@
+--- a/src/taskboard/priority.py
++++ b/src/taskboard/priority.py
+@@ -2,9 +2,16 @@
+ 
+ 
+ def parse_priority(value: object) -> int:
+-    """Parse a priority from one to five."""
++    """Parse an integer priority from one to five."""
+ 
+-    priority = int(value)
++    if isinstance(value, bool):
++        raise ValueError("priority must be an integer or numeric string")
++    if isinstance(value, int):
++        priority = value
++    elif isinstance(value, str) and value.strip() in {"1", "2", "3", "4", "5"}:
++        priority = int(value.strip())
++    else:
++        raise ValueError("priority must be an integer or numeric string")
+     if not 1 <= priority <= 5:
+         raise ValueError("priority must be between 1 and 5")
+     return priority
+--- a/tests/regression/test_priority.py
++++ b/tests/regression/test_priority.py
+@@ -0,0 +1,13 @@
++import pytest
++
++from taskboard.priority import parse_priority
++
++
++def test_parse_priority_accepts_trimmed_numeric_strings():
++    assert parse_priority(" 2 ") == 2
++
++
++@pytest.mark.parametrize("value", [True, False, 1.5, "6", "high"])
++def test_parse_priority_rejects_unsupported_values(value):
++    with pytest.raises(ValueError):
++        parse_priority(value)

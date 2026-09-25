@@ -1,0 +1,38 @@
+--- a/src/taskboard/preferences.py
++++ b/src/taskboard/preferences.py
+@@ -1,9 +1,16 @@
+ """Preference merging."""
+ 
++from copy import deepcopy
+ from typing import Any
+ 
+ 
+ def merge_preferences(defaults: dict[str, Any], overrides: dict[str, Any]) -> dict[str, Any]:
+-    """Merge top-level preference values."""
++    """Recursively merge preferences without sharing mutable input values."""
+ 
+-    return {**defaults, **overrides}
++    merged = deepcopy(defaults)
++    for key, value in overrides.items():
++        if isinstance(merged.get(key), dict) and isinstance(value, dict):
++            merged[key] = merge_preferences(merged[key], value)
++        else:
++            merged[key] = deepcopy(value)
++    return merged
+--- a/tests/regression/test_preferences.py
++++ b/tests/regression/test_preferences.py
+@@ -0,0 +1,14 @@
++from taskboard.preferences import merge_preferences
++
++
++def test_merge_preferences_is_recursive_and_non_mutating():
++    defaults = {"ui": {"theme": "light", "density": "compact"}, "flags": ["a"]}
++    overrides = {"ui": {"theme": "dark"}, "flags": ["b"]}
++
++    result = merge_preferences(defaults, overrides)
++
++    assert result == {"ui": {"theme": "dark", "density": "compact"}, "flags": ["b"]}
++    result["ui"]["theme"] = "changed"
++    result["flags"].append("c")
++    assert defaults == {"ui": {"theme": "light", "density": "compact"}, "flags": ["a"]}
++    assert overrides == {"ui": {"theme": "dark"}, "flags": ["b"]}

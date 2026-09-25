@@ -1,0 +1,47 @@
+--- a/src/taskboard/dates.py
++++ b/src/taskboard/dates.py
+@@ -1,13 +1,21 @@
+ """Date helpers."""
+ 
+ from collections.abc import Iterable
+-from datetime import date
++from datetime import date, timedelta
+ 
+ 
+ def business_days_between(start: str, end: str, holidays: Iterable[str] = ()) -> int:
+-    """Return the number of calendar days in the half-open interval."""
++    """Return business days in the half-open interval from start to end."""
+ 
+-    del holidays
+     start_date = date.fromisoformat(start)
+     end_date = date.fromisoformat(end)
+-    return max(0, (end_date - start_date).days)
++    if end_date < start_date:
++        raise ValueError("end must not be earlier than start")
++    holiday_dates = {date.fromisoformat(value) for value in holidays}
++    current = start_date
++    count = 0
++    while current < end_date:
++        if current.weekday() < 5 and current not in holiday_dates:
++            count += 1
++        current += timedelta(days=1)
++    return count
+--- a/tests/regression/test_dates.py
++++ b/tests/regression/test_dates.py
+@@ -0,0 +1,16 @@
++import pytest
++
++from taskboard.dates import business_days_between
++
++
++def test_business_days_excludes_weekends_and_holidays():
++    assert business_days_between(
++        "2026-09-25",
++        "2026-10-03",
++        holidays=["2026-09-28", "2026-10-01"],
++    ) == 4
++
++
++def test_business_days_rejects_reversed_range():
++    with pytest.raises(ValueError):
++        business_days_between("2026-09-26", "2026-09-25")

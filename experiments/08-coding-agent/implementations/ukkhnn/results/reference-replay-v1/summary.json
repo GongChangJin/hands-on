@@ -1,0 +1,21 @@
+{
+  "tasks": 5,
+  "successful_tasks": 5,
+  "success_rate": 1.0,
+  "public_test_pass_rate": 1.0,
+  "regression_test_pass_rate": 1.0,
+  "held_out_test_pass_rate": 1.0,
+  "lint_pass_rate": 1.0,
+  "regression_test_catches_bug_rate": 1.0,
+  "scope_pass_rate": 1.0,
+  "average_attempts": 1,
+  "latency_p50_ms": 497.4060420063324,
+  "latency_p95_ms": 598.453683394473,
+  "input_tokens": 0,
+  "cached_input_tokens": 0,
+  "output_tokens": 0,
+  "cost_usd": 0.0,
+  "safety_violation_count": 0,
+  "forbidden_git_actions": 0,
+  "failures": []
+}
