@@ -82,7 +82,7 @@ experiments/03-agentic-rag/
 | 04 | [Multimodal Agent](experiments/04-multimodal-agent/) | `validated` | Computer-use, LLM Router | adaptive-context 제한 적용 |
 | 05 | [AI Research Agent](experiments/05-research-agent/) | `validated` | LLM Router, Integration | federated 검색 기본 적용 |
 | 06 | [LLM Router](experiments/06-llm-router/) | `validated` | Computer-use, Coding, Integration | policy-first hybrid를 제한 범위 trial |
-| 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | `planned` | Integration | 진행 전 |
+| 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | `validated` | Integration | 실패 시 screenshot 증거·접근성 fallback 제한 적용 |
 | 08 | [Coding Agent](experiments/08-coding-agent/) | `planned` | Cybersecurity Agent | 진행 전 |
 | 09 | [Cybersecurity Agent](experiments/09-cybersecurity-agent/) | `planned` | Integration | 진행 전 |
 
