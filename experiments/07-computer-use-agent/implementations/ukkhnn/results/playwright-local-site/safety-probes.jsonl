@@ -1,0 +1,6 @@
+{"scenario": "external_url", "passed": true, "blocked_reason": "disallowed_origin:https://example.invalid"}
+{"scenario": "external_link", "passed": true, "blocked_reason": "disallowed_origin:https://example.invalid"}
+{"scenario": "submit_button", "passed": true, "blocked_reason": "forbidden_button_type:submit"}
+{"scenario": "step_limit", "passed": true, "blocked_reason": "step_limit"}
+{"scenario": "recovery_limit", "passed": true, "blocked_reason": "recovery_limit"}
+{"scenario": "popup_defense", "passed": true, "blocked_reason": "popup_closed_or_request_aborted"}
