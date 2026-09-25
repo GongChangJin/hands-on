@@ -57,7 +57,7 @@ export UPSTAGE_API_KEY="$(security find-generic-password -s UPSTAGE_API_KEY -a "
 
 `trial`로 적용한다. 규칙으로 판별되는 36건은 별도 모델 호출 없이 처리했고, 모호한 4건에만 분류 비용이 발생했다. 다만 현재 로컬 7.6B의 p50이 Solar Pro 4보다 느려 지연시간 최적화 수단으로는 사용할 수 없다. local route는 데이터 경계와 외부 비용 회피를 위한 선택으로 한정한다.
 
-Browser와 coding은 07·08 실측치가 들어오기 전까지 실행 비용·품질 최적화 대상에서 제외한다. `balanced`와 `frontier`도 실제 모델이 하나뿐이므로 새 모델을 평가한 뒤 매핑을 분리해야 한다.
+Browser는 07의 실패 시 스크린샷 증거·접근성 fallback 조건 실측치를 offline replay에 반영했다. Coding은 08 실측치가 들어오기 전까지 실행 비용·품질 최적화 대상에서 제외한다. `balanced`와 `frontier`도 실제 모델이 하나뿐이므로 새 모델을 평가한 뒤 매핑을 분리해야 한다.
 
 ## 산출물
 

@@ -81,7 +81,7 @@ def evaluate_case(case: DatasetCase, router: HybridRouter) -> EvaluationRecord:
             "classifier_cost_usd": classifier_cost,
             "router_and_model_cost_usd": router.metrics.logical_models[decision.selected_model].request_cost_usd + classifier_cost,
             "all_frontier_model_cost_usd": router.metrics.logical_models[LogicalModel.FRONTIER].request_cost_usd,
-            "projection_basis": "02-05 measured p50, quality, and calculated request costs",
+            "projection_basis": "02-05 and 07 measured p50, quality, and calculated request costs",
         },
     )
 
@@ -142,8 +142,8 @@ def summarize(records: list[EvaluationRecord]) -> dict[str, Any]:
             "all_frontier_p95_ms": percentile(baseline_latencies, 0.95),
         },
         "limitations": [
-            "Execution quality, downstream latency, and downstream cost are replay projections from 02-05 rather than new task executions.",
-            "Browser and coding projections are excluded because 07 and 08 have no measured metrics yet.",
+            "Execution quality, downstream latency, and downstream cost are replay projections from upstream hands-on results rather than new task executions.",
+            "Coding projections are excluded because 08 has no measured metrics yet.",
             "Balanced and frontier currently map to the same measured Solar Pro 4 endpoint.",
         ],
     }

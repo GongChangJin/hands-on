@@ -21,14 +21,14 @@ def test_quality_stays_within_five_percentage_points():
     _, summary = evaluated()
 
     assert summary["quality"]["within_five_percent"]
-    assert summary["quality"]["coverage"] == 0.85
+    assert summary["quality"]["coverage"] == 0.925
 
 
 def test_cost_and_latency_comparison_reports_coverage():
     _, summary = evaluated()
 
-    assert summary["cost"]["coverage"] == 0.85
-    assert summary["latency"]["coverage"] == 0.85
+    assert summary["cost"]["coverage"] == 0.925
+    assert summary["latency"]["coverage"] == 0.925
     assert summary["cost"]["router_total_usd"] is not None
     assert summary["cost"]["routing_and_model_savings_rate"] > 0
     assert summary["latency"]["router_p50_ms"] is not None

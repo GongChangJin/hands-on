@@ -20,7 +20,8 @@ def test_metrics_cover_every_logical_model_and_agent():
 
     assert set(metrics.logical_models) == set(LogicalModel)
     assert metrics.logical_models[LogicalModel.LOCAL].actual_model == "qwen2.5:latest"
-    assert metrics.agents["browser"].quality_score is None
+    assert metrics.agents["browser"].quality_score == 1.0
+    assert metrics.agents["coding"].quality_score is None
 
 
 def test_policy_has_safe_thresholds():

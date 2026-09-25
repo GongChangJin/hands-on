@@ -11,32 +11,32 @@
   "classifier_calls": 4,
   "fallbacks": 0,
   "quality": {
-    "coverage": 0.85,
-    "router_mean": 0.8937908496647059,
-    "all_frontier_mean": 0.9305555555588235,
-    "absolute_gap": 0.03676470589411762,
+    "coverage": 0.925,
+    "router_mean": 0.9024024023945946,
+    "all_frontier_mean": 0.9361861861891891,
+    "absolute_gap": 0.03378378379459457,
     "within_five_percent": true
   },
   "cost": {
-    "coverage": 0.85,
-    "router_total_usd": 0.12294402008771929,
-    "all_frontier_total_usd": 0.12320767508771929,
-    "savings_rate": 0.002139923505676809,
+    "coverage": 0.925,
+    "router_total_usd": 0.12300993383771927,
+    "all_frontier_total_usd": 0.12327358883771927,
+    "savings_rate": 0.002138779299652614,
     "classifier_total_usd": 0.0,
-    "routing_and_model_total_usd": 0.000615195,
-    "all_frontier_model_total_usd": 0.00087885,
-    "routing_and_model_savings_rate": 0.3
+    "routing_and_model_total_usd": 0.0006151950000000002,
+    "all_frontier_model_total_usd": 0.0008788500000000009,
+    "routing_and_model_savings_rate": 0.30000000000000043
   },
   "latency": {
-    "coverage": 0.85,
-    "router_p50_ms": 573.6475000740108,
-    "router_p95_ms": 10696.362552313101,
+    "coverage": 0.925,
+    "router_p50_ms": 573.6523331143042,
+    "router_p95_ms": 10696.366333407084,
     "all_frontier_p50_ms": 520.9072079742,
     "all_frontier_p95_ms": 10696.361250004
   },
   "limitations": [
-    "Execution quality, downstream latency, and downstream cost are replay projections from 02-05 rather than new task executions.",
-    "Browser and coding projections are excluded because 07 and 08 have no measured metrics yet.",
+    "Execution quality, downstream latency, and downstream cost are replay projections from upstream hands-on results rather than new task executions.",
+    "Coding projections are excluded because 08 has no measured metrics yet.",
     "Balanced and frontier currently map to the same measured Solar Pro 4 endpoint."
   ]
 }

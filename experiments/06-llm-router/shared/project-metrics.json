@@ -54,10 +54,10 @@
       "source": "05 federated-verified evidence coverage and report-level measured cost"
     },
     "browser": {
-      "quality_score": null,
-      "latency_p50_ms": null,
-      "request_cost_usd": null,
-      "source": "07 not measured"
+      "quality_score": 1.0,
+      "latency_p50_ms": 1373.7548960198,
+      "request_cost_usd": 0.0,
+      "source": "07 adaptive-screenshot, 24/24 across two repetitions; local hardware cost not estimated"
     },
     "coding": {
       "quality_score": null,
