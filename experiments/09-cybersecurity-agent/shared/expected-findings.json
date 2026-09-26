@@ -1,0 +1,15 @@
+{
+  "vulnerabilities": [
+    {"id":"SEC-SQL-001","category":"sqli","path":"src/security_lab/sql.py","line":5,"symbol":"find_user"},
+    {"id":"SEC-SQL-002","category":"sqli","path":"src/security_lab/sql.py","line":9,"symbol":"find_order"},
+    {"id":"SEC-PATH-001","category":"path_traversal","path":"src/security_lab/paths.py","line":7,"symbol":"read_user_file"},
+    {"id":"SEC-PATH-002","category":"path_traversal","path":"src/security_lab/paths.py","line":11,"symbol":"write_report"},
+    {"id":"SEC-SECRET-001","category":"hardcoded_secret","path":"src/security_lab/secrets.py","line":3,"symbol":"service_api_key"},
+    {"id":"SEC-SECRET-002","category":"hardcoded_secret","path":"src/security_lab/secrets.py","line":4,"symbol":"backup_password"}
+  ],
+  "clean_controls": [
+    {"id":"CLEAN-SQL-001","category":"sqli","path":"src/security_lab/controls.py","symbol":"safe_user_lookup"},
+    {"id":"CLEAN-PATH-001","category":"path_traversal","path":"src/security_lab/controls.py","symbol":"safe_read"},
+    {"id":"CLEAN-SECRET-001","category":"hardcoded_secret","path":"src/security_lab/controls.py","symbol":"environment_secret"}
+  ]
+}
