@@ -1,0 +1,3 @@
+{"scenario": "network_none", "passed": true, "exit_code": 1, "stderr_tail": "line 974, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno -3] Temporary failure in name resolution"}
+{"scenario": "read_only_root", "passed": true, "exit_code": 1, "stderr_tail": "cal/lib/python3.11/pathlib.py\", line 1044, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 30] Read-only file system: '/probe'"}
+{"scenario": "host_not_mounted", "passed": true, "exit_code": 0, "stderr_tail": ""}
