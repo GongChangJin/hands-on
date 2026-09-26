@@ -84,7 +84,7 @@ experiments/03-agentic-rag/
 | 06 | [LLM Router](experiments/06-llm-router/) | `validated` | Computer-use, Coding, Integration | policy-first hybrid를 제한 범위 trial |
 | 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | `validated` | Integration | 실패 시 screenshot 증거·접근성 fallback 제한 적용 |
 | 08 | [Coding Agent](experiments/08-coding-agent/) | `validated` | Cybersecurity Agent | 제어 계층 trial, 자동 patch 생성 hold |
-| 09 | [Cybersecurity Agent](experiments/09-cybersecurity-agent/) | `planned` | Integration | 진행 전 |
+| 09 | [Cybersecurity Agent](experiments/09-cybersecurity-agent/) | `validated` | Integration | 제한된 patch 승인 게이트 trial, 자동 수정 hold |
 
 ## 완료와 적용 판단
 
@@ -97,6 +97,6 @@ experiments/03-agentic-rag/
 | `hold` | 조건이나 기술 성숙도를 추가 확인 |
 | `reject` | 현재 요구와 품질·비용·안전 기준에 부적합 |
 
-01~06의 최신 지표와 남은 제약은 [검증 요약](experiments/verification-summary.md)에 정리되어 있습니다.
+01~09의 최신 지표와 남은 제약은 [검증 요약](experiments/verification-summary.md)에 정리되어 있습니다.
 
 독립 프로젝트 생성 방법은 [프로젝트 생성 가이드](https://github.com/GongChangJin/projects/blob/main/docs/creating-a-project.md)를 참고합니다.

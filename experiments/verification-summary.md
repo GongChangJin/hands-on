@@ -1,4 +1,4 @@
-# 01~07 검증 요약
+# 01~09 검증 요약
 
 이 문서는 현재 구현의 공통 계약, 회귀 테스트, live 평가 결과와 적용 경계를 한곳에서 확인하기 위한 기술 요약이다. 독립 구현 간 비교는 범위에서 제외한다.
 
@@ -13,10 +13,12 @@
 | 05 Research Agent | 두 검색 조건 모두 18/18 evidence coverage, citation·locator 100% | 결과 내 비밀·안전 위반 0 | federated 검색 기본 적용 |
 | 06 LLM Router | 실제 분류기 39/40, 품질 차이 3.79%p, fallback 7/7 | local-only 외부 fallback 0 | policy-first hybrid 제한 범위 trial |
 | 07 Computer-use Agent | DOM 22/24, adaptive 24/24, 복구 6/6 | 안전 probe 6/6, 실제 외부 navigation 0 | 내부 테스트·되돌릴 수 있는 작업에 trial |
+| 08 Coding Agent | 참조 patch replay 5/5, 공개·회귀·held-out·lint 각 100% | 범위 위반·금지 Git 작업 0 | 제어 계층 trial, 자동 patch 생성 hold |
+| 09 Cybersecurity Agent | 취약점 탐지 6/6, 수정 6/6, 08 handoff 승인 5/5 | 오탐 0, 격리 probe 3/3 | 제한된 patch 승인 게이트 trial, 자동 수정 hold |
 
 ## 회귀 검증
 
-일곱 구현의 로컬 회귀 테스트 170개가 모두 통과했다.
+아홉 구현의 로컬 회귀 테스트 208개가 모두 통과했다.
 
 | 핸즈온 | 통과 |
 | --- | ---: |
@@ -27,6 +29,8 @@
 | 05 | 42 |
 | 06 | 19 |
 | 07 | 18 |
+| 08 | 19 |
+| 09 | 19 |
 
 모든 구현은 공통 `TaskRequest`, `AgentResult`, `ToolTrace`, `EvaluationRecord` 계약을 유지한다. Live 결과는 provider가 반환한 token과 실행 당시 요율을 사용하며 실제 청구서로 해석하지 않는다.
 
@@ -39,6 +43,8 @@
 - 05: Semantic Scholar 429와 arXiv 406을 source failure로 보존했다. 선택된 논문과 근거가 모든 결정론적 기준을 만족할 때만 성공으로 판정한다.
 - 06: 연구 요청 1건에서 `browser`를 추가 선택한 과다 라우팅을 보존했다. 모델+라우팅 비용은 10.52% 줄었지만 전체 비용 절감은 0.22%였고 p50은 52.7ms 늘었다. Browser는 07 실측치를 offline replay에 반영했고 coding projection은 08 실측 전까지 제외한다.
 - 07: DOM 전용 조건은 ID가 바뀐 버튼을 두 번 모두 찾지 못했다. Adaptive 조건은 실패 시 screenshot hash를 증거로 남기고 접근성 이름으로 복구했지만, screenshot 의미 해석과 실제 웹 일반화는 검증하지 않았다.
+- 08: 고정 참조 patch replay로 실행 제어 계층을 검증했다. live 모델의 Issue 해석과 patch 생성 품질은 측정하지 않았다.
+- 09: SQL injection, 경로 순회, 하드코딩 비밀값의 Python fixture만 평가했다. dependency·동적 검사와 live LLM 수정 품질은 범위 밖이다.
 
 ## 주요 산출물
 
@@ -48,3 +54,5 @@
 - 05 보완 상태: [`05-research-agent/implementations/ukkhnn/results/remediation-v2/verification-status.json`](05-research-agent/implementations/ukkhnn/results/remediation-v2/verification-status.json)
 - 06 최종 평가: [`06-llm-router/implementations/ukkhnn/results/hybrid-solar-pro4/`](06-llm-router/implementations/ukkhnn/results/hybrid-solar-pro4/)
 - 07 조건 비교: [`07-computer-use-agent/implementations/ukkhnn/results/playwright-local-site/comparison.md`](07-computer-use-agent/implementations/ukkhnn/results/playwright-local-site/comparison.md)
+- 08 최종 평가: [`08-coding-agent/implementations/ukkhnn/results/reference-replay-v1/`](08-coding-agent/implementations/ukkhnn/results/reference-replay-v1/)
+- 09 최종 평가: [`09-cybersecurity-agent/implementations/ukkhnn/results/deterministic-container-v1/`](09-cybersecurity-agent/implementations/ukkhnn/results/deterministic-container-v1/)
