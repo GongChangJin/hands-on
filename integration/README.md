@@ -1,40 +1,51 @@
 # Integrated Agent System
 
-9개 핸즈온에서 검증된 구현을 공통 계약으로 연결하는 통합 영역입니다. 새로운 전문 기능을 만드는 곳이 아니라 프로젝트 간 연결과 전체 흐름을 검증하는 곳입니다.
+Hands-on 01~09에서 검증된 구현을 공통 계약으로 연결하는 CLI 검증 harness입니다. 개별 Agent의 기능을 다시 만들지 않고 Router, 전문 Agent, 실행 Agent와 Security gate 사이의 경계를 검사합니다.
 
-## 입력
+## 실행
 
-- `TaskRequest`
-- 사용 가능한 모델과 Agent 목록
-- 허용 도구와 안전 정책
-- 프로젝트별 평가 결과
+```bash
+cd integration
+uv sync --all-extras
+./run-integration replay
+uv run --frozen pytest
+```
+
+`replay`는 06 Router를 subprocess로 실제 실행하고 나머지 프로젝트의 커밋된 검증 결과를 adapter로 읽습니다. 외부 API를 호출하지 않습니다.
+
+```bash
+./run-integration live-smoke
+```
+
+`live-smoke`는 03 RAG 1건, 07 Browser 전체 로컬 suite, 08 Coding 1건과 09 Docker Security gate를 실행합니다. Upstage 키는 macOS Keychain의 `UPSTAGE_API_KEY` service에서 실행 프로세스에만 주입합니다. 05 Research는 DeepSeek 키가 없으면 deterministic offline corpus로 실행되며 결과에 명시됩니다.
 
 ## 처리 흐름
 
 ```text
-요청 분류
-→ Router가 모델과 Agent 선택
-→ 전문 Agent 또는 실행형 Agent 수행
-→ 코드 변경이면 보안 재검증
-→ 공통 평가
-→ 근거와 실행 이력이 포함된 결과 반환
+TaskRequest
+→ 06 Router subprocess
+→ 02 model 또는 03/04/05/07/08 adapter
+→ Coding이면 09 Security gate 필수
+→ AgentResult + ToolTrace + EvaluationRecord
 ```
 
 ## 구성
 
-- `src/`: 프로젝트별 adapter와 orchestration 코드
-- `tests/`: 통합·권한·fallback·회귀 테스트
-- `results/`: 작은 요약 결과와 비교표
+- `scenarios/replay-v1.jsonl`: 정상 7건과 fail-closed 3건
+- `src/integrated_agent/`: 계약, subprocess/artifact adapter, orchestration, 평가 CLI
+- `tests/`: 계약, local-only, 보안 게이트, end-to-end 회귀 테스트
+- `results/replay-v1/`: 외부 호출 없는 재현 결과
+- `results/live-smoke-v1/`: 실제 실행 요약; 중복 raw 산출물은 Git 제외
 
 ## 범위
 
 ### 포함
 
-- 공통 계약 호환성 검증
-- Router와 Agent 연결
-- 로컬/API 모델 교체
-- 실행형 Agent 권한 제한
-- end-to-end 결과 평가
+- 공통 계약 호환성 검증과 route/agent 일치
+- local-only 외부 adapter 차단
+- downstream timeout·형식 오류 fail-closed
+- Coding → Security gate 강제
+- replay와 live-smoke 결과 분리
 
 ### 제외
 
@@ -44,7 +55,9 @@
 
 ## 완료 조건
 
-- 모든 연결 프로젝트가 공통 계약을 사용함
-- Router의 선택과 fallback이 기록됨
-- 실행형 작업에 허용 범위와 검증 단계가 있음
-- 단일 프로젝트 결과와 통합 결과를 같은 평가 형식으로 비교할 수 있음
+- replay 10/10, route/agent/status 10/10
+- Coding 경로의 Security gate 우회 불가
+- 오류 주입 3건이 예상된 failed/blocked 상태로 종료
+- live-smoke 4/4와 공통 계약 기록 생성
+
+현재 결과와 개별 Hands-on 대비 판단은 [`results/report.md`](results/report.md)에 정리했습니다.
