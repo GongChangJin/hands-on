@@ -18,3 +18,9 @@ artifacts/
 *.gguf
 *.safetensors
 :memory:.ses
+
+# iCloud conflict copies are not shared evaluation fixtures.
+experiments/04-multimodal-agent/shared/**/* [0-9]*.*
+
+# Integration live-smoke keeps reproducible summaries; downstream raw copies stay local.
+integration/results/*/raw/

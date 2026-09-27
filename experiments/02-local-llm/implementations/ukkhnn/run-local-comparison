@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+local-llm evaluate --adapter ollama --model qwen2.5:3b --context-window 4096 --repetitions 3 --output results/qwen2.5-3b-q4_k_m
+local-llm evaluate --adapter ollama --model qwen2.5:latest --context-window 4096 --repetitions 3 --output results/qwen2.5-7b-q4_k_m
+local-llm compare results/qwen2.5-3b-q4_k_m/summary.json results/qwen2.5-7b-q4_k_m/summary.json --output results/local-comparison.md

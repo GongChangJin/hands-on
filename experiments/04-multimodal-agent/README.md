@@ -4,7 +4,8 @@
 
 ## 프로젝트 정의
 
-- **상태:** 구현·로컬 검증·DeepSeek live 비교·adaptive 보완 완료
+- **상태:** `validated`
+- **검증 범위:** 로컬 검증·DeepSeek live 비교·adaptive 보완 완료
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 이미지·화면 상태를 해석하는 전문 Agent
 - **선행 프로젝트:** Agent Evaluation

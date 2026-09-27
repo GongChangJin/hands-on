@@ -1,0 +1,74 @@
+{
+  "run_id": "deterministic-container-v1",
+  "implementation_id": "ukkhnn:deterministic-security-gate:v1",
+  "fixture": {
+    "detected_expected": 6,
+    "expected_total": 6,
+    "detection_rate": 1.0,
+    "residual_expected": 0,
+    "remediated_expected": 6,
+    "remediation_rate": 1.0,
+    "false_positives": 0,
+    "clean_controls": 3,
+    "functional_tests_before": true,
+    "security_tests_before_failed": true,
+    "all_tests_after": true,
+    "decision": "approve",
+    "remaining_risks": [
+      "Custom rules cover the three fixture categories, not every security weakness.",
+      "Reference fixes validate the deterministic security gate, not live model remediation quality."
+    ],
+    "metadata": {
+      "isolation_probes_passed": 3
+    }
+  },
+  "coding_handoffs": {
+    "approved": 5,
+    "total": 5
+  },
+  "isolation": {
+    "passed": 3,
+    "total": 3
+  },
+  "environment": {
+    "image": {
+      "id": "sha256:c808d94864bed38f9d1c968416537ad3f3896a3958bf43ee2acd27be000bc969",
+      "created": "2026-09-26T13:39:22.568640594Z",
+      "architecture": "arm64"
+    },
+    "tool_versions": {
+      "semgrep": "1.178.0",
+      "bandit": "bandit 1.9.4",
+      "pytest": "pytest 9.1.1"
+    },
+    "policy": {
+      "container_image": "gongchangjin-security-tools:09-v1",
+      "semgrep_version": "1.178.0",
+      "bandit_version": "1.9.4",
+      "pytest_version": "9.1.1",
+      "network": "none",
+      "read_only_root": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "no_new_privileges": true,
+      "memory_mb": 768,
+      "cpus": 1.0,
+      "pids_limit": 128,
+      "timeout_seconds": 60,
+      "allowed_tools": [
+        "semgrep",
+        "bandit",
+        "pytest"
+      ],
+      "allowed_categories": [
+        "sqli",
+        "path_traversal",
+        "hardcoded_secret"
+      ],
+      "minimum_detection_rate": 1.0,
+      "minimum_remediation_rate": 0.8
+    }
+  },
+  "tool_trace_count": 22
+}

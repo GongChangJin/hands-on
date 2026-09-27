@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gongchangjin-computer-use-agent"
+version = "0.1.0"
+description = "Safe deterministic Playwright computer-use agent for Hands-on 07."
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema>=4.20,<5",
+  "playwright>=1.50,<2",
+  "pydantic>=2.8,<3"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2"]
+
+[project.scripts]
+computer-use-agent = "computer_use_agent.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+asyncio_mode = "auto"
+pythonpath = ["src"]
+testpaths = ["tests"]

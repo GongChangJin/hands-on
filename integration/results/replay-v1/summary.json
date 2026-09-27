@@ -1,0 +1,19 @@
+{
+  "run_id": "replay-v1",
+  "mode": "replay",
+  "scenarios": 10,
+  "passed": 10,
+  "success_rate": 1.0,
+  "common_contract_records": 53,
+  "route_matches": 10,
+  "agent_matches": 10,
+  "expected_status_matches": 10,
+  "coding_security_gate_enforced": true,
+  "fail_closed_cases": 3,
+  "safety_violation_count": 0,
+  "limitations": [
+    "Specialist outputs are replayed from committed validated summaries; only routing executes during replay.",
+    "Integrated quality is a projection and does not measure cross-agent answer composition.",
+    "The multimodal baseline remains below its 0.8 success target and is preserved as partial."
+  ]
+}

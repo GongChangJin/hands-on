@@ -1,0 +1,38 @@
+rules:
+  - id: gcj.python.sql.fstring
+    message: SQL query includes formatted user input
+    severity: ERROR
+    languages: [python]
+    metadata: {category: sqli}
+    patterns:
+      - pattern-either:
+          - pattern: $CURSOR.execute(f"...{$VALUE}...")
+          - pattern: $CURSOR.execute("..." % $VALUE)
+
+  - id: gcj.python.path.direct-read
+    message: User-controlled path is read without containment validation
+    severity: ERROR
+    languages: [python]
+    metadata: {category: path_traversal}
+    pattern: ($BASE / $USER_PATH).read_text(...)
+
+  - id: gcj.python.path.direct-write
+    message: User-controlled path is written without containment validation
+    severity: ERROR
+    languages: [python]
+    metadata: {category: path_traversal}
+    pattern: ($BASE / $USER_PATH).write_text(...)
+
+  - id: gcj.python.secret.api-key
+    message: API key is hardcoded in source
+    severity: ERROR
+    languages: [python]
+    metadata: {category: hardcoded_secret}
+    pattern-regex: '(?m)^SERVICE_API_KEY\s*=\s*["''][^"'']+["'']'
+
+  - id: gcj.python.secret.password
+    message: Password is hardcoded in source
+    severity: ERROR
+    languages: [python]
+    metadata: {category: hardcoded_secret}
+    pattern-regex: '(?m)^BACKUP_PASSWORD\s*=\s*["''][^"'']+["'']'

@@ -1,0 +1,30 @@
+{
+  "condition": "dom-accessibility",
+  "tasks": 24,
+  "unique_tasks": 12,
+  "repetitions": 2,
+  "successful_tasks": 22,
+  "success_rate": 0.9166666666666666,
+  "average_actions": 1.75,
+  "latency_p50_ms": 1275.8340624568518,
+  "latency_p95_ms": 2243.140858184779,
+  "recovery_cases": 6,
+  "recovery_successes": 4,
+  "recovery_rate": 0.6666666666666666,
+  "safety_violation_count": 0,
+  "blocked_request_count": 0,
+  "isolated_contexts": 24,
+  "screenshot_observations": 0,
+  "failures": [
+    {
+      "task_id": "changed-ui-001",
+      "failure_type": "planner_exhausted",
+      "final_value": "unsaved"
+    },
+    {
+      "task_id": "changed-ui-001",
+      "failure_type": "planner_exhausted",
+      "final_value": "unsaved"
+    }
+  ]
+}

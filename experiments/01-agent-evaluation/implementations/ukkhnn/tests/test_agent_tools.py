@@ -25,8 +25,8 @@ def test_evaluate_arithmetic_rejects_code_execution() -> None:
 
 
 def test_project_status() -> None:
-    assert project_status("01-agent-evaluation")["status"] == "active"
-    assert project_status("현재 프로젝트")["status"] == "active"
+    assert project_status("01-agent-evaluation")["status"] == "validated"
+    assert project_status("현재 프로젝트")["status"] == "validated"
 
 
 def test_provider_defaults() -> None:

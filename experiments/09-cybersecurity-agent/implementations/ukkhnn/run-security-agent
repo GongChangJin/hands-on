@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+cd "$(dirname "$0")"
+export PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}src"
+export UV_CACHE_DIR="${UV_CACHE_DIR:-/tmp/gcj-uv-cache}"
+exec uv run --extra dev python -m cybersecurity_agent.cli "$@"

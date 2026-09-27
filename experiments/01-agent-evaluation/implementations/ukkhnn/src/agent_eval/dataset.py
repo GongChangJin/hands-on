@@ -13,7 +13,7 @@ from phoenix.client import Client
 from .contracts import task_request_from_example
 
 
-DATASET_NAME = "agent-tool-use-golden-v1"
+DATASET_NAME = "agent-tool-use-golden-v2"
 
 
 def default_dataset_path() -> Path:

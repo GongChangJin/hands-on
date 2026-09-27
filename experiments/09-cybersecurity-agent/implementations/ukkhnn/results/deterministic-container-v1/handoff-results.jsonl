@@ -1,0 +1,5 @@
+{"task_id": "coding-tags-001", "source_project": "08-coding-agent", "decision": "approve", "finding_count": 0, "blocking_findings": [], "tests_passed": true, "upstream_verification_passed": true}
+{"task_id": "coding-priority-002", "source_project": "08-coding-agent", "decision": "approve", "finding_count": 0, "blocking_findings": [], "tests_passed": true, "upstream_verification_passed": true}
+{"task_id": "coding-preferences-003", "source_project": "08-coding-agent", "decision": "approve", "finding_count": 0, "blocking_findings": [], "tests_passed": true, "upstream_verification_passed": true}
+{"task_id": "coding-dates-004", "source_project": "08-coding-agent", "decision": "approve", "finding_count": 0, "blocking_findings": [], "tests_passed": true, "upstream_verification_passed": true}
+{"task_id": "coding-titles-005", "source_project": "08-coding-agent", "decision": "approve", "finding_count": 0, "blocking_findings": [], "tests_passed": true, "upstream_verification_passed": true}

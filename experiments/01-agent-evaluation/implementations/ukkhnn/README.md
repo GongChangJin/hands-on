@@ -3,7 +3,7 @@
 ## 구현 정보
 
 - **구현자:** @ukkhnn
-- **상태:** completed
+- **상태:** `validated`
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
 - **협업 방식:** @ukkhnn과 @us788이 각각 독립 구현하고, 실행 결과와 학습 결론을 공유해 비교
 
@@ -72,7 +72,7 @@ Phoenix의 `Projects > 01-agent-evaluation > Traces`에서 workflow → Agent �
 ./upload-dataset
 ```
 
-`agent-tool-use-golden-v1`은 계산 10개, 프로젝트 조회 5개, 두 도구 결합 5개로 구성된다. 정답, 필수 도구, handoff 목표 Agent를 실행 전에 고정한다.
+`agent-tool-use-golden-v2`는 계산 10개, 프로젝트 조회 5개, 두 도구 결합 5개로 구성된다. 현재 프로젝트 상태인 `validated`, 필수 도구와 handoff 목표 Agent를 실행 전에 고정한다. 이전 v1 실행 결과는 당시 `active` 상태를 사용한 과거 기록으로 보존한다.
 
 ### 3. 한 모델 또는 구조 실행
 
@@ -135,9 +135,20 @@ LLM judge는 `kind=LLM` annotation으로만 기록한다. `task_success`는 아�
 | DeepSeek / `deepseek-v4-flash` | 6/6 | 2.0초 | 1,169 |
 | Upstage / `solar-pro4` | 6/6 | 3.5초 | 866 |
 
-### Agent 구조 비교 — 20개 example, Upstage `solar-pro4`
+### 상태 정합성 재평가 — 20개 example, Upstage `solar-pro4`
 
-최종 v2 결과는 [`comparison.md`](reports/upstage-solar-pro4-architecture-v2/comparison.md)에 있다.
+현재 프로젝트 상태를 `validated`로 맞춘 golden Dataset v2와 prompt v3 결과는 [`comparison.md`](reports/upstage-solar-pro4-status-v3-20260927/comparison.md)에 있다.
+
+| architecture | 성공률 | p50 | p95 | tokens | Agent 호출 추정 비용 | 안전 위반 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| single | 100% (20/20) | 1,280ms | 5,309ms | 18,663 | $0.006527 | 0 |
+| handoff | 100% (20/20) | 2,082ms | 9,695ms | 24,531 | $0.008607 | 0 |
+
+두 구조 모두 현재 상태 정답을 포함해 통과했다. Handoff는 single보다 p50이 약 63%, token이 약 31%, 추정 비용이 약 32% 늘어 현재 범위에서는 single 기본 판단을 유지한다.
+
+### 이전 Agent 구조 비교 — 당시 `active` 상태
+
+이전 v2 결과는 [`comparison.md`](reports/upstage-solar-pro4-architecture-v2/comparison.md)에 과거 실행으로 보존한다.
 
 | architecture | 성공률 | p50 | p95 | tokens | Agent 호출 추정 비용 | 안전 위반 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -165,7 +176,7 @@ DeepSeek은 UTC 평일 peak/off-peak 배율을 반영한다. 실제 청구액은
 
 - exploratory run에서 handoff의 tool 생략, transfer tool 반복, 모호한 tool argument를 발견하고 결과를 보존했다.
 - handoff history filter, 전문 Agent 지시 강화, 안전한 `^`/프로젝트 별칭 정규화를 적용했다.
-- 최종 suite는 25개 로컬 테스트로 Dataset 개수, 네 계약, evaluator, 실패 보존, 비용, p50/p95, 세 형식 export를 검증한다.
+- 최종 suite는 27개 로컬 테스트로 Dataset 개수, 네 계약, evaluator, 실패 보존, 비용, p50/p95, 세 형식 export를 검증한다.
 
 ```bash
 python -m pytest

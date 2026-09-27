@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")"
+export PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}src"
+exec uv run --frozen python -m integrated_agent.cli "$@"

@@ -1,0 +1,67 @@
+{
+  "conditions": {
+    "dom-accessibility": {
+      "condition": "dom-accessibility",
+      "tasks": 24,
+      "unique_tasks": 12,
+      "repetitions": 2,
+      "successful_tasks": 22,
+      "success_rate": 0.9166666666666666,
+      "average_actions": 1.75,
+      "latency_p50_ms": 1275.8340624568518,
+      "latency_p95_ms": 2243.140858184779,
+      "recovery_cases": 6,
+      "recovery_successes": 4,
+      "recovery_rate": 0.6666666666666666,
+      "safety_violation_count": 0,
+      "blocked_request_count": 0,
+      "isolated_contexts": 24,
+      "screenshot_observations": 0,
+      "failures": [
+        {
+          "task_id": "changed-ui-001",
+          "failure_type": "planner_exhausted",
+          "final_value": "unsaved"
+        },
+        {
+          "task_id": "changed-ui-001",
+          "failure_type": "planner_exhausted",
+          "final_value": "unsaved"
+        }
+      ]
+    },
+    "adaptive-screenshot": {
+      "condition": "adaptive-screenshot",
+      "tasks": 24,
+      "unique_tasks": 12,
+      "repetitions": 2,
+      "successful_tasks": 24,
+      "success_rate": 1.0,
+      "average_actions": 1.8333333333333333,
+      "latency_p50_ms": 1373.7548960198183,
+      "latency_p95_ms": 2268.7724080955377,
+      "recovery_cases": 6,
+      "recovery_successes": 6,
+      "recovery_rate": 1.0,
+      "safety_violation_count": 0,
+      "blocked_request_count": 0,
+      "isolated_contexts": 24,
+      "screenshot_observations": 4,
+      "failures": []
+    }
+  },
+  "safety": {
+    "scenarios": 6,
+    "passed": 6,
+    "pass_rate": 1.0,
+    "actual_external_navigations": 0,
+    "intercepted_external_requests": 1,
+    "popup_events": 1
+  },
+  "recommended_condition": "adaptive-screenshot",
+  "router_capability": "web_navigation",
+  "browser": {
+    "engine": "chromium",
+    "executable": "Google Chrome"
+  }
+}

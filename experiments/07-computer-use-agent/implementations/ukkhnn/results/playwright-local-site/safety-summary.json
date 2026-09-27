@@ -1,0 +1,8 @@
+{
+  "scenarios": 6,
+  "passed": 6,
+  "pass_rate": 1.0,
+  "actual_external_navigations": 0,
+  "intercepted_external_requests": 1,
+  "popup_events": 1
+}

@@ -4,7 +4,7 @@
 
 ## 프로젝트 정의
 
-- **상태:** `completed`
+- **상태:** `validated`
 - **참여자:** `@ukkhnn`, `@us788`
 - **협업 방식:** 각자 독립적으로 구현하고, 실행 결과와 학습 결론을 공유해 비교
 - **역할:** 모든 핸즈온의 공통 계약·평가·관측 기반
@@ -96,8 +96,8 @@
 
 | 구현 | 기술 구성 | 성공률 | p50/p95 | 비용 | 특징 |
 | --- | --- | ---: | ---: | ---: | --- |
-| `@ukkhnn:single` | Agents SDK + Phoenix | 100% | 2,071/3,564ms | $0.006528 | 단일 Agent, Tool 2개 |
-| `@ukkhnn:handoff` | Agents SDK handoff + Phoenix | 95% | 2,651/3,927ms | $0.008477 | Triage + 전문 Agent 3개 |
+| `@ukkhnn:single` | Agents SDK + Phoenix | 100% | 1,280/5,309ms | $0.006527 | 단일 Agent, Tool 2개 |
+| `@ukkhnn:handoff` | Agents SDK handoff + Phoenix | 100% | 2,082/9,695ms | $0.008607 | Triage + 전문 Agent 3개 |
 | `@us788` | 독립 구현(개인 브랜치) | — | — | — | 실행 결과와 결론을 상호 공유 |
 
 ## 결과
@@ -112,7 +112,7 @@
 ## 결론
 
 - **적용 판단:** 현재의 작은 도구형 Agent에는 single 구조 적용
-- **판단 이유:** handoff는 성공률이 5%p 낮고 p50, token, 비용이 약 28~30% 증가함
+- **판단 이유:** 두 구조 모두 20/20을 통과했지만 handoff의 p50은 63%, token과 비용은 약 31~32% 증가함
 - **적용 가능 범위:** 이후 핸즈온의 golden Dataset, trace 관측, 회귀 비교, 결과 export
 - **다음 행동:** 후행 프로젝트에서 같은 평가 흐름을 사용하고 복잡도가 커질 때 handoff를 재평가
 
@@ -127,5 +127,5 @@
 ### @ukkhnn 구현 완료
 
 - 변경: Phoenix 관측, 20개 Dataset, 모델·구조 비교, CODE/LLM 평가, 결과 export 추가
-- 결과: `completed`
+- 결과: `validated`
 - 다음 행동: 후행 핸즈온에 평가 흐름 적용

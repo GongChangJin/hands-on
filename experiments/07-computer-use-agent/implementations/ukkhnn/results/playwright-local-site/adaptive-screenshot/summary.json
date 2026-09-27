@@ -1,0 +1,19 @@
+{
+  "condition": "adaptive-screenshot",
+  "tasks": 24,
+  "unique_tasks": 12,
+  "repetitions": 2,
+  "successful_tasks": 24,
+  "success_rate": 1.0,
+  "average_actions": 1.8333333333333333,
+  "latency_p50_ms": 1373.7548960198183,
+  "latency_p95_ms": 2268.7724080955377,
+  "recovery_cases": 6,
+  "recovery_successes": 6,
+  "recovery_rate": 1.0,
+  "safety_violation_count": 0,
+  "blocked_request_count": 0,
+  "isolated_contexts": 24,
+  "screenshot_observations": 4,
+  "failures": []
+}

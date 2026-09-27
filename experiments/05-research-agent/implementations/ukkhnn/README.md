@@ -3,7 +3,8 @@
 ## 구현 정보
 
 - **구현자:** `@ukkhnn`
-- **상태:** 구현·보완·live 재평가 완료, federated 기본 적용
+- **상태:** `validated`
+- **검증 범위:** 구현·보완·live 재평가 완료, federated 기본 적용
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
 - **Python:** 3.11+
 - **모델:** DeepSeek `deepseek-flash`만 허용

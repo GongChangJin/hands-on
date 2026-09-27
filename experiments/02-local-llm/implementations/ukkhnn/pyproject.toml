@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gongchangjin-local-llm"
+version = "0.1.0"
+description = "Reproducible local and API LLM benchmark for GongChangJin Hands-on 02."
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.20,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+local-llm = "local_llm.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]

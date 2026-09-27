@@ -1,0 +1,40 @@
+{
+  "image": {
+    "id": "sha256:c808d94864bed38f9d1c968416537ad3f3896a3958bf43ee2acd27be000bc969",
+    "created": "2026-09-26T13:39:22.568640594Z",
+    "architecture": "arm64"
+  },
+  "tool_versions": {
+    "semgrep": "1.178.0",
+    "bandit": "bandit 1.9.4",
+    "pytest": "pytest 9.1.1"
+  },
+  "policy": {
+    "container_image": "gongchangjin-security-tools:09-v1",
+    "semgrep_version": "1.178.0",
+    "bandit_version": "1.9.4",
+    "pytest_version": "9.1.1",
+    "network": "none",
+    "read_only_root": true,
+    "cap_drop": [
+      "ALL"
+    ],
+    "no_new_privileges": true,
+    "memory_mb": 768,
+    "cpus": 1.0,
+    "pids_limit": 128,
+    "timeout_seconds": 60,
+    "allowed_tools": [
+      "semgrep",
+      "bandit",
+      "pytest"
+    ],
+    "allowed_categories": [
+      "sqli",
+      "path_traversal",
+      "hardcoded_secret"
+    ],
+    "minimum_detection_rate": 1.0,
+    "minimum_remediation_rate": 0.8
+  }
+}

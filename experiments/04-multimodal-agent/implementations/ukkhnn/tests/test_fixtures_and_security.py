@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 from PIL import Image
 
-from multimodal_agent.fixtures import prepare_shared, validate_fixtures
+from multimodal_agent.fixtures import FIXTURE_IMAGE_NAME, prepare_shared, validate_fixtures
 from multimodal_agent.paths import FIXTURES_DIR, LABELS_DIR, TASKS_PATH
 from multimodal_agent.preprocessing import ImageSafetyError, _signature_mime, preprocess_image
 from multimodal_agent.privacy import scan_texts
@@ -27,6 +27,12 @@ def test_shared_fixtures_are_complete_and_valid() -> None:
         "error_message",
         "accessibility_issue",
     }
+
+
+def test_fixture_name_filter_ignores_conflict_copies() -> None:
+    assert FIXTURE_IMAGE_NAME.fullmatch("ui-error-001.png")
+    assert FIXTURE_IMAGE_NAME.fullmatch("ui-normal-024.png")
+    assert not FIXTURE_IMAGE_NAME.fullmatch("ui-error-001 2.png")
 
 
 def test_prepare_is_byte_reproducible() -> None:
