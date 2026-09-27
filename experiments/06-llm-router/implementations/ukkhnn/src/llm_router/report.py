@@ -35,15 +35,17 @@ def evaluation_report(summary: dict[str, Any], records: list[EvaluationRecord], 
         f"- routing + model cost: {_money(cost['routing_and_model_total_usd'])} vs all-frontier model {_money(cost['all_frontier_model_total_usd'])} (savings {_pct(cost['routing_and_model_savings_rate'])})",
         f"- projected latency p50/p95: {_ms(latency['router_p50_ms'])} / {_ms(latency['router_p95_ms'])}",
         f"- all-frontier latency p50/p95: {_ms(latency['all_frontier_p50_ms'])} / {_ms(latency['all_frontier_p95_ms'])}",
+        f"- measured control planes: {', '.join(summary['control_plane']) or '-'}",
         "",
-        "| task | strategy | model | agents | confidence | match | classifier ms | projected cost | projected latency |",
-        "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |",
+        "| task | strategy | model | agents | gates | confidence | match | classifier ms | projected cost | projected latency |",
+        "| --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |",
     ]
     for record in records:
         classifier_latency = float(record.metadata["classifier_latency_ms"])
         lines.append(
             f"| {record.task_id} | {record.route.strategy} | {record.route.selected_model.value} | "
-            f"{', '.join(agent.value for agent in record.route.selected_agents) or '-'} | {record.route.confidence:.2f} | "
+            f"{', '.join(agent.value for agent in record.route.selected_agents) or '-'} | "
+            f"{', '.join(record.metadata['required_post_execution_gates']) or '-'} | {record.route.confidence:.2f} | "
             f"{str(record.route_match).lower()} | {classifier_latency:.1f} | {_money(record.projected_cost_usd)} | "
             f"{_ms(record.projected_latency_ms)} |"
         )

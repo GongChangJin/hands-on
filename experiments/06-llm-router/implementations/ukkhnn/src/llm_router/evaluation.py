@@ -81,12 +81,13 @@ def evaluate_case(case: DatasetCase, router: HybridRouter) -> EvaluationRecord:
             "classifier_cost_usd": classifier_cost,
             "router_and_model_cost_usd": router.metrics.logical_models[decision.selected_model].request_cost_usd + classifier_cost,
             "all_frontier_model_cost_usd": router.metrics.logical_models[LogicalModel.FRONTIER].request_cost_usd,
-            "projection_basis": "02-05 and 07 measured p50, quality, and calculated request costs",
+            "projection_basis": "02-05 and 07 measured end-to-end metrics; 08 control-plane metrics are reported separately",
+            "required_post_execution_gates": ["cybersecurity"] if AgentRoute.CODING in decision.selected_agents else [],
         },
     )
 
 
-def summarize(records: list[EvaluationRecord]) -> dict[str, Any]:
+def summarize(records: list[EvaluationRecord], metrics: ProjectMetrics) -> dict[str, Any]:
     total = len(records)
     comparable_quality = [record for record in records if record.projected_quality is not None and record.baseline_quality is not None]
     comparable_cost = [record for record in records if record.projected_cost_usd is not None and record.baseline_cost_usd is not None]
@@ -141,9 +142,14 @@ def summarize(records: list[EvaluationRecord]) -> dict[str, Any]:
             "all_frontier_p50_ms": percentile(baseline_latencies, 0.50),
             "all_frontier_p95_ms": percentile(baseline_latencies, 0.95),
         },
+        "control_plane": {
+            agent.value: metric.control_plane.model_dump(mode="json")
+            for agent, metric in metrics.agents.items()
+            if metric.control_plane is not None
+        },
         "limitations": [
             "Execution quality, downstream latency, and downstream cost are replay projections from upstream hands-on results rather than new task executions.",
-            "Coding projections are excluded because 08 has no measured metrics yet.",
+            "Coding end-to-end generation projections remain excluded; 08 measures reference-patch control-plane execution and 09 measures its security gate.",
             "Balanced and frontier currently map to the same measured Solar Pro 4 endpoint.",
         ],
     }
@@ -151,7 +157,7 @@ def summarize(records: list[EvaluationRecord]) -> dict[str, Any]:
 
 def run_evaluation(cases: list[DatasetCase], router: HybridRouter) -> tuple[list[EvaluationRecord], dict[str, Any]]:
     records = [evaluate_case(case, router) for case in cases]
-    return records, summarize(records)
+    return records, summarize(records, router.metrics)
 
 
 class _TimeoutClassifier:

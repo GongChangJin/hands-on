@@ -37,17 +37,18 @@ export UPSTAGE_API_KEY="$(security find-generic-password -s UPSTAGE_API_KEY -a "
 | --- | ---: | ---: |
 | 라우팅 정확도 | 39/40 (97.5%) | 해당 없음 |
 | 모델 / Agent 정확도 | 100% / 97.5% | 해당 없음 |
-| projected 품질 | 89.73% | 93.52% |
-| 모델+라우팅 비용 | $0.000786 | $0.000879 |
-| 비교 가능한 전체 비용 | $0.099255 | $0.099476 |
+| projected 품질 | 90.24% | 93.62% |
+| 모델+라우팅 비용 | $0.000794 | $0.000879 |
+| 비교 가능한 전체 비용 | $0.123147 | $0.123274 |
 | projected p50 | 573.6ms | 520.9ms |
 | projected p95 | 10,696.4ms | 10,696.4ms |
 
 - 실제 분류기 호출: 4회, $0.000171
-- 모델+라우팅 비용 절감: 10.52%
-- 전체 비용 절감: 0.22%. Research Agent 비용이 총비용의 대부분이라 절감 효과가 희석됐다.
-- 품질 차이: 3.79%p로 목표 5%p 이내
-- 품질·비용·지연 projection coverage: 82.5%. 미측정 browser/coding과 이들이 함께 선택된 요청은 제외했다.
+- 모델+라우팅 비용 절감: 9.66%
+- 전체 비용 절감: 0.10%. Research Agent 비용이 총비용의 대부분이라 절감 효과가 희석됐다.
+- 품질 차이: 3.38%p로 목표 5%p 이내
+- 품질·비용·지연 projection coverage: 92.5%. Browser는 07 실측치를 반영했고 coding live 생성은 제외했다.
+- Coding 제어 계층: 08 참조 patch 5/5, 09 보안 승인 5/5. Coding route에는 후행 `cybersecurity` 게이트가 기록된다.
 - fallback: timeout, provider 오류, schema 오류, 낮은 confidence, circuit open, 로컬 모델 장애 7/7 통과
 - 회귀 테스트: 19/19 통과
 
@@ -57,10 +58,10 @@ export UPSTAGE_API_KEY="$(security find-generic-password -s UPSTAGE_API_KEY -a "
 
 `trial`로 적용한다. 규칙으로 판별되는 36건은 별도 모델 호출 없이 처리했고, 모호한 4건에만 분류 비용이 발생했다. 다만 현재 로컬 7.6B의 p50이 Solar Pro 4보다 느려 지연시간 최적화 수단으로는 사용할 수 없다. local route는 데이터 경계와 외부 비용 회피를 위한 선택으로 한정한다.
 
-Browser는 07의 실패 시 스크린샷 증거·접근성 fallback 조건 실측치를 offline replay에 반영했다. Coding은 08 실측치가 들어오기 전까지 실행 비용·품질 최적화 대상에서 제외한다. `balanced`와 `frontier`도 실제 모델이 하나뿐이므로 새 모델을 평가한 뒤 매핑을 분리해야 한다.
+Browser는 07의 실패 시 스크린샷 증거·접근성 fallback 조건 실측치를 replay에 반영했다. Coding은 08의 실행 제어 계층과 09의 보안 승인 게이트를 연결했지만 live patch 생성 품질은 측정하지 않았으므로 end-to-end projection에서 제외한다. `balanced`와 `frontier`도 실제 모델이 하나뿐이므로 새 모델을 평가한 뒤 매핑을 분리해야 한다.
 
 ## 산출물
 
-- `results/hybrid-solar-pro4/`: 실제 Solar 분류 결과, 행별 route와 비교 보고서
-- `results/offline-replay/`: 네트워크 없는 결정론적 재현 결과
-- `results/fallback-suite/`: 7개 장애·안전 경계 결과
+- `results/hybrid-solar-pro4-v2/`: 실제 Solar 분류와 08·09 제어 계층을 반영한 결과
+- `results/offline-replay-v2/`: 네트워크 없는 결정론적 재현 결과
+- `results/fallback-suite-v2/`: 7개 장애·안전 경계 결과

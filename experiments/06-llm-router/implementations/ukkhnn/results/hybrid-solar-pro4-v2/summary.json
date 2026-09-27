@@ -1,0 +1,51 @@
+{
+  "tasks": 40,
+  "route_matches": 39,
+  "routing_accuracy": 0.975,
+  "model_accuracy": 1.0,
+  "agent_accuracy": 0.975,
+  "strategies": {
+    "hybrid": 4,
+    "rule": 36
+  },
+  "classifier_calls": 4,
+  "fallbacks": 0,
+  "quality": {
+    "coverage": 0.925,
+    "router_mean": 0.9024024023945946,
+    "all_frontier_mean": 0.9361861861891891,
+    "absolute_gap": 0.03378378379459457,
+    "within_five_percent": true
+  },
+  "cost": {
+    "coverage": 0.925,
+    "router_total_usd": 0.12314700383771929,
+    "all_frontier_total_usd": 0.12327358883771929,
+    "savings_rate": 0.0010268622921868402,
+    "classifier_total_usd": 0.00017873999999999999,
+    "routing_and_model_total_usd": 0.0007939350000000001,
+    "all_frontier_model_total_usd": 0.00087885,
+    "routing_and_model_savings_rate": 0.09662058371735788
+  },
+  "latency": {
+    "coverage": 0.925,
+    "router_p50_ms": 573.6478749895548,
+    "router_p95_ms": 10696.362083258307,
+    "all_frontier_p50_ms": 520.9072079742,
+    "all_frontier_p95_ms": 10696.361250004
+  },
+  "control_plane": {
+    "coding": {
+      "success_rate": 1.0,
+      "latency_p50_ms": 497.4060420063324,
+      "request_cost_usd": 0.0,
+      "security_gate_approval_rate": 1.0,
+      "source": "08 reference-replay-v1 5/5; 09 deterministic-container-v2 security approval 5/5"
+    }
+  },
+  "limitations": [
+    "Execution quality, downstream latency, and downstream cost are replay projections from upstream hands-on results rather than new task executions.",
+    "Coding end-to-end generation projections remain excluded; 08 measures reference-patch control-plane execution and 09 measures its security gate.",
+    "Balanced and frontier currently map to the same measured Solar Pro 4 endpoint."
+  ]
+}

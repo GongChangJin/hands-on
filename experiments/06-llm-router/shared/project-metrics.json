@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-09-24",
+  "recorded_at": "2026-09-27",
   "logical_models": {
     "small": {
       "actual_model": "qwen2.5:3b",
@@ -63,7 +63,14 @@
       "quality_score": null,
       "latency_p50_ms": null,
       "request_cost_usd": null,
-      "source": "08 not measured"
+      "source": "08 reference replay measures the execution control plane, not live patch generation quality",
+      "control_plane": {
+        "success_rate": 1.0,
+        "latency_p50_ms": 497.4060420063324,
+        "request_cost_usd": 0.0,
+        "security_gate_approval_rate": 1.0,
+        "source": "08 reference-replay-v1 5/5; 09 deterministic-container-v2 security approval 5/5"
+      }
     }
   }
 }

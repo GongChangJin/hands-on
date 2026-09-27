@@ -123,11 +123,20 @@ class ModelMetric(BaseModel):
     source: str
 
 
+class ControlPlaneMetric(BaseModel):
+    success_rate: float = Field(ge=0, le=1)
+    latency_p50_ms: float = Field(ge=0)
+    request_cost_usd: float = Field(ge=0)
+    security_gate_approval_rate: float | None = Field(default=None, ge=0, le=1)
+    source: str
+
+
 class AgentMetric(BaseModel):
     quality_score: float | None = Field(default=None, ge=0, le=1)
     latency_p50_ms: float | None = Field(default=None, ge=0)
     request_cost_usd: float | None = Field(default=None, ge=0)
     source: str
+    control_plane: ControlPlaneMetric | None = None
 
 
 class ProjectMetrics(BaseModel):

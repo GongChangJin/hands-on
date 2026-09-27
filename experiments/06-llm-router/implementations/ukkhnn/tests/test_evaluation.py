@@ -40,3 +40,12 @@ def test_every_record_keeps_reason_and_mapping_metadata():
     assert all(record.route.reason for record in records)
     assert all(record.route.actual_model for record in records)
     assert all(record.metadata["projection_basis"] for record in records)
+
+
+def test_coding_routes_require_security_gate_and_report_control_plane():
+    records, summary = evaluated()
+    coding = [record for record in records if "coding" in record.route.selected_agents]
+
+    assert coding
+    assert all(record.metadata["required_post_execution_gates"] == ["cybersecurity"] for record in coding)
+    assert summary["control_plane"]["coding"]["success_rate"] == 1.0

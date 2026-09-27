@@ -22,6 +22,8 @@ def test_metrics_cover_every_logical_model_and_agent():
     assert metrics.logical_models[LogicalModel.LOCAL].actual_model == "qwen2.5:latest"
     assert metrics.agents["browser"].quality_score == 1.0
     assert metrics.agents["coding"].quality_score is None
+    assert metrics.agents["coding"].control_plane.success_rate == 1.0
+    assert metrics.agents["coding"].control_plane.security_gate_approval_rate == 1.0
 
 
 def test_policy_has_safe_thresholds():
