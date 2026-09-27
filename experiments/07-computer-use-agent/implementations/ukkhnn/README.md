@@ -2,7 +2,7 @@
 
 ## 구현 정보
 
-- **상태:** validated
+- **상태:** `validated`
 - **방식:** 정책 선검사 + 결정적 browser planner + 실패 시 screenshot 증거·접근성 fallback
 - **런타임:** Python 3.11 이상, Playwright, Pydantic 2, JSON Schema, `uv`
 - **브라우저:** headless Google Chrome(Playwright Chromium API)

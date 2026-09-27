@@ -4,7 +4,8 @@
 
 ## 프로젝트 정의
 
-- **상태:** `validated` (`@ukkhnn` 실행 제어 계층 평가 완료, live 모델 평가는 후속 작업)
+- **상태:** `validated`
+- **검증 범위:** 실행 제어 계층 평가 완료, live 모델 평가는 후속 작업
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 요구사항을 검증된 코드 patch로 전환하는 실행형 Agent
 - **선행 프로젝트:** Agent Evaluation, LLM Router

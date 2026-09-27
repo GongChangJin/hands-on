@@ -2,7 +2,7 @@
 
 ## 구현 정보
 
-- **상태:** validated
+- **상태:** `validated`
 - **방식:** policy-first hybrid router
 - **런타임:** Python 3.11 이상, Pydantic 2, `uv`
 - **모호 요청 분류기:** Upstage `solar-pro4`
@@ -43,14 +43,14 @@ export UPSTAGE_API_KEY="$(security find-generic-password -s UPSTAGE_API_KEY -a "
 | projected p50 | 573.6ms | 520.9ms |
 | projected p95 | 10,696.4ms | 10,696.4ms |
 
-- 실제 분류기 호출: 4회, $0.000171
+- 실제 분류기 호출: 4회, $0.000179
 - 모델+라우팅 비용 절감: 9.66%
 - 전체 비용 절감: 0.10%. Research Agent 비용이 총비용의 대부분이라 절감 효과가 희석됐다.
 - 품질 차이: 3.38%p로 목표 5%p 이내
 - 품질·비용·지연 projection coverage: 92.5%. Browser는 07 실측치를 반영했고 coding live 생성은 제외했다.
 - Coding 제어 계층: 08 참조 patch 5/5, 09 보안 승인 5/5. Coding route에는 후행 `cybersecurity` 게이트가 기록된다.
 - fallback: timeout, provider 오류, schema 오류, 낮은 confidence, circuit open, 로컬 모델 장애 7/7 통과
-- 회귀 테스트: 19/19 통과
+- 회귀 테스트: 20/20 통과
 
 실패 1건은 `hybrid-002` 연구 요청에서 `research`와 함께 `browser`를 추가 선택한 경우다. 실행은 가능하지만 기대 경로보다 도구가 하나 많아 과다 라우팅으로 판정했다.
 

@@ -14,6 +14,7 @@ dependencies = [
   "jsonschema>=4.20.0",
   "openai-agents>=0.2.6",
   "openinference-instrumentation-openai-agents>=1.6.2",
+  "opentelemetry-exporter-otlp-proto-http>=1.34,<1.45",
 ]
 
 [project.optional-dependencies]

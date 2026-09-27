@@ -4,7 +4,8 @@
 
 ## 프로젝트 정의
 
-- **상태:** `validated` (`@ukkhnn` 결정적 보안 게이트 평가 완료)
+- **상태:** `validated`
+- **검증 범위:** 결정적 보안 게이트와 fail-closed scanner 경계
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 코드 변경의 보안 분석·수정·승인 근거를 제공하는 검증 계층
 - **선행 프로젝트:** Agent Evaluation, Coding Agent
@@ -106,7 +107,7 @@ LLM이 취약점을 단독 판단하는 대신 정적 분석과 보안 테스트
 
 컨테이너는 네트워크 없음, 읽기 전용 root와 workspace, 모든 Linux capability 제거, `no-new-privileges`, 비-root 사용자, CPU·메모리·PID·시간 제한을 적용했다. 08의 5개 patch는 각 replay workspace에 독립 held-out 테스트를 다시 주입해 정적 분석과 전체 회귀 테스트를 통과한 경우에만 승인했다. 결과는 공통 `TaskRequest`, `AgentResult`, `ToolTrace`, `EvaluationRecord`와 통합용 승인 기록으로 보존한다.
 
-이번 결과는 세 종류의 Python 취약점과 고정 참조 수정에 대한 보안 게이트 기준선이다. 전체 취약점 부재를 증명하지 않으며 dependency scan, 동적 보안 테스트, live LLM 수정 품질은 측정하지 않았다.
+이번 결과는 세 종류의 Python 취약점과 고정 참조 수정에 대한 보안 게이트 기준선이다. Scanner timeout·알 수 없는 종료 상태는 무조건 차단하며 timeout 컨테이너를 강제 제거한다. 전체 취약점 부재를 증명하지 않으며 dependency scan, 동적 보안 테스트, live LLM 수정 품질은 측정하지 않았다.
 
 ## 결론
 

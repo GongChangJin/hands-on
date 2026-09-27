@@ -3,7 +3,8 @@
 ## 구현 정보
 
 - **구현자:** `@ukkhnn`
-- **상태:** 구현·로컬 검증·DeepSeek live 평가·adaptive 보완 완료
+- **상태:** `validated`
+- **검증 범위:** 로컬 검증·DeepSeek live 평가·adaptive 보완 완료
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
 - **provider/model:** DeepSeek / `deepseek-v4-flash-vision-exp`
 - **Phoenix project:** `04-multimodal-agent`

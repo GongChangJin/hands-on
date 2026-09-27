@@ -4,7 +4,8 @@
 
 ## 프로젝트 정의
 
-- **상태:** `in_progress` (`@ukkhnn` 구현 완료, `@us788` 독립 구현 대기)
+- **상태:** `validated`
+- **후속 비교:** `@us788` 독립 구현 대기
 - **참여자:** `@ukkhnn`, `@us788`
 - **협업 방식:** 각자 독립적으로 구현하고, 동일 데이터의 실행 결과와 학습 결론만 공유해 비교
 - **역할:** 문서 기반 질의와 결정적 도구 사용을 담당하는 전문 Agent
@@ -122,7 +123,7 @@
 ### @ukkhnn 구현 완료
 
 - 변경: LangGraph workflow, 로컬 embedding, Qdrant, Phoenix 관측, 19개 평가와 결과 export 추가
-- 결과: `@ukkhnn completed`
+- 결과: `@ukkhnn validated`
 - 다음 행동: 독립 구현 결과 비교
 
 ### @ukkhnn 전체 live 평가 완료

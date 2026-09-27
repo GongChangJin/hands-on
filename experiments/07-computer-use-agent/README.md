@@ -4,7 +4,8 @@
 
 ## 프로젝트 정의
 
-- **상태:** `validated` (`@ukkhnn` 구현·로컬 평가 완료, 독립 구현 비교는 후속 작업)
+- **상태:** `validated`
+- **후속 비교:** 독립 구현 비교
 - **참여자:** `@ukkhnn`, `@us788`
 - **역할:** 브라우저 화면을 해석하고 제한된 행동을 실행하는 Agent
 - **선행 프로젝트:** Agent Evaluation, Multimodal Agent, LLM Router

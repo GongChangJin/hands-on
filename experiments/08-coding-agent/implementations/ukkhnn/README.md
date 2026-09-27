@@ -2,7 +2,8 @@
 
 ## 구현 정보
 
-- **상태:** validated control plane / live generation pending
+- **상태:** `validated`
+- **검증 범위:** 실행 제어 계층 검증 완료, live 생성 평가는 후속 작업
 - **방식:** 정책 선검사 + 고정 참조 patch replay + 독립 held-out 판정
 - **런타임:** Python 3.11 이상, Pydantic 2, JSON Schema, pytest, ruff
 - **모델:** `reference-replay-v1`(외부 전송 없는 결정적 기준선)

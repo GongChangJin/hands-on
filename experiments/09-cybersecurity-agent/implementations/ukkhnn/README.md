@@ -2,7 +2,8 @@
 
 ## 구현 정보
 
-- **상태:** validated deterministic security gate
+- **상태:** `validated`
+- **검증 범위:** 결정적 보안 게이트와 fail-closed scanner 경계
 - **방식:** 정적 분석 정규화 + 결정적 참조 수정 + 격리 재검사 + 08 handoff 승인
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
 
@@ -15,7 +16,7 @@ Semgrep과 Bandit 결과를 범주·경로·줄 단위로 합치고 `expected-fi
 ## 기술 스택
 
 - 언어·런타임: Python 3.11 이상
-- 모델: 사용하지 않음(`deterministic-container-v1`)
+- 모델: 사용하지 않음(`deterministic-container-v2`)
 - 프레임워크: Pydantic 2, JSON Schema
 - 외부 도구: Docker, Semgrep 1.178.0, Bandit 1.9.4, pytest 9.1.1
 - 평가 도구: 공통 계약 validator와 자체 security evaluation runner
@@ -34,7 +35,7 @@ cd experiments/09-cybersecurity-agent/implementations/ukkhnn
 ./run-security-agent
 ```
 
-Docker Desktop 또는 호환 Docker 엔진이 필요하다. 실행기는 고정 버전 이미지를 만들고 `results/deterministic-container-v1/`에 finding, 수정 diff, 도구 trace, 격리 probe, 08 handoff 승인, 공통 계약 레코드, 요약과 보고서를 생성한다. 컨테이너에 실제 API 비밀값을 전달하지 않으며 fixture 값은 명시적으로 가짜다.
+Docker Desktop 또는 호환 Docker 엔진이 필요하다. 실행기는 고정 버전 이미지를 만들고 `results/deterministic-container-v2/`에 finding, 수정 diff, 도구 trace, 격리 probe, 08 handoff 승인, 공통 계약 레코드, 요약과 보고서를 생성한다. 컨테이너에 실제 API 비밀값을 전달하지 않으며 fixture 값은 명시적으로 가짜다.
 
 ## 결과
 
@@ -46,9 +47,10 @@ Docker Desktop 또는 호환 Docker 엔진이 필요하다. 실행기는 고정 
 | 기능·보안 회귀 | 통과 |
 | 격리 probe | 3/3 |
 | 08 handoff 승인 | 5/5 |
+| 스캐너 정상 완료 | fixture 2/2, handoff 5/5 |
 | 모델 호출 / 비용 | 0 / $0.00 |
 
-구현 자체 회귀 테스트는 19/19 통과했다. 결과 trace는 fixture 7개와 handoff 15개로 총 22개다. 대표 실패는 없었다. 규칙은 Python의 세 취약점 범주만 다루며 dependency·동적 검사는 제외한다. 참조 수정 replay는 게이트와 증거 체인을 검증하지만 live LLM의 수정 품질을 측정하지 않는다.
+구현 자체 회귀 테스트는 22/22 통과했다. timeout 또는 알 수 없는 scanner 종료 코드는 finding 0건으로 승인하지 않고 차단하며, timeout 컨테이너는 이름으로 강제 제거한다. 결과 trace는 fixture 7개와 handoff 15개로 총 22개다. 규칙은 Python의 세 취약점 범주만 다루며 dependency·동적 검사는 제외한다. 참조 수정 replay는 게이트와 증거 체인을 검증하지만 live LLM의 수정 품질을 측정하지 않는다.
 
 ## 공통 README에 반영할 결론
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -13,6 +14,9 @@ from .contracts import ERROR_TYPES, SEVERITIES, validate_contract
 from .paths import CONTEXT_DIR, FIXTURES_DIR, LABELS_DIR, SHARED_DIR, STANDARD_SIZE, TASKS_PATH
 from .preprocessing import preprocess_image
 from .privacy import scan_texts
+
+
+FIXTURE_IMAGE_NAME = re.compile(r"ui-(?:error|normal)-\d{3}\.png")
 
 
 def _jsonl(path: Path) -> list[dict[str, Any]]:
@@ -30,7 +34,10 @@ def validate_fixtures() -> dict[str, Any]:
     labels = _jsonl(LABELS_DIR / "labels.jsonl")
     contexts = _jsonl(CONTEXT_DIR / "contexts.jsonl")
     tasks = _jsonl(TASKS_PATH)
-    images = sorted(FIXTURES_DIR.glob("*.png"))
+    images = sorted(
+        path for path in FIXTURES_DIR.glob("*.png")
+        if FIXTURE_IMAGE_NAME.fullmatch(path.name)
+    )
     if len(images) < 20:
         raise ValueError("공통 fixture는 최소 20장이어야 합니다.")
     if not (len(images) == len(labels) == len(contexts) == manifest["fixture_count"]):
