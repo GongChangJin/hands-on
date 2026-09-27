@@ -1,0 +1,21 @@
+{
+  "run_id": "live-smoke-v1",
+  "mode": "live-smoke",
+  "scenarios": 4,
+  "passed": 4,
+  "success_rate": 1.0,
+  "route_matches": 4,
+  "coding_security_gate_enforced": true,
+  "paid_provider_calls": [
+    "03-agentic-rag/upstage"
+  ],
+  "estimated_paid_cost_usd": 0.0005193,
+  "offline_stages": [
+    "05-research-agent"
+  ],
+  "limitations": [
+    "The RAG request is live and paid; Research uses its deterministic offline corpus because no DeepSeek key is registered.",
+    "Coding uses its validated replay patch provider while tests and the container security gate execute live.",
+    "This smoke run checks connectivity and boundaries, not statistical quality."
+  ]
+}
