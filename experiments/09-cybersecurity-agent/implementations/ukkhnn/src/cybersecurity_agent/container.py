@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 import time
+import uuid
 from pathlib import Path
 
 from .io import shared_dir
@@ -52,7 +53,7 @@ class ContainerRunner:
         payload = json.loads(inspect.stdout)
         return {"id": payload["Id"], "created": payload["Created"], "architecture": payload["Architecture"]}
 
-    def _base_command(self, workspace: Path) -> list[str]:
+    def _base_command(self, workspace: Path, container_name: str | None = None) -> list[str]:
         make_world_readable(workspace)
         command = [
             "docker", "run", "--rm",
@@ -72,15 +73,40 @@ class ContainerRunner:
             "-e", "BACKUP_PASSWORD=runtime-backup-password",
             "-v", f"{workspace.resolve()}:/workspace:ro",
         ]
+        if container_name:
+            command.extend(["--name", container_name])
         if self.policy.read_only_root:
             command.append("--read-only")
         command.append(self.policy.container_image)
         return command
 
+    @staticmethod
+    def _timeout_output(value: str | bytes | None) -> str:
+        if isinstance(value, bytes):
+            return value.decode(errors="replace")
+        return value or ""
+
+    @staticmethod
+    def _remove_container(container_name: str) -> str:
+        try:
+            cleanup = subprocess.run(
+                ["docker", "rm", "-f", container_name],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+        except (OSError, subprocess.TimeoutExpired) as error:
+            return f"container_cleanup_failed:{type(error).__name__}"
+        if cleanup.returncode == 0:
+            return "container_cleanup:removed"
+        detail = cleanup.stderr.strip().replace("\n", " ")[-200:]
+        return f"container_cleanup_unconfirmed:{detail or cleanup.returncode}"
+
     def run(self, workspace: Path, tool: str, args: list[str], acceptable_codes: set[int]) -> ToolExecution:
         if tool not in self.policy.allowed_tools:
             raise ContainerPolicyError(f"tool_not_allowed:{tool}")
-        command = [*self._base_command(workspace), tool, *args]
+        container_name = f"gcj-security-{uuid.uuid4().hex}"
+        command = [*self._base_command(workspace, container_name), tool, *args]
         started = time.perf_counter()
         try:
             completed = subprocess.run(
@@ -92,12 +118,14 @@ class ContainerRunner:
             )
             timed_out = False
         except subprocess.TimeoutExpired as error:
+            cleanup_status = self._remove_container(container_name)
+            stderr = self._timeout_output(error.stderr)
             return ToolExecution(
                 tool=tool,
                 exit_code=124,
                 duration_ms=(time.perf_counter() - started) * 1000,
-                stdout=error.stdout or "",
-                stderr=error.stderr or "",
+                stdout=self._timeout_output(error.stdout),
+                stderr=f"{stderr}\n{cleanup_status}".strip(),
                 timed_out=True,
                 container_args=command[2:command.index(self.policy.container_image)],
             )

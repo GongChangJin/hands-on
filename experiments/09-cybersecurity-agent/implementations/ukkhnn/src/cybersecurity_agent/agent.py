@@ -13,10 +13,10 @@ from .evaluation import evaluate_fixture, tool_trace, validate_records
 from .io import load_expected, repo_root, shared_dir, write_json, write_jsonl
 from .models import SecurityPolicy, ToolExecution
 from .report import render_report
-from .scanner import SecurityScanner
+from .scanner import SecurityScanner, scan_succeeded
 
 
-RUN_ID = "deterministic-container-v1"
+RUN_ID = "deterministic-container-v2"
 IMPLEMENTATION_ID = "ukkhnn:deterministic-security-gate:v1"
 
 
@@ -61,6 +61,8 @@ class CybersecurityAgent:
                 self.expected,
                 fixture_result["before"].findings,
                 fixture_result["after"].findings,
+                scan_succeeded(fixture_result["before"]),
+                scan_succeeded(fixture_result["after"]),
                 fixture_result["functional_before"].exit_code == 0,
                 fixture_result["security_before"].exit_code != 0,
                 fixture_result["all_after"].exit_code == 0,
@@ -140,7 +142,8 @@ class CybersecurityAgent:
             tests = self.runner.run(workspace, "pytest", ["-q", "/workspace/tests"], {0, 1})
             blocking = [item for item in scan.findings if item.severity == "ERROR"]
             upstream_ok = task["decision"] == "ready_for_security_review" and all(task["verification"].values())
-            approved = not blocking and tests.exit_code == 0 and upstream_ok
+            scanner_ok = scan_succeeded(scan)
+            approved = scanner_ok and not blocking and tests.exit_code == 0 and upstream_ok
             rows.append({
                 "task_id": task["task_id"],
                 "source_project": "08-coding-agent",
@@ -148,6 +151,7 @@ class CybersecurityAgent:
                 "finding_count": len(scan.findings),
                 "blocking_findings": [item.model_dump() for item in blocking],
                 "tests_passed": tests.exit_code == 0,
+                "scan_succeeded": scanner_ok,
                 "upstream_verification_passed": upstream_ok,
                 "scan": scan,
                 "test_execution": tests,

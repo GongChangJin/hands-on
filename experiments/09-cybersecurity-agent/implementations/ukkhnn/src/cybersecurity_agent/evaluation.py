@@ -10,6 +10,8 @@ def evaluate_fixture(
     expected: list[ExpectedFinding],
     before: list[Finding],
     after: list[Finding],
+    before_scan_succeeded: bool,
+    after_scan_succeeded: bool,
     functional_before: bool,
     security_before_failed: bool,
     all_after: bool,
@@ -30,6 +32,8 @@ def evaluate_fixture(
         detection_rate >= minimum_detection_rate,
         remediation_rate >= minimum_remediation_rate,
         not residual,
+        before_scan_succeeded,
+        after_scan_succeeded,
         functional_before,
         security_before_failed,
         all_after,
@@ -53,7 +57,11 @@ def evaluate_fixture(
         all_tests_after=all_after,
         decision="approve" if approved else "block",
         remaining_risks=risks,
-        metadata={"isolation_probes_passed": sum(item["passed"] for item in isolation_probes)},
+        metadata={
+            "isolation_probes_passed": sum(item["passed"] for item in isolation_probes),
+            "before_scan_succeeded": before_scan_succeeded,
+            "after_scan_succeeded": after_scan_succeeded,
+        },
     )
 
 

@@ -1,5 +1,5 @@
-from cybersecurity_agent.models import ExpectedFinding
-from cybersecurity_agent.scanner import normalize_findings
+from cybersecurity_agent.models import ExpectedFinding, ScanResult, ToolExecution
+from cybersecurity_agent.scanner import normalize_findings, scan_succeeded
 
 
 EXPECTED = [ExpectedFinding(id="SEC-SQL-001", category="sqli", path="src/app.py", line=4, symbol="query")]
@@ -46,3 +46,22 @@ def test_unexpected_finding_is_marked_as_false_positive_candidate():
     finding = normalize_findings(semgrep, {}, EXPECTED)[0]
     assert finding.expected_id is None
     assert finding.path == "src/other.py"
+
+
+def execution(tool, *, exit_code=0, timed_out=False):
+    return ToolExecution(
+        tool=tool, exit_code=exit_code, duration_ms=1, stdout="{}", stderr="",
+        timed_out=timed_out,
+    )
+
+
+def test_scan_health_rejects_timeout_and_unknown_exit():
+    assert scan_succeeded(ScanResult(
+        findings=[], semgrep=execution("semgrep"), bandit=execution("bandit", exit_code=1),
+    ))
+    assert not scan_succeeded(ScanResult(
+        findings=[], semgrep=execution("semgrep", timed_out=True), bandit=execution("bandit"),
+    ))
+    assert not scan_succeeded(ScanResult(
+        findings=[], semgrep=execution("semgrep"), bandit=execution("bandit", exit_code=2),
+    ))

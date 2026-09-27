@@ -64,6 +64,15 @@ def normalize_findings(
     return findings
 
 
+def scan_succeeded(result: ScanResult) -> bool:
+    """Return whether every required scanner completed with an understood result."""
+
+    return all(
+        not execution.timed_out and execution.exit_code in {0, 1}
+        for execution in (result.semgrep, result.bandit)
+    )
+
+
 class SecurityScanner:
     def __init__(self, runner: ContainerRunner, expected: list[ExpectedFinding]):
         self.runner = runner

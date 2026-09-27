@@ -1,4 +1,5 @@
 import json
+import subprocess
 
 import pytest
 
@@ -22,6 +23,25 @@ def test_container_command_has_required_boundaries(tmp_path):
 def test_unknown_tool_is_rejected_before_execution(tmp_path):
     with pytest.raises(ContainerPolicyError, match="tool_not_allowed"):
         ContainerRunner(load_policy()).run(tmp_path, "curl", [], {0})
+
+
+def test_timeout_forces_named_container_removal(monkeypatch, tmp_path):
+    calls = []
+
+    def fake_run(command, **kwargs):
+        calls.append(command)
+        if command[:3] == ["docker", "rm", "-f"]:
+            return subprocess.CompletedProcess(command, 0, "removed", "")
+        raise subprocess.TimeoutExpired(command, 60, output=b"partial", stderr=b"stalled")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    result = ContainerRunner(load_policy()).run(tmp_path, "pytest", ["-q"], {0})
+
+    assert result.timed_out is True
+    assert result.exit_code == 124
+    assert "container_cleanup:removed" in result.stderr
+    name = calls[0][calls[0].index("--name") + 1]
+    assert calls[1] == ["docker", "rm", "-f", name]
 
 
 def test_common_contract_accepts_security_request():
