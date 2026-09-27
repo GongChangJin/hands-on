@@ -1,0 +1,15 @@
+--- a/src/security_lab/sql.py
++++ b/src/security_lab/sql.py
+@@ -1,9 +1,9 @@
+-"""Intentionally unsafe SQL helpers."""
++"""Parameterized SQL helpers."""
+ 
+ 
+ def find_user(cursor, username: str):
+-    return cursor.execute(f"SELECT * FROM users WHERE username = '{username}'").fetchall()
++    return cursor.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchall()
+ 
+ 
+ def find_order(cursor, order_id: str):
+-    return cursor.execute("SELECT * FROM orders WHERE id = %s" % order_id).fetchall()
++    return cursor.execute("SELECT * FROM orders WHERE id = ?", (order_id,)).fetchall()

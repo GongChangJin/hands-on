@@ -70,8 +70,13 @@ def test_report_contains_fixture_and_handoff_metrics():
             "decision": "approve", "detected_expected": 6, "expected_total": 6,
             "detection_rate": 1.0, "remediated_expected": 6, "remediation_rate": 1.0,
             "false_positives": 0, "all_tests_after": True,
+            "metadata": {"before_scan_succeeded": True, "after_scan_succeeded": True},
         }, "isolation": {"passed": 3, "total": 3},
     }
-    report = render_report(summary, [{"task_id": "coding-1", "decision": "approve", "finding_count": 0, "tests_passed": True}])
+    report = render_report(summary, [{
+        "task_id": "coding-1", "decision": "approve", "scan_succeeded": True,
+        "finding_count": 0, "tests_passed": True,
+    }])
     assert "Detection: 6/6" in report
+    assert "Scanner health before/after remediation: pass / pass" in report
     assert "`coding-1`" in report

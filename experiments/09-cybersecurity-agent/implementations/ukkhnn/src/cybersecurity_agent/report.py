@@ -13,17 +13,21 @@ def render_report(summary: dict, handoffs: list[dict]) -> str:
         f"- Detection: {metrics['detected_expected']}/{metrics['expected_total']} ({metrics['detection_rate']:.0%})",
         f"- Remediation: {metrics['remediated_expected']}/{metrics['detected_expected']} ({metrics['remediation_rate']:.0%})",
         f"- False positives: {metrics['false_positives']}",
+        "- Scanner health before/after remediation: "
+        f"{'pass' if metrics['metadata']['before_scan_succeeded'] else 'fail'} / "
+        f"{'pass' if metrics['metadata']['after_scan_succeeded'] else 'fail'}",
         f"- Regression/security tests after remediation: {'pass' if metrics['all_tests_after'] else 'fail'}",
         f"- Isolation probes: {summary['isolation']['passed']}/{summary['isolation']['total']}",
         "",
         "## Coding Agent handoff review",
         "",
-        "| Task | Decision | Findings | Tests |",
-        "| --- | --- | ---: | --- |",
+        "| Task | Decision | Scan | Findings | Tests |",
+        "| --- | --- | --- | ---: | --- |",
     ]
     for item in handoffs:
         lines.append(
-            f"| `{item['task_id']}` | {item['decision']} | {item['finding_count']} | "
+            f"| `{item['task_id']}` | {item['decision']} | "
+            f"{'pass' if item['scan_succeeded'] else 'fail'} | {item['finding_count']} | "
             f"{'pass' if item['tests_passed'] else 'fail'} |"
         )
     lines.extend([

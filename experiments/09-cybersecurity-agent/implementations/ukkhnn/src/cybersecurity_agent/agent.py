@@ -17,7 +17,7 @@ from .scanner import SecurityScanner, scan_succeeded
 
 
 RUN_ID = "deterministic-container-v2"
-IMPLEMENTATION_ID = "ukkhnn:deterministic-security-gate:v1"
+IMPLEMENTATION_ID = "ukkhnn:deterministic-security-gate:v2"
 
 
 def _copytree(source: Path, target: Path) -> None:
