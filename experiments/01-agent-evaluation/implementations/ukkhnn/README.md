@@ -3,7 +3,7 @@
 ## 구현 정보
 
 - **구현자:** @ukkhnn
-- **상태:** completed
+- **상태:** validated
 - **공통 과제:** [프로젝트 과제명세](../../README.md)
 - **협업 방식:** @ukkhnn과 @us788이 각각 독립 구현하고, 실행 결과와 학습 결론을 공유해 비교
 
@@ -72,7 +72,7 @@ Phoenix의 `Projects > 01-agent-evaluation > Traces`에서 workflow → Agent �
 ./upload-dataset
 ```
 
-`agent-tool-use-golden-v1`은 계산 10개, 프로젝트 조회 5개, 두 도구 결합 5개로 구성된다. 정답, 필수 도구, handoff 목표 Agent를 실행 전에 고정한다.
+`agent-tool-use-golden-v2`는 계산 10개, 프로젝트 조회 5개, 두 도구 결합 5개로 구성된다. 현재 프로젝트 상태인 `validated`, 필수 도구와 handoff 목표 Agent를 실행 전에 고정한다. 이전 v1 실행 결과는 당시 `active` 상태를 사용한 과거 기록으로 보존한다.
 
 ### 3. 한 모델 또는 구조 실행
 

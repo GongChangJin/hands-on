@@ -31,8 +31,8 @@ def test_golden_dataset_has_twenty_learning_cases() -> None:
 
 def test_answer_contains_required_text() -> None:
     assert _answer_contains_required_text(
-        {"answer": "결과는 42이며 상태는 ACTIVE입니다."},
-        {"required_texts": ["42", "active"]},
+        {"answer": "결과는 42이며 상태는 VALIDATED입니다."},
+        {"required_texts": ["42", "validated"]},
     )
 
 

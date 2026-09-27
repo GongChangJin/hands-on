@@ -16,7 +16,7 @@ BinaryOperator = Callable[[int | float, int | float], int | float]
 UnaryOperator = Callable[[int | float], int | float]
 Architecture = Literal["single", "handoff"]
 ARCHITECTURES: tuple[Architecture, ...] = ("single", "handoff")
-PROMPT_VERSION = "v2"
+PROMPT_VERSION = "v3"
 
 _BINARY_OPERATORS: dict[type[ast.operator], BinaryOperator] = {
     ast.Add: operator.add,
@@ -60,7 +60,7 @@ def calculator(expression: str) -> str:
 
 PROJECTS = {
     "01-agent-evaluation": {
-        "status": "active",
+        "status": "validated",
         "purpose": "Agent 관측과 평가 기술스택을 비교하고 익힌다.",
     }
 }
