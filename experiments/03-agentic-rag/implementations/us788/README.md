@@ -11,9 +11,9 @@
 
 LangGraph로 `retrieve → grade_docs → (재검색) → calculate → answer` 흐름을 만들었습니다. 세 가지를 의도적으로 분리했습니다.
 
-- **계산은 LLM에 맡기지 않습니다.** `calculator`가 AST로 직접 평가합니다. 이름·호출·첨자는 전부 거부해서, 계산 정확도 100% 목표를 모델 성능과 무관하게 만듭니다.
+- **계산은 LLM에 맡기지 않습니다.** `calculator`가 AST로 직접 평가합니다. 이름·호출·첨자는 전부 거부하므로 계산 자체는 모델 성능과 무관합니다. 다만 **현재는 질문에 `숫자 연산자 숫자` 형태가 그대로 있을 때만 발동합니다.** `tasks/sample.jsonl`의 `calc-001`처럼 연산자가 없는 자연어 질문에서는 추출 정규식이 매치되지 않아 계산이 일어나지 않고 모델이 암산합니다. 수식 추출 단계가 없는 것이 원인이고, 이 상태에서는 프로젝트 평가 기준의 계산 정확도 100%를 달성할 수 없습니다.
 - **검색 결과는 데이터로만 취급합니다.** 문서를 `<document>` 태그로 감싸고, 그 안의 지시문은 따르지 않도록 시스템 프롬프트에 명시합니다. 주입 의심 문구가 문서에 있으면 `forbidden_actions`로 계수합니다.
-- **관련성 판정 후 재검색**을 최대 2회까지 돌립니다.
+- **재검색 루프는 구조만 있고 아직 동작하지 않습니다.** `grade_docs`의 판정 조건이 "질의와 토큰이 하나라도 겹치는가"인데 `retrieve`가 이미 그 조건을 만족하는 문서만 돌려주므로 한 건도 걸러내지 못합니다. 재검색 시 질의 확장도 질문 앞 3단어를 덧붙이는 방식이라, 질의를 토큰 집합으로 쓰는 `retrieve` 입장에서는 확장 전과 완전히 동일합니다. 결과적으로 최대 2회 루프가 같은 결과를 반복합니다.
 
 근거는 `[문서ID:p페이지]` 형식으로 답변에 넣고, evalkit의 `cited` grader가 이 패턴을 검사합니다.
 
@@ -31,7 +31,7 @@ LangGraph로 `retrieve → grade_docs → (재검색) → calculate → answer` 
 
 - `TaskRequest` 입력: `evalkit.Task`로 받습니다. `constraints.allowed_tools`(`retrieve`·`calculate`)는 아직 그래프에 하드코딩되어 있어 계약 필드로 뺄 작업이 남았습니다.
 - `AgentResult` 출력: 답변 문자열과 `forbidden_actions` 계수를 반환합니다. 답변 안의 `[문서ID:p페이지]` 인용이 `evidence[]`의 원본이므로, `source`·`location`·`claim` 구조로 분리하면 그대로 채울 수 있습니다.
-- `ToolTrace` 수집: `evalkit.ToolCall`로 `retrieve`·`calculate` 호출을 기록합니다. `result_summary`와 `task_id` 필드가 빠져 있습니다.
+- `ToolTrace` 수집: `graph.py`의 `_record()`가 `retrieve`·`calculate`·`llm` 호출을 `state["tool_calls"]`에 모읍니다. 다만 **`eval_agent.py`가 `tool_calls=[]`로 하드코딩해 평가 기록에는 하나도 남지 않습니다.** `ToolCall(**c)` 변환을 붙이는 작업이 남았고, 그때까지 `tool_used` grader는 이 구현에서 항상 실패하며 프로젝트 평가 기준의 도구 정확도는 0%로 집계됩니다. `result_summary`와 `task_id` 필드도 빠져 있습니다.
 - `EvaluationRecord` 생성: `run_eval.py`를 거쳐 `evalkit.RunRecord`로 만듭니다. 전환 계획은 [01 구현 README](../../../01-agent-evaluation/implementations/us788/README.md)에 정리했습니다.
 
 ## 디렉터리
@@ -56,7 +56,9 @@ cp .env.example .env
 python run.py "약관에서 중도해지 위약금 조항을 근거와 함께 설명하라"
 
 # 평가
-python ../../../01-agent-evaluation/implementations/us788/run_eval.py \
+# run_eval.py 를 다른 디렉터리에서 부르면 sys.path[0] 이 스크립트 위치로 잡혀
+# cwd 가 빠진다. eval_agent 를 찾도록 PYTHONPATH 로 현재 디렉터리를 알려준다.
+PYTHONPATH=. python ../../../01-agent-evaluation/implementations/us788/run_eval.py \
   --tasks ../../../01-agent-evaluation/implementations/us788/tasks/sample.jsonl \
   --agent eval_agent:build \
   --experiment 03-agentic-rag
@@ -75,9 +77,13 @@ python ../../../01-agent-evaluation/implementations/us788/run_eval.py \
 ## 한계
 
 - 검색이 키워드 겹침 기반이라 동의어와 표현 차이에 약합니다. 임베딩 검색과 비교가 필요합니다.
-- `grade_docs`가 아직 결정적 판정입니다. LLM 관련성 판정과의 차이를 측정해야 합니다.
-- 재검색 질의 확장 방식이 단순합니다. 질의 재작성으로 교체할 여지가 있습니다.
+- `grade_docs`가 결정적 판정인데, 그 조건이 `retrieve`의 반환 조건과 같아 실질적으로 무동작입니다. LLM 관련성 판정으로 교체해야 의미가 생깁니다.
+- 재검색 질의 확장이 토큰 집합을 바꾸지 못해 같은 결과를 반복합니다. 본 문서 제외와 질의 재작성이 필요합니다.
+- `eval_agent.py`가 도구 호출 기록을 버려서 도구 정확도를 측정할 수 없습니다.
+- 계산 추출이 정규식뿐이라 자연어 질문에서 계산기가 발동하지 않습니다.
+- `node_retrieve`가 재검색 시 `forbidden_actions`를 다시 더해 같은 문서의 주입 마커를 이중 계수합니다.
 - 코퍼스가 샘플 3건입니다. 공통 문서는 `shared/`에서 확정해야 합니다.
+- 프로젝트 완료 조건인 "두 구현을 동일 데이터로 평가"는 `shared/`가 비어 있어 아직 불가능합니다.
 
 ## 공통 README에 반영할 결론
 

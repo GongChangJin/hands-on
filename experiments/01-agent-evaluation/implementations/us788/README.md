@@ -82,7 +82,12 @@ python run_eval.py --tasks tasks/sample.jsonl --agent agents.echo:build --repeat
 - `cited` grader가 정규식 기반이라 형식만 보고 근거의 진위는 보지 않습니다.
 - 비용은 `models.yaml`의 단가표에 의존하는 추정치입니다. 실제 청구액과 대조가 필요합니다.
 - 재현성은 성공/실패가 갈리는지만 봅니다. 출력 자체의 분산은 아직 측정하지 않습니다.
-- 공통 계약(`common/contracts/`)으로의 전환이 남아 있습니다.
+- 공통 계약(`common/contracts/`)으로의 전환이 남아 있습니다. 전환 전까지는 다른 참여자의 구현과 같은 표로 비교할 수 없습니다.
+- `AgentResult.extra`를 `RunRecord`로 옮기지 않아 소비 측(03·06)이 담은 telemetry가 전량 유실됩니다. 프로젝트 평가 기준의 관측성(누락률 0%)에 걸립니다.
+- `run_eval.py`가 cwd를 `sys.path`에 넣지 않아, 다른 프로젝트 디렉터리에서 `--agent`로 로컬 어댑터를 지정하면 import에 실패합니다. 호출 측에서 `PYTHONPATH=.`가 필요합니다.
+- `Grade.score`의 의미가 grader마다 다릅니다. 대부분 0.0/1.0인데 `cited`는 인용 개수, `no_forbidden`은 위반 횟수를 담아 `EvaluationRecord.quality_score`(0~1)로 그대로 옮길 수 없습니다.
+- 실행 기록을 append로 쌓아 같은 `--out`에 여러 번 실행하면 과거 기록이 섞입니다.
+- 평가 태스크가 3건입니다. 프로젝트 완료 조건은 20건 이상입니다.
 
 ## 공통 README에 반영할 결론
 
