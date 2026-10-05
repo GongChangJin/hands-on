@@ -1,0 +1,16 @@
+{
+  "experiment": "10-runtime-adapter",
+  "learningSlot": "2026-10-05",
+  "executedAt": "2026-11-04T14:21:25.577Z",
+  "provenance": "Retrospective learning sequence; executedAt is the actual evaluation time, not the learning slot.",
+  "evidenceMode": "local-fixture",
+  "scope": "Local HTTP protocol fixture; no OpenCode process, model, account or API key.",
+  "runtime": "v22.19.0",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "p50Ms": 1.437,
+  "p95Ms": 31.372,
+  "apiCostUsd": 0,
+  "externalModelCalls": 0
+}
