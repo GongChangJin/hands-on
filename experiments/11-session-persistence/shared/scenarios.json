@@ -1,0 +1,56 @@
+{
+  "experiment": "11-session-persistence",
+  "learningSlot": "2026-10-06",
+  "evidenceMode": "local-fixture",
+  "scope": "Real temporary filesystem and separate Node restart process; no production data.",
+  "cases": [
+    {
+      "id": "task-identity",
+      "expected": "Same task/owner/project create is idempotent; changed owner is rejected."
+    },
+    {
+      "id": "immutable-reads",
+      "expected": "Mutating input, returned task or nested event payload cannot change stored data."
+    },
+    {
+      "id": "monotonic-cursors",
+      "expected": "Interleaved task events receive global seq 1,2,3; per-task cursor after1 returns only3."
+    },
+    {
+      "id": "restart-process",
+      "expected": "A separately started Node process reads event1 and appends event2."
+    },
+    {
+      "id": "malformed-json",
+      "expected": "Broken JSON is rejected without replacing original bytes."
+    },
+    {
+      "id": "checksum-corruption",
+      "expected": "Changing an owner in otherwise valid JSON fails checksum validation."
+    },
+    {
+      "id": "unknown-schema",
+      "expected": "Unsupported schema cannot be encoded or replace current schema1 data."
+    },
+    {
+      "id": "invalid-payload",
+      "expected": "NaN, functions, prototype keys and oversized payloads append zero events."
+    },
+    {
+      "id": "writer-lock",
+      "expected": "A second writer is rejected until the first closes."
+    },
+    {
+      "id": "atomic-failure",
+      "expected": "Injected pre-rename failure preserves the committed snapshot and removes temporary output."
+    },
+    {
+      "id": "private-files",
+      "expected": "Snapshot and lock permission modes equal0600."
+    },
+    {
+      "id": "unknown-task",
+      "expected": "Unknown task and path-like identity requests cannot mutate state."
+    }
+  ]
+}
