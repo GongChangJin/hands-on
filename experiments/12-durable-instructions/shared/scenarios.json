@@ -1,0 +1,60 @@
+{
+  "experiment": "12-durable-instructions",
+  "learningSlot": "2026-10-07",
+  "evidenceMode": "local-fixture",
+  "scope": "Durable local queue and separate Node restart process; no model or remote side effect.",
+  "cases": [
+    {
+      "id": "empty-task-lifecycle",
+      "expected": "Explicit ensureTask permits empty list/next/stop/resume; reads do not create missing tasks."
+    },
+    {
+      "id": "idempotent-enqueue",
+      "expected": "The same task/message ID and text produces one queued message."
+    },
+    {
+      "id": "idempotency-conflict",
+      "expected": "The same message ID with different text conflicts without rewriting original intent."
+    },
+    {
+      "id": "ordered-dispatch",
+      "expected": "Only one instruction may be sending; completion permits the next queued ID."
+    },
+    {
+      "id": "followup-does-not-stop",
+      "expected": "Enqueueing a follow-up preserves current sending state and does not pause."
+    },
+    {
+      "id": "stop-preserves-queue",
+      "expected": "Stop preserves active and pending messages; confirmed completion still needs explicit resume."
+    },
+    {
+      "id": "uncertain-no-retry",
+      "expected": "Uncertain delivery blocks all later dispatch and cannot be bypassed by resume."
+    },
+    {
+      "id": "sending-restart",
+      "expected": "Reopening a sending queue persists uncertain status before allowing any dispatch."
+    },
+    {
+      "id": "completed-restart-process",
+      "expected": "A new Node process dispatches only the pending message and preserves both completion records."
+    },
+    {
+      "id": "explicit-resolution",
+      "expected": "Uncertain resolution requires evidence and explicit resume before the next message."
+    },
+    {
+      "id": "cross-task-acknowledgement",
+      "expected": "An acknowledgement for another task does not complete the active instruction."
+    },
+    {
+      "id": "invalid-inputs",
+      "expected": "Invalid IDs, empty text and messages over20000 characters are rejected."
+    },
+    {
+      "id": "immutable-list",
+      "expected": "Mutating list output cannot change durable text or instruction status."
+    }
+  ]
+}
