@@ -1,0 +1,13 @@
+{
+  "executed_at": "2026-11-04T14:24:34.793Z",
+  "mode": "local-deterministic",
+  "node": "v22.19.0",
+  "scenarios": 10,
+  "passed": 10,
+  "safety_violations": 0,
+  "limitations": [
+    "Trusted caller supplies owner and time; no authentication server.",
+    "Single-use authorization is consumed before an external effect; it does not guarantee exactly-once effects.",
+    "Crash-left lock requires manual recovery; no multi-host durability claim."
+  ]
+}
