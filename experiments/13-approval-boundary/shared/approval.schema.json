@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ApprovalRequestSnapshot",
+  "type":"object",
+  "required":["id","taskId","ownerId","action","revision","expiresAt","fingerprint","status","consumed"],
+  "additionalProperties":false,
+  "properties":{
+    "id":{"type":"string","minLength":1},"taskId":{"type":"string","minLength":1},"ownerId":{"type":"string","minLength":1},
+    "action":{"type":"object","minProperties":1},"revision":{"type":"integer","minimum":0},
+    "expiresAt":{"type":"integer","minimum":1},"fingerprint":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "status":{"enum":["pending","approved","rejected","expired","superseded"]},
+    "consumed":{"type":"boolean"},"decidedAt":{"type":"integer","minimum":1}
+  }
+}
