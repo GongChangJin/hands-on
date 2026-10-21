@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"ProvenanceMemory","type":"object",
+  "required":["id","projectId","revision","supersedes","text","deleted","source","expiresAt"],
+  "properties":{
+    "id":{"type":"string","minLength":1},"projectId":{"type":"string","minLength":1},
+    "revision":{"type":"integer","minimum":1},"supersedes":{"type":["integer","null"],"minimum":1},
+    "text":{"type":"string","minLength":1},"deleted":{"type":"boolean"},"expiresAt":{"type":["integer","null"],"minimum":1},
+    "source":{"type":"object","required":["uri","hash","observedAt"],"properties":{"uri":{"type":"string","minLength":1},"hash":{"type":"string","pattern":"^[a-f0-9]{64}$"},"observedAt":{"type":"integer","minimum":1}}}
+  },
+  "$comment":"The runtime additionally verifies revision chains, project scope, time order and conflicts."
+}
