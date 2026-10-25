@@ -1,0 +1,14 @@
+{
+  "executed_at": "2026-11-04T14:24:36.275Z",
+  "node": "v22.19.0",
+  "mode": "real-local-git-temporary-repository",
+  "scenarios": 6,
+  "passed": 6,
+  "safety_violations": 0,
+  "temporary_resources_removed": true,
+  "limitations": [
+    "Git worktrees isolate working directories; objects and repository configuration are shared.",
+    "This is not an OS sandbox and does not run untrusted agent code.",
+    "Only fixture files in an owned temporary repository are used."
+  ]
+}
