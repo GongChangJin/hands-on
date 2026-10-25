@@ -1,0 +1,8 @@
+[
+  {"id":"two-worktree-isolation","check":"isolation","expected":true},
+  {"id":"invalid-worktree-name","check":"name","expected":true},
+  {"id":"relative-path-escape","check":"escape","expected":true},
+  {"id":"dirty-removal-preserves-content","check":"dirty","expected":true},
+  {"id":"clean-source-export","check":"export","expected":true},
+  {"id":"clean-owned-resource-removal","check":"cleanup","expected":true}
+]
