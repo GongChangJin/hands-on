@@ -1,0 +1,38 @@
+[
+  {
+    "id": "same-owner-two-clients",
+    "expected": "shared_task"
+  },
+  {
+    "id": "instruction-dedup",
+    "expected": "one_message"
+  },
+  {
+    "id": "cursor-reconnect",
+    "expected": "no_repeat"
+  },
+  {
+    "id": "other-owner-read",
+    "expected": "denied_404"
+  },
+  {
+    "id": "missing-auth",
+    "expected": "denied_401"
+  },
+  {
+    "id": "foreign-origin",
+    "expected": "denied_403"
+  },
+  {
+    "id": "invalid-cursor",
+    "expected": "denied_400"
+  },
+  {
+    "id": "stop-is-request",
+    "expected": "not_runtime_confirmation"
+  },
+  {
+    "id": "restart-uncertain",
+    "expected": "no_redispatch"
+  }
+]
