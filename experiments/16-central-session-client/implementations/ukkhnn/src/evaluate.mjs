@@ -1,0 +1,18 @@
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { evaluateScenarios } from './scenarios.mjs';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+const arg=process.argv.indexOf('--output');
+const output=arg<0?join(root,'results'):resolve(process.argv[arg+1]);
+const records=await evaluateScenarios();
+const cases=JSON.parse(readFileSync(join(root,'../../shared/cases.json'),'utf8'));
+if(JSON.stringify(cases.map(x=>x.id))!==JSON.stringify(records.map(x=>x.id))) throw new Error('case_manifest_drift');
+const sorted=records.map(x=>x.latency_ms).sort((a,b)=>a-b);
+const summary={experiment:'16-central-session-client',evaluated_at:new Date().toISOString(),mode:'real_loopback_http_fixture',node:process.version,total:records.length,passed:records.filter(x=>x.passed).length,cost_usd:0,latency_p50_ms:sorted[Math.ceil(sorted.length*.5)-1],latency_p95_ms:sorted[Math.ceil(sorted.length*.95)-1],product_readiness:'partial',live_model_calls:0,remote_device_tested:false,limitations:['Two clients run on one host; HTTPS, Tailscale, mobile and Mac mini are not exercised.','Control pauses dispatch; it does not prove a runtime process stopped.','Independent module stores do not provide a cross-store transaction.']};
+mkdirSync(output,{recursive:true});
+writeFileSync(join(output,'records.jsonl'),records.map(x=>JSON.stringify(x)).join('\n')+'\n');
+writeFileSync(join(output,'summary.json'),JSON.stringify(summary,null,2)+'\n');
+writeFileSync(join(output,'report.md'),`# Central Session Client 결과\n\n실행 시각: ${summary.evaluated_at}\n\n로컬 HTTP 평가 ${summary.passed}/${summary.total}. 외부 모델 호출과 비용은 0이다.\n\n${records.map(x=>`- ${x.id}: ${x.passed?'PASS':'FAIL'} (${x.observed})`).join('\n')}\n\n## 적용 판단\n\ntrial. 같은 소유자의 두 클라이언트가 상태와 커서를 공유하며 다른 소유자는 접근하지 못한다. 지시 중복, 연결 재시도, 재시작 후 불확실 전달을 검증했다.\n\n## 한계\n\n${summary.limitations.map(x=>'- '+x).join('\n')}\n`);
+console.log(JSON.stringify(summary));
+if(summary.passed!==summary.total) process.exitCode=1;
