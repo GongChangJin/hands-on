@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/ukkhnn/personal-ai",
+  "revision": "a73d8179d0d41e67eeefcda488453601c47e6027",
+  "inspected_at": "2026-11-04T14:16:34.171Z",
+  "inspection_mode": "read_only_source_and_documentation",
+  "working_tree_clean": true,
+  "application_executed": false,
+  "live_model_calls": 0,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "797cc4a4b25b29d05ba00eb700c993626729c693932451943803723ed9c48324"
+    },
+    {
+      "path": "agent-workspace/REQUIREMENTS.md",
+      "sha256": "24c3bb44a20f671a7673d3e471bcce9ee84c999d91db4623fdaf5cc2ecfc8d1d"
+    },
+    {
+      "path": "agent-workspace/ARCHITECTURE.md",
+      "sha256": "8d6a299c9a31ffca04f44e8d52831ba496bf8362498efa931021c70d2fb313bf"
+    },
+    {
+      "path": "agent-workspace/DECISIONS.md",
+      "sha256": "45c3f7e91ca9a42de14c64b745dfd698d0174b5468e5e1849f5326a9bb0fa136"
+    },
+    {
+      "path": "agent-workspace/ROADMAP.md",
+      "sha256": "a2f27cee5294885925d9fd9a6a29ea84aa41ad4133a4826f7d61958b86295d7b"
+    },
+    {
+      "path": "agent-workspace/specs/harness-templates.md",
+      "sha256": "6f42da18d78eb770ce471a7781bc59c2c5c93b0dcb8fbd2f6149b5be235b2f81"
+    },
+    {
+      "path": "agent-workspace/app/README.md",
+      "sha256": "d73b77dd56d9cf18d897ffc37879a96c9f84e5c317584b8161e952d33e2442a2"
+    },
+    {
+      "path": "agent-workspace/app/HANDOFF.md",
+      "sha256": "4d6a5f186f715237a9251299884de855744d5ea6bdfc3d774334fe5caace8d05"
+    },
+    {
+      "path": "agent-workspace/app/src/workspace.js",
+      "sha256": "73120281dd3e94024eb811be451493d78b949ff02254111257969e4da3595a60"
+    },
+    {
+      "path": "agent-workspace/app/src/server.js",
+      "sha256": "b782548381aab72b05405756e72a1133baf9973f1158cc5af7a08cb4805ebc2a"
+    },
+    {
+      "path": "agent-workspace/app/src/store.js",
+      "sha256": "fa47cf941517dc6d9976791bc96eab3e854c05ac6e30fc14179ceeec9832dc38"
+    },
+    {
+      "path": "agent-workspace/app/src/opencode.js",
+      "sha256": "c974e1a7a564b1620a889e6766f4a195b88cdcc32c59c1c3895ed31de1fcdec8"
+    },
+    {
+      "path": "agent-workspace/app/src/git.js",
+      "sha256": "bac6463d45f10ad05f5e973a0ba7581b66778aba256e10cac369dc860d0704b0"
+    },
+    {
+      "path": "agent-workspace/app/test/workspace.test.js",
+      "sha256": "7faf144041fb010d43da640344714e545d5757248402e8cf0e7893ab03d7ee88"
+    },
+    {
+      "path": "agent-workspace/app/test/server.test.js",
+      "sha256": "268e25a5a96f5f8d6540e85343f00c593136ccd0e3f7bdb4d24f98cd83ef0228"
+    }
+  ],
+  "mappings": [
+    {
+      "id": "runtime-adapter",
+      "experiment": 10,
+      "requirements": [
+        "U-02",
+        "U-16"
+      ],
+      "status": "partial",
+      "implemented": "Source contains an OpenCode loopback HTTP adapter, session mapping and provider catalog.",
+      "planned": "Other engines, subscription integrations and complete capability evaluation.",
+      "evidence": [
+        "agent-workspace/app/src/opencode.js",
+        "agent-workspace/REQUIREMENTS.md"
+      ]
+    },
+    {
+      "id": "session-storage",
+      "experiment": 11,
+      "requirements": [
+        "U-03",
+        "U-17"
+      ],
+      "status": "partial",
+      "implemented": "Versioned JSON state, atomic file replacement, single-process lock and corruption refusal.",
+      "planned": "Backup/restore, host-restart recovery and reliable long-term operation.",
+      "evidence": [
+        "agent-workspace/app/src/store.js",
+        "agent-workspace/app/README.md"
+      ]
+    },
+    {
+      "id": "queued-instructions",
+      "experiment": 12,
+      "requirements": [
+        "U-04"
+      ],
+      "status": "implemented_in_source",
+      "implemented": "Request deduplication, persistent queue, uncertain delivery without automatic resend and explicit stop/resume.",
+      "planned": "Real device/host transitions and stronger subprocess recovery remain validation work.",
+      "evidence": [
+        "agent-workspace/app/src/workspace.js",
+        "agent-workspace/app/test/workspace.test.js"
+      ]
+    },
+    {
+      "id": "approval-boundary",
+      "experiment": 13,
+      "requirements": [
+        "U-05",
+        "U-13"
+      ],
+      "status": "partial",
+      "implemented": "Selected-task permission response checked against a fresh runtime snapshot; shell execution asks approval.",
+      "planned": "Project dependency install automation and operating-system enforcement.",
+      "evidence": [
+        "agent-workspace/app/src/workspace.js",
+        "agent-workspace/app/src/opencode.js"
+      ]
+    },
+    {
+      "id": "harness-memory",
+      "experiment": 14,
+      "requirements": [
+        "U-14"
+      ],
+      "status": "partial",
+      "implemented": "Model, prompt and direct text memory copied into a task template snapshot.",
+      "planned": "Skills/tools/permissions editing, template revision management and memory retrieval.",
+      "evidence": [
+        "agent-workspace/app/src/workspace.js",
+        "agent-workspace/specs/harness-templates.md",
+        "agent-workspace/app/README.md"
+      ]
+    },
+    {
+      "id": "worktree-isolation",
+      "experiment": 15,
+      "requirements": [
+        "U-08",
+        "U-09",
+        "U-10"
+      ],
+      "status": "partial",
+      "implemented": "Task-specific Git branches/worktrees and tracked diff readout.",
+      "planned": "Real concurrent jobs, ports/DB/process isolation and worktree retention/cleanup policy.",
+      "evidence": [
+        "agent-workspace/app/src/git.js",
+        "agent-workspace/app/README.md"
+      ]
+    },
+    {
+      "id": "git-automation",
+      "experiment": 15,
+      "requirements": [
+        "U-12"
+      ],
+      "status": "planned",
+      "implemented": "No automatic commit/push/final merge workflow is claimed by the inspected app.",
+      "planned": "Automatic task-branch commit/push, revision-bound merge approval and conflict recovery.",
+      "evidence": [
+        "agent-workspace/app/README.md",
+        "agent-workspace/app/HANDOFF.md"
+      ]
+    },
+    {
+      "id": "central-client",
+      "experiment": 16,
+      "requirements": [
+        "U-01",
+        "U-04",
+        "U-05",
+        "U-07"
+      ],
+      "status": "partial",
+      "implemented": "Local authenticated HTTP service, host/origin checks and polling-based task view.",
+      "planned": "HTTPS/Tailscale/mobile, Mac mini deployment; experiment event cursors are a candidate enhancement.",
+      "evidence": [
+        "agent-workspace/app/src/server.js",
+        "agent-workspace/app/HANDOFF.md"
+      ]
+    },
+    {
+      "id": "source-handoff",
+      "experiment": 17,
+      "requirements": [
+        "U-07",
+        "U-10",
+        "U-11",
+        "U-17"
+      ],
+      "status": "documented_plan",
+      "implemented": "Handoff instructions distinguish source transfer from runtime/session migration.",
+      "planned": "Create fresh tasks on the host, verify host prerequisites and remaining product acceptance criteria.",
+      "evidence": [
+        "agent-workspace/app/HANDOFF.md",
+        "agent-workspace/REQUIREMENTS.md"
+      ]
+    }
+  ],
+  "limitations": [
+    "Source inspection is not a repeat of the app live-model evaluation documented on 2026-10-28.",
+    "This retrospective learning sequence does not establish historical execution dates or causation.",
+    "The Mac mini hardware specification is known; deployment and remote access are unverified here."
+  ]
+}
