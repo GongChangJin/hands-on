@@ -1,0 +1,19 @@
+{
+  "experiment": "16-central-session-client",
+  "evaluated_at": "2026-11-04T14:25:27.364Z",
+  "mode": "real_loopback_http_fixture",
+  "node": "v22.19.0",
+  "total": 9,
+  "passed": 9,
+  "cost_usd": 0,
+  "latency_p50_ms": 40.973,
+  "latency_p95_ms": 65.76654199999996,
+  "product_readiness": "partial",
+  "live_model_calls": 0,
+  "remote_device_tested": false,
+  "limitations": [
+    "Two clients run on one host; HTTPS, Tailscale, mobile and Mac mini are not exercised.",
+    "Control pauses dispatch; it does not prove a runtime process stopped.",
+    "Independent module stores do not provide a cross-store transaction."
+  ]
+}

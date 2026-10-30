@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "kind": "source-only-handoff",
+  "source": {
+    "repository": "fixture://handoff-source",
+    "revision": "db98b327ac976289d53b6821468ed8169289bcbd",
+    "files": [
+      {
+        "path": "fixture.txt",
+        "sha256": "4b654bd1437066b13498661f3ca14774daf1066d072036beffaf06f0c014250e"
+      },
+      {
+        "path": "summary.txt",
+        "sha256": "8e02290a5425bb0618019171249f73f3fc4df0734b5678ef36ba6e8572f78871"
+      }
+    ]
+  },
+  "target": {
+    "requires_new_task": true,
+    "auto_resume": false
+  },
+  "checks": {
+    "delivery_completed": true,
+    "queue_empty": true,
+    "runtime_idle": true,
+    "approval_consumed": true,
+    "source_clean": true,
+    "tests_passed": true
+  },
+  "steps": [
+    "fetch-source",
+    "verify-revision-and-file-hashes",
+    "prepare-host-with-local-auth",
+    "create-new-project-and-task",
+    "run-local-checks",
+    "request-first-execution"
+  ]
+}
