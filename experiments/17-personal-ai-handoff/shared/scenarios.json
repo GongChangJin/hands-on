@@ -1,0 +1,20 @@
+[
+  {"id":"completed-restart-handoff","expected":"completed_source_handoff","scope":"composed_local_http_git"},
+  {"id":"uncertain-restart-denial","expected":"uncertain_delivery_blocks_handoff","scope":"composed_local_http_git"},
+  {"id":"stop-confirmation","expected":"stop_confirmed_without_handoff","scope":"composed_local_http_git"},
+  {"id":"unknown-schema","expected":"unsupported_handoff_schema","scope":"export_contract"},
+  {"id":"auth-field","expected":"plan_unknown_or_missing_field","scope":"export_contract"},
+  {"id":"active-session-field","expected":"target_unknown_or_missing_field","scope":"export_contract"},
+  {"id":"absolute-path","expected":"unsafe_source_path","scope":"export_contract"},
+  {"id":"traversal-path","expected":"unsafe_source_path","scope":"export_contract"},
+  {"id":"private-file","expected":"unsafe_source_path","scope":"export_contract"},
+  {"id":"runtime-state-file","expected":"unsafe_source_path","scope":"export_contract"},
+  {"id":"array-revision","expected":"invalid_source_revision","scope":"export_contract"},
+  {"id":"array-digest","expected":"invalid_source_digest","scope":"export_contract"},
+  {"id":"credential-url","expected":"unsafe_repository","scope":"export_contract"},
+  {"id":"auto-resume","expected":"auto_resume_forbidden","scope":"export_contract"},
+  {"id":"pending-instructions","expected":"instructions_remaining","scope":"export_contract"},
+  {"id":"runtime-still-running","expected":"runtime_not_idle","scope":"export_contract"},
+  {"id":"approval-not-consumed","expected":"approval_not_consumed","scope":"export_contract"},
+  {"id":"dirty-source","expected":"source_checks_incomplete","scope":"export_contract"}
+]
