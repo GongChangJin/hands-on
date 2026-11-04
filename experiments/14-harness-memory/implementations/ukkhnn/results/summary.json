@@ -1,0 +1,13 @@
+{
+  "executed_at": "2026-11-04T14:24:34.963Z",
+  "node": "v22.19.0",
+  "mode": "local-deterministic",
+  "scenarios": 10,
+  "passed": 10,
+  "safety_violations": 0,
+  "limitations": [
+    "Capabilities are declarations, not provider performance validation.",
+    "Provenance hashes identify supplied evidence; they do not establish truth.",
+    "All memory is synthetic; no production retrieval-quality or privacy claim."
+  ]
+}

@@ -57,3 +57,23 @@
 - 07 조건 비교: [`07-computer-use-agent/implementations/ukkhnn/results/playwright-local-site/comparison.md`](07-computer-use-agent/implementations/ukkhnn/results/playwright-local-site/comparison.md)
 - 08 최종 평가: [`08-coding-agent/implementations/ukkhnn/results/reference-replay-v1/`](08-coding-agent/implementations/ukkhnn/results/reference-replay-v1/)
 - 09 최종 평가: [`09-cybersecurity-agent/implementations/ukkhnn/results/deterministic-container-v2/`](09-cybersecurity-agent/implementations/ukkhnn/results/deterministic-container-v2/)
+
+
+## Personal AI 연결 실험 — 10~17
+
+2026-11-04에 실제 실행한 로컬 재현 결과다. 지정된 10월 학습 슬롯은 회고 구성의 순서이며 실측 날짜와 구분한다.
+
+| 실험 | 자동 테스트 | 시나리오 평가 | 적용 범위 |
+|---|---:|---:|---|
+| 10 Runtime Adapter | 14/14 | 12/12 | OpenCode 형태의 로컬 HTTP fixture 계약 |
+| 11 Session Persistence | 14/14 | 12/12 | 단일 writer, 원자 저장, 이벤트 커서 |
+| 12 Durable Instructions | 15/15 | 13/13 | 순차 지시, 중복 방지, 불확실 전달 중지 |
+| 13 Approval Boundary | 14/14 | 10/10 | 소유자·행동·버전·기한별 1회 승인 |
+| 14 Harness & Memory | 17/17 | 10/10 | 설정 snapshot, 지원 차이, 기억 범위·이력 |
+| 15 Worktree Isolation | 12/12 | 6/6 | 임시 Git 저장소의 실제 파일·브랜치 분리 |
+| 16 Central Session Client | 11/11 | 9/9 | 두 로컬 클라이언트, 소유권·재접속·접수 영수증 |
+| 17 Personal AI Handoff | 26/26 | 18/18 | 10~16 조합, source-only 인계, 제품 격차 확인 |
+
+총 자동 테스트 **123개**, 평가 시나리오 **90개** 통과. 17의 요청 18건·결과 18건·도구 trace 25건·평가 18건은 기존 공통 JSON Schema로 검증했다. 통합 실행 결과는 [Workspace Bridge](../integration/results/workspace-bridge-v1/report.md), 흐름과 적용 판단은 [학습 경로](../docs/personal-ai-learning-path.md)에 있다.
+
+모델 호출과 운영 배포의 성공률은 측정하지 않았다. 실제 모델·Mac mini·모바일·Tailscale/HTTPS·강제 종료 복구·운영 백업은 별도 검증 대상이다. 기존 Python v1 E2E의 현재 호스트 환경 제약은 [재현 안내](../docs/reproduction-notes.md)에 남겼다.

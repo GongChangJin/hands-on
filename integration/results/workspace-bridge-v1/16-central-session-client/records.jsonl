@@ -1,0 +1,9 @@
+{"id":"same-owner-two-clients","expected":"shared_task","observed":"shared_task","passed":true,"latency_ms":46.669875000000005}
+{"id":"instruction-dedup","expected":"one_message","observed":"one_message","passed":true,"latency_ms":50.822458}
+{"id":"cursor-reconnect","expected":"no_repeat","observed":"no_repeat","passed":true,"latency_ms":40.973}
+{"id":"other-owner-read","expected":"denied_404","observed":"denied_404","passed":true,"latency_ms":28.69749999999999}
+{"id":"missing-auth","expected":"denied_401","observed":"denied_401","passed":true,"latency_ms":23.53941599999999}
+{"id":"foreign-origin","expected":"denied_403","observed":"denied_403","passed":true,"latency_ms":25.031915999999995}
+{"id":"invalid-cursor","expected":"denied_400","observed":"denied_400","passed":true,"latency_ms":29.700125000000014}
+{"id":"stop-is-request","expected":"not_runtime_confirmation","observed":"not_runtime_confirmation","passed":true,"latency_ms":55.828750000000014}
+{"id":"restart-uncertain","expected":"no_redispatch","observed":"no_redispatch","passed":true,"latency_ms":65.76654199999996}

@@ -1,0 +1,7 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"SourceOnlySnapshot","type":"object","additionalProperties":false,
+  "required":["revision","branch","files"],"properties":{
+    "revision":{"type":"string","pattern":"^[a-f0-9]{40,64}$"},"branch":{"type":"string","pattern":"^codex/lab-[a-z][a-z0-9-]{0,31}$"},
+    "files":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["path","content","sha256"],"properties":{"path":{"type":"string","minLength":1},"content":{"type":"string"},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}}}}
+  },"$comment":"Runtime rejects absolute paths, traversal, symlinks, Git metadata and dirty sources."
+}

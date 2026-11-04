@@ -1,0 +1,16 @@
+{
+  "experiment": "11-session-persistence",
+  "learningSlot": "2026-10-06",
+  "executedAt": "2026-11-04T14:25:22.825Z",
+  "provenance": "Retrospective learning sequence; executedAt is the actual evaluation time, not the learning slot.",
+  "evidenceMode": "local-fixture",
+  "scope": "Real temporary filesystem and separate Node restart process; no production data.",
+  "runtime": "v22.19.0",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "p50Ms": 13.397,
+  "p95Ms": 80.851,
+  "apiCostUsd": 0,
+  "externalModelCalls": 0
+}

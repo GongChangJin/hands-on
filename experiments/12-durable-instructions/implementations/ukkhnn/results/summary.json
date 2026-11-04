@@ -1,0 +1,16 @@
+{
+  "experiment": "12-durable-instructions",
+  "learningSlot": "2026-10-07",
+  "executedAt": "2026-11-04T14:21:20.280Z",
+  "provenance": "Retrospective learning sequence; executedAt is the actual evaluation time, not the learning slot.",
+  "evidenceMode": "local-fixture",
+  "scope": "Durable local queue and separate Node restart process; no model or remote side effect.",
+  "runtime": "v22.19.0",
+  "total": 13,
+  "passed": 13,
+  "failed": 0,
+  "p50Ms": 58.728,
+  "p95Ms": 104.071,
+  "apiCostUsd": 0,
+  "externalModelCalls": 0
+}

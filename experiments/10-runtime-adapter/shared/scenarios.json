@@ -1,0 +1,56 @@
+{
+  "experiment": "10-runtime-adapter",
+  "learningSlot": "2026-10-05",
+  "evidenceMode": "local-fixture",
+  "scope": "Local HTTP protocol fixture; no OpenCode process, model, account or API key.",
+  "cases": [
+    {
+      "id": "lifecycle-http",
+      "expected": "HTTP create returns session ID; 204 means accepted; later snapshot carries completed assistant evidence."
+    },
+    {
+      "id": "abort-confirmation",
+      "expected": "Abort returns requested and a subsequent snapshot confirms idle."
+    },
+    {
+      "id": "unsupported-capability",
+      "expected": "Unsupported permissions and memory capabilities reject before any HTTP request."
+    },
+    {
+      "id": "endpoint-allowlist",
+      "expected": "Configuration, authentication, traversal and query-bearing endpoints never reach HTTP."
+    },
+    {
+      "id": "destination-boundary",
+      "expected": "External, DNS localhost, credential-bearing and non-origin URLs are rejected."
+    },
+    {
+      "id": "malformed-json",
+      "expected": "Malformed JSON throws ProtocolError."
+    },
+    {
+      "id": "schema-guard",
+      "expected": "Incorrect health field types are rejected."
+    },
+    {
+      "id": "bounded-response",
+      "expected": "Responses larger than 65536 bytes are rejected."
+    },
+    {
+      "id": "timeout-no-retry",
+      "expected": "A 30ms timeout causes one HTTP request and no automatic retry."
+    },
+    {
+      "id": "redirect-no-follow",
+      "expected": "A 302 redirect is not followed and credentials stay on the original request."
+    },
+    {
+      "id": "foreign-session-response",
+      "expected": "Message info.sessionID must match the selected session."
+    },
+    {
+      "id": "unknown-runtime-state",
+      "expected": "An unrecognized runtime status cannot become idle or completed."
+    }
+  ]
+}

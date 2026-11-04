@@ -1,0 +1,209 @@
+{
+  "evaluated_at": "2026-11-04T14:25:29.951Z",
+  "node": "v22.19.0",
+  "experiments": 8,
+  "passed": 8,
+  "tests_count": 123,
+  "mode": "local_fixture_and_real_io",
+  "live_model_calls": 0,
+  "remote_device_tested": false,
+  "results": [
+    {
+      "experiment": "10-runtime-adapter",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 14,
+      "passed": true,
+      "summary": {
+        "experiment": "10-runtime-adapter",
+        "learningSlot": "2026-10-05",
+        "executedAt": "2026-11-04T14:25:22.366Z",
+        "provenance": "Retrospective learning sequence; executedAt is the actual evaluation time, not the learning slot.",
+        "evidenceMode": "local-fixture",
+        "scope": "Local HTTP protocol fixture; no OpenCode process, model, account or API key.",
+        "runtime": "v22.19.0",
+        "total": 12,
+        "passed": 12,
+        "failed": 0,
+        "p50Ms": 1.397,
+        "p95Ms": 32.508,
+        "apiCostUsd": 0,
+        "externalModelCalls": 0
+      }
+    },
+    {
+      "experiment": "11-session-persistence",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 14,
+      "passed": true,
+      "summary": {
+        "experiment": "11-session-persistence",
+        "learningSlot": "2026-10-06",
+        "executedAt": "2026-11-04T14:25:22.825Z",
+        "provenance": "Retrospective learning sequence; executedAt is the actual evaluation time, not the learning slot.",
+        "evidenceMode": "local-fixture",
+        "scope": "Real temporary filesystem and separate Node restart process; no production data.",
+        "runtime": "v22.19.0",
+        "total": 12,
+        "passed": 12,
+        "failed": 0,
+        "p50Ms": 13.397,
+        "p95Ms": 80.851,
+        "apiCostUsd": 0,
+        "externalModelCalls": 0
+      }
+    },
+    {
+      "experiment": "12-durable-instructions",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 15,
+      "passed": true,
+      "summary": {
+        "experiment": "12-durable-instructions",
+        "learningSlot": "2026-10-07",
+        "executedAt": "2026-11-04T14:25:23.708Z",
+        "provenance": "Retrospective learning sequence; executedAt is the actual evaluation time, not the learning slot.",
+        "evidenceMode": "local-fixture",
+        "scope": "Durable local queue and separate Node restart process; no model or remote side effect.",
+        "runtime": "v22.19.0",
+        "total": 13,
+        "passed": 13,
+        "failed": 0,
+        "p50Ms": 39.666,
+        "p95Ms": 118.368,
+        "apiCostUsd": 0,
+        "externalModelCalls": 0
+      }
+    },
+    {
+      "experiment": "13-approval-boundary",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 14,
+      "passed": true,
+      "summary": {
+        "executed_at": "2026-11-04T14:25:24.499Z",
+        "mode": "local-deterministic",
+        "node": "v22.19.0",
+        "scenarios": 10,
+        "passed": 10,
+        "safety_violations": 0,
+        "limitations": [
+          "Trusted caller supplies owner and time; no authentication server.",
+          "Single-use authorization is consumed before an external effect; it does not guarantee exactly-once effects.",
+          "Crash-left lock requires manual recovery; no multi-host durability claim."
+        ]
+      }
+    },
+    {
+      "experiment": "14-harness-memory",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 17,
+      "passed": true,
+      "summary": {
+        "executed_at": "2026-11-04T14:25:24.671Z",
+        "node": "v22.19.0",
+        "mode": "local-deterministic",
+        "scenarios": 10,
+        "passed": 10,
+        "safety_violations": 0,
+        "limitations": [
+          "Capabilities are declarations, not provider performance validation.",
+          "Provenance hashes identify supplied evidence; they do not establish truth.",
+          "All memory is synthetic; no production retrieval-quality or privacy claim."
+        ]
+      }
+    },
+    {
+      "experiment": "15-worktree-isolation",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 12,
+      "passed": true,
+      "summary": {
+        "executed_at": "2026-11-04T14:25:26.098Z",
+        "node": "v22.19.0",
+        "mode": "real-local-git-temporary-repository",
+        "scenarios": 6,
+        "passed": 6,
+        "safety_violations": 0,
+        "temporary_resources_removed": true,
+        "limitations": [
+          "Git worktrees isolate working directories; objects and repository configuration are shared.",
+          "This is not an OS sandbox and does not run untrusted agent code.",
+          "Only fixture files in an owned temporary repository are used."
+        ]
+      }
+    },
+    {
+      "experiment": "16-central-session-client",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 11,
+      "passed": true,
+      "summary": {
+        "experiment": "16-central-session-client",
+        "evaluated_at": "2026-11-04T14:25:27.364Z",
+        "mode": "real_loopback_http_fixture",
+        "node": "v22.19.0",
+        "total": 9,
+        "passed": 9,
+        "cost_usd": 0,
+        "latency_p50_ms": 40.973,
+        "latency_p95_ms": 65.76654199999996,
+        "product_readiness": "partial",
+        "live_model_calls": 0,
+        "remote_device_tested": false,
+        "limitations": [
+          "Two clients run on one host; HTTPS, Tailscale, mobile and Mac mini are not exercised.",
+          "Control pauses dispatch; it does not prove a runtime process stopped.",
+          "Independent module stores do not provide a cross-store transaction."
+        ]
+      }
+    },
+    {
+      "experiment": "17-personal-ai-handoff",
+      "tests_exit": 0,
+      "evaluation_exit": 0,
+      "tests_count": 26,
+      "passed": true,
+      "summary": {
+        "experiment": "17-personal-ai-handoff",
+        "learning_slot": "2026-10-30",
+        "retrospective": true,
+        "evaluated_at": "2026-11-04T14:25:28.671Z",
+        "node": "v22.19.0",
+        "mode": "composed_local_http_and_real_temporary_git",
+        "scenarios": 18,
+        "passed": 18,
+        "safety_violations": 0,
+        "live_model_calls": 0,
+        "cost_usd": 0,
+        "product_readiness": "partial",
+        "personal_ai_reference": {
+          "status": "verified_read_only",
+          "revision": "a73d8179d0d41e67eeefcda488453601c47e6027",
+          "files_verified": 15,
+          "application_executed": false
+        },
+        "remote_device_tested": false,
+        "application_executed": false,
+        "latency_p50_ms": 0.06091600000013386,
+        "latency_p95_ms": 529.954625,
+        "limitations": [
+          "Only synthetic local HTTP and temporary real Git worktrees were executed; no model or personal-ai application was run.",
+          "The coordinator writes fixed fixture content. This is not an AI coding-quality evaluation.",
+          "Memory is project-scoped synthetic text inserted by the coordinator; the protocol adapter does not support native memory.",
+          "Independent module stores and Git operations are not one transaction and do not guarantee exactly-once external effects.",
+          "Restart restores the coordinator records while the fixture runtime remains running; host/process migration is not verified.",
+          "Restart tests close stores cleanly; automatic stale-lock recovery after an abrupt process kill is not implemented.",
+          "Source-only plans contain hashes and allowlisted names, not credentials, active sessions or an executable migration.",
+          "Mac mini, mobile, HTTPS/Tailscale, production backup/restore and automatic Git lifecycle remain unverified."
+        ]
+      }
+    }
+  ]
+}

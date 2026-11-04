@@ -1,0 +1,7 @@
+{
+  "name": "hands-on-13-approval-boundary",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22 <23" },
+  "scripts": { "test": "node --test", "evaluate": "node src/evaluate.mjs" }
+}

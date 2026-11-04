@@ -1,0 +1,9 @@
+{
+  "version":1,
+  "prompt":"Use project evidence; ask before an external effect.",
+  "model":{"id":"fixture-model","requiredCapabilities":["structured-output"]},
+  "skills":[{"id":"summarize","version":"1.0","requiredCapabilities":["structured-output"]}],
+  "tools":[{"name":"read_note","capability":"local-files","sideEffect":false}],
+  "memory":{"projectId":"project-a","enabled":true},
+  "permissions":{"allowedTools":["read_note"],"allowWrites":false}
+}

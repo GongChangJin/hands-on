@@ -1,0 +1,12 @@
+[
+  {"id":"valid-snapshot","change":"none","expected":"ok"},
+  {"id":"version","change":"version","expected":"unsupported_harness_version"},
+  {"id":"capability","change":"capability","expected":"missing_model_capability"},
+  {"id":"permission","change":"permission","expected":"write_permission_required"},
+  {"id":"project-scope","change":"scope","expected":"project-a"},
+  {"id":"expiry","change":"expiry","expected":"empty"},
+  {"id":"revision-conflict","change":"conflict","expected":"conflicting_revision"},
+  {"id":"provenance","change":"provenance","expected":"missing_provenance"},
+  {"id":"deleted-latest","change":"delete","expected":"empty"},
+  {"id":"old-resurrection","change":"expired-latest","expected":"empty"}
+]

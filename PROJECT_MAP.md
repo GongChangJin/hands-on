@@ -2,7 +2,7 @@
 
 ## 목적
 
-9개 핸즈온 프로젝트의 정의, 선행·후행 관계, 공통 계약과 최종 통합 구조를 설명합니다. 세부 과제와 평가 기준은 각 프로젝트 README를 기준으로 합니다.
+17개 핸즈온 프로젝트의 정의, 선행·후행 관계, 공통 계약과 최종 통합 구조를 설명합니다. 01~09는 전문 Agent와 실행 경계, 10~17은 Personal AI 작업공간에 필요한 지속 실행 기반을 다룹니다. 세부 과제와 평가 기준은 각 프로젝트 README를 기준으로 합니다.
 
 ## 전체 구조
 
@@ -36,6 +36,27 @@ Agent Evaluation은 모든 프로젝트가 사용하는 기반입니다. Local L
 | 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | 제한된 브라우저 행동 실행 | 01, 04, 06 | Integration |
 | 08 | [Coding Agent](experiments/08-coding-agent/) | Issue 기반 코드 변경과 테스트 | 01, 06 | 09, Integration |
 | 09 | [Cybersecurity Agent](experiments/09-cybersecurity-agent/) | 코드 변경의 보안 재검증 | 01, 08 | Integration |
+| 10 | [Runtime Adapter](experiments/10-runtime-adapter/) | 실행 엔진의 ID·기능·HTTP 경계 | 06, Integration | 11, 17 |
+| 11 | [Session Persistence](experiments/11-session-persistence/) | 작업과 이벤트의 영속 저장 | 01, 10 | 12, 16 |
+| 12 | [Durable Instructions](experiments/12-durable-instructions/) | 지시 순서·중복·불확실성·중단 | 11 | 16, 17 |
+| 13 | [Approval Boundary](experiments/13-approval-boundary/) | 행동에 결부된 1회 승인 | 09 | 16, 17 |
+| 14 | [Harness & Memory](experiments/14-harness-memory/) | 설정 snapshot·기억 범위·지원 차이 | 03, 10 | 17 |
+| 15 | [Worktree Isolation](experiments/15-worktree-isolation/) | 병행 코드 변경과 파일 보존 | 08 | 17 |
+| 16 | [Central Session Client](experiments/16-central-session-client/) | 두 클라이언트의 중앙 상태 접근 | 11, 12, 13 | 17 |
+| 17 | [Personal AI Handoff](experiments/17-personal-ai-handoff/) | 구성요소 통합·제품 격차·소스 인계 | 10~16 | personal-ai/agent-workspace |
+
+## 지속하는 작업공간으로의 확장
+
+```text
+Integration v1
+  → 10 실행 연결 → 11 상태 저장 → 12 지시 대기열
+  → 13 행동별 승인 + 14 하네스·메모리 + 15 작업 파일 분리
+  → 16 중앙 세션 클라이언트
+  → 17 통합·인계 평가
+  → personal-ai/agent-workspace
+```
+
+새 실험은 제품의 현재 요구사항을 기준으로 재구성한 학습 경로입니다. 날짜별 슬롯은 과거 실측의 증거가 아니며 실제 실행 시각을 결과에 기록합니다. 맥미니·모바일 운영, 실제 모델 품질, 실행 중 세션 이전은 로컬 fixture 통과만으로 검증된 것으로 보지 않습니다. 자세한 동기와 적용 판단은 [학습 경로](docs/personal-ai-learning-path.md)를 참고합니다.
 
 ## 구축 전후관계
 

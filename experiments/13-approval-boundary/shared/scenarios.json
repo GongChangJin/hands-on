@@ -1,0 +1,12 @@
+[
+  {"id":"exact","change":"none","expected":"approved","allowed":true},
+  {"id":"other-owner","change":"owner","expected":"scope_mismatch","allowed":false},
+  {"id":"other-task","change":"task","expected":"scope_mismatch","allowed":false},
+  {"id":"changed-action","change":"action","expected":"action_changed","allowed":false},
+  {"id":"stale-revision","change":"revision","expected":"stale_revision","allowed":false},
+  {"id":"expired","change":"expiry","expected":"expired","allowed":false},
+  {"id":"reused","change":"reuse","expected":"already_consumed","allowed":false},
+  {"id":"rejected","change":"reject","expected":"user_rejected","allowed":false},
+  {"id":"superseded","change":"supersede","expected":"superseded","allowed":false},
+  {"id":"invalid-allow","change":"invalid","expected":"invalid_allow","allowed":false}
+]

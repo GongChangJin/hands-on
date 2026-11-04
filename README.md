@@ -85,6 +85,26 @@ experiments/03-agentic-rag/
 | 07 | [Computer-use Agent](experiments/07-computer-use-agent/) | `validated` | Integration | 실패 시 screenshot 증거·접근성 fallback 제한 적용 |
 | 08 | [Coding Agent](experiments/08-coding-agent/) | `validated` | Cybersecurity Agent | 제어 계층 trial, 자동 patch 생성 hold |
 | 09 | [Cybersecurity Agent](experiments/09-cybersecurity-agent/) | `validated` | Integration | 제한된 patch 승인 게이트 trial, 자동 수정 hold |
+| 10 | [Runtime Adapter](experiments/10-runtime-adapter/) | `validated` | Session Persistence, Personal AI | 엔진 ID·지원 기능·HTTP 경계 검증 |
+| 11 | [Session Persistence](experiments/11-session-persistence/) | `validated` | Durable Instructions, Central Session | 재시작·원자 저장·이벤트 복원 |
+| 12 | [Durable Instructions](experiments/12-durable-instructions/) | `validated` | Central Session | 중복·불확실 전달과 중단 분리 |
+| 13 | [Approval Boundary](experiments/13-approval-boundary/) | `validated` | Central Session, Personal AI | 정확한 행동·소유자·버전에 결부한 승인 |
+| 14 | [Harness & Memory](experiments/14-harness-memory/) | `validated` | Personal AI Handoff | 설정 snapshot·지원 차이·기억 범위 |
+| 15 | [Worktree Isolation](experiments/15-worktree-isolation/) | `validated` | Personal AI Handoff | 실제 Git 파일 분리·미커밋 변경 보존 |
+| 16 | [Central Session Client](experiments/16-central-session-client/) | `validated` | Personal AI Handoff | 같은 상태를 보는 두 로컬 클라이언트 |
+| 17 | [Personal AI Handoff](experiments/17-personal-ai-handoff/) | `validated` | personal-ai/agent-workspace | 통합 실행·제품 격차·소스 인계 검증 |
+
+## Personal AI로 이어지는 학습 경로
+
+01~09가 전문 Agent의 품질과 실행 경계를 다뤘다면, 10~17은 상태를 보존하고 지시·승인·설정·파일을 관리하는 작업공간을 다룹니다. [학습 흐름과 제품 연결](docs/personal-ai-learning-path.md)에 각 실험이 필요한 이유, 날짜 슬롯과 실제 실행일의 구분, `personal-ai`에 적용할 판단을 정리했습니다.
+
+새 실험 전체는 Node.js 22.19 이상과 Git으로 재현합니다. 외부 npm 의존성이나 유료 모델 호출은 필요하지 않습니다.
+
+```sh
+node integration/run-workspace-bridge.mjs
+```
+
+로컬 통합 검증과 Mac mini·모바일 운영 검증은 별도이며, 제품의 현재 구현과 남은 범위는 17의 고정 소스 기준표에서 구분합니다.
 
 ## 완료와 적용 판단
 

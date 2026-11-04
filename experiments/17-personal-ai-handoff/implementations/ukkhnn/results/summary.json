@@ -1,0 +1,34 @@
+{
+  "experiment": "17-personal-ai-handoff",
+  "learning_slot": "2026-10-30",
+  "retrospective": true,
+  "evaluated_at": "2026-11-04T14:23:39.052Z",
+  "node": "v22.19.0",
+  "mode": "composed_local_http_and_real_temporary_git",
+  "scenarios": 18,
+  "passed": 18,
+  "safety_violations": 0,
+  "live_model_calls": 0,
+  "cost_usd": 0,
+  "product_readiness": "partial",
+  "personal_ai_reference": {
+    "status": "verified_read_only",
+    "revision": "a73d8179d0d41e67eeefcda488453601c47e6027",
+    "files_verified": 15,
+    "application_executed": false
+  },
+  "remote_device_tested": false,
+  "application_executed": false,
+  "latency_p50_ms": 0.05749999999989086,
+  "latency_p95_ms": 870.0395420000001,
+  "limitations": [
+    "Only synthetic local HTTP and temporary real Git worktrees were executed; no model or personal-ai application was run.",
+    "The coordinator writes fixed fixture content. This is not an AI coding-quality evaluation.",
+    "Memory is project-scoped synthetic text inserted by the coordinator; the protocol adapter does not support native memory.",
+    "Independent module stores and Git operations are not one transaction and do not guarantee exactly-once external effects.",
+    "Restart restores the coordinator records while the fixture runtime remains running; host/process migration is not verified.",
+    "Restart tests close stores cleanly; automatic stale-lock recovery after an abrupt process kill is not implemented.",
+    "Source-only plans contain hashes and allowlisted names, not credentials, active sessions or an executable migration.",
+    "Mac mini, mobile, HTTPS/Tailscale, production backup/restore and automatic Git lifecycle remain unverified."
+  ]
+}
